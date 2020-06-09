@@ -1,4 +1,4 @@
-package com.eldorado.csa.dao;
+package com.eldorado.jsa.dao;
 
 public interface JsaDAO {
 
