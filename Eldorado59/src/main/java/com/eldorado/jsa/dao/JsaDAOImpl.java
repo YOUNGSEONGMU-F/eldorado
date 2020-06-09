@@ -1,4 +1,4 @@
-package com.eldorado.csa.dao;
+package com.eldorado.jsa.dao;
 
 import org.springframework.stereotype.Repository;
 
