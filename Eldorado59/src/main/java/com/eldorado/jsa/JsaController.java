@@ -1,4 +1,4 @@
-package com.eldorado.csa;
+package com.eldorado.jsa;
 
 import java.util.Locale;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping(value="csa/*")
-public class CsaController {
+@RequestMapping(value="jsa/*")
+public class JsaController {
 	
 	@RequestMapping(value = "test", method = RequestMethod.GET)
 	public String home_lyj(Locale locale, Model model) {

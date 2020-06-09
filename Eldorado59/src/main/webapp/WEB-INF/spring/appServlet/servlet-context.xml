@@ -25,9 +25,9 @@
 	<context:component-scan base-package="com.eldorado.lyj" />
 	<context:component-scan base-package="com.eldorado.lyj.service" />
 	<context:component-scan base-package="com.eldorado.lyj.dao" />
-	<context:component-scan base-package="com.eldorado.csa" />
-	<context:component-scan base-package="com.eldorado.csa.service" />
-	<context:component-scan base-package="com.eldorado.csa.dao" />
+	<context:component-scan base-package="com.eldorado.jsa" />
+	<context:component-scan base-package="com.eldorado.jsa.service" />
+	<context:component-scan base-package="com.eldorado.jsa.dao" />
 	<context:component-scan base-package="com.eldorado.khr" />
 	<context:component-scan base-package="com.eldorado.khr.service" />
 	<context:component-scan base-package="com.eldorado.khr.dao" />
