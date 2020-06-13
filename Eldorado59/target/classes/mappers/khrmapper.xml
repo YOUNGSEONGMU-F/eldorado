@@ -3,6 +3,17 @@
 
 <mapper namespace="khr">
 
+<update id="updateMember" parameterType="map">
+	update member 
+	set pass=#{pass},name=#{name},addr=#{addr},tel=#{tel} 
+	where id=#{id}
 
+</update>
+
+<delete id="deleteMember" parameterType="map">
+	delete from member 
+	where id=#{id}
+	
+</delete>
 </mapper>
 
