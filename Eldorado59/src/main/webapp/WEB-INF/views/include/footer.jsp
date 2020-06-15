@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <link href="${pageContext.request.contextPath }/resources/css/footer.css" rel="stylesheet" type="text/css" />
+
 <footer>
 <div class="footer">
                 <div class="qr_code" style="display:none" id="qrLink">
@@ -9,17 +10,19 @@
                         <span>YES24 영화 앱에서 참여 가능한 이벤트 입니다!</span> <span class="qr_img"><img src="//movie-img.yes24.com/NYes24/new/evt/movieday/qr_code.png" alt=""></span>
                     </div>
                 </div>
+                <!-- 광고 -->
                         <div class="foot_banner" style="background:#FFFFFF">
                             <a href="#" target="_self">
                                 <img src="https://movie-simg.yes24.com/NYes24//MgrMain//20/06/1200x1800_110347.jpg" alt="밤쉘">
                             </a>
                         </div>
+                <!-- 광고 -->
 
                 <div class="foot_area container">
-                    <div class="foot_info ">
+                    <div class="foot_info f_item_1">
                         <dl class="foot_info_cont">
-                            <dt class="f_item"><h1>ELDORADO59</h1></dt>
-                            <dd class="f_item">
+                            <dt><h1>ELDORADO59</h1></dt>
+                            <dd>
                                 <div class="policy_cont">
                                     <a href="#" target="_blank" style="border: none;">회사소개</a> 
                                     <a href="#" target="_blank">이용약관</a>
@@ -36,8 +39,8 @@
                             </dd>
                         </dl>
                     </div>
-                    <div class="foot_call">
-                        <div class="f_call_cont f_item">
+                    <div class="foot_call f_item_2">
+                        <div class="f_call_cont">
                             <p class="tit">영화예매/다운로드 문의</p>
                             <p class="tell_num">0000-0000</p>
                             <p>평일 : 9시~12시, 13시~18시 </p>
@@ -45,7 +48,7 @@
                             <p>(단, 다운로드는 주말/공휴일 휴무)</p>
                         </div>
                         <div class="top_area show">
-                            <button type="button" class="btn_top">최상단으로 이동</button>
+                            <button type="button" class="btn_top" onclick="location.href='#';">최상단으로 이동</button>
                         </div>
                     </div>
                 </div>

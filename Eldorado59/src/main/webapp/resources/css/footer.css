@@ -7,48 +7,55 @@
 /* 	border: 1px blue solid; */
     padding-bottom: 50px;
     height: 375px;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 1519px;
+	min-width: 925px;
 }
 .foot_banner {
     position: relative;
-    width: 100%;
     height: 180px;
     text-align: center;
     background: #291c14;
 }
+.foot_banner img{
+	max-width: 1519px;
+	min-width: 925px;
+}
 
 .foot_area {
-    margin-top: 60px;
+	margin-top: 2rem;
+    padding: 5rem 2rem;
     line-height: 1;
 }
 
-.foot_info{
-	
-}
 .policy_cont{
 /* 	border: 1px green solid; */
 	
 }
 .foot_call{
 	padding-left: 26px;
-    width: 248px;
+/*     width: 248px; */
     border-left: 1px solid #e4e4e4;
 	
 }
 
 .container{
 	display: flex;
-	justify-content: space-around;
+	justify-content: flex-start;
 }
 
-.f_item{
-/* 	border: 1px skyblue solid; */
-	flex:1; 
+.f_item_1{
+	flex-basis: 80%;
+}
+.f_item_2{
+	flex-basis: 20%;
 }
 
 .foot_info_cont>dt{
 	padding-right: 75px;
 	display: inline-block;
-	width: 150px;
+/* 	width: 150px; */
 	vertical-align: top;
 }
 .foot_info_cont h1{
