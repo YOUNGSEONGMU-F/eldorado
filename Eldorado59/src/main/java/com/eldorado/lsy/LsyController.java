@@ -21,15 +21,17 @@ public class LsyController {
 		return "home";
 	}
 
+	
 	/*
-	 * @RequestMapping(value = "header", method = RequestMethod.GET) public String
-	 * header(Locale locale, Model model) { logger.info("/header 林家 角青");
+	 * @RequestMapping(value = "footer", method = RequestMethod.GET) public String
+	 * header(Locale locale, Model model) { logger.info("/footer 鞁ろ枆");
 	 * 
-	 * return "lsy/header"; }
+	 * return "include/footer"; }
 	 */
+	 
 	@RequestMapping(value = "index", method = RequestMethod.GET)
 	public String main(Locale locale, Model model) {
-		logger.info("/main 林家 角青");
+		logger.info("/main 鞁ろ枆");
 		
 		return "lsy/main";
 	}
