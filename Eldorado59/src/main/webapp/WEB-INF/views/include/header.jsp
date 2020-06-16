@@ -37,7 +37,7 @@
                                     <li class="">
                                                 <a href="/Movie/Ticket" ><span>예매</span></a>
                                         <ul class="m_sub_gnb">
-                                                        <li><a href="/Movie/Ticket" class="udb">빠른예매</a></li>
+                                                        <li><a href="/Movie/Ticket">빠른예매</a></li>
                                                         <li><a href="/HelpDesk/GuideInfo">예매안내</a></li>
                                                         <li><a href="/MyPage/Index?tab=coupon">예매권 등록</a></li>
 
