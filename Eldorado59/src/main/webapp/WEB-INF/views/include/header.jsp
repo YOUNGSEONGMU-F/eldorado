@@ -7,10 +7,18 @@
 
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<header class="sticky">
+
+  <div id="ad">
+    광고란
+
+  </div>
+
+<header class="sticky"> 
+
+<div id="stc">
 <div class="header sc">
                 <div class="nav_area" style="height: 0px;">
-                    <div class="sc_nav ">
+                    <div id="sc_nav" style="display: none;">
                         <ul class="sc_g_left">
                           
                         </ul>
@@ -22,14 +30,14 @@
                             <li><a href="/Customer">고객센터</a></li>
                         </ul>
                     </div>
-					<div class="m_nav">
+					<div id="m_nav">
                         <h1 class="logo"><a href="/Main/Index">ELDORADO59</a></h1>
                         <div class="m_gnb_area">
                             <ul class="m_gnb_list">
                                     <li class="">
-                                                <a href="/Movie/Ticket"><span>예매</span></a>
+                                                <a href="/Movie/Ticket" ><span>예매</span></a>
                                         <ul class="m_sub_gnb">
-                                                        <li><a href="/Movie/Ticket">빠른예매</a></li>
+                                                        <li><a href="/Movie/Ticket" class="udb">빠른예매</a></li>
                                                         <li><a href="/HelpDesk/GuideInfo">예매안내</a></li>
                                                         <li><a href="/MyPage/Index?tab=coupon">예매권 등록</a></li>
 
@@ -84,7 +92,7 @@
                         <!-- on 추가/삭제로 사이드 영역 활성 -->
                         <div class="aside_rnb eve_parent">
                             <ul class="as_rng_list">
-                                <li style="margin-top: 2px;"><a href="#" class="as_btn btn_st btn_search_on eve_side_menu" data-cls="search_on"><i class='fas fa-search' style='font-size:20px;color:white'></i></a></li>
+                                <li style="margin-top: 2px;"><a href="#" class="as_btn btn_st btn_search_on eve_side_menu" data-cls="search_on"><i class="fas fa-search" style="font-size:20px;color:white" aria-hidden="true"></i></a></li>
                                 <li>
                                     <a href="/MyPage/Index" class="as_btn btn_my eve_quick"><i class="material-icons" style="font-size:30px;color:white">person_outline</i></a>
                                 </li>
@@ -144,4 +152,25 @@
                     </div>
                     </div>
                           
+</div>
+
+  </div>
 </header>
+
+<script id="jsbin-javascript">
+
+window.onscroll = function() {myFunction()};
+
+var sc = document.getElementById("stc");
+var tt = sc.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= tt) {
+      document.getElementById("sc_nav").style.display = "inline-block"; 
+      document.getElementById("sc_nav").style.backgroundColor = "rgba(26,26,26,.95)"; 
+      document.getElementById("m_nav").style.backgroundColor = "rgba(26,26,26,.95)"; 
+  }
+}
+
+
+</script>
