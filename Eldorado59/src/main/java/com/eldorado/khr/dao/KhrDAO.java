@@ -10,5 +10,7 @@ public interface KhrDAO {
 	//회원정보삭제
 	public int deleteMember(Map<String, Object> user);
 	
+	//마이페이지
+	
 	
 }

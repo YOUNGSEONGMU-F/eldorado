@@ -26,7 +26,7 @@ public class KhrController {
 		return "home";
 	}
 	
-	
+	// 회원정보 수정 
 	@RequestMapping(value = "updateMember", method = RequestMethod.GET)
 	public String updateMember(Locale locale, Model model) {
 	
@@ -42,6 +42,7 @@ public class KhrController {
 		return "khr/updateMember";
 	}
 	
+	// 회원정보 삭제
 	@RequestMapping(value = "deleteMember", method = RequestMethod.GET)
 	public String deleteMember(Locale locale, Model model) {
 	
@@ -57,7 +58,21 @@ public class KhrController {
 		return "khr/deleteMember";
 	}
 	
+	// 마이페이지
+	@RequestMapping(value = "myPage", method = RequestMethod.GET)
+	public String myPage(Locale locale, Model model) {
 	
+		return "khr/myPage";
+	}
+	
+	@RequestMapping(value = "myPage", method = RequestMethod.POST)
+	public String myPage_post(Locale locale, Model model,
+			@RequestParam Map<String,Object> user) {
+	
+		service.deleteMember(user);
+		
+		return "khr/myPage";
+	}
 	
 	
 	
