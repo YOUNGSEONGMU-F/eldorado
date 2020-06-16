@@ -31,11 +31,11 @@
                         </ul>
                     </div>
 					<div id="m_nav">
-                        <h1 class="logo"><a href="/Main/Index">ELDORADO59</a></h1>
+                        <h1 class="logo"><a href="index">ELDORADO59</a></h1>
                         <div class="m_gnb_area">
                             <ul class="m_gnb_list">
-                                    <li class="">
-                                                <a href="/Movie/Ticket" ><span>예매</span></a>
+                                    <li class="m_gnb">
+                                                <a href="/Movie/Ticket"><span>예매</span></a>
                                         <ul class="m_sub_gnb">
                                                         <li><a href="/Movie/Ticket">빠른예매</a></li>
                                                         <li><a href="/HelpDesk/GuideInfo">예매안내</a></li>
@@ -43,7 +43,7 @@
 
                                         </ul>
                                     </li>
-                                    <li class="">
+                                    <li class="m_gnb">
                                                 <a href="/MovieInfo/TicketRank"><span>영화</span></a>
                                         <ul class="m_sub_gnb">
                                                         <li><a href="/MovieInfo/TicketRank">예매순위</a></li>
@@ -55,7 +55,7 @@
 
                                         </ul>
                                     </li>
-                                    <li class="">
+                                    <li class="m_gnb">
                                                 <a href="/Event/Index"><span>이벤트</span></a>
                                         <ul class="m_sub_gnb">
                                                         <li><a href="/Event/Index?tab=PREVIEW">시사회</a></li>
@@ -64,7 +64,7 @@
 
                                         </ul>
                                     </li>
-                                    <li class="">
+                                    <li class="m_gnb">
                                                 <a href="/Magazine/Index"><span>매거진</span></a>
                                         <ul class="m_sub_gnb">
                                                         <li><a href="/Magazine/Index?GC=NEWS">뉴스</a></li>
@@ -73,13 +73,13 @@
 
                                         </ul>
                                     </li>
-                                    <li class="">
+                                    <li class="m_gnb">
                                                 <a href="/MovieGift/Index"><span>무비기프트</span></a>
                                         <ul class="m_sub_gnb">
 
                                         </ul>
                                     </li>
-                                    <li class="">
+                                    <li class="m_gnb">
                                                 <a href="http://vod.yes24.com/" target="_blank"><span>다운로드</span></a>
                                         <ul class="m_sub_gnb">
 

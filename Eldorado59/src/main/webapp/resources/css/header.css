@@ -27,6 +27,9 @@ header{
 	z-index: 99;
 }
 
+.sticky:hover #m_nav {
+	background-color: rgba(26,26,26,.95);
+}
 
 #sc_nav {
     border-bottom: 1px solid rgba(255,255,255,.1);
@@ -45,8 +48,8 @@ header{
 #sc_nav, #m_nav{
 /* 	border: 1px pink solid; */
 	display:flex;
-	/*background-color: rgba(26,26,26,.95);*/
-/*     background-color: transparent; */
+/*	background-color: rgba(26,26,26,.95);*/
+/*  background-color: transparent; */
 	justify-content: space-between;
 	width: 1519px;
 	min-width: 925px;
@@ -94,12 +97,24 @@ padding: 0 8rem;
 	white-space: nowrap;
 /* 	padding: 0; */
 }
+
+/* hover시 red */
+.m_gnb:hover > a{
+    border-bottom: 3px #ec6159 solid;
+    padding-bottom: 2px;
+}
+.m_sub_gnb>li:hover > a{
+    color: #ec6159;;
+    font-weight: normal;
+}
+
 .m_gnb_list>li{
 	margin: 0 0.5rem;
 }
 
 .m_sub_gnb{
 	display: none;
+	margin-top: 1rem;
 }
 .m_sub_gnb>li{
 	list-style: none;
@@ -107,7 +122,8 @@ padding: 0 8rem;
 }
 
 .m_sub_gnb a{
-	font-size: 10px;
+	font-size: 14px;
+	font-weight: normal;
 }
 
 
