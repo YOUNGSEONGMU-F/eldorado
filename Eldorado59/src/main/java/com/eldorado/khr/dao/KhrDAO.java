@@ -1,5 +1,12 @@
 package com.eldorado.khr.dao;
 
-public interface KhrDAO {
+import java.util.Map;
 
+public interface KhrDAO {
+	
+	// 회원정보 수정
+	public int updateMember(Map<String, Object> user);
+	
+	// 회원정보 삭제
+	public int deleteMember(Map<String, Object> user);
 }
