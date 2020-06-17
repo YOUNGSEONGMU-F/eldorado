@@ -42,7 +42,7 @@ public class LyjController {
 		service.insertMember(user);
 		
 		
-		return "join";
+		return "lyj/joincheck";
 	}
 	
 	
