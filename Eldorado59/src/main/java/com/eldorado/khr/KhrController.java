@@ -58,6 +58,22 @@ public class KhrController {
 		return "khr/deleteMember";
 	}
 	
+	// 비밀번호 수정
+	@RequestMapping(value = "changePW", method = RequestMethod.GET)
+	public String changePW(Locale locale, Model model) {
+	
+		return "khr/changePW";
+	}
+	
+//	@RequestMapping(value = "changePW", method = RequestMethod.POST)
+//	public String changePW_post(Locale locale, Model model,
+//			@RequestParam Map<String,Object> user) {
+//	
+//		service.changePW(user);
+//		
+//		return "khr/changePW";
+//	}
+	
 	// 마이페이지
 //	@RequestMapping(value = "myPage", method = RequestMethod.GET)
 //	public String myPage(Locale locale, Model model) {

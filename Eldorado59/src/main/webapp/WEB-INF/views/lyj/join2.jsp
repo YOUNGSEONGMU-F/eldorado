@@ -64,8 +64,7 @@
 </script>
 </head>
 <body>
-<!--  -->
-<style>
+ㄴ<style>
 	img,fieldset {border:0 none;}
 	dl,ul,ol,li {list-style: none;}
 	h1,h2,h3,h4,h5,dl,dt,dd,ul,li,ol,th,td,p,blockquote,form,fieldset,legend {margin:0;padding:0;}
