@@ -24,6 +24,13 @@ public class LyjDAOImpl implements LyjDAO{
 		
 	}
 
+
+	@Override
+	public String getPass(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return session.selectOne("lyj.getPass",map);
+	}
+
 	
 	
 }

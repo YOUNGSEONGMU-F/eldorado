@@ -8,7 +8,10 @@ insert into member(id,pass,name,email,addr,tel)
 values(#{id},#{pass},#{name},#{email},#{addr},#{tel})
 </insert>
 
+<select id="getPass" resultType="String">
 
+select pass from member where id=#{id}
+</select>
 
 </mapper>
 
