@@ -4,8 +4,8 @@
 <mapper namespace="lyj">
 
 <insert id="insertMember" parameterType="map">
-insert into member(id,pass,name,addr,tel) 
-values(#{id},#{pass},#{name},#{addr},#{tel})
+insert into member(id,pass,name,email,addr,tel) 
+values(#{id},#{pass},#{name},#{email},#{addr},#{tel})
 </insert>
 
 
