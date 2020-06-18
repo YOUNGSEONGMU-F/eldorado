@@ -14,9 +14,11 @@
 	<form action="updateMember" method="post" id="updateForm">
 		아이디 : <input type="text" name="id"><br>
 		이름 : <input type="text" name="name"><br>
-		기존 비밀번호 : <input type="password"><br>
+		<!-- 비밀번호 변경 시, 다시 변경 한 비밀번호로 로그인 후 회원정보 수정 페이지로 -->
+		비밀번호 : <button onclick="window.open('changePW','window_name','width=430,height=500,location=no,status=no,scrollbars=yes');">비밀번호 변경</button><br>
+		<!-- 기존 비밀번호 : <input type="password" id="ori_pass"><br>
 		새 비밀번호 : <input type="password" id="pass" name="pass"><br>
-		새 비밀번호 확인 : <input type="password" id="pass2" name="pass2"><br>
+		새 비밀번호 확인 : <input type="password" id="pass2" name="pass2"><br> -->
 		주소 : <input type="text" name="addr"><br>
 		전화번호 : <input type="text" name="tel" id="tel"><br>
 		이메일 : <input type="text" name="email" id="email"><br>
@@ -29,7 +31,9 @@
 
 $('#submitBtn').click(function(){
 	var id= $('#id').val();
+	var ori_pass = $('#ori_pass').val();
 	var pass = $('#pass').val();
+	var pass2 = $('#pass2').val();
 	var name = $('#name').val();
 	var tel = $('#tel').val();
 	var email = $('#email').val();
@@ -56,6 +60,10 @@ $('#submitBtn').click(function(){
 		   $("#name").focus();
 		   return false;
 	} */
+
+	// 기존 비밀번호 맞게 입력(로그인된 회원 정보 먼저 가져와야 함.)
+	
+	// 새 비밀번호는 기존 비밀번호와 달라야 함(마찬가지로 로그인된 회원정보 먼저 가져와야 함.)
 	if ($("#pass").val() == "") {
 	   $("#pass").focus();
 	   alert("비밀번호를 입력하세요.");
@@ -72,18 +80,17 @@ $('#submitBtn').click(function(){
 	   alert("비밀번호 확인란을 입력하세요.");
 	   return false;
 	}
-	if ($("#pass2").val() != ($("#pass")
-	      .val())) {
+	if ($("#pass2").val() != ($("#pass").val())) {
 	   alert("비밀번호가 서로 맞지않습니다.");
 	   $("#pass2").val("");
 	   $("#pass2").focus();
 	   return false;
 	}
-	if( blank_pattern.test($('#email').val()) == true){
+	//이메일 공백 확인
+	if(blank_pattern.test($('#email').val()) == true){
 	    alert(' 공백은 사용할 수 없습니다.');
 	    return false;
 	}
-	//이메일 공백 확인
 	if ($("#email").val() == "") {
 	   alert("이메일을 입력해주세요");
 	   $("#email").focus();
@@ -108,7 +115,8 @@ $('#submitBtn').click(function(){
 	   return false;
 	}
 	document.getElementById('updateForm').submit();
-	});
+	
+});
 		
 
 </script>
