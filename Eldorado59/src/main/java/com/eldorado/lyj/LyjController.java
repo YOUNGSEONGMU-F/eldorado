@@ -25,7 +25,6 @@ public class LyjController {
 	@Inject
 	private LyjServiceImpl service;
 	
-	//
 	
 	@RequestMapping(value = "test", method = RequestMethod.GET)
 	public String home_lyj(Locale locale, Model model) {
