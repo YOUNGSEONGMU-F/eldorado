@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.eclipse.jetty.server.Request;
 import org.springframework.stereotype.Controller;
@@ -60,4 +61,23 @@ public class LyjController {
 		return "lyj/login";
 	}
 	
+	@RequestMapping(value="login",method =RequestMethod.POST)
+	public String login_post(@RequestParam Map<String,Object> map,
+			HttpSession session) {
+		
+		String getPass = service.getPass(map);
+		if(getPass == null) {
+			System.out.println("아이디없음");
+		}else {
+			if(getPass.equals(map.get("pass"))) {
+				System.out.println("로그인성공");
+				session.setAttribute("id", map.get("id"));
+				
+				return "lyj/main";
+			}else {
+				System.out.println("패스워드 불일치");
+			}
+		}
+		return "lyj/login";
+	}
 }

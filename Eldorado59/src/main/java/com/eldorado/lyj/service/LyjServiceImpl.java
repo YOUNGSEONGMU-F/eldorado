@@ -22,6 +22,12 @@ public class LyjServiceImpl implements LyjService{
 		return 0;
 	}
 
+	@Override
+	public String getPass(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return dao.getPass(map);
+	}
+
 	
 	
 	
