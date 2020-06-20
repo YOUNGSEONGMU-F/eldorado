@@ -52,7 +52,7 @@ header{
 /*	background-color: rgba(26,26,26,.95);*/
 /*  background-color: transparent; */
 	justify-content: space-between;
-	width: 1519px;
+	width: 100vw;
 	min-width: 925px;
 }
 

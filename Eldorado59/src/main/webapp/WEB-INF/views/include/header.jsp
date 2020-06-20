@@ -31,7 +31,7 @@
                         </ul>
                     </div>
 					<div id="m_nav">
-                        <h1 class="logo"><a href="index">ELDORADO59</a></h1>
+                        <h1 class="logo"><a href="${pageContext.request.contextPath }/Main/index">ELDORADO59</a></h1>
                         <div class="m_gnb_area">
                             <ul class="m_gnb_list">
                                     <li class="m_gnb">
