@@ -16,7 +16,6 @@ public class JsaController {
 	Logger logger = LoggerFactory.getLogger(JsaController.class);
 	@RequestMapping(value = "test", method = RequestMethod.GET)
 	public String home_lyj(Locale locale, Model model) {
-	
 		return "home";
 	}
 	
@@ -26,7 +25,11 @@ public class JsaController {
 		return "jsa/BoxOfficeRank";
 	}
 	
-	
+	@RequestMapping(value = "FestivalMovie", method = RequestMethod.GET)
+	public String FestivalMovie(Locale locale, Model model) {
+		logger.info("/FestivalMovie 실행");
+		return "jsa/FestivalMovie";
+	}
 	
 	
 	
