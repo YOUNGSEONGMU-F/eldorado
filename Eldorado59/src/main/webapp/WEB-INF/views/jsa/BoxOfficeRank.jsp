@@ -36,7 +36,6 @@
     color: #2b2b2b;
     font-weight: bold;
     margin-top: 5%;}
-
 .t_bxof_tbl {
 	width: 100%;
     table-layout: fixed;
@@ -74,7 +73,6 @@
     color: #ec6159!important}
 a {text-decoration: none; color: #000000;
 }
-
 .t_tbl_st04 td{
 	padding: 15px 0;
     height: 60px;
@@ -83,10 +81,11 @@ a {text-decoration: none; color: #000000;
     line-height: 20px;
     }
     
-
 </style>
 <body>
 <%
+	//https://www.kobis.or.kr/kobisopenapi/homepg/main/main.do
+	//id: tbtb06 pw: maroon53
 	Date ddate = new Date();
 	ddate.setTime(ddate.getTime()-(1*23*60*60*1000));
 	
@@ -106,17 +105,13 @@ a {text-decoration: none; color: #000000;
 	String dkey = "125e0d7589b7019fcf325c4d2eac30d6";
 	// KOBIS 오픈 API Rest Client를 통해 호출
     KobisOpenAPIRestService dservice = new KobisOpenAPIRestService(dkey);
-
 	// 일일 박스오피스 서비스 호출 (boolean isJson, String targetDt, String itemPerPage,String multiMovieYn, String repNationCd, String wideAreaCd)
     String dailyResponse = dservice.getDailyBoxOffice(true, dtargetDt, ditemPerPage, dmultiMovieYn, drepNationCd, dwideAreaCd);
  
-
 	// Json 라이브러리를 통해 Handling
 	ObjectMapper dmapper = new ObjectMapper();
 	HashMap<String,Object> dailyResult = dmapper.readValue(dailyResponse, HashMap.class);
-
 	request.setAttribute("dailyResult",dailyResult);
-
 	// KOBIS 오픈 API Rest Client를 통해 코드 서비스 호출 (boolean isJson, String comCode )
 	String dcodeResponse = dservice.getComCodeList(true,"0105000000");
 	HashMap<String,Object> dcodeResult = dmapper.readValue(dcodeResponse, HashMap.class);
@@ -180,18 +175,14 @@ a {text-decoration: none; color: #000000;
 	String key = "125e0d7589b7019fcf325c4d2eac30d6";
 	// KOBIS 오픈 API Rest Client를 통해 호출
     KobisOpenAPIRestService service = new KobisOpenAPIRestService(key);
-
 	// 일일 박스오피스 서비스 호출 (boolean isJson, String targetDt, String itemPerPage,String multiMovieYn, String repNationCd, String wideAreaCd)
     String weeklyResponse = service.getWeeklyBoxOffice(true, targetDt, itemPerPage, weekGb, multiMovieYn, repNationCd, wideAreaCd);
    
     
-
 	// Json 라이브러리를 통해 Handling
 	ObjectMapper mapper = new ObjectMapper();
 	HashMap<String,Object> weeklyResult = mapper.readValue(weeklyResponse, HashMap.class);
-
 	request.setAttribute("weeklyResult",weeklyResult);
-
 	// KOBIS 오픈 API Rest Client를 통해 코드 서비스 호출 (boolean isJson, String comCode )
 	String codeResponse = service.getComCodeList(true,"0105000000");
 	HashMap<String,Object> codeResult = mapper.readValue(codeResponse, HashMap.class);
@@ -236,14 +227,12 @@ a {text-decoration: none; color: #000000;
 
 <script type="text/javascript">
 /* var dt = new Date();
-
 var d = dt.getDate() -1;
 if (d < 10) {var day = "0" + d;} else {var day = d + "";}
 var m = dt.getMonth() + 1;
 if (m < 10) { var month = "0" + m;} else {var month = m + "";}
 var y = dt.getFullYear();
 var year = y + "";
-
 var result = year + month + day;
 $(function() {
 	$.ajax({
@@ -268,7 +257,6 @@ $(function() {
 										$("<th/>").html("&nbsp;&nbsp;전일순위"));
 						var tbody = $("<tbody/>");
 						$.each($data, function(i, o) {
-
 							//오픈 API에 정의된 변수와 내가 정의한 변수 데이터 파싱
 							var $rank = $(o).find("rank").text(); // 순위
 							var $movieNm = $(o).find("movieNm").text(); //영화명
@@ -284,11 +272,8 @@ $(function() {
 									$("<td/>").text($salesAcc),
 									$("<td/>").text($audiAcc),
 									$("<td/>").text($rankInten));
-
 							tbody.append(row);
-
 						}); // end of each 
-
 						table.append(thead);
 						table.append(tbody);
 						$(".wrap").append(table);
@@ -301,4 +286,3 @@ $(function() {
 			});
 }); */
 </script>
-</html>
