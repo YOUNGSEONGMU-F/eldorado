@@ -221,6 +221,55 @@
           <div class="boff_more">
             <a href="/MovieInfo/TicketRank" id="rankText">예매순위 더보기+</a>
           </div>
-
         </section>
+              <!-- 핫클립 -->
+      <section class="hotClip">
+        <div class="hc_info">
+          <div class="btn_vod">play</div>
+          <h1 class="hc_title">테넷</h1>
+          <p class="info_text">화제의 개봉영화 예고편</p>
+        </div>
+        <div class="hc_item">
+          <a href="">
+            <div class="small_item">
+              <img
+                src="https://movie-simg.yes24.com/NYes24//MgrMain//20/06/tttt_094701.jpg"
+                alt="테넷"
+                width="220"
+                height="84"
+              />
+              <div class="ht_name">
+                <p>테넷</p>
+              </div>
+            </div>
+          </a>
+          <a href="">
+            <div class="small_item">
+              <img
+                src="https://movie-simg.yes24.com/NYes24//MgrMain//20/06/steel_112741.jpg"
+                alt="강철비2: 정상회담"
+                width="220"
+                height="84"
+              />
+              <div class="ht_name">
+                <p>강철비2</p>
+              </div>
+            </div>
+          </a>
+          <a href="">
+            <div class="small_item">
+              <img
+                src="https://movie-simg.yes24.com/NYes24//MgrMain//20/06/deep_105531.jpg"
+                alt="딥워터"
+                width="220"
+                height="84"
+              />
+              <div class="ht_name">
+                <p>딥워터</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="hc"></div>
+      </section>
       </div>
