@@ -1,0 +1,1418 @@
+@charset "UTF-8";
+
+body{
+	line-height: 1;
+	color: #777;
+    font-size: 15px;
+    font-family: nanumBa, '맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;
+}
+.detail_banner_area {
+    position: relative;
+    height: 540px;
+    background: #000;
+    overflow: hidden;
+}
+.detail_banner_area .bg_blur_area {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 580px;
+    transform: translate(-50%, 0);
+    z-index: 1;
+}
+
+.detail_banner_area .bg_blur_area .svg_blur {
+    width: 100%;
+    height: 100%;
+}
+
+
+image[Attributes Style] {
+    filter: url(#svgFilter);
+    width: 100%;
+    height: 100%;
+    x: 0;
+    y: 0;
+}
+
+user agent stylesheet
+image {
+    overflow: hidden;
+}
+.detail_movie_info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 0;
+    color: #fff;
+    text-align: center;
+    z-index: 5;
+}
+.detail_movie_info .img_thumb {
+    position: relative;
+    margin-right: 60px;
+    width: 290px;
+    height: 440px;
+    overflow: hidden;
+    border: 0px solid rgba(255,255,255,.1);
+}
+.detail_movie_info > div {
+    display: inline-block;
+    vertical-align: top;
+}
+.detail_movie_info .img_thumb img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 100%;
+}
+.detail_movie_info .dm_info_txt {
+    text-align: left;
+    padding-top: 60px;
+}
+
+.detail_movie_info > div {
+    display: inline-block;
+    vertical-align: top;
+}
+.detail_movie_info .dmb_tit {
+    font-size: 50px;
+    line-height: 60px;
+        font-family: nanumB, '맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;
+    letter-spacing: -2px;
+    max-width: 700px;
+}
+.detail_movie_info .dmb_eng_tit {
+    margin: 14px 0 35px;
+    font-size: 13px;
+    opacity: .4;
+}
+.detail_movie_info .btn_area .btn_shareW:hover {
+    border: 0;
+}
+.detail_movie_info .dmb_txt {
+    margin-bottom: 10px;
+}
+.detail_movie_info .dmb_txt span:first-child {
+    margin-left: 0;
+    padding-left: 0;
+}
+.detail_movie_info .dmb_txt span {
+    position: relative;
+    margin-left: 9px;
+    padding-left: 10px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 15px;
+}
+
+.detail_movie_info .btn_area {
+    position: absolute;
+    bottom: 50px;
+}
+.detail_banner_area:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 2;
+}
+
+.btn_line_whilte {
+    border: 1px solid rgba(255,255,255,.6);
+    background: none;
+    color: #fff
+}
+.btn_defaultB {
+    padding: 20px 0 19px;
+    min-width: 160px;
+    line-height: 1;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+button {
+    cursor: pointer;
+    font-family: nanumBa, '맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;
+}
+button {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+.detail_movie_info .btn_area .btn_shareW {
+    margin: 15px 0 0 30px;
+    vertical-align: top;
+}
+
+.detail_movie_info .btn_area button {
+    margin-right: 10px;
+    font-size: 14px;
+}
+.detail_movie_info .btn_area button:hover {
+    border: 1px solid #ec6159;
+    color: #ec6159;
+}
+.btn_shareW {
+    width: 25px;
+    height: 26px;
+    font-size: 0;
+    background: url(//movie-img.yes24.com/NYes24/new/all_sprite.png) no-repeat -288px -520px;
+}
+.movie_cont {
+    padding-bottom: 120px;
+}
+
+.lay_inner {
+    margin: auto;
+    width: 1200px;
+}
+.graph_area {
+    position: relative;
+}
+.graph_area .mc_title {
+    padding: 60px 0 30px;
+    font-family: nanumB, '맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;
+    font-size: 22px;
+}
+
+.mc_title:first-child {
+    margin-top: 0;
+}
+.al_c {
+    text-align: center;
+}
+.graph_area .tooltip_area {
+    display: inline-block;
+    vertical-align: top;
+}
+.tooltip_area {
+    position: relative;
+    font-family: '맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;
+}
+.graph_area .mc_title .btn_tooltip {
+    margin: -1px 0 0 2px;
+    vertical-align: top;
+}
+.btn_tooltip {
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+    background: url(//movie-img.yes24.com/NYes24/new/all_sprite.png) no-repeat 0 -182px;
+}
+.tooltip_area .tooltip_cont {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    padding: 30px;
+    display: none;
+    width: 456px;
+    font-size: 13px;
+    line-height: 18px;
+    color: #777;
+    text-align: left;
+    background: #fff;
+    border: 1px solid #7b7b7b;
+}
+.tooltip_area .tooltip_cont .btn_x_small {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+.btn_x_small {
+    width: 15px;
+    height: 15px;
+    background: url(//movie-img.yes24.com/NYes24/new/all_sprite.png) no-repeat -166px -120px;
+    font-size: 0;
+}
+.graph_area .graph_cont {
+    padding: 0 100px;
+    height: 310px;
+    font-size: 0;
+    border-top: 0px solid #b4b4b4;
+    background: #fff;
+    transition: height .5s;
+    overflow: hidden;
+    border-radius: 150px;
+}
+.graph_cont .graph_gender {
+    width: 265px;
+}
+
+.graph_cont > div {
+    position: relative;
+    display: inline-block;
+    width: calc((100% - 265px) / 3);
+    vertical-align: top;
+}
+.graph_cont .graph_gender .gr_tit {
+    padding-bottom: 20px;
+}
+
+.graph_cont .gr_tit {
+    padding: 70px 0 30px;
+    font-size: 15px;
+    text-align: center;
+    color: #2b2b2b;
+}
+.graph_gender .graph_grid {
+    margin-top: 10px;
+}
+.graph_grid {
+    position: relative;
+    font-size: 0;
+}
+.graph_grid .graph_bar {
+    width: calc(100% - (104px + 20px));
+}
+
+.graph_grid > div {
+    display: inline-block;
+    vertical-align: top;
+}
+.graph_bar .bar_draw_cont:first-child {
+    margin-top: 0;
+}
+.graph_bar .bar_draw_cont {
+    margin-top: 10px;
+    font-size: 0;
+}
+.graph_bar .bar_draw_cont .bar_label {
+    padding-top: 3px;
+    width: 30px;
+    font-size: 10px;
+    color: #999;
+    font-family: nanumB, '맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;
+}
+
+.graph_bar .bar_draw_cont > div {
+    display: inline-block;
+    height: 13px;
+    vertical-align: top;
+}
+.graph_bar .bar_draw_cont > div {
+    display: inline-block;
+    height: 13px;
+    vertical-align: top;
+}
+
+.bar_draw_cont .bar_draw {
+    position: relative;
+    width: calc(100% - 30px);
+    background: #ececec;
+    cursor: pointer;
+}
+.bar_draw_cont .bar_percent {
+    width: 0;
+    height: 100%;
+    background: #ec6159;
+    transition: width .8s;
+}
+.graph_bar .bar_draw_cont .graph_tool {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    padding: 7px 5px 6px;
+    display: none;
+    font-size: 11px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+}
+.graph_grid .graph_sex {
+    position: relative;
+    margin-left: 20px;
+    width: 104px;
+    height: 110px;
+    background: #ececec;
+}
+
+.graph_grid > div {
+    display: inline-block;
+    vertical-align: top;
+}
+.graph_grid .graph_sex .sex_male {
+    width: 45px;
+    height: 0;
+    background: #96b9fe;
+    transition: height 1s;
+}
+.graph_grid .graph_sex > div {
+    position: absolute;
+    bottom: 0;
+    font-size: 14px;
+    color: #2b2b2b;
+    text-align: center;
+    letter-spacing: -1px;
+    z-index: 2;
+    font-family: nanumEB, '맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;
+}
+.graph_grid .graph_sex .sex_male_txt {
+    margin-top: 6px;
+    bottom: 0;
+    width: 45px;
+    height: 0;
+    transition: height 1s;
+    z-index: 10;
+    font-size: 17px;
+}
+.graph_grid .graph_sex .sex_male_txt {
+    margin-top: 6px;
+    bottom: 0;
+    width: 45px;
+    height: 0;
+    transition: height 1s;
+    z-index: 10;
+    font-size: 17px;
+}
+.graph_grid .graph_sex .sex_female {
+    left: 45px;
+    width: calc(100% - 45px);
+    height: 0;
+    background: #fd9988;
+    transition: height 1s;
+}
+.graph_grid .graph_sex .sex_female_txt {
+    margin-top: 6px;
+    left: 48px;
+    bottom: 0;
+    width: calc(100% - 45px);
+    height: 0;
+    transition: height 1s;
+    z-index: 10;
+    font-size: 17px;
+}
+.graph_cont > div {
+    position: relative;
+    display: inline-block;
+    width: calc((100% - 265px) / 3);
+    vertical-align: top;
+}
+.graph_cont .gr_tit {
+    padding: 70px 0 30px;
+    font-size: 15px;
+    text-align: center;
+    color: #2b2b2b;
+}
+.graph_cont .graph_img02 .graph_view {
+    background: url(//movie-img.yes24.com/NYes24/new/img_graph02.png) no-repeat center 0;
+}
+
+.graph_cont .graph_view {
+    padding-top: 36px;
+    height: 100px;
+    text-align: center;
+    color: #2b2b2b;
+}
+.graph_cont .graph_view .gr_txt {
+    font-size: 17px;
+    font-family: nanumEB, '맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;
+}
+.graph_cont .graph_view .gr_txt02 {
+    padding-top: 3px;
+    font-size: 11px;
+    color: #777;
+    font-family: nanumba, '맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;
+}
+.graph_chart {
+    position: relative;
+    margin: auto;
+    width: 190px;
+    height: 112px;
+}
+
+.graph_grid {
+    position: relative;
+    font-size: 0;
+}
+.graph_area .btn_area {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: bottom .3s;
+}
+.btn_more_arrow {
+    display: block;
+    width: 16px;
+    height: 9px;
+    background: url(//movie-img.yes24.com/NYes24/new/all_sprite.png) no-repeat -382px 0;
+    font-size: 0;
+    text-indent: -9999px;
+    transform: rotate(-180deg);
+}
+.detaile_tab_area {
+    margin-top: 70px;
+}
+.tab_menu02 {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+.detaile_tab_area .tab_menu02 > li {
+    border-top: 1px solid #b4b4b4;
+    padding-top: 30px;
+}
+
+.tab_menu02 > li.active {
+    padding-bottom: 0;
+    border-bottom: 3px solid #2b2b2b;
+}
+.tab_menu02 > li {
+    padding-bottom: 2px;
+    display: table-cell;
+    border-bottom: 1px solid #b4b4b4;
+    text-align: center;
+    font-size: 0;
+    padding-top: 30px;
+}
+nav ul, li {
+    list-style: none;
+}
+.tab_menu02 > li.active a {
+    color: #2b2b2b;
+}
+
+.tab_menu02 > li a {
+    padding-bottom: 28px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 17px;
+    color: #777;
+}
+a {
+    color: #2b2b2b;
+    outline: none;
+}
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    text-decoration: none;
+}
+.tab_menu02 > li {
+    padding-bottom: 2px;
+    display: table-cell;
+    border-bottom: 1px solid #b4b4b4;
+    text-align: center;
+    font-size: 0;
+    padding-top: 30px;
+}
+.tab_menu02 > li a {
+    padding-bottom: 28px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 17px;
+    color: #777;
+}
+.layer_popup_container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    background: rgba(0,0,0,.5);
+    z-index: 1001;
+}
+.layer_area.layer_large {
+    width: 750px;
+}
+.layer_area {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 50px;
+    background: #fff;
+    transform: translate(-50%, -50%);
+}
+.layer_area .btn_x_large {
+    position: absolute;
+    top: -16px;
+    right: -54px;
+}
+.btn_x_large {
+    width: 31px;
+    height: 31px;
+    background: url(//movie-img.yes24.com/NYes24/new/all_sprite.png) no-repeat -62px -120px;
+    font-size: 0;
+}
+.layer_area .layer_header {
+    padding-bottom: 15px;
+    border-bottom: 2px solid #2b2b2b;
+}
+.layer_area .layer_header .title {
+    line-height: 1;
+    font-size: 20px;
+    color: #2b2d2b;
+    font-family: nanumB,'맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;
+}
+.layer_area .layer_cont {
+    padding-top: 30px;
+}
+.layer_area .lay_txt_box:first-child {
+    margin-top: 0;
+}
+
+.layer_area .lay_txt_box {
+    margin-top: 30px;
+}
+.layer_area .lay_txt {
+    margin-top: 5px;
+    line-height: 20px;
+}
+.layer_area .lay_txt_box {
+    margin-top: 30px;
+}
+.layer_area .lay_txt {
+    margin-top: 5px;
+    line-height: 20px;
+}
+.detaile_tab_area .mc_title:first-child {
+    margin-top: 70px;
+}
+.detaile_tab_area .mc_title {
+    margin: 120px 0 20px;
+}
+.mc_title:first-child {
+    margin-top: 0;
+}
+.mc_title {
+    position: relative;
+    margin: 80px 0 20px;
+    font-size: 20px;
+    color: #2b2b2b;
+     font-family: nanumB, '맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif; 
+}
+.detaile_tab_area .syn_txt {
+    line-height: 24px;
+}
+.def_txt {
+    padding-bottom: 10px;
+}
+.mc_title .btn_more {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.btn_more {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(//movie-img.yes24.com/NYes24/new/all_sprite.png) no-repeat -580px -119px;
+    font-size: 0;
+    text-indent: -9999px;
+}
+.act_area {
+    font-size: 0;
+}
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+.slick-slider .slick-track, .slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.detail_act_slider .slick-track {
+    margin: 0;
+}
+.slick-slider .slick-track, .slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slick-initialized .slick-slide {
+    display: block;
+}
+
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+.detail_act_slider .da_slide {
+    width: 150px;
+    text-align: center;
+}
+.act_area .act_cont {
+    margin: 30px 0 0 0;
+    display: inline-block;
+    width: 133px;
+    vertical-align: top;
+}
+.act_area .act_cont .act_thumb {
+    margin: auto;
+    width: 115px;
+    height: 115px;
+    text-align: center;
+    border-radius: 50%;
+    background: #e5e5e5;
+    overflow: hidden;
+}
+.act_area .act_cont .act_thumb img {
+    width: 100%;
+}
+
+.slick-slide img {
+    display: block;
+}
+.act_area .act_cont .act_info {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+}
+.act_area .act_cont .act_info .name {
+    font-size: 15px;
+    color: #2b2b2b;
+}
+
+.dot_st {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.act_area .act_cont .act_info .job {
+    padding-top: 7px;
+    font-size: 12px;
+    color: #777;
+}
+.detail_vod_area .detail_vod_slider {
+    height: 530px;
+    overflow: hidden;
+}
+.detail_vod_area .detail_vod_slider .slick-arrow {
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.movie_cont .slick-prev {
+    left: 0;
+}
+.movie_cont .slick-arrow {
+    position: absolute;
+    top: 33px;
+    display: none !important;
+    width: 90px;
+    height: 90px;
+    font-size: 0;
+    background: url(//movie-img.yes24.com/NYes24/new/all_sprite.png) no-repeat 0 0;
+    z-index: 3;
+    cursor: pointer;
+}
+.slick-slider .slick-track, .slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-slider .slick-track, .slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slick-initialized .slick-slide {
+    display: block;
+}
+
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+.dv_slide {
+    position: relative;
+    background: #000;
+}
+.dv_slide .vod_video {
+    width: 100%;
+    height: 530px;
+    vertical-align: top;
+}
+.sld_banner_info {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: left;
+}
+.sld_banner_info .btn_vod_big {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.btn_vod_big {
+    width: 77px;
+    height: 77px;
+    background: url(//movie-img.yes24.com/NYes24/new/all_sprite.png) no-repeat 0 -520px;
+    font-size: 0;
+    text-indent: -9999px;
+}
+.sld_banner_info .sld_banner_txt {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    font-size: 0;
+    color: #fff;
+    z-index: 2;
+    padding-right: 50px;
+}
+.sld_banner_info .sld_banner_txt .sld_title {
+    margin-bottom: 20px;
+    font-size: 40px;
+    line-height: 48px;
+    font-family: nanumEB,'맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;
+    letter-spacing: -1px;
+}
+.sld_banner_info .sld_banner_txt .sld_type {
+    font-size: 19px;
+}
+.detail_vod_area .detail_vod_slider .slick-next {
+    right: 0;
+    background-position: -120px 0;
+}
+
+.detail_vod_area .detail_vod_slider .slick-arrow {
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.movie_cont .slick-next {
+    right: 30px;
+    background-position: -120px 0;
+}
+.movie_cont .slick-arrow {
+    position: absolute;
+    top: 33px;
+    display: none !important;
+    width: 90px;
+    height: 90px;
+    font-size: 0;
+    background: url(//movie-img.yes24.com/NYes24/new/all_sprite.png) no-repeat 0 0;
+    z-index: 3;
+    cursor: pointer;
+}
+.slick-arrow {
+    cursor: pointer;
+}
+.slide_page {
+    position: absolute;
+    top: 24px;
+    right: 30px;
+    color: #fff;
+    opacity: .7;
+    font-size: 14px;
+}
+.detail_pohto_area {
+    font-size: 0;
+}
+}
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+.detail_pohto_area .detail_pohto_slider .slick-arrow {
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.movie_cont .slick-prev {
+    left: 0;
+}
+.movie_cont .slick-arrow {
+    position: absolute;
+    top: 33px;
+    display: none !important;
+    width: 90px;
+    height: 90px;
+    font-size: 0;
+    background: url(//movie-img.yes24.com/NYes24/new/all_sprite.png) no-repeat 0 0;
+    z-index: 3;
+    cursor: pointer;
+}
+.slick-slider .slick-track, .slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slick-initialized .slick-slide {
+    display: block;
+}
+.detail_pohto_area .detail_pohto_slider .slick-next {
+    right: 0;
+    background-position: -120px 0;
+}
+.detail_pohto_area .detail_pohto_slider .slick-arrow {
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.movie_cont .slick-next {
+    right: 30px;
+    background-position: -120px 0;
+}
+.movie_cont .slick-arrow {
+    position: absolute;
+    top: 33px;
+    display: none !important;
+    width: 90px;
+    height: 90px;
+    font-size: 0;
+    background: url(//movie-img.yes24.com/NYes24/new/all_sprite.png) no-repeat 0 0;
+    z-index: 3;
+    cursor: pointer;
+}
+.slide_page {
+    position: absolute;
+    top: 24px;
+    right: 30px;
+    color: #fff;
+    opacity: .7;
+    font-size: 14px;
+}
+.detail_pohto_area .detail_pohto_nav_slider {
+    margin-top: 30px;
+    width: 1220px;
+}
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+.detail_pohto_nav_slider .slick-arrow {
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.movie_cont .slick-prev {
+    left: 0;
+}
+.movie_cont .slick-arrow {
+    position: absolute;
+    top: 33px;
+    display: none !important;
+    width: 90px;
+    height: 90px;
+    font-size: 0;
+    background: url(//movie-img.yes24.com/NYes24/new/all_sprite.png) no-repeat 0 0;
+    z-index: 3;
+    cursor: pointer;
+}
+.detail_pohto_area .detail_pohto_nav_slider .slick-track {
+    margin-left: inherit;
+    margin-right: inherit;
+}
+.slick-initialized .slick-slide {
+    display: block;
+}
+
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+.detail_pohto_area .detail_pohto_nav_slider .dpn_slide {
+    position: relative;
+    padding-right: 20px;
+    height: 94px;
+    cursor: pointer;
+}
+.detail_pohto_area .detail_pohto_nav_slider .dpn_slide img {
+    width: 100%;
+}
+
+.slick-slide img {
+    display: block;
+}
+.detail_pohto_area .detail_pohto_nav_slider .slick-next {
+    right: 20px;
+    background-position: -120px 0;
+}
+
+.detail_pohto_area .detail_pohto_nav_slider .slick-arrow {
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.movie_cont .slick-next {
+    right: 30px;
+    background-position: -120px 0;
+}
+.movie_cont .slick-arrow {
+    position: absolute;
+    top: 33px;
+    display: none !important;
+    width: 90px;
+    height: 90px;
+    font-size: 0;
+    background: url(//movie-img.yes24.com/NYes24/new/all_sprite.png) no-repeat 0 0;
+    z-index: 3;
+    cursor: pointer;
+}
+.movie_cont .mc_title .btn_more {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    top: -1px;
+    background: url(//movie-img.yes24.com/NYes24/new/all_sprite.png) no-repeat -543px -628px;
+    width: 55px;
+    height: 20px;
+}
+.detail_news_area {
+    font-size: 0;
+}
+.detail_news_area .detail_news_box:nth-child(3n + 1) {
+    margin-left: 0;
+}
+
+.detail_news_area .detail_news_box {
+    margin: 0 0 30px 30px;
+    display: inline-block;
+    width: calc((100% - 60px) / 3);
+    height: 176px;
+    overflow: hidden;
+    vertical-align: top;
+}
+.detail_news_area .detail_news_box a {
+    position: relative;
+    display: block;
+    height: 100%;
+}
+.detail_news_area .detail_news_box img {
+    width: 100%;
+}
+.detail_news_area .detail_news_box .dn_txt {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    font-size: 18px;
+    line-height: 22px;
+    color: #fff;
+    text-align: center;
+    transform: translate(0, -50%);
+    margin: 0 30px;
+}
+.de_default_area .comment_area {
+    padding-top: 0;
+}
+
+.comment_area {
+    padding-top: 80px;
+}
+.my_grade_cont.eidit_box {
+    padding: 0;
+}
+.my_grade_cont {
+    padding: 0 40px 40px;
+}
+.ag_cont_box {
+    position: relative;
+}
+.my_grade_cont.eidit_box .ag_top {
+    padding: 0 30px;
+    height: 66px;
+}
+
+.ag_cont_box .ag_top {
+    padding: 24px 0;
+    font-size: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+.my_grade_cont.eidit_box .ag_top .agt_tit {
+    margin-top: 0;
+    padding-top: 26px;
+    height: 100%;
+}
+
+.my_grade_cont.eidit_box .ag_top .star_area.big {
+    padding-top: 17px;
+}
+
+.my_grade_cont.eidit_box .ag_top .star_area {
+    margin-right: 30px;
+    padding-top: 24px;
+}
+.ag_cont_box .star_area {
+    margin-right: 40px;
+    display: inline-block;
+    vertical-align: top;
+}
+.star_area {
+    font-size: 0;
+}
+.my_grade_cont.eidit_box .ag_top .star_area + .agt_tit {
+    padding-left: 30px;
+    border-left: 1px solid #e9e9e9;
+}
+.my_grade_cont.eidit_box .ag_top .chk_left + label .ck_txt {
+    font-size: 14px;
+    color: #666;
+}
+
+.chkbx_area .ck_txt {
+    padding-top: 12px;
+    display: block;
+    font-size: 12px;
+    line-height: 1;
+    color: #999;
+}
+.my_grade_cont.eidit_box .ag_top > a {
+    margin-top: 26px;
+    float: right;
+    font-size: 13px;
+    color: #666;
+    border-bottom: 1px solid #666;
+}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;}
+.comment_area .my_grade_cont.eidit_box .ag_cont {
+    padding: 30px 180px 30px 30px;
+}
+.my_grade_cont.eidit_box .ag_cont {
+    position: relative;
+    padding: 25px 170px 25px 30px;
+}
+.ag_cont_box .ag_cont {
+    position: relative;
+    padding-top: 40px;
+}
+.my_grade_cont.eidit_box .ag_cont textarea {
+    width: 100%;
+    height: 70px;
+    border: none;
+    line-height: 21px;
+    font-size: 14px;
+    font-family: nanumBa,'맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;
+}
+textarea {
+    resize: none;
+}
+.my_grade_cont.eidit_box .ag_cont .btn_grade_add {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 146px;
+    font-size: 18px;
+    color: #fff;
+    background: #ec6159;
+    cursor: pointer;
+}
+.comment_area .my_grade_cont {
+    margin-bottom: 8px;
+}
+.white_box {
+    border: 1px solid #e5e5e5;
+    background: #fff;
+}
+.ag_cont_box .ag_top .agt_tit {
+    margin: 3px 13px 0 0;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 13px;
+    color: #2b2b2b;
+}
+.chkbx_area {
+    cursor: pointer;
+}
+.chk_st {
+    position: absolute;
+    left: -9999px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    font-size: 0;
+}
+input, select {
+    margin: 0;
+    padding: 0;
+    appearance: none;
+    -webkit-appearance: none;
+}
+.chk_left + label {
+    padding: 0 0 0 37px;
+    font-size: 0;
+}
+.chk_st + label {
+    position: relative;
+    padding-top: 25px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+}
+.chkbx_area.chk_small .chk_st + label .ck_txt {
+    line-height: 20px;
+}
+.chk_left + label .ck_txt {
+    padding-top: 0;
+    line-height: 25px;
+}
+.chkbx_area .ck_txt {
+    padding-top: 12px;
+    display: block;
+    font-size: 12px;
+    line-height: 1;
+    color: #999;
+}
+.ag_cont_box .ag_text {
+    padding-bottom: 0px;
+    line-height: 24px;
+    font-size: 15px;
+    color: #404040;
+    word-break: break-all;
+}
+.ag_cont_box .ag_writer {
+    font-size: 12px;
+    color: #999;
+    padding-top: 20px;
+}
+.ag_cont_box .ag_writer span {
+    display: inline-block;
+    vertical-align: top;
+}
+.ag_cont_box .like_box {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    font-size: 0;
+}
+
+.like_box {
+    font-size: 0;
+}
+.like_box > div {
+    margin-left: 36px;
+    display: inline-block;
+    vertical-align: top;
+}
+.ic_heart.active {
+    background-position: -100px -182px;
+}
+
+.ic_heart {
+    display: block;
+    width: 20px;
+    height: 17px;
+    background: url(//movie-img.yes24.com/NYes24/new/all_sprite.png) no-repeat -50px -181px;
+}
+button > span {
+    position: relative;
+}
+.like_box .like_count {
+    margin: 3px 0 0 7px;
+    font-size: 13px;
+    color: #777;
+    text-align: left;
+    height: 15px;
+    display: inline-block;
+    vertical-align: top;
+}
+.like_box > div {
+    margin-left: 36px;
+    display: inline-block;
+    vertical-align: top;
+}
+.ic_b_heart.active {
+    background-position: -201px -182px;
+}
+
+.ic_b_heart {
+    display: block;
+    width: 21px;
+    height: 17px;
+    background: url(//movie-img.yes24.com/NYes24/new/all_sprite.png) no-repeat -150px -181px;
+}
+button > span {
+    position: relative;
+}
+.like_box .like_count {
+    margin: 3px 0 0 7px;
+    font-size: 13px;
+    color: #777;
+    text-align: left;
+    height: 15px;
+    display: inline-block;
+    vertical-align: top;
+}
+.movie_grade_area .tab_menu_txt {
+    margin-bottom: 20px;
+    text-align: right;
+}
+.comment_area .tab_menu_txt {
+    margin: 35px 0 20px;
+    text-align: right;
+}
+
+.tab_menu_txt {
+    font-size: 0;
+}
+.tab_menu_txt a.active {
+    color: #2b2b2b;
+}
+
+.tab_menu_txt a:first-child {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+.tab_menu_txt a {
+    position: relative;
+    margin-left: 12px;
+    padding-left: 14px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+    color: #777;
+    border-left: 1px solid #d1d1d1;
+}
+.white_box {
+    border: 1px solid #e5e5e5;
+    background: #fff;
+}
+
+.all_grade_cont {
+    padding: 0 40px;
+}
+.contentMessage {
+    text-align: center;
+    display: table;
+    height: 200px;
+    line-height: 200px;
+    font-size: 18px;
+    color: #999;
+    font-size: 15px;
+}
+
+.detail_movie_info .dmb_txt span:before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 1px;
+    height: 10px;
+    background: rgba(255,255,255,.2);
+}
+.detail_movie_info .dmb_txt span:first-child:before {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+

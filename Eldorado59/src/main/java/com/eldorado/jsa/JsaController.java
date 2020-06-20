@@ -37,7 +37,11 @@ public class JsaController {
 		return "jsa/NowPlayRank";
 	}
 	
-	
+	@RequestMapping(value = "Index", method = RequestMethod.GET)
+	public String Index(Locale local, Model model) {
+		logger.info("/Index 실행");
+		return "jsa/Index";
+	}
 	
 	
 	
