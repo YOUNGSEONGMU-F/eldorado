@@ -158,6 +158,7 @@ a {text-decoration: none; color: #000000;
 	</div><!-- t_bxof_tbl -->
 	
 	<%
+	
 	Date date = new Date();
 	date.setTime(date.getTime()-(1000*60*60*24));
 	
