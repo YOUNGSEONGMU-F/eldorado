@@ -309,7 +309,7 @@
                             </div>
                             <span class="chkbx_area chk_small">
                                 <input type="checkbox" class="chk_st chk_left" id="IndexChkSpoilerB"><label for="efe"><span class="ck_txt" id="IndexSpoilerTxt">스포일러</span></label>
-                            </span>
+                            </span> 
                             <!-- 삭제버튼 -->
                         </div>
                         <div class="ag_cont">

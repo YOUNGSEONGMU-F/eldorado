@@ -17,7 +17,7 @@ public class JsaController {
 	@RequestMapping(value = "test", method = RequestMethod.GET)
 	public String home_lyj(Locale locale, Model model) {
 		return "home";
-	}
+	} 
 	
 	@RequestMapping(value = "BoxOfficeRank", method = RequestMethod.GET)
 	public String BoxOfficeRank(Locale locale, Model model) {
