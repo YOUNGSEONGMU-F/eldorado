@@ -122,7 +122,7 @@
                     <p class="rank_num">8</p>                                                                  
                       <div>                                     
                         <span>야구소녀</span>                                                                          
-                        <span>%</span>                                                                      
+                        <span>1.71%</span>                                                                      
                       </div>                             
                     </div>
                     <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M75/M57/M000077557_091604.jpg/dims/optimize" onerror="fnImgError(this);" alt="야구소녀">
@@ -147,7 +147,7 @@
                       <p class="rank_num">2</p>                                                                  
                         <div>                                     
                           <span>온워드</span>                                                                          
-                          <span>%</span>                                                                      
+                          <span>25.03%</span>                                                                      
                         </div>                             
                       </div>
                       <a href="#"><img src="https://movie-simg.yes24.com/NYes24//MOVIE//M61/M88/M000076188_133743.jpg/dims/optimize" onerror="fnImgError(this);" alt="온워드: 단 하루의 기적"></a>
@@ -159,7 +159,7 @@
                       <p class="rank_num">3</p>                                                                  
                         <div>                                     
                           <span>사라진 시간</span>                                                                          
-                          <span>%</span>                                                                      
+                          <span>20.28%</span>                                                                      
                         </div>                             
                       </div>
                       <a href="#"><img src="https://movie-simg.yes24.com/NYes24//MOVIE//M11/M89/M00007118950_134307.jpg/dims/optimize" onerror="fnImgError(this);" alt="사라진 시간"></a>                      
@@ -171,7 +171,7 @@
                       <p class="rank_num">4</p>                                                                  
                         <div>                                     
                           <span>침입자</span>                                                                          
-                          <span>%</span>                                                                      
+                          <span>5.1%</span>                                                                      
                         </div>                             
                       </div>
                       <a href="#"><img src="https://movie-simg.yes24.com/NYes24//MOVIE//M25/M93/M00007259350_162353.jpg/dims/optimize" onerror="fnImgError(this);" alt="침입자"></a>
@@ -183,7 +183,7 @@
                         <p class="rank_num">5</p>                                                                  
                         <div>                                     
                           <span>위대한 쇼맨</span>                                                                          
-                          <span>%</span>                                                                      
+                          <span>2.56%</span>                                                                      
                         </div>                             
                       </div>
                       <a href="#"><img src="https://movie-simg.yes24.com/NYes24//MOVIE//M58/M84/M000065884_135714.jpg/dims/optimize" onerror="fnImgError(this);" alt="위대한 쇼맨"></a>
@@ -194,11 +194,11 @@
                       <div class="rl_info_box">                                                                  
                       <p class="rank_num">6</p>                                                                  
                         <div>                                     
-                          <span>나의 첫 번째 슈퍼스타</span>                                                                          
-                          <span>%</span>                                                                      
+                          <span>에어로너츠</span>                                                                          
+                          <span>2.01%</span>                                                                      
                         </div>                             
                       </div>
-                      <a href="#"><img src="https://movie-simg.yes24.com/NYes24//MOVIE//M76/M40/M000077640_142244.jpg/dims/optimize" onerror="fnImgError(this);" alt="나의 첫 번째 슈퍼스타"></a>
+                      <a href="#"><img src="https://movie-simg.yes24.com/NYes24//MOVIE//M69/M29/M000076929_150901.jpg/dims/optimize" onerror="fnImgError(this);" alt="에어로너츠"></a>
                     </a>
                  </li>
                  <li>
@@ -206,11 +206,11 @@
                       <div class="rl_info_box">                                                                  
                       <p class="rank_num">7</p>                                                                  
                         <div>                                     
-                          <span>에어로너츠</span>                                                                          
-                          <span>%</span>                                                                      
+                          <span>나의 첫 번째 슈퍼스타</span>                                                                          
+                          <span>1.99%</span>                                                                      
                         </div>                             
                       </div>
-                      <a href="#"><img src="https://movie-simg.yes24.com/NYes24//MOVIE//M69/M29/M000076929_150901.jpg/dims/optimize" onerror="fnImgError(this);" alt="에어로너츠"></a>
+                      <a href="#"><img src="https://movie-simg.yes24.com/NYes24//MOVIE//M76/M40/M000077640_142244.jpg/dims/optimize" onerror="fnImgError(this);" alt="나의 첫 번째 슈퍼스타"></a>
                     </a>
                  </li>
 
