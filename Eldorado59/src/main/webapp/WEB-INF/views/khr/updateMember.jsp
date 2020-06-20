@@ -224,39 +224,60 @@ gtag('config', 'AW-1056776890');
 								</td>
 							</tr>
 							<!-- 비밀번호 -->
+							<!-- <button onclick="window.open('changePW','window_name','width=430,height=500,location=no,status=no,scrollbars=yes');">비밀번호 변경</button> -->
 							<tr>
 								<th class="txt" scope="row">비밀번호</th>
 								<td colspan="3" class="inpArea lastCol">
 									<div class="inpRow">
-			                        	<a href="javascript:void(0);" onclick="hidingInfoShowAlert()" class="btnC m_size w_120">
-			                        		<span class="bWrap"><em class="txt">비밀번호 변경</em></span>
-			                        	</a>
+										<button onclick="window.open('changePW','window_name','width=430,height=500,location=no,status=no,scrollbars=yes');" class="btnC m_size w_120">
+			                        		<span class="bWrap"><em class="txt">
+			                        				비밀번호 변경
+			                        		</em></span>
+			                       		</button>
 			                        </div>
 								</td>
 							</tr>
-							<!-- 주소 -->
+							<!-- 주소 미완성 -->
 							<tr>
 								<th class="txt" scope="row">주소</th>
 								<td colspan="3" class="inpArea lastCol">
 									<div class="inpRow">
 										<span class="yesIpt m_size w_70">
-											<input name="Zip5" type="text" id="Zip5" autocomplete="off" maxlength="5" value="58746" readonly="readonly">
+											<input name="Zip5" type="text" id="sample6_postcode" autocomplete="off" maxlength="5" value="우편번호" readonly>
 										</span>
 			                            
-											        <a href="javascript:void(0)" onclick="hidingInfoShowAlert();" class="btnC m_size w_80"><span class="bWrap"><em class="txt">주소찾기</em></span></a>
+										<button onclick="sample6_execDaumPostcode()" class="btnC m_size w_80" >
+											<span class="bWrap"><em class="txt">
+												우편번호 찾기
+											</em></span>
+										</button>
 			                                    
 									</div>
+									
+									<!-- <input type="text" id="sample6_address" placeholder="주소"><br> -->
+									
 									<div id="div_ST_ADDR_TEXT" class="inpRow">
 										<span class="yesIpt m_size ipt_wSizeF">
-											<input name="ST_ADDR_TEXT" type="text" id="ST_ADDR_TEXT" class="fwN" autocomplete="off" readonly="readonly" value="전라남도 목포시 평화로107번길 ** ***">
+											<input name="ST_ADDR_TEXT" type="text" id="sample6_address" class="fwN" autocomplete="off" readonly="readonly" placeholder="주소">
 										</span>
 									</div>
+									
+									<!-- <input type="text" id="sample6_detailAddress" placeholder="상세주소"> -->
+									
 									<div id="div_OLD_ADDR_TEXT" class="inpRow">
 										<span class="yesIpt m_size ipt_wSizeF">
-											<input name="OLD_ADDR_TEXT" type="text" id="OLD_ADDR_TEXT" class="fwN" autocomplete="off" readonly="readonly" value="전라남도 목포시 옥암동 **** ***** ***">
+											<input name="OLD_ADDR_TEXT" type="text" id="sample6_detailAddress" class="fwN" autocomplete="off" readonly="readonly" placeholder="상세주소">
 										</span>
 									</div>
-									<div id="div_FOREIGN_ADDR_TEXT1" class="dp_none">
+									
+									<!-- <input type="text" id="sample6_extraAddress" placeholder="참고항목"> -->
+									<div id="div_OLD_ADDR_TEXT" class="inpRow">
+										<span class="yesIpt m_size ipt_wSizeF">
+											<input name="OLD_ADDR_TEXT" type="text" id="sample6_extraAddress" class="fwN" autocomplete="off" readonly="readonly" placeholder="참고항목">
+										</span>
+									</div>
+									
+									<!-- <div id="div_FOREIGN_ADDR_TEXT1" class="dp_none">
 										<span id="span_FOREIGN_ADDR_TEXT1" class="yesIpt m_size ipt_wSizeF">
 											<label for="FOREIGN_ADDR_TEXT1" id="labelFOREIGN_ADDR_TEXT1">Street/Local address</label>
 											<input name="FOREIGN_ADDR_TEXT1" type="text" id="FOREIGN_ADDR_TEXT1" class="fwN" autocomplete="off" readonly="readonly">
@@ -267,11 +288,11 @@ gtag('config', 'AW-1056776890');
 											<label for="FOREIGN_ADDR_TEXT2" id="labelFOREIGN_ADDR_TEXT2">Address details</label>
 											<input name="FOREIGN_ADDR_TEXT2" type="text" id="FOREIGN_ADDR_TEXT2" class="fwN" autocomplete="off" readonly="readonly">
 										</span>
-									</div>
+									</div> -->
 									<div class="inpDes">
 										정확하고 빠른 배송을 위해 입력된 주소를 확인하시고 업데이트해 주시기 바랍니다. 
 									</div>
-			                        <input name="ADDR1" type="hidden" id="ADDR1" value="전라남도 목포시 옥암동 1097 우미오션빌">
+			                        <!-- <input name="ADDR1" type="hidden" id="ADDR1" value="전라남도 목포시 옥암동 1097 우미오션빌">
 			                        <input name="ADDR2" type="hidden" id="ADDR2" value="604동 1201호">
 			                        <input name="ADDR3" type="hidden" id="ADDR3" value="전라남도 목포시 평화로107번길 16">
 			                        <input name="ADDR4" type="hidden" id="ADDR4" value="옥암동,우미오션빌">
@@ -285,9 +306,11 @@ gtag('config', 'AW-1056776890');
 			                                $("#FOREIGN_ADDR_TEXT1").removeAttr("readonly");
 			                                $("#FOREIGN_ADDR_TEXT2").removeAttr("readonly");
 			                            }
-			                        </script>
+			                        </script> -->
+			                        
 								</td>
 							</tr>
+							
 							<!-- 전화번호 -->
 							<tr>
 								<th class="txt" scope="row">전화번호</th>
@@ -317,6 +340,57 @@ gtag('config', 'AW-1056776890');
 				</div>
 				<!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 필수정보 영역 끝 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
 				
+				<!-- 주소 스크립트 -->
+				<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+                <script>
+				   function sample6_execDaumPostcode() {
+				       new daum.Postcode({
+				           oncomplete: function(data) {
+				               // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+				
+				               // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+				               // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+				               var addr = ''; // 주소 변수
+				               var extraAddr = ''; // 참고항목 변수
+				
+				               //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+				               if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+				                   addr = data.roadAddress;
+				               } else { // 사용자가 지번 주소를 선택했을 경우(J)
+				                   addr = data.jibunAddress;
+				               }
+				
+				               // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+				               if(data.userSelectedType === 'R'){
+				                   // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+				                   // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+				                   if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+				                       extraAddr += data.bname;
+				                   }
+				                   // 건물명이 있고, 공동주택일 경우 추가한다.
+				                   if(data.buildingName !== '' && data.apartment === 'Y'){
+				                       extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+				                   }
+				                   // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+				                   if(extraAddr !== ''){
+				                       extraAddr = ' (' + extraAddr + ')';
+				                   }
+				                   // 조합된 참고항목을 해당 필드에 넣는다.
+				                   document.getElementById("sample6_extraAddress").value = extraAddr;
+				               
+				               } else {
+				                   document.getElementById("sample6_extraAddress").value = '';
+				               }
+				
+				               // 우편번호와 주소 정보를 해당 필드에 넣는다.
+				               document.getElementById('sample6_postcode').value = data.zonecode;
+				               document.getElementById("sample6_address").value = addr;
+				               // 커서를 상세주소 필드로 이동한다.
+				               document.getElementById("sample6_detailAddress").focus();
+				           }
+				       }).open();
+				   }
+				</script>
 				<!-- 뭔지 모름 -->
 				<script type="text/javascript">
 					function chgEMailAddr(val, obj) {
@@ -392,7 +466,7 @@ gtag('config', 'AW-1056776890');
 		새 비밀번호 : <input type="password" id="pass" name="pass"><br>
 		새 비밀번호 확인 : <input type="password" id="pass2" name="pass2"><br> -->
 		<!-- 주소 다음api 가져오기 -->
-		주소 : <input type="text" id="sample6_postcode" placeholder="우편번호">
+<!-- 		주소 : <input type="text" id="sample6_postcode" placeholder="우편번호">
 			<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
 			<input type="text" id="sample6_address" placeholder="주소"><br>
 			<input type="text" id="sample6_detailAddress" placeholder="상세주소">
@@ -448,7 +522,7 @@ gtag('config', 'AW-1056776890');
         }).open();
     }
 </script>
-
+ -->
 		
 		
 		전화번호 : <input type="text" name="tel" id="tel"><br>
