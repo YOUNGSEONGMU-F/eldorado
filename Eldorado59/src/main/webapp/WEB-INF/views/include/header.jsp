@@ -101,7 +101,7 @@
                             <div class="aside_menu eve_content">
                                 <!-- 활성시 브라우저 높이 계산(aside_men 여기에 입력) / 클릭된 메뉴에 따라 quick_on, search_on 클래스 추가-->
                                 <!-- 검색 -->
-                                <div class="search_area am_content">
+                                <div class="search_area">
                                     <div class="search_box ">
                                         <span class="inp_clar_box on">
                                             <input type="text" id="txtSearchVal" class="inp_st02 inp_val" placeholder="검색어를 입력하세요">
@@ -115,7 +115,7 @@
                                     </div>
                                 </div>
                                 <!-- 퀵메뉴 -->
-                                <div class="quick_area am_content">
+                                <div class="quick_area">
                                     <div class="quick_title ">
                                                 <span class="q_tit"><a href="https://www.yes24.com/Templates/FTLogin.aspx?ReturnURL=">로그인을 해주세요.</a></span>
 
