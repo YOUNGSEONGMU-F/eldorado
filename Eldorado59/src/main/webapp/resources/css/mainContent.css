@@ -131,3 +131,188 @@ a {
   height: 263px;
   background-color: beige;
 }
+
+/* 섹션 더 추가 */
+
+.ranking {
+  display: flex;
+  /* border: olive 1px solid; */
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(245, 245, 245, 1);
+  width: 100%;
+  padding: 30px 0 90px 0;
+}
+
+.r_list {
+  /* background-color: beige; */
+  /* border: olivedrab 1px solid; */
+  height: 200px;
+  width: 40%;
+  display: flex;
+  align-items: center;
+}
+
+.rk_list {
+  /* border: blueviolet; */
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.rk_list > li {
+  content: "RANKING";
+  top: 50px;
+}
+
+.rk_list > li > a {
+  position: relative;
+  padding-bottom: 5px;
+  display: block;
+  line-height: 1;
+  font-size: 19px;
+  font-weight: bold;
+  font-family: nanumEB, "맑은 고딕", "Malgun Gothic", "Helvetica",
+    "Apple SD Gothic Neo", AppleGothic, "돋움", Dotum, "굴림", Gulim, Helvetica,
+    sans-serif;
+  z-index: 2;
+}
+
+.rl_info_box {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 12px;
+  padding: 0px;
+  z-index: 2;
+  color: #fff;
+  line-height: 1;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  z-index: 1;
+}
+
+.rl_info_box > div {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  text-align: left;
+  z-index: 1;
+}
+.rl_info_box > div > span:first-child {
+  display: inline-block;
+  width: 160px;
+  font-size: 15px;
+  line-height: 18px;
+}
+.rl_info_box > div > span:nth-child(2) {
+  margin-top: 0px;
+  float: right;
+  font-size: 16px;
+  color: #ec6159;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.rank_num {
+  position: relative;
+  font-size: 25px;
+  font-style: normal;
+  z-index: 1;
+  font-family: nanumEB, "맑은 고딕", "Malgun Gothic", "Helvetica",
+    "Apple SD Gothic Neo", AppleGothic, "돋움", Dotum, "굴림", Gulim, Helvetica,
+    sans-serif;
+  width: 45px;
+  height: 40px;
+  background: url(//movie-img.yes24.com/NYes24/new/all_sprite.png) no-repeat -493px -629px;
+  padding: 6px 1px 0 0;
+  text-align: center;
+  letter-spacing: -1px;
+}
+
+#rk_item {
+  /* background-color: beige; */
+  /* border: olivedrab 1px solid; */
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  /* border: blue 1px solid; */
+  width: 90%;
+  /* margin-left: 3rem; */
+  position: relative;
+}
+
+#bannerWrap {
+  position: relative;
+  width: 90%;
+  /* margin: 0 auto; */
+  /* padding-left: 80px; */
+}
+
+#r_item {
+  display: flex;
+}
+
+.bst_download {
+  display: flex;
+  border: springgreen 1px solid;
+}
+
+#rk_item img {
+  width: 256px;
+  height: 372px;
+  border: none 0;
+  vertical-align: top;
+}
+
+.prevBtn {
+  vertical-align: center;
+  padding: 150px 0;
+  position: absolute;
+  font-size: 50px;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 380px;
+  color:whitesmoke;
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 245, 245, 1) 35%,
+    rgba(245, 245, 245, 0)
+  );
+  z-index: 2;
+}
+
+.nextBtn {
+  vertical-align: center;
+  text-align: right;
+  padding: 150px 0;
+  font-size: 50px;
+  right: 0;
+  top: 0;
+  position: absolute;
+  width: 200px;
+  height: 380px;
+  color:whitesmoke;
+  background-image: linear-gradient(
+    to left,
+    rgba(245, 245, 245, 1) 35%,
+    rgba(245, 245, 245, 0)
+  );
+  z-index: 2;
+}
+.boff_more > a {
+  margin-top: 2rem;
+  padding-bottom: 4px;
+  display: inline-block;
+  font-size: 15px;
+  vertical-align: top;
+  border-bottom: 1px solid #2b2b2b;
+}
+

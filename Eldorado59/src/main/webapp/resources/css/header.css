@@ -7,8 +7,9 @@
 }
 
 #ad{
-	height: 30px;
+	height: 70px;
 	background-color: beige;
+	margin-bottom: -1px;
 }
 
 .sticky {
