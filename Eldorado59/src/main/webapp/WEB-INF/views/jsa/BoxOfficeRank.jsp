@@ -89,7 +89,7 @@ a {text-decoration: none; color: #000000;
 	Date ddate = new Date();
 	ddate.setTime(ddate.getTime()-(1*23*60*60*1000));
 	
-	SimpleDateFormat dsdf = new SimpleDateFormat("yyyyMMdd");
+	SimpleDateFormat dsdf = new SimpleDateFormat("yyyymmdd");
 	String ddateStr = dsdf.format(ddate);
 	
 	String durl = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.xml?key=125e0d7589b7019fcf325c4d2eac30d6&targetDt="
@@ -217,7 +217,7 @@ a {text-decoration: none; color: #000000;
 	</c:if>
 	</table>
 	</div>
-	<p style="margin-top:20px;"> ※ 영화진흥위원회 영화관 입장권 통합전산망 제공 </p>
+	<p style="margin-top:20px; text-align: left;"> ※ 영화진흥위원회 영화관 입장권 통합전산망 제공 </p>
 	</div>
   </div> <!-- t_boxoffice_cont -->
  </div> <!-- t_movie_cont t_lay_inner -->
