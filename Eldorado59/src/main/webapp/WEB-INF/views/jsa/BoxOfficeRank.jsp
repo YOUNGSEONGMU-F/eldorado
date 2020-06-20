@@ -142,8 +142,8 @@ a {text-decoration: none; color: #000000;
 		<tr>
 			<td><c:out value="${boxoffice.rank }"/></td>
 			<td style="text-align: left;"><a href="#"><c:out value="${boxoffice.movieNm }"/></a></td>
-			<td><c:out value="${boxoffice.salesAmt }"/></td>
-			<td><c:out value="${boxoffice.audiAcc }"/></td>
+			<td><text class="currency"><c:out value="${boxoffice.salesAmt }"/></text>원</td>
+			<td><text class="currency"><c:out value="${boxoffice.audiAcc }"/></text>명</td>
 			<td><c:out value="${boxoffice.rankInten }"/></td>
 		</tr>
 	</c:forEach>
@@ -210,9 +210,9 @@ a {text-decoration: none; color: #000000;
 	 <tr>
 	 <td><c:out value="${wboxoffice.rank }"/></td>
 			<td style="text-align: left;"><a href="#"><c:out value="${wboxoffice.movieNm }"/></a></td>
-			<td><c:out value="${wboxoffice.salesAmt }"/></td>
-			<td><c:out value="${wboxoffice.audiAcc }"/></td>
-			<td><c:out value="${wboxoffice.rankInten }"/></td>
+			<td><text class="currency"><c:out value="${wboxoffice.salesAmt }"/></text>원</td>
+			<td><text class="currency"><c:out value="${wboxoffice.audiAcc }"/></text>명</td>
+			<td><c:out value="${wboxoffice.rankInten }"/></td> 
 	 </c:forEach>
 	</c:if>
 	</table>

@@ -31,7 +31,11 @@ public class JsaController {
 		return "jsa/FestivalMovie";
 	}
 	
-	
+	@RequestMapping(value = "NowPlayRank", method = RequestMethod.GET)
+	public String NowPlayRank(Locale locale, Model model) {
+		logger.info("/NowPlayRank 실행");
+		return "jsa/NowPlayRank";
+	}
 	
 	
 	
