@@ -11,6 +11,7 @@ a {
 
 .magazine {
   /* border: olive 1px solid; */
+  padding-top: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,7 +23,7 @@ a {
   /* border: springgreen 1px solid; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 1000px;
   padding-bottom: 60px;
@@ -116,7 +117,6 @@ a {
   /* border: steelblue 1px solid; */
   width: calc((100% - 30px) / 2);
   height: 406px;
-  margin-bottom: 2rem;
   /* background-color: beige; */
 }
 
@@ -280,7 +280,7 @@ a {
   top: 0;
   width: 200px;
   height: 380px;
-  color:whitesmoke;
+  color: #eceff1;
   background-image: linear-gradient(
     to right,
     rgba(245, 245, 245, 1) 35%,
@@ -299,7 +299,7 @@ a {
   position: absolute;
   width: 200px;
   height: 380px;
-  color:whitesmoke;
+  color: #eceff1;
   background-image: linear-gradient(
     to left,
     rgba(245, 245, 245, 1) 35%,
@@ -307,6 +307,11 @@ a {
   );
   z-index: 2;
 }
+
+.prevBtn:hover, .nextBtn:hover {
+	color: #b0bec5;
+}
+
 .boff_more > a {
   margin-top: 2rem;
   padding-bottom: 4px;
