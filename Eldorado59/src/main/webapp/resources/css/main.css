@@ -86,6 +86,13 @@ height: 745px;
   font-weight: 200;
 }
 
+.down_tit{
+	top:60%;
+}
+.down_txt{
+	top:70%;
+}
+
 .mv_rank{
 /* 	border: 1px pink solid; */
 /* 	background-color: beige; */

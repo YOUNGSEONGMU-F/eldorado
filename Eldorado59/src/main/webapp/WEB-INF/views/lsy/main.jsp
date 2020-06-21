@@ -42,17 +42,19 @@
 
 <div class="mySlides fade">
 <img src="https://movie-simg.yes24.com/NYes24//MgrMain//20/06/cats_085807.jpg/dims/optimize" alt="허남웅 영화경" >
-    <div class="text">Caption Text</div>
+    <div class="title down_tit">＜프랑스여자＞</div>
+    <div class="text down_txt">기억의 유령이 주위를 배회하고 있다</div>
 </div>
 
 <div class="mySlides fade">
 <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M14/M14/M00007141401_105043.jpg/dims/optimize" id="M000071414" alt="결백">
-    <div class="text">Caption Text</div>
+<!--     <div class="title down_tit">결백</div> -->
 </div>
 
  <div class="mySlides fade">
   <img src="https://movie-simg.yes24.com/NYes24//MgrMain//20/06/0111_113611.jpg/dims/optimize" alt="저 산 너머"> class="sld">
-    <div class="text">Caption Text</div>
+    <div class="title down_tit">저 산 너머</div>
+    <div class="text down_txt">가난하지만 행복했던 그시절</div>
 </div>
 <!--
 <div class="mySlides fade">

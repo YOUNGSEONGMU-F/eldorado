@@ -419,3 +419,104 @@ a {
   z-index: 20;
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
 }
+
+/* 공지사항 */
+
+.notice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 500px;
+}
+
+.notice_board {
+  /* border: orange 1px solid; */
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  width: 70%;
+  padding: 2rem 0 0.5rem 0;
+  border-bottom: #2b2b2b 2px solid;
+}
+.help {
+  /* border: orange 1px solid; */
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  width: 70%;
+  padding: 5rem;
+}
+
+.help > li {
+  border-left: #eceff1 0.5px solid;
+  padding-left: 3rem;
+}
+
+.notice_title {
+  flex: 1;
+  text-align: left;
+  font-size: 24px;
+}
+
+.notice_main {
+  flex: 5;
+}
+
+.notice_more {
+  flex: 1;
+  text-align: right;
+  font-size: 24px;
+}
+
+.noti_ic:after {
+  content: "";
+  display: block;
+  background: url(//movie-img.yes24.com/NYes24/new/all_sprite.png) no-repeat 0 0;
+}
+
+.noti_ic.noti_ic01:after {
+  margin: 12px auto 0;
+  width: 48px;
+  height: 48px;
+  background-position: 0 -382px;
+}
+
+.noti_ic.noti_ic02:after {
+  margin: 16px auto 0;
+  width: 49px;
+  height: 44px;
+  background-position: -78px -382px;
+}
+
+.noti_ic.noti_ic03:after {
+  margin: 15px auto 0;
+  width: 54px;
+  height: 38px;
+  background-position: -157px -382px;
+}
+
+.noti_ic.noti_ic04:after {
+  margin: 14px auto 0;
+  width: 41px;
+  height: 42px;
+  background-position: -241px -382px;
+}
+
+.noti_ic.noti_ic05:after {
+  margin: 13px auto 0;
+  width: 42px;
+  height: 42px;
+  background-position: -312px -382px;
+}
+
+.noti_ic.noti_ic06:after {
+  margin: 14px auto 0;
+  width: 47px;
+  height: 44px;
+  background-position: -384px -382px;
+}
