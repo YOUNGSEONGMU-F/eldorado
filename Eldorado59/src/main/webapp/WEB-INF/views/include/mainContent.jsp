@@ -273,3 +273,48 @@
         <div class="hc"></div>
       </section>
       </div>
+      <!-- 공지 -->
+            <section class="notice">
+        <div class="notice_board">
+          <h1 class="notice_title">공지사항</h1>
+          <a href="" class="notice_main">
+            <p>[알림] CGV 극장 시스템 점검 안내 (06/16)</p>
+          </a>
+          <a href="" class="notice_more">&#10095;</a>
+        </div>
+        <ul class="help">
+          <li style="border: none; padding: 0;">
+            <a
+              href="http://www.yes24.com/Mall/Help/CS/Apply"
+              class="noti_ic noti_ic01"
+            >
+              <span>1:1상담</span>
+            </a>
+          </li>
+          <li>
+            <a href="/HelpDesk/Faq" class="noti_ic noti_ic02">
+              <span>FAQ</span>
+            </a>
+          </li>
+          <li>
+            <a href="/HelpDesk/DiscountInfo" class="noti_ic noti_ic03">
+              <span>할인안내</span>
+            </a>
+          </li>
+          <li>
+            <a href="/HelpDesk/CouponInfo" class="noti_ic noti_ic04">
+              <span>예매권안내</span>
+            </a>
+          </li>
+          <li>
+            <a href="/HelpDesk/GuideInfo" class="noti_ic noti_ic05">
+              <span>예매 안내</span>
+            </a>
+          </li>
+          <li>
+            <a href="/HelpDesk/TheaterInfo" class="noti_ic noti_ic06">
+              <span>극장안내</span>
+            </a>
+          </li>
+        </ul>
+      </section>
