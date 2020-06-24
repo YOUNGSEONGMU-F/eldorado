@@ -18,7 +18,7 @@
 <div id="stc">
 <div class="header sc">
                 <div class="nav_area" style="height: 0px;">
-                    <div id="sc_nav" style="display: none;">
+                    <div id="sc_nav">
                         <ul class="sc_g_left">
                           
                         </ul>
@@ -166,7 +166,7 @@ var tt = sc.offsetTop;
 
 function myFunction() {
   if (window.pageYOffset >= tt) {
-      document.getElementById("sc_nav").style.display = "inline-block"; 
+//       document.getElementById("sc_nav").style.display = "inline-block"; 
       document.getElementById("sc_nav").style.backgroundColor = "rgba(26,26,26,.95)"; 
       document.getElementById("m_nav").style.backgroundColor = "rgba(26,26,26,.95)"; 
   }
