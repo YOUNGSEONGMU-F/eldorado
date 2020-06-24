@@ -23,7 +23,7 @@
                           
                         </ul>
                         <ul class="sc_g_right">
-                                    <li><a href="/Login">로그인</a></li>
+                                    <li><a href="../lyj/login">로그인</a></li>
 
 
                             <li><a href="/MyPage">마이페이지</a></li>

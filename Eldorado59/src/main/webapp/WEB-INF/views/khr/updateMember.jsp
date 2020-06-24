@@ -218,7 +218,7 @@ gtag('config', 'AW-1056776890');
 								<td colspan="3" class="inpArea lastCol">
 									<div class="inpRow">
 										<span class="setAlignL"><span id="CLabMemNm"><span class="yesIpt m_size w_200">
-											<input name="name" type="text" id="name" autocomplete="off" maxlength="20" value="이름 불러오기">
+											<input name="name" type="text" id="name" autocomplete="off" maxlength="20" value="${mb.name }">
 										</span></span></span>
 									</div>
 								</td>
@@ -317,7 +317,7 @@ gtag('config', 'AW-1056776890');
 								<td colspan="3" class="inpArea lastCol">
 									<div id="CTxtTelNoA" class="inpRow">
 										<span class="setAlignL" id="sTelNo"><span class="yesIpt m_size w_200">
-											<input name="tel" type="text" id="tel" autocomplete="off" maxlength="20" value="번호 불러오기">
+											<input name="tel" type="text" id="tel" autocomplete="off" maxlength="20" value="${mb.tel }">
 										</span></span>
 									</div>
 								</td>
@@ -329,7 +329,7 @@ gtag('config', 'AW-1056776890');
 									<input type="hidden" name="email" id="email" value="">
 									<div class="inpRow" id="CTxtEmlA">
 										<span id="sEmailAddress" class="setAlignL"><span class="yesIpt m_size w_200">
-											<input name="email" type="text" id="email" autocomplete="off" maxlength="20" value="이메일 불러오기">
+											<input name="email" type="text" id="email" autocomplete="off" maxlength="20" value="${mb.email }">
 										</span></span>
 			                        </div>
 								</td>
