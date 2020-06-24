@@ -1,13 +1,19 @@
 @charset "utf-8";
 
-mySlides>img{
-	max-width: 1519px;
+html{
+	width: 100vw;
+}
+
+.mySlides>img{
+/* 	max-width: 1519px; */
+	width:100vw;
 	min-width: 925px;
 }
 
 /* Slideshow container */
 .slideshow-container {
-  width: 1519px; /* 1077*320 */ /*1287*192*/
+/*   width: 1519px; 1077*320 1287*192 */
+  width:100vw;
   height: 745px;
   position: relative;
   overflow: hidden;

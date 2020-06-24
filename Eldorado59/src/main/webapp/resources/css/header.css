@@ -25,16 +25,19 @@ header a{
 
 header{
 	background: transparent;
-	z-index: 99;
+	z-index: 9999;
 }
 
 .sticky:hover #m_nav {
 	background-color: rgba(26,26,26,.95);
 }
+.nav_area {
+	width: 100vw;
+}
 
 #sc_nav {
     border-bottom: 1px solid rgba(255,255,255,.1);
-    height: 28px;
+/*     height: 28px; */
     position: relative;
     padding: 0 2rem;
 }
