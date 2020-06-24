@@ -28,6 +28,13 @@ public class KhrDAOImpl implements KhrDAO{
 		
 		return session.delete("khr.deleteMember", user);
 	}
+
+	@Override
+	public Map<String, Object> getMember(String id) {
+		
+		
+		return session.selectOne("khr.selectMember", id);
+	}
 	
 	
 	

@@ -4,6 +4,7 @@ import java.util.Locale;
 import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,8 +29,12 @@ public class KhrController {
 	
 	// 회원정보 수정 
 	@RequestMapping(value = "updateMember", method = RequestMethod.GET)
-	public String updateMember(Locale locale, Model model) {
+	public String updateMember(Locale locale, Model model,HttpSession session) {
 	
+			String id = (String) session.getAttribute("id");
+			Map<String, Object> mb = service.getMember(id);
+			model.addAttribute("mb", mb);
+		
 		return "khr/updateMember";
 	}
 	

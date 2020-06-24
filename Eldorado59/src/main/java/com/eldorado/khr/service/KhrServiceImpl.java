@@ -31,6 +31,14 @@ public class KhrServiceImpl implements KhrService{
 		
 		return 0;
 	}
+
+	@Override
+	public Map<String, Object> getMember(String id) {
+		// TODO Auto-generated method stub
+		
+		
+		return dao.getMember(id);
+	}
 	
 	
 

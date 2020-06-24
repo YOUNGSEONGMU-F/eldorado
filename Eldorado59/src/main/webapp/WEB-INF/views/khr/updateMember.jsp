@@ -79,11 +79,11 @@ gtag('config', 'AW-1056776890');
 <%
 	String id = (String)session.getAttribute("id");
 	
-	/* if(id == null){
-		response.sendRedirect("login");
-	} */
+	if(id == null){
+		response.sendRedirect("../lyj/login");
+	} 
 	
-	/* Map<String,Object> user  */
+	
 %>
 
 <div id="wrapperContent">
@@ -208,7 +208,7 @@ gtag('config', 'AW-1056776890');
 								<th class="txt" scope="row">아이디</th>
 								<td colspan="3" class="txt lastCol">
 									<span id="CLabMemId"><span class="yesIpt m_size w_200">
-										<input name="id" type="text" id="id" autocomplete="off" maxlength="20" value="아이디 불러오기" readonly>
+										<input name="id" type="text" id="id" autocomplete="off" maxlength="20" value="${mb.id} " readonly>
 									</span></span>
 								</td>
 							</tr>

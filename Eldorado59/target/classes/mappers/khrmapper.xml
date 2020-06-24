@@ -15,5 +15,13 @@
 	where id=#{id}
 	
 </delete>
+
+<select id="selectMember" resultType="map">
+select * from member where id=#{id}
+
+</select>
+
+
+
 </mapper>
 
