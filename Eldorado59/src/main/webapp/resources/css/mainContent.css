@@ -59,7 +59,8 @@ a {
 
 .item {
   /* border: steelblue 1px solid; */
-  width: 380px;
+  width: calc((100% - 60px) / 3);
+/*   width: 380px; */
   height: 390px;
   overflow: hidden;
   /* background-color: beige; */
