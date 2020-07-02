@@ -4,6 +4,7 @@ import java.util.Locale;
 import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,17 +31,34 @@ public class KhrController {
 	@RequestMapping(value = "updateMember", method = RequestMethod.GET)
 	public String updateMember(Locale locale, Model model) {
 	
+
 		return "khr/updateMember";
 	}
 	
 	@RequestMapping(value = "updateMember", method = RequestMethod.POST)
 	public String updateMember_post(Locale locale, Model model,
-			@RequestParam Map<String,Object> user) {
-	
+			@RequestParam Map<String,Object> user,HttpSession session) {
+		
+		
 		service.updateMember(user);
 		
 		return "khr/updateMember";
 	}
+
+	//회원정보조회
+	@RequestMapping(value = "/info", method = RequestMethod.GET)
+	public String info(HttpSession session,Model model) {
+		System.out.println("정보 조회");
+		// 데이터 가져오기
+		String id = (String)session.getAttribute("id");
+		
+		
+		return "info";
+	}
+
+	
+	
+	
 	
 	// 회원정보 삭제
 	@RequestMapping(value = "deleteMember", method = RequestMethod.GET)

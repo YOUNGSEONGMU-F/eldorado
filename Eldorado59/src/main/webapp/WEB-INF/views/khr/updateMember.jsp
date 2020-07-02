@@ -458,7 +458,7 @@ gtag('config', 'AW-1056776890');
 	<h1>회원정보 수정</h1>
 
 	<form action="updateMember" method="post" id="updateForm">
-		아이디 : <input type="text" name="id" value="${member.id }"><br>
+		아이디 : <input type="text" name="id" value=""><br>
 		이름 : <input type="text" name="name"><br>
 		<!-- 비밀번호 변경 시, 다시 변경 한 비밀번호로 로그인 후 회원정보 수정 페이지로 -->
 		비밀번호 : <button onclick="window.open('changePW','window_name','width=430,height=500,location=no,status=no,scrollbars=yes');">비밀번호 변경</button><br>

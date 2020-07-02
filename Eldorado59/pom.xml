@@ -108,6 +108,21 @@
          <artifactId>hamcrest-core</artifactId>
          <version>1.3</version>
       </dependency>
+ <!-- 이메일인증 -->
+ <!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<!-- 이메일 인증 2018.11.20 KW -->
+
 
 
       <!-- PDF -->
@@ -268,7 +283,7 @@
          <version>${org.slf4j-version}</version>
          <scope>runtime</scope>
       </dependency>
-      <dependency>
+     <!--  <dependency>
          <groupId>log4j</groupId>
          <artifactId>log4j</artifactId>
          <version>1.2.15</version>
@@ -291,7 +306,7 @@
             </exclusion>
          </exclusions>
          <scope>runtime</scope>
-      </dependency>
+      </dependency> -->
       <!-- log4j -->
       <dependency>
          <groupId>com.sparkjava</groupId>

@@ -13,7 +13,8 @@
 <delete id="deleteMember" parameterType="map">
 	delete from member 
 	where id=#{id}
-	
 </delete>
+
+
 </mapper>
 

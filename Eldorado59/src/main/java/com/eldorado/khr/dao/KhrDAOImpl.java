@@ -28,6 +28,8 @@ public class KhrDAOImpl implements KhrDAO{
 		
 		return session.delete("khr.deleteMember", user);
 	}
+
+
 	
 	
 	

@@ -20,38 +20,9 @@ import com.eldorado.lyj.dao.LyjDAOImpl;
 import com.eldorado.lyj.service.LyjService;
 
 @Service
-public class LyjServiceImpl implements LyjService{
+public class MailServiceImpl implements MailService{
 
-	@Inject
-	private LyjDAOImpl dao;
-
-
-	@Resource(name="sqlSession")
-	private SqlSession session;
-
-
-	
-	@Override
-	public int insertMember(Map<String, Object> user) {
-		System.out.println("service : "+user);
-		dao.insertmember(user);
-		
-		return 0;
-	}
-
-	@Override
-	public String getPass(Map<String, Object> map) {
-		// TODO Auto-generated method stub
-		return dao.getPass(map);
-	}
-
-	@Override
-	public String searchId(String name, String email) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	private Log log = LogFactory.getLog(LyjServiceImpl.class);
+	private Log log = LogFactory.getLog(MailServiceImpl.class);
 	// org.springframework.mail.javamail.JavaMailSender
 	@Autowired
 	private JavaMailSender javaMailSender;
@@ -91,7 +62,7 @@ public class LyjServiceImpl implements LyjService{
 	}
 	return false;
 	}
-
+	
 	
 	
 	
