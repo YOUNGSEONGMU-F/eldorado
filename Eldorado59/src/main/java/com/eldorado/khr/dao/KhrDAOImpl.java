@@ -30,6 +30,13 @@ public class KhrDAOImpl implements KhrDAO{
 	}
 
 
+	@Override
+	public Map<String, Object> getMember(String id) {
+		
+		
+		return session.selectOne("khr.selectMember", id);
+	}
+
 	
 	
 	

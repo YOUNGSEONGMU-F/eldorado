@@ -80,7 +80,7 @@ public class LyjController {
 		}else {
 			if(getPass.equals(map.get("pass"))) {
 				System.out.println("로그인성공");
-				//세션에저장
+
 				session.setAttribute("id", map.get("id"));
 				
 				return "lyj/main";
