@@ -123,7 +123,7 @@ public class LyjController {
 				System.out.println("로그인성공");
 				session.setAttribute("id", map.get("id"));
 				
-				return "lyj/main";
+				return "lsy/main";
 				
 			}else {
 				System.out.println("패스워드 불일치");

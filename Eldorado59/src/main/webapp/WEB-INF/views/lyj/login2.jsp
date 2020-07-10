@@ -21,6 +21,8 @@
 	<link rel="stylesheet" href="//www.yes24.com/Resource/css/renew/sLayout/sLayoutV2.css" type="text/css" media="all" />
     <link rel="stylesheet" href="https://secimage.yes24.com/sysimage/yesUI/member/member.css?ver=180828c" type="text/css" media="all" />
     <link rel="stylesheet" href="https://secimage.yes24.com/sysimage/yesUI/yesUI.css?ver=180817c" type="text/css" media="all" />
+<!-- <script type = "text/javascript" src = "https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script> -->
+<script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
 </head>
 <body>
 <dl id="yesSkip">
@@ -105,7 +107,7 @@
 쇼셜 로그인 개수가 4개 이상 일 경우에는 "loginSocialLi loginSocialLi_2col clearfix"을 써주세요.
 -->
 <ul class="loginSocialLi">
-	<li class="oddCol "><a href="javascript:void(0);" id="FBLoginSub_aBtnNaverLogin" onClick="callNaverAuth('R');" class="btn_social"><span class="bWrap"><em class="ico_social ico_na bgMem"></em><em class="txt">네이버 아이디로 로그인</em></span></a>  </li>
+	<li class="oddCol "><div id="naverIdLogin"  class="btn_social"><span class="bWrap"><em class="ico_social ico_na bgMem"></em><em class="txt">네이버 아이디로 로그인</em></span></div>  </li>
 	<li class="evenCol"><a href="javascript:void(0);" id="FBLoginSub_aBtnKakaoLogin" onClick="callKakaoLogin();" class="btn_social"><span class="bWrap"><em class="ico_social ico_ka bgMem"></em><em class="txt">카카오 아이디로 로그인</em></span></a>  </li>
 	
 </ul>
@@ -214,336 +216,6 @@
 
 
 
-<script type="text/javascript" src="/Javascript/Member/Fingerprintjs2.js"></script>
-<script type="text/javascript" src="/Javascript/Member/Fingerprintjs2_plugin.js"></script>
-<script type="text/javascript" src="/Javascript/Member/Kakao.js" ></script>
-<script type="text/javascript">
-    function CheckLogin() {
-        $SMemberID = $("#SMemberID");
-        $SMemberPassword = $("#SMemberPassword");
-        $AutoLogin = $("#AutoLogin");
-
-        if ($SMemberID.val() == "") {
-            //alert("아이디를 입력하십시오");
-            $("#spanMemID").addClass("error");
-            $("#pYesFormErrTxt_MemID").show();
-            $SMemberID.focus();
-            return false;
-        } else {
-            $("#spanMemID").removeClass("error");
-            $("#pYesFormErrTxt_MemID").hide();
-        }
-
-        if ($SMemberPassword.val() == "") {
-            //alert("비밀번호를 입력하십시오");
-            $("#spanMemPW").addClass("error");
-            $("#pYesFormErrTxt_MemPW").show();
-            $SMemberPassword.focus();
-            return false;
-        } else {
-            $("#spanMemPW").removeClass("error");
-            $("#pYesFormErrTxt_MemPW").hide();
-        }
-
-        if ($("#txtCaptcha").val() == "") {
-            $("#spanCaptcha").addClass("error");
-            $("#pYesFormErrTxt_Capcha").show();
-            $("#txtCaptcha").focus();
-            return false;
-        } else {
-            $("#spanCaptcha").removeClass("error");
-            $("#pYesFormErrTxt_Capcha").hide();
-        }
-
-        if ($SMemberID.val().length > 0 || $SMemberPassword.val().length > 0) {
-
-            //CS 인입으로 주석처리
-            //if ($SMemberID.val().indexOf(" ") >= 0) {
-            //    //alert("아이디 입력란에서 공백을 제거해 주십시오");
-            //    $("#spanMemID").addClass("error");
-            //    $("#pYesFormErrTxt_MemID").text("아이디 입력란에서 공백을 제거해 주십시오").show();
-            //    $SMemberID.focus();
-            //    return false;
-            //} else {
-            //    $("#spanMemID").removeClass("error");
-            //    $("#pYesFormErrTxt_MemID").hide();
-            //}
-
-            if ($SMemberPassword.val().indexOf(" ") >= 0) {
-                //alert("비밀번호 입력란에서 공백을 제거해 주십시오");
-                $("#spanMemPW").addClass("error");
-                $("#pYesFormErrTxt_MemPW").text("비밀번호 입력란에서 공백을 제거해 주십시오").show();
-                $SMemberPassword.focus();
-                return false;
-            } else {
-                $("#spanMemPW").removeClass("error");
-                $("#pYesFormErrTxt_MemPW").hide();
-            }
-        }
-
-        var $naverCode = $('#FBLoginSub_NaverCode');
-        var $naverState = $('#FBLoginSub_NaverState');
-
-        var vToken = $("#FBLoginSub_hdfLoginToken").val();
-        $("#FBLoginSub_hdfLoginHash").val(btoa(jQuery.now() + "|" + vToken));
-
-        if (LoginDoubleClickFlag) { }
-        else {
-            LoginDoubleClickFlag = true;
-            submitLoginSub();
-            LoginDoubleClickFlag = false;
-        }
-    }
-
-    //유효성 검사 텍스트 제거
-    function removeErrorText(sender) {
-
-        switch (sender) {
-            case "MemberID":
-                $("#spanMemID").removeClass("error");
-                $("#pYesFormErrTxt_MemID").hide();
-                break;
-            case "MemberPW":
-                $("#spanMemPW").removeClass("error");
-                $("#pYesFormErrTxt_MemPW").hide();
-                break;
-            case "Captcha":
-                $("#spanCaptcha").removeClass("error");
-                $("#pYesFormErrTxt_Capcha").hide();
-                break;
-        }
-    }
-
-    function submitLoginSub() {
-        $("#btnLogin").removeAttr("onclick").addClass("btn_disabled");
-
-        //document.LoginSub.action = "/Templates/FTLogIn.aspx";
-        document.LoginSub.submit();
-    }
-
-    function LoginEnter(event) {
-        var keyCode = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-        if (keyCode == 13) {
-            CheckLogin();
-            return false;
-        }
-    }
-
-    function ShowRealNameError(mennm, idnno1, idnno2) {
-        $("#divRealnameErrorLayer").load('/Member/FTRealnameErrorInfoIFrame.aspx?mennm=' + mennm + '&idnno1=' + idnno1 + '&idnno2=' + idnno2);
-        $("#divRealnameErrorLayer").show();
-    }
-
-    function SubmitDormantPage(memId, autoLoginType, loginIDSave, returnUrl) {
-        $("#btnLogin").removeAttr("onclick").addClass("btn_disabled");
-        var ReturnUrl = $("input[name$='ReturnURL']").val();
-        var ReturnParams = $("input[name$='ReturnParams']").val();
-        if (returnUrl != undefined && returnUrl != "") ReturnUrl = returnUrl;
-
-        var $formDormant = $("<form></form>");
-        $formDormant.attr("action", "FTDormant.aspx");
-        $formDormant.attr("method", "post");
-        $formDormant.appendTo("body");
-
-        var inputMemId = $("<input type='hidden' value='" + memId + "' name='memId' />");
-        var inputAutoLoginType = $("<input type='hidden' value='" + autoLoginType + "' name='AutoLoginType' />");
-        var inputLoginIDSave = $("<input type='hidden' value='" + loginIDSave + "' name='LoginIDSave' />");
-        var inputReturnUrl = $("<input type='hidden' value='" + ReturnUrl + "' name='ReturnUrl' />");
-        var inputReturnParams = $("<input type='hidden' value='" + ReturnParams + "' name='ReturnParams' />");
-
-        $formDormant.append(inputMemId);
-        $formDormant.append(inputAutoLoginType);
-        $formDormant.append(inputLoginIDSave);
-        if (ReturnUrl != undefined && ReturnUrl != "") $formDormant.append(inputReturnUrl);
-        if (ReturnParams != undefined && ReturnParams != "") $formDormant.append(inputReturnParams);
-        $formDormant.submit();
-    }
-
-    function SubmitMovieDormantPage(memId, autoLoginType, loginIDSave, returnUrl) {
-        $("#btnLogin").removeAttr("onclick").addClass("btn_disabled");
-
-        if (parent && parent != this) {
-            alert('현재 고객님은 휴면계정 상태입니다.\n휴면계정 해지를 위해 페이지를 이동합니다.');
-            parent.window.location.href = "https://www.yes24.com/Templates/FTLogIn.aspx?ReturnURL=http://movie.yes24.com";
-        } else {
-            //console.log(returnUrl);
-            SubmitDormantPage(memId, autoLoginType, loginIDSave, returnUrl);
-        }
-    }
-
-    function callNaverAuth(type, successCallback, failCallback) {
-        var url = "/PartnerSSO/NaverLoginUrl.aspx";
-
-        if (typeof type !== 'undefined') {
-            url += '?type=' + type;
-        }
-
-        setCookie('ptr_reffer', document.location.href, 1);
-        setCookie('pre_RefererUrl', $("#RefererUrl").val(), 1);
-
-        $.ajax({
-            type: "POST",
-            url: url,
-            success: function (res) {
-                window.open(res, "naverid", "toolbar=no, scrollbars=yes, width=768, height=800");
-
-                //document.location.href = jsonData.url;
-
-                if (typeof successCallback === 'function') {
-                    successCallback(jsonData);
-                }
-            },
-            fail: function (xhr, status, errorMsg) {
-                if (typeof failCallback === 'function') {
-                    failCallback(xhr, status, errorMsg);
-                }
-            }
-
-        });
-    }
-
-
-
-    //카카오 로그인
-    function callKakaoLogin() {
-        setCookie('ptr_reffer', document.location.href, 1);
-        setCookie('pre_RefererUrl', $("#RefererUrl").val(), 1);
-        doubleClickFlag = true;
-        window.open("https://www.yes24.com/PartnerSSO/Kakao/KakaoLogin.aspx?State=Login"
-            , "kakao", "toolbar=no, scrollbars=no, width=400, height=670");
-    }
-
-    function SubmitTwoFactorPage(twoFactorLoginType, memId, memPwd, autoLoginType, loginIDSave, returnUrl) {
-        $("#btnLogin").removeAttr("onclick").addClass("btn_disabled");
-        var ReturnUrl = $("input[name$='ReturnURL']").val();
-        var ReturnParams = $("input[name$='ReturnParams']").val();
-        if (returnUrl != undefined && returnUrl != "") ReturnUrl = returnUrl;
-
-        var $formTwoFactor = $("<form></form>");
-        $formTwoFactor.attr("action", "/Member/TwoFactorLogin.aspx");
-        $formTwoFactor.attr("method", "post");
-        $formTwoFactor.appendTo("body");
-
-        var inputLoginType = $("<input type='hidden' value='" + twoFactorLoginType + "' name='TwoFactorLoginType' />");
-        var inputMemId = $("<input type='hidden' value='" + memId + "' name='MemId' />");
-        var inputMemPwd = $("<input type='hidden' value='" + memPwd + "' name='MemPwd' />");
-        var inputAutoLoginType = $("<input type='hidden' value='" + autoLoginType + "' name='AutoLoginType' />");
-        var inputLoginIDSave = $("<input type='hidden' value='" + loginIDSave + "' name='LoginIDSave' />");
-        var inputReturnUrl = $("<input type='hidden' value='" + ReturnUrl + "' name='ReturnUrl' />");
-        var inputReturnParams = $("<input type='hidden' value='" + ReturnParams + "' name='ReturnParams' />");
-
-        $formTwoFactor.append(inputLoginType);
-        $formTwoFactor.append(inputMemId);
-        $formTwoFactor.append(inputMemPwd);
-        $formTwoFactor.append(inputAutoLoginType);
-        $formTwoFactor.append(inputLoginIDSave);
-        if (ReturnUrl != undefined && ReturnUrl != "") $formTwoFactor.append(inputReturnUrl);
-        if (ReturnParams != undefined && ReturnParams != "") $formTwoFactor.append(inputReturnParams);
-        $formTwoFactor.submit();
-    }
-</script>
-<script type="text/javascript">
-    //네이버 연동
-    function chkNaverMem(mid, mnm, joinDate, code, state) {
-        $('#SMemberID').val(mid);
-        $('#naverNm').html(mnm + "님!");
-        $('#naverJoinDate').html(joinDate);
-        $('#FBLoginSub_NaverCode').val(code);
-        $('#FBLoginSub_NaverState').val(state);
-        var wW = $(window).width();
-        var wH = $(document).height();
-        $.yesPop('naverAccountGuidePop', this, { mask: true, pWidth: 460, pGap: 160 });
-        // ExistMember(mid, mnm, email, joinDate, '네이버');
-    }
-    function closeChkNaverMem() {
-        $("#naverAccountGuidePop .popYUI_close a").click();
-    }
-
-    
-
-    function chkKakaoMem(mid, mnm, email, joinDate) {
-        ExistMember(mid, mnm, email, joinDate, '카카오');
-        doubleClickFlag = false;
-    }
-
-    function chkKakaoMemExist(mid) {
-        alert('이미 ' + mid + ' 회원 아이디로 연동되어 있습니다.\n사용하시려면, 마이페이지 > 회원정보 메뉴에서 계정연동 설정을 연동해지 후 이용해주세요.');
-    }
-
-    //기존연동
-    function ExistMember(mid, mnm, email, joinDate, snsName) {
-        $('#SMemberID').val();
-        $('#ExistMemberNm').html(mnm);
-        $('#ExistMemberJoinDate').html(email);
-        $('.sSnsName').html(snsName);
-        var wW = $(window).width();
-        var wH = $(document).height();
-        $.yesPop('AccountGuidePop', this, { mask: true, pWidth: 460, pGap: 160 });
-
-        $('#tdExistMemberIdChecks').show();
-        $('#trExistMemberRegDts').html("");
-        var arr = joinDate.split('|');
-        var s = '<caption>기존 가입일자</caption>';
-        s += '<colgroup>';
-        s += '<col width="80">';
-        s += '<col width="*">';
-        s += '</colgroup>';
-        s += '<tbody><tr>';
-        for (i = 0; i < arr.length - 1 ; i++) {
-            if (i > 0 && i < arr.length) s += '</tr><tr>';
-            s += '<th class="txt" scope="row">가입일자</th>';
-            s += '<td class="txt lastCol">' + arr[i] + '</td>';
-        }
-        s += '</tbody></tr>';
-        $('#trExistMemberRegDts').html(s);
-        doubleClickFlag = false;
-    }
-    function closeExistMemberMem() {
-        $("#AccountGuidePop .popYUI_close a").click();
-    }
-
-    function MoveReturnPage(s) {
-        document.location.href = s;
-    };
-
-    (function () {
-        doubleClickFlag = false;
-    })();
-
-    var LoginDoubleClickFlag = false;
-    $(document).ready(function () {
-        $("#chkAutoLogin").bind("change", function () {
-            if ($("#chkAutoLogin").is(":checked")) {
-                $("#AutoLogin").val("2");
-                $("#divAutoLoginInfo").show();
-                $.yesPop("dPop_autoSaveIs", $("#chkAutoLogin").parent(), { cock: true, mask: false, pWidth: 360, baseWidth: $("#yesWrap").width(), cockH: -150 });
-            } else {
-                $("#AutoLogin").val("1");
-                $("#divAutoLoginInfo").hide();
-                $("#dPop_autoSaveIs").hide();
-            }
-        });
-        $("#chkLoginIDSave").bind("change", function () {
-            if ($("#chkLoginIDSave").is(":checked")) {
-                $("#LoginIDSave").val("Y");
-            } else {
-                $("#LoginIDSave").val("N");
-            }
-        });
-
-        
-    });
-
-    // 캡챠 이미지 새로고침
-    function refreshCatchaImage() {
-        $("#yesCaptchaImage").attr("src", "/Common/YesCaptchaImage.aspx?" + new Date().getTime());
-        $("#txtCaptcha").val('');
-    }
-
-    function closeloginFailPop() {
-        $("#loginFailPop .popYUI_close a").click();
-    }
-</script>
 					
 				</div>
 				<!-- ############### 로그인 폼 : 회원 영역 끝 ############### -->
@@ -551,80 +223,14 @@
 				<div id="nMemLoginForm" class="loginFormGrp" style="display:none;">
 					<form name="frmNoMemberLogin" method="post" action="./FTLogin.aspx?ReturnURL=" id="frmNoMemberLogin" autocomplete="off">
 <div>
-<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
-<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMjEyNzI1MzYwMGRkrKFMZSZ2ynZJ14Z6dPrlo1wqCCQ=" />
 </div>
 
-<script type="text/javascript">
-//<![CDATA[
-var theForm = document.forms['frmNoMemberLogin'];
-if (!theForm) {
-    theForm = document.frmNoMemberLogin;
-}
-function __doPostBack(eventTarget, eventArgument) {
-    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-        theForm.__EVENTTARGET.value = eventTarget;
-        theForm.__EVENTARGUMENT.value = eventArgument;
-        theForm.submit();
-    }
-}
-//]]>
-</script>
 
-
-<script src="/WebResource.axd?d=d1wn2vZJxQ24rX2UAuinQhWyIkpCExWnK9johVGdxdBfq9XVBKNcum7DUXmY1lKCIsvSC9VVVMameKRT6-lhu07u4Fk1&amp;t=636777048783889403" type="text/javascript"></script>
-
-
-<script src="/ScriptResource.axd?d=7nQwKNaL5y5c885Bcvw3xsngbfGRlIotyjbiJdLOzOPWoDWVXeFj8TzPRszeJu8dzSKThPQ_OO9yJ_HQGDjrbblmZh-RHGnsVEfVpnvsj-8UjT1eel2uUxQtcE6feuZ-BSf7L1z5Xa_3XqZ8DX8KUfZR2ms1&t=ffffffff999c3159" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=jmFtT6QpeAReh4nPZ4U6jERVsZ2-TH6bmsBW9KrN2G97zLZimLPwyztojoPAMt0S-u4weOI8ahl-cMsdvjcDPfEP7lQIwZi8SDbJlHDozJzbHZVcjEhu2BUzjjZxzJqYfYPEvKr0Gm07lBUzy8a-J7B2l-o8dPIqtx_FvO7NEEN3Tvg50&t=ffffffff999c3159" type="text/javascript"></script>
-<script type="text/javascript">
-//<![CDATA[
-var PageMethods = function() {
-PageMethods.initializeBase(this);
-this._timeout = 0;
-this._userContext = null;
-this._succeeded = null;
-this._failed = null;
-}
-PageMethods.prototype = {
-_get_path:function() {
- var p = this.get_path();
- if (p) return p;
- else return PageMethods._staticInstance.get_path();},
-CheckNoMemberOrdNo:function(OrdId,OrdConfPwd,succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'CheckNoMemberOrdNo',false,{OrdId:OrdId,OrdConfPwd:OrdConfPwd},succeededCallback,failedCallback,userContext); }}
-PageMethods.registerClass('PageMethods',Sys.Net.WebServiceProxy);
-PageMethods._staticInstance = new PageMethods();
-PageMethods.set_path = function(value) { PageMethods._staticInstance.set_path(value); }
-PageMethods.get_path = function() { return PageMethods._staticInstance.get_path(); }
-PageMethods.set_timeout = function(value) { PageMethods._staticInstance.set_timeout(value); }
-PageMethods.get_timeout = function() { return PageMethods._staticInstance.get_timeout(); }
-PageMethods.set_defaultUserContext = function(value) { PageMethods._staticInstance.set_defaultUserContext(value); }
-PageMethods.get_defaultUserContext = function() { return PageMethods._staticInstance.get_defaultUserContext(); }
-PageMethods.set_defaultSucceededCallback = function(value) { PageMethods._staticInstance.set_defaultSucceededCallback(value); }
-PageMethods.get_defaultSucceededCallback = function() { return PageMethods._staticInstance.get_defaultSucceededCallback(); }
-PageMethods.set_defaultFailedCallback = function(value) { PageMethods._staticInstance.set_defaultFailedCallback(value); }
-PageMethods.get_defaultFailedCallback = function() { return PageMethods._staticInstance.get_defaultFailedCallback(); }
-PageMethods.set_enableJsonp = function(value) { PageMethods._staticInstance.set_enableJsonp(value); }
-PageMethods.get_enableJsonp = function() { return PageMethods._staticInstance.get_enableJsonp(); }
-PageMethods.set_jsonpCallbackParameter = function(value) { PageMethods._staticInstance.set_jsonpCallbackParameter(value); }
-PageMethods.get_jsonpCallbackParameter = function() { return PageMethods._staticInstance.get_jsonpCallbackParameter(); }
-PageMethods.set_path("FTLogin.aspx");
-PageMethods.CheckNoMemberOrdNo= function(OrdId,OrdConfPwd,onSuccess,onFailed,userContext) {PageMethods._staticInstance.CheckNoMemberOrdNo(OrdId,OrdConfPwd,onSuccess,onFailed,userContext); }
-//]]>
-</script>
 
 <div>
 
-	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C58AA124" />
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAjvI/Q+3UPuyznrWZLvDZSpJRPi1R6LZfIEpTwpCEnpHwgA4kZlsMKL6XMkqiBpiAfnhTbxkm5uWvUOmdpcFMUSJOB8+gIjUkt8CcXoBJT7bg/7DYedef5IDLX+01cFNkhA+oILqQnqV8wwZFFfxWKO+vEZVUOpgPUjbafDOKth+dt5UY9E7VfhfrpM92+dodaZDz5u" />
 </div>
-                        <script type="text/javascript">
-//<![CDATA[
-Sys.WebForms.PageRequestManager._initialize('oScriptHonor', 'frmNoMemberLogin', [], [], [], 90, '');
-//]]>
-</script>
+
 
 				
 					</form>
@@ -696,140 +302,30 @@ Sys.WebForms.PageRequestManager._initialize('oScriptHonor', 'frmNoMemberLogin', 
 </div>
 
 <script type="text/javascript">
-    var HTTP_URL = 'http://www.yes24.com/';     // pc web : www.yes24.com/ramses.yes24.com
-    var HTTPS_IMG_HOST_SYS = 'https://secimage.yes24.com'
-    var ORDER_URL_HTTPS = 'https://ssl.yes24.com/';
-
-    var vPath = window.location.pathname;
-    if (vPath.indexOf("//") >= 0) {
-        do {
-            vPath = vPath.replace(/\/\//g, '/');
-        } while (vPath.indexOf("//") >= 0);
-        window.location.href = vPath + window.location.search;
-    }
-
-    var getParam = function (key) {
-        var _parammap = {};
-        document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
-            function decode(s) {
-                return decodeURIComponent(s.split("+").join(" "));
-            }
-            _parammap[decode(arguments[1])] = decode(arguments[2]);
-        });
-        return _parammap[key];
-    };
-
-    function LoginEnter2(event) {
-        var keyCode = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-        if (keyCode == 13) {
-            NoMemOrdConf();
-            return false;
-        }
-    }
-
-    function fPopYUI_Close() {
-        $(".popYUI_close a").click();
-    }
-
-    $(document).ready(function () {
-        window.name = "FTLogin";
-
-        if (document.location.hash == "#PWD_CHAG_Y") {
-            $("#pwForcedLogOutMsgPop #pLogOutHtmlMsg").html("비밀번호가 변경되어 로그인 페이지로 이동됩니다.<br/>변경된 비밀번호로 다시 로그인 후 이용해주시기 <br/>바랍니다.");
-            $.yesPop('pwForcedLogOutMsgPop', null, { mask: true, pWidth: 320 });
-            document.location.hash = "";
-        } else if (document.location.hash == "#FORCED_LOGOUT_Y") {
-            $("#pwForcedLogOutMsgPop #pLogOutHtmlMsg").html("로그인 세션이 만료되어 로그인 페이지로 이동되었습니다.<br/>다시 로그인 후 이용해주세요.");
-            $.yesPop('pwForcedLogOutMsgPop', null, { mask: true, pWidth: 360 });
-            document.location.hash = "";
-        } else if (document.location.hash == "#TWOFACTOR_LOGOUT_Y") {
-            $("#pwForcedLogOutMsgPop #pLogOutHtmlMsg").html("2단계 인증이 설정되어<br/>모든 기기 및 브라우저에서 로그아웃 되었습니다.<br/>다시 로그인 후 이용해 주세요.");
-            $.yesPop('pwForcedLogOutMsgPop', null, { mask: true, pWidth: 320 });
-            document.location.hash = "";
-        }
-
-        if (getParam("MEM_ID") != null)
-            $("#SMemberID").val(getParam("MEM_ID"));
-
-        //$(function () {
-        //    $("input[type='text']:first").focus();
-        //});
-
-	    $('.loginForm .yesIpt').iptNorBox({
-	        focusColor: true
-	    });
-	    $('.loginForm .yesChk').iptChkBox();
-	    var vTab = getParam("Tab");
-	    if (vTab != undefined) {
-	        if (vTab.toUpperCase() == "NoMember".toUpperCase()) {
-	            $("#ulTabMember li[id=liTabNoMember] a").click();
-	        }
-	    }
-
-        //하단 배너 미노출시 기본 배너 노출
-	    if ($("#loginBotBn").length <= 1 && $("#loginBotBn").hasClass("") != true) {
-	        $("#loginBotBn.default").css("display", "");
-	    }
-    });
-
-    var _isAjaxDoing = "N";
-    /**비회원주문확인**/
-    function NoMemOrdConf() {
-
-	    var d = document.frmNoMemberLogin;
-	    //if (isNull(d.TxtOrdNo, "주문번호")) return;
-	    if ((d.TxtOrdNo.value == "") || (d.TxtOrdNo.value == null)) {
-	        //alert('[' + msg + ']를(을) 입력하시기 바랍니다.');
-	        $("#spanOrdNo").addClass("error");
-	        $("#pYesFormErrTxt_OrdNo").show();
-	        d.TxtOrdNo.focus();
-	        return false;
-	    }
-	    if (d.TxtOrdNo.value.replace(/\s/g, "") == "") {
-	        //alert("주문번호를 입력해주세요");
-	        $("#spanOrdNo").addClass("error");
-	        $("#pYesFormErrTxt_OrdNo").show();
-	        return false;
-	    }
-
-	    //if (isNull(d.TxtOrdConfPwd, "주문비밀번호")) return;
-	    if ((d.TxtOrdConfPwd.value == "") || (d.TxtOrdConfPwd.value == null)) {
-	        //alert('[' + msg + ']를(을) 입력하시기 바랍니다.');
-	        $("#spanOrdConfPwd").addClass("error");
-	        $("#pYesFormErrTxt_OrdConfPwd").show();
-	        d.TxtOrdConfPwd.focus();
-	        return false;
-	    }
-
-	    if (_isAjaxDoing == "N") {
-	        
-	        _isAjaxDoing = "Y";
-	        PageMethods.CheckNoMemberOrdNo(d.TxtOrdNo.value, d.TxtOrdConfPwd.value, function (result) {
-	            if (result == "Y") {
-	                //var form = "frmNoMemberLogin";
-	                //var target = "post";
-	                //var action = ORDER_URL_HTTPS + "MyPageOrderDetail/MyPageOrderDetail";
-
-	                //submit(form, target, action);
-
-	                $("#btnOrdConf").removeAttr("onclick").addClass("btn_disabled");
-
-	                document.frmNoMemberLogin.method = "POST";
-	                document.frmNoMemberLogin.action = ORDER_URL_HTTPS + "MyPageOrderDetail/MyPageOrderDetail";
-	                document.frmNoMemberLogin.submit();
-	            } else {
-	                alert("주문번호 또는 비밀번호를 잘못 입력하셨습니다.\n다시 확인 후 입력해주세요.\n모르시는 경우 고객센터로 문의바랍니다.\n(TEL : 1544-3800)");
-	            }
-	            _isAjaxDoing = "N";
-	            return false;
-	        }, function (result) {
-	            alert("비회원 주문번호 조회 오류가 발생했습니다.\n다시 시도 해주세요.");
-	            _isAjaxDoing = "N";
-	            return false;
-	        });
-	    }
-    }
-
+  //네이버
+/*    var naver_id_login = new naver_id_login("AJhImJMME5hDjzPfSu24", "http://localhost:8080/team/Main/index");    // Client ID, CallBack URL 삽입
+                                            // 단 'localhost'가 포함된 CallBack URL
+         var state = naver_id_login.getUniqState();
+        
+         naver_id_login.setButton("white", 4, 40);
+         naver_id_login.setDomain("http://localhost:8080/team/lyj/login2");    //  URL
+         naver_id_login.setState(state);
+         naver_id_login.setPopup();
+         naver_id_login.init_naver_id_login(); */
+         var naverLogin = new naver.LoginWithNaverId(
+        			{
+        				clientId: "AJhImJMME5hDjzPfSu24",
+        				callbackUrl: "http://localhost:8080/team/Main/index",
+        				isPopup: false, /* 팝업을 통한 연동처리 여부 */
+        				loginButton: {color: "green", type: 3, height: 60} /* 로그인 버튼의 타입을 지정 */
+        			}
+        		);
+        		
+        		/* 설정정보를 초기화하고 연동을 준비 */
+        		naverLogin.init();
+  //네이버
+  
+  
     //유효성 검사 텍스트 제거
     function removeErrorText(sender) {
         switch (sender) {
@@ -882,22 +378,14 @@ Sys.WebForms.PageRequestManager._initialize('oScriptHonor', 'frmNoMemberLogin', 
     }
 </script>
 <script type="text/javascript" src="/JavaScript/recentviewgoods.js?v=20180108"></script>
-<script>
-    // 최근본 상품 - 로그인 성공시 사용.
-    var recentViewGoods = new RecentViewGoods();
-</script>
+
 
 <script type="text/javascript" src="https://secimage.yes24.com/sysimage/Contents/Scripts/p/logging/GoogleAnlystics.js"></script>
 <!-- WEMS TRACKING SCRIPT CODE START -->
 <!-- DO NOT MODIFY THIS SCRIPT CODE. -->
 <!-- COPYRIGHT (C) 1999-2008 NETHRU INC. ALL RIGHTS RESERVED. -->
 <script type="text/javascript" src="https://secimage.yes24.com/sysimage/Contents/Scripts/p/logging/wlo.min.js"></script>
-<script type="text/javascript">
-    _n_sid = "08070200045";
-    _n_uid_cookie = "Mallinmall_CKMI";
-    _n_info1_cookie = "PID";
-    n_logging();
-</script>
+
 
 </body>
 </html>
