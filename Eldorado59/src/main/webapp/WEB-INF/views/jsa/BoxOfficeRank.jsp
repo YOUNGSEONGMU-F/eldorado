@@ -104,18 +104,18 @@ a {text-decoration: none; color: #000000;
 	// 발급키
 	String dkey = "125e0d7589b7019fcf325c4d2eac30d6";
 	// KOBIS 오픈 API Rest Client를 통해 호출
-    KobisOpenAPIRestService dservice = new KobisOpenAPIRestService(dkey);
+   // KobisOpenAPIRestService dservice = new KobisOpenAPIRestService(dkey);
 	// 일일 박스오피스 서비스 호출 (boolean isJson, String targetDt, String itemPerPage,String multiMovieYn, String repNationCd, String wideAreaCd)
-    String dailyResponse = dservice.getDailyBoxOffice(true, dtargetDt, ditemPerPage, dmultiMovieYn, drepNationCd, dwideAreaCd);
+   // String dailyResponse = dservice.getDailyBoxOffice(true, dtargetDt, ditemPerPage, dmultiMovieYn, drepNationCd, dwideAreaCd);
  
 	// Json 라이브러리를 통해 Handling
 	ObjectMapper dmapper = new ObjectMapper();
-	HashMap<String,Object> dailyResult = dmapper.readValue(dailyResponse, HashMap.class);
-	request.setAttribute("dailyResult",dailyResult);
+	//HashMap<String,Object> dailyResult = dmapper.readValue(dailyResponse, HashMap.class);
+	//request.setAttribute("dailyResult",dailyResult);
 	// KOBIS 오픈 API Rest Client를 통해 코드 서비스 호출 (boolean isJson, String comCode )
-	String dcodeResponse = dservice.getComCodeList(true,"0105000000");
-	HashMap<String,Object> dcodeResult = dmapper.readValue(dcodeResponse, HashMap.class);
-	request.setAttribute("dcodeResult",dcodeResult);
+	//String dcodeResponse = dservice.getComCodeList(true,"0105000000");
+	//HashMap<String,Object> dcodeResult = dmapper.readValue(dcodeResponse, HashMap.class);
+	//request.setAttribute("dcodeResult",dcodeResult);
     %>	
 	
 <div class="t_movie_area">
@@ -174,19 +174,19 @@ a {text-decoration: none; color: #000000;
 	// 발급키
 	String key = "125e0d7589b7019fcf325c4d2eac30d6";
 	// KOBIS 오픈 API Rest Client를 통해 호출
-    KobisOpenAPIRestService service = new KobisOpenAPIRestService(key);
+    //KobisOpenAPIRestService service = new KobisOpenAPIRestService(key);
 	// 일일 박스오피스 서비스 호출 (boolean isJson, String targetDt, String itemPerPage,String multiMovieYn, String repNationCd, String wideAreaCd)
-    String weeklyResponse = service.getWeeklyBoxOffice(true, targetDt, itemPerPage, weekGb, multiMovieYn, repNationCd, wideAreaCd);
+   // String weeklyResponse = service.getWeeklyBoxOffice(true, targetDt, itemPerPage, weekGb, multiMovieYn, repNationCd, wideAreaCd);
    
     
 	// Json 라이브러리를 통해 Handling
 	ObjectMapper mapper = new ObjectMapper();
-	HashMap<String,Object> weeklyResult = mapper.readValue(weeklyResponse, HashMap.class);
-	request.setAttribute("weeklyResult",weeklyResult);
+	//HashMap<String,Object> weeklyResult = mapper.readValue(weeklyResponse, HashMap.class);
+	//request.setAttribute("weeklyResult",weeklyResult);
 	// KOBIS 오픈 API Rest Client를 통해 코드 서비스 호출 (boolean isJson, String comCode )
-	String codeResponse = service.getComCodeList(true,"0105000000");
-	HashMap<String,Object> codeResult = mapper.readValue(codeResponse, HashMap.class);
-	request.setAttribute("codeResult",codeResult);
+	//String codeResponse = service.getComCodeList(true,"0105000000");
+	//HashMap<String,Object> codeResult = mapper.readValue(codeResponse, HashMap.class);
+	//request.setAttribute("codeResult",codeResult);
     %>
 	
 	

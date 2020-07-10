@@ -1,5 +1,6 @@
 package com.eldorado.lyj.dao;
 
+
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -29,8 +30,27 @@ public class LyjDAOImpl implements LyjDAO{
 	public String getPass(Map<String, Object> map) {
 		// TODO Auto-generated method stub
 		return session.selectOne("lyj.getPass",map);
+		
 	}
 
+	@Override
+
+	public void newPassword(Map<String, Object> map) {
+
+		
+		session.update("lyj.newPassword", map);
+
+	}
+
+
+	@Override
+	public String findIdresult(String userEmail) {
+		System.out.println("find아이디 :"+userEmail);
+		
+		
+		return session.selectOne("lyj.idfind",userEmail);
+	}
+	
 	
 	
 }

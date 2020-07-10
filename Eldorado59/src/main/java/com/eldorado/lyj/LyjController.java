@@ -22,6 +22,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.eldorado.lyj.service.Email;
+import com.eldorado.lyj.service.EmailSender;
 import com.eldorado.lyj.service.LyjServiceImpl;
 import com.eldorado.lyj.service.MailService;
 
@@ -34,6 +36,10 @@ public class LyjController {
 	
 	@Autowired
 	private MailService mailService;
+	
+	
+
+
 	 
 	@RequestMapping(value = "test", method = RequestMethod.GET)
 	public String home_lyj(Locale locale, Model model) {
@@ -99,46 +105,53 @@ public class LyjController {
 	
 	@RequestMapping(value="login2",method =RequestMethod.POST)
 	public String logincss_post(@RequestParam Map<String,Object> map,
-			HttpSession session) {
+			HttpSession session, HttpServletResponse response) throws IOException {
 		
 		String getPass = service.getPass(map);
 		if(getPass == null) {
 			System.out.println("아이디없음");
+			response.setContentType("text/html; charset=utf-8");
+			response.setCharacterEncoding("UTF-8");
+			PrintWriter out = response.getWriter();
+			out.print("<script>");
+			out.print("alert('아이디 또는 패스워드가 틀립니다');");
+			out.print("location.href='login2';");
+			out.print("</script>");
+			out.flush();
 		}else {
 			if(getPass.equals(map.get("pass"))) {
 				System.out.println("로그인성공");
 				session.setAttribute("id", map.get("id"));
 				
 				return "lyj/main";
+				
 			}else {
 				System.out.println("패스워드 불일치");
+				response.setContentType("text/html; charset=utf-8");
+				response.setCharacterEncoding("UTF-8");
+				PrintWriter out = response.getWriter();
+				out.print("<script>");
+				out.print("alert('아이디 또는 패스워드가 틀립니다');");
+				out.print("location.href='login2';");
+				out.print("</script>");
+				out.flush();
 			}
 		}
-		return "lyj/login2";
+		return null;
 	}
 	@RequestMapping(value="findidresult",method =RequestMethod.GET)
-	public String findidresult() {
+	public String findidresult(@RequestParam String userEmail,Model model) {
+		
+		String idByEmail = service.findIdresult(userEmail);
+		model.addAttribute("idByEmail", idByEmail);
+		
 		
 		return "lyj/findidresult";
 	}
 	
 	
 	
-	@RequestMapping(value="findIdpage",method =RequestMethod.GET)
-	public String findIdget() {
-		
-		return "lyj/findIdpage";
-	}
-	@RequestMapping(value="findIdpage",method =RequestMethod.POST)
-	public String findIdpost(
-			@RequestParam("name") String name, 
-			@RequestParam("email") String email,HttpServletRequest request
-
-
-			) {
-
-		return "lyj/findIdpage";
-	}
+	
 	
 	
 	@RequestMapping(value="/email.do")
@@ -176,6 +189,69 @@ public class LyjController {
 	return new ResponseEntity<String>("complete", HttpStatus.OK);
 	else return new ResponseEntity<String>("false", HttpStatus.OK);
 	}
+
+	
+	
+	
+	//새로
+	@RequestMapping(value="pass",method =RequestMethod.GET)
+	public String findpassword() {
+		
+		return "lyj/pass";
+	}
+	
+	
+	@Autowired
+	private Email email;
+	
+	@Autowired
+	private EmailSender emailSender;
+
+
+	
+	// 새로운 비밀번호가 생성된다.
+
+		@RequestMapping("/newPassword")
+		//map에는 id와email이 들어오면 돼
+		public String newPassword(@RequestParam Map<String,Object> map, HttpSession session,HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+			Random r = new Random();
+
+			int num = r.nextInt(89999) + 10000;
+
+			String npassword = "bapsi" + Integer.toString(num);// 새로운 비밀번호 변경
+
+			//memberVO.setPassword(npassword);
+			map.put("pass", npassword);
+
+			session.setAttribute("map", map);
+
+			service.newPassword(map);
+
+			email.setContent("새로운 비밀번호 " + map.get("pass") + " 입니다. ");
+
+			email.setReceiver((String)map.get("email"));
+
+			email.setSubject("안녕하세요"+map.get("email") +"님  재설정된 비밀번호를 확인해주세요");
+
+			emailSender.SendEmail(email);
+
+			System.out.println(email);
+			session.invalidate();
+			
+			response.setContentType("text/html; charset=utf-8");
+			response.setCharacterEncoding("UTF-8");
+			PrintWriter out = response.getWriter();
+			out.print("<script>");
+			out.print("alert('가상비밀번호가 전송되었습니다. 이메일을 확인해주세요');");
+			out.print("location.href='login2';");
+			out.print("</script>");
+			out.flush();
+			
+			return null;
+			
+		}
+
 
 
 }

@@ -13,5 +13,20 @@ values(#{id},#{pass},#{name},#{email},#{addr},#{tel})
 select pass from member where id=#{id}
 </select>
 
+
+<update id="newPassword" parameterType="map">
+
+		update member
+
+		set pass = #{pass}
+
+		where email=#{email}
+
+</update>
+
+<select id="idfind" parameterType="String" resultType="String" >
+select id from member where email= #{userEmail}
+</select>
+
 </mapper>
 

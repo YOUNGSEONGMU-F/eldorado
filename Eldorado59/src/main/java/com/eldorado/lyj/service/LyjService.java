@@ -14,5 +14,12 @@ public interface LyjService {
 
 	public boolean send(String subject, String text, String from, String to, String filePath);
 
+	//비밀번호찾기
+	public void newPassword(Map<String,Object> map) throws Exception;
+	//아이디찾기
+	public String findIdresult(String userEmail);
+	
+	
+	
 	
 }

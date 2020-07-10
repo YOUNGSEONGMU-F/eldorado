@@ -39,7 +39,7 @@
 				<span class="servName">로그인</span>
 			</h1>
 			<div class="headerLnk">
-				<a href="/Member/FTMemAcc.aspx" class="btnC m_size w_120"><span class="bWrap"><em class="txt">회원가입</em></span></a>
+				<a href="join" class="btnC m_size w_120"><span class="bWrap"><em class="txt">회원가입</em></span></a>
 			</div>
 		</div>
 	</div>
@@ -61,7 +61,7 @@
 				<!-- ############### 로그인 폼 : 회원 영역 시작 ############### -->
 				<div id="memLoginForm" class="loginFormGrp">
                     
-<form method="post" name="LoginSub" autocomplete="off" action="login">
+<form method="post" name="LoginSub" autocomplete="off" action="login2">
  <!--    <input name="FBLoginSub$hdfLoginToken" type="hidden" id="FBLoginSub_hdfLoginToken" value="jj+Q9vDc35+txh6eAqGPaL8pDYzzoyg2Rk9Ffb+ZhcMH4IoLakoDHVNxywh5bCFO" />
     <input name="FBLoginSub$hdfLoginHash" type="hidden" id="FBLoginSub_hdfLoginHash" />
     <input type="hidden" name="LoginType" />
@@ -85,31 +85,17 @@
 		</span>
 		<p class="yesFormTxt error" style="display:none;" id="pYesFormErrTxt_MemPW">비밀번호를 입력해주세요.</p>
 		
-		<!--그밑에꺼  로그인상태유지-->
-		<div class="loginForm_chk">
-			<span class="yesChk">
-				<label for="chkAutoLogin"><em class="ico_yesChk bgYUI"></em>로그인 상태 유지</label>
-				<input id="chkAutoLogin" type="checkbox" autocapitalize="off" class="iptChk" />
-			</span>
-			<span class="yesChk">
-				<label for="chkLoginIDSave"><em class="ico_yesChk bgYUI"></em>아이디 저장</label>
-				<input id="chkLoginIDSave" type="checkbox" autocapitalize="off" class="iptChk" />
-			</span>
-			
-			<!-- name="chkAutoLogin"    name="chkLoginIDSave"-->
-			
-			
-		</div>
-		<button type="button" id="btnLogin" title="로그인" onclick="CheckLogin();return false;" class="btn_login btnC xb_size btn_blue"><span class="bWrap"><em class="txt">로그인</em></span></button>
+	
+		<button type="submit" id="btnLogin" title="로그인" class="btn_login btnC xb_size btn_blue"><span class="bWrap"><em class="txt">로그인</em></span></button>
 	
 	
 	</fieldset>
 </form>
 <!-- ##### 아이디 비번 찾기 영역 시작 ##### -->
 <div class="loginEtc">
-	<a href="findIdpage" class="lnk_etc">아이디 찾기</a>
+	<a href="email.do" class="lnk_etc">아이디 찾기</a>
 	<em class="divi">|</em>
-	<a href="/Templates/FTForgetPW.aspx" class="lnk_etc">비밀번호 찾기</a>
+	<a href="pass" class="lnk_etc">비밀번호 찾기</a>
 	
 </div>
 <!-- ##### 아이디 비번 찾기 영역 끝 ##### -->

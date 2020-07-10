@@ -52,8 +52,15 @@
 </beans:bean>
 <beans:bean id="mailService" class="com.eldorado.lyj.service.MailServiceImpl">
 <beans:property name="javaMailSender" ref="javaMailSender" />
+
 </beans:bean>
 	
-	
+	<beans:bean id="email" class="com.eldorado.lyj.service.Email">
+
+	</beans:bean>
+
+	<beans:bean id="emailSender" class="com.eldorado.lyj.service.EmailSender">
+
+	</beans:bean>
 	
 </beans:beans>
