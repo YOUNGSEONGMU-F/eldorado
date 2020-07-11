@@ -18,7 +18,7 @@
 <div class="lyjwrap">
 <div class="reserve_top lay_inner">
     <div class="btn_area">
-        <button id="btnInit" class="btn_init">처음부터 다시선택</button>
+        <button id="btnInit" class="btn_init">처음부터 다시선택!</button>
     </div>
 </div>
 
