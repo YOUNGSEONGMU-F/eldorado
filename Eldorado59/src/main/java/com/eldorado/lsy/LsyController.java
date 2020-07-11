@@ -49,10 +49,19 @@ public class LsyController {
 		this.naverLoginBO = naverLoginBO;
 	} 
 	
+	@RequestMapping(value = "index", method = RequestMethod.GET)
+	public String main(Locale locale, Model model) {
+		logger.info("/main 실행");
+		
+		
+		
+		return "lsy/main";
+	}
+
 	
 	//네이버 로그인 성공시 callback호출 메소드
-	@RequestMapping(value = "index", method = { RequestMethod.GET, RequestMethod.POST })
-	public String main(Locale locale, Model model,@RequestParam String code, @RequestParam String state, HttpSession session) throws IOException, ParseException, org.json.simple.parser.ParseException {
+	@RequestMapping(value = "index", method = RequestMethod.POST )
+	public String main_post(Locale locale, Model model,@RequestParam String code, @RequestParam String state, HttpSession session) throws IOException, ParseException, org.json.simple.parser.ParseException {
 		logger.info("/main 실행");
 		System.out.println("여기는 callback");
 		OAuth2AccessToken oauthToken;

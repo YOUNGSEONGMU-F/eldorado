@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.lyjwrap {color:#777;
+font-size:15px;
+font-family: nanumBa, '맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif; }
+
+
+.lyjwrap.fixed {position: fixed;
+top:0;bottom:0;height:100%;width:100%;overflow: hidden;}
+
+.reserve_top {
+    position: relative;
+    padding: 30px 0 16px;
+}
+
+.reserve_top .btn_area {text-align:right;}
+
+.btn_init {
+    position: relative;
+    padding: 7px 20px 7px 44px;
+    font-size: 12px;
+    color: #777;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    letter-spacing: -1px;
+}

@@ -64,31 +64,7 @@ public class LyjController {
 		return "lyj/login";
 	}
 
-	@RequestMapping(value = "login", method = RequestMethod.GET)
-	public String login() {
-
-		return "lyj/login";
-	}
-
-	@RequestMapping(value = "login", method = RequestMethod.POST)
-	public String login_post(@RequestParam Map<String, Object> map, HttpSession session) {
-
-		String getPass = service.getPass(map);
-		if (getPass == null) {
-			System.out.println("아이디없음");
-		} else {
-			if (getPass.equals(map.get("pass"))) {
-				System.out.println("로그인성공");
-
-				session.setAttribute("id", map.get("id"));
-
-				return "lyj/main";
-			} else {
-				System.out.println("패스워드 불일치");
-			}
-		}
-		return "lyj/login";
-	}
+	
 
 	@RequestMapping(value = "login2", method = RequestMethod.GET)
 	public String logincss(Model model, HttpSession session) {
@@ -261,6 +237,17 @@ public class LyjController {
 
 		return null;
 
+	}
+	
+	@RequestMapping(value = "movieTicket", method = RequestMethod.GET)
+	public String movieTicket() {
+
+		
+		
+		
+		
+		
+		return "lyj/toReserve";
 	}
 
 }
