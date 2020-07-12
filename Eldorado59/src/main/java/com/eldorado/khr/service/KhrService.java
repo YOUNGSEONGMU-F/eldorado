@@ -4,6 +4,9 @@ import java.util.Map;
 
 public interface KhrService {
 	
+	//로그인(임시)
+	public String getPass(Map<String,Object> map);
+	
 	// 회원정보 수정
 	public int updateMember(Map<String, Object> user);
 	

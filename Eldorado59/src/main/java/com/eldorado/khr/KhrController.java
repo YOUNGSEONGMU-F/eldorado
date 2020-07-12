@@ -1,9 +1,12 @@
 package com.eldorado.khr;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Locale;
 import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -26,6 +29,24 @@ public class KhrController {
 	
 		return "home";
 	}
+	
+	// 로그인(임시)
+	@RequestMapping(value = "loginTest", method = RequestMethod.GET)
+	public String login(Model model, HttpSession session) {
+		
+		return "khr/loginTest";
+	}
+	
+	@RequestMapping(value = "loginTest", method = RequestMethod.POST)
+	public String login_post(@RequestParam Map<String, Object> map, HttpSession session,
+			HttpServletResponse response, Model model) throws IOException {
+
+		String getPass = service.getPass(map);
+		
+		return null;
+	}
+	
+	
 	
 	// 회원정보 수정 
 	@RequestMapping(value = "updateMember", method = RequestMethod.GET)

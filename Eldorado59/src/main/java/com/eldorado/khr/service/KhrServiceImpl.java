@@ -14,6 +14,16 @@ public class KhrServiceImpl implements KhrService{
 	@Inject
 	private KhrDAOImpl dao;
 	
+	// 로그인(임시)
+	@Override
+	public String getPass(Map<String, Object> map) {
+		
+		return dao.getPass(map);
+	}
+	
+	
+	
+	
 	@Override
 	public int updateMember(Map<String, Object> user) {
 		
@@ -22,6 +32,8 @@ public class KhrServiceImpl implements KhrService{
 		
 		return 0;
 	}
+
+	
 
 	@Override
 	public int deleteMember(Map<String, Object> user) {
