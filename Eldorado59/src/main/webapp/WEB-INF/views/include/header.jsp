@@ -28,6 +28,7 @@
                         </ul>
                         <ul class="sc_g_right">
                                     <li><a href="../lyj/login2">로그인</a></li>
+                                    <li><a href="../khr/loginTest">로그인(임시)</a></li>
 
 
                             <li><a href="/MyPage">마이페이지</a></li>
