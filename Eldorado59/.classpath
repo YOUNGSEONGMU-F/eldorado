@@ -26,5 +26,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="lib" path="D:/새 폴더 (7)/새 폴더/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="D:/새 폴더 (7)/새 폴더/kobis-opcl-rest-v1.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
