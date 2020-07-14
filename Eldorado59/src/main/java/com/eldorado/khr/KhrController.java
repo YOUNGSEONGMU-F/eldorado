@@ -182,5 +182,13 @@ public class KhrController {
 //		
 //		return "khr/myPage";
 //	}
+	
+	
+	// 무비기프트
+	@RequestMapping(value = "MovieGift", method = RequestMethod.GET)
+	public String MovieGift(Locale locale, Model model) {
+
+		return "khr/MovieGift";
+	}
 
 }
