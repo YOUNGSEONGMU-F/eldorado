@@ -1,0 +1,130 @@
+@charset "utf-8";
+
+/*무비기프트 222*/
+.moviegift_area {padding-bottom:120px;}
+.moviegift_area .notice_area {margin-top: 0;border:0;} 
+.moviegift_banner_area {font-size:0;height:380px;vertical-align:top;text-align:center;background: #3b2925 url('//movie-img.yes24.com/Nyes24/new/banner_mg.png') no-repeat center 0;}
+
+.moviegift_voucher_area .title_box {text-align:right;font-size:16px;font-weight: normal;}
+.moviegift_voucher_area .title_box .link_left {padding-bottom: 5px;border-bottom:1px solid #2b2b2b;}
+
+.mg_vou_list_area {font-size:0;}
+.mg_vou_list_area > div {position: relative;margin-left:30px;display:inline-block;width:calc((100% - 30px) / 2);vertical-align:top;border:1px solid #e5e5e5;background:#fff;box-shadow:0 0 20px 0 rgba(0,0,0,.07);}
+.mg_vou_list_area > div:first-child {margin-left: 0;}
+
+.moviegift_give_area .mg_vou_box:hover:before {content:'';position:absolute;top:0;bottom:106px;left:0;right:0;background:rgba(0,0,0,.6);z-index:3;cursor: pointer; }
+.moviegift_give_area .mg_vou_box:hover:after {content:'';position:absolute;top:50%;left:50%;width:222px;height:82px;background:url('//movie-img.yes24.com/Nyes24/new/bg_icon.png') no-repeat 0 -222px;z-index:4;transform: translate(-50%,-115%);cursor: pointer;}
+.moviegift_voucher_area .mg_vou_box:hover:before {content:'';position:absolute;top:0;bottom:80px;left:0;right:0;background:rgba(0,0,0,.6);z-index:3;cursor: pointer; }
+.moviegift_voucher_area .mg_vou_box:hover:after {content:'';position:absolute;top:50%;left:50%;width:222px;height:82px;background:url('//movie-img.yes24.com/Nyes24/new/bg_icon.png') no-repeat 0 -222px;z-index:4;transform: translate(-50%,-90%);cursor: pointer;}
+.mg_vou_list_area .mg_vou_img {height:207px;overflow: hidden;}
+.mg_vou_list_area .mg_vou_img img {width:100%;}
+.mg_vou_list_area .mg_vou_info {padding:30px 30px 0;height:81px;border-top:1px solid #e5e5e5;font-size:0;}
+.mg_vou_list_area .mg_vou_info .mg_vou_type {display:inline-block;vertical-align:top;font-size:18px;  }
+.mg_vou_list_area .mg_vou_info .mg_vou_price {float:right;font-size:22px;}
+.mg_vou_list_area .mg_vou_info .fir_price {display:inline-block;vertical-align:middle;text-decoration: line-through;color:#777; font-size:16px;}
+.mg_vou_list_area .mg_vou_info .las_price {position:relative;padding-left: 45px;display:inline-block;vertical-align:top;color:#ec6159;font-weight: normal;}
+.mg_vou_list_area .mg_vou_info .las_price:before {content:'';position:absolute;top:3px;left:12px;width:18px;height:14px;background:url('//movie-img.yes24.com/Nyes24/new/all_sprite.png') no-repeat -311px -460px;}
+.moviegift_give_area {margin: 120px 0 20px;}
+.moviegift_give_area .mg_vou_box {width:calc((100% - 60px) / 3);box-shadow:none;}
+.moviegift_give_area .mg_vou_img {height:533px;}
+.moviegift_give_area .mg_vou_info {padding-top: 25px;height:106px;border-top:none;text-align: center;}
+.moviegift_give_area .mg_vou_info .mg_vou_type  {margin-bottom: 15px;display:block;  width: 320px;  overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align:center; }
+.moviegift_give_area .mg_vou_info .mg_vou_price  {float:none; margin-bottom:30px;}
+
+.theater_box_area .mg_vou_list_area > div {position: relative;margin-left:20px;display:inline-block;width:calc((100% - 60px) / 4);vertical-align:top;border:1px solid #e5e5e5;background:#fff; }
+.theater_box_area .mg_vou_list_area > div:first-child {margin-left: 0;}
+.theater_box_area {margin: 120px 0 20px;}
+.theater_box_area .mg_vou_img img {width:90%;}
+.theater_box_area .tit_mg {font-size:22px; color:#2b2b2b; letter-spacing:-1px; margin:0 0 25px 0; position:relative; font-weight:bold;}
+.theater_box_area .link_left {position:absolute; right:0; font-size:15px; padding-bottom:5px; border-bottom:1px solid #2b2b2b; letter-spacing:0; font-weight:normal;}
+.theater_box_area .theater_box {width:calc((100% - 90px) / 5); box-shadow:none;position:relative; margin-bottom:30px;}
+.theater_box_area .theater_box:hover:before {content:'';position:absolute;top:0;bottom:140px;left:0;right:0;background:rgba(0,0,0,.7);z-index:3;cursor: pointer; }
+.theater_box_area .theater_box:hover:after {content:'';position:absolute;top:47%;left:50%;width:186px;height:70px;background:url('//movie-img.yes24.com/Nyes24/new/bg_icon.png') no-repeat 0 -315px;z-index:4;transform: translate(-50%,-135%); cursor:pointer;}
+.theater_box_area .theater_box.saleend:before {content:'';position:absolute;top:0;bottom:140px;left:0;right:0;background:rgba(255,255,255,.8);z-index:3;}
+.theater_box_area .theater_box.saleend:after {content:'';position:absolute;top:30%;left:18%;width:186px;height:70px;background:url('//movie-img.yes24.com/Nyes24/new/bg_icon.png') no-repeat 0 -395px;z-index:4;transform: translate(-50%,-135%); opacity:.5;   -ms-transform: rotate(15deg);  transform: rotate(-15deg);}
+.theater_box_area .theater_box.soldout:before {content:'';position:absolute;top:0;bottom:140px;left:0;right:0;background:rgba(255,255,255,.8);z-index:3;}
+.theater_box_area .theater_box.soldout:after {content:'';position:absolute;top:30%;left:18%;width:186px;height:70px;background:url('//movie-img.yes24.com/Nyes24/new/bg_icon.png') no-repeat 0 -475px;z-index:4;transform: translate(-50%,-135%); opacity:.5; -ms-transform: rotate(15deg);  transform: rotate(-15deg);}
+.theater_box_area .theater_box .mg_vou_img {height:330px; background:#fff; text-align:center;}
+.theater_box_area .theater_box .mg_vou_info {text-align:center; height:140px; padding:20px 10px;}
+.theater_box_area .theater_box .mg_vou_type {width:90%; margin:0 0 7px 0; font-size:16px; line-height:22px;}
+.theater_box_area .theater_box .mg_vou_type2 {color:#999; font-size:13px; line-height:17px; margin:auto; width:90%;}
+.theater_box_area .theater_box .mg_vou_price {float:none; margin:15px 0 30px 0;}
+.theater_box_area .theater_box .fir_price {display:inline-block;vertical-align:middle;text-decoration: line-through;color:#777; font-size:15px;}
+.theater_box_area .theater_box .las_price {position:relative;padding-left: 30px;display:inline-block;vertical-align:top;color:#ec6159;font-weight: normal; font-size:21px;}
+.theater_box_area .theater_box .las_price:before {content:'';position:absolute;top:3px;left:5px;width:18px;height:14px;background:url('//movie-img.yes24.com/Nyes24/new/all_sprite.png') no-repeat -311px -460px;}
+
+
+/* 결제 */
+.moviegift_pay_cont {padding-bottom: 120px;}
+.moviegift_pay_cont .form_tbl_col{font-size:15px;}
+.pay_info_area {padding-top: 80px;font-size:0;}
+.pay_info_area > div {position: relative;display:inline-block;vertical-align:top;}
+.pay_info_area .pay_thumb {width:645px;height:386px;background:#e5e5e5;overflow: hidden;}
+.pay_info_area .pay_thumb img {position:absolute;top:50%;left:50%;transform: translate(-50%, -50%);max-height:350px; min-height:200px; }
+.pay_info_area .pay_info_txt {padding:10px 0 0 60px; width:555px; }
+.pay_info_area.item_t .pay_thumb img {max-height:460px !important;}
+.pay_info_area.item_t .pay_thumb {background:#fff;}
+.pay_info_area.item_t .pay_info_txt .pi_prcie_box {padding: 22px 0 20px 0; border-top:2px solid #777; border-bottom:2px solid #777; width:255px;}
+.pay_info_area.item_t .pay_thumb {height:330px;}
+
+.pay_info_txt .btn_share {position:absolute;top:12px;right:0;}
+.pay_info_txt .pi_tit {padding-bottom: 40px;font-size:30px;color:#2b2b2b; width:420px; line-height:37px; }
+.pay_info_txt .pi_stit {margin: -40px 0 30px 0;font-size:15px;color:#777; width:420px; line-height:37px; }
+.pay_info_txt .pri_tit {width:75px;}
+
+.pay_info_txt .pi_price {width:calc(248px - 72px);}
+.pay_info_txt .select_line {padding-bottom: 35px;color:#2b2b2b;}
+.pay_info_txt .select_line .sel_option li {font-size:14px;}
+.pay_info_txt .pay_price {font-size:0;}
+.pay_info_txt .pay_price > span {display:inline-block;vertical-align: top;}
+.pay_info_txt .pay_price .pri_tit {color:#2b2b2b;font-weight: bold;font-size:15px;}
+.pay_info_txt .pay_price .pi_price {font-weight: bold;color:#ec6159;font-size:18px;text-align: right;} 
+.pay_info_txt .li_bar {margin-top: 50px;font-size:14px;}
+.pay_info_txt .pi_prcie_box {padding-bottom: 30px;}
+.pay_info_txt .pi_prcie_box .pri_tit {font-weight:bold; font-size:16px; color:#2b2b2b;}
+
+
+
+.gift_msg {position:absolute;top:-6px;right:20px;width:380px;height:252px;border:1px solid #efefef;background:#fff;box-shadow:0 0 10px 0 rgba(1,1,1,.1);}
+.gift_msg .gm_tit {padding-top: 12px;width:100%;height:35px;background:#ffeb00;font-size:13px;color:#2b2b2b;text-align: center;}
+.gift_msg .gm_tit:before {content:'';position:absolute;top:-8px;left:11px;width:25px;height:30px;background:url('//movie-img.yes24.com/Nyes24/new/all_sprite.png') no-repeat -413px -460px;}
+.gift_msg .gm_cont {padding:30px 30px 15px;font-size:15px;line-height:18px;}
+.gift_msg textarea {width:100%;height:140px;border:none;resize: none; font-family: nanumBa, '맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif}
+.gift_msg .gm_send {text-align: right;font-size:11px;}
+.gift_msg .gm_send .ta_len {color:#2b2b2b;}
+.gift_msg .gm_send button {margin-left: 10px;}
+
+.dis_last_pay_area .chk_agree {padding-top:30px;text-align:center;}
+.dis_last_pay_area .chkbx_area .ck_txt {padding-top:5px;line-height:1;font-size:15px; color:#2b2b2b; }
+
+.dis_last_tbl {font-size:0;}
+.dis_last_tbl > div {display:inline-block;vertical-align:top;}
+.dis_select_area {width:795px;}
+.dis_select_area .form_tbl {padding-bottom: 35px;font-size:14px;}
+.dis_select_area .form_tbl .form_tbl_col {padding-top:10px;}
+.dis_select_area .inp_st {margin-top:0;padding-right:20px;width:158px;vertical-align:top; }
+.dis_select_area .tx_won {margin:0 40px 0 -15px;color:#777;vertical-align:top;}
+.dis_select_area button {margin-top:-10px;vertical-align:top;}
+.dis_select_area .dis_noti {margin:3px 0 0 15px;display:inline-block;color:#777;font-size:12px;} 
+.dis_select_area .dis_noti_pri {margin:1px 0 0 15px;display:inline-block;color:#777;} 
+
+.last_pay_area {margin-left: 5px;width:400px;}
+.last_pay_area .form_tbl {padding-top: 58px;height:222px;font-size:14px;}
+.last_pay_area .form_tbl .form_tbl_col {height:30px;}
+.last_pay_area .form_tbl .last_row  {margin-top:7px;font-size:16px;}
+.last_pay_area .form_tbl .last_row .form_tbl_col {padding-top: 30px;border-top:1px solid #e5e5e5; font-size:20px;}
+.last_pay_area .form_tbl .last_row .first {font-size:15px;color:#2b2b2b;font-weight: bold;}  
+
+.last_pay_tarea {margin-left: 5px;width:400px;}
+.last_pay_tarea .form_tbl {padding-top: 80px; height:278px;font-size:14px; margin-top:120px;}
+.last_pay_tarea .form_tbl .form_tbl_col {height:30px;}
+.last_pay_tarea .form_tbl .last_row  {margin-top:7px;font-size:16px;}
+.last_pay_tarea .form_tbl .last_row .form_tbl_col {padding-top: 30px;border-top:1px solid #e5e5e5; font-size:20px;}
+.last_pay_tarea .form_tbl .last_row .first {font-size:15px;color:#2b2b2b;font-weight: bold;}  
+
+.moviegift_pay_cont .notice_area {position:relative;margin-top: 55px;border:none;}
+.moviegift_pay_cont .notice_area p.noti_txt {margin-bottom:3px; font-size:14px;}
+.moviegift_pay_cont .noti_btn_bottom {position: absolute;top:110px;right:0;margin-top: 0;}
+.moviegift_payresult_area .head_top_title {font-family:nanumBa; font-weight:normal;}
+
+.sp_noti_box .li_tit {margin-bottom:10px; }

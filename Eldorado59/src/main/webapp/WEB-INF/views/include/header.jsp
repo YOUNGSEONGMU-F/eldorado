@@ -28,6 +28,7 @@
                         </ul>
                         <ul class="sc_g_right">
                                     <li><a href="../lyj/login2">로그인</a></li>
+                                    <li><a href="../khr/loginTest">로그인(임시)</a></li>
 
 
                             <li><a href="/MyPage">마이페이지</a></li>
@@ -78,7 +79,7 @@
                                         </ul>
                                     </li>
                                     <li class="m_gnb">
-                                                <a href="/MovieGift/Index"><span>무비기프트</span></a>
+                                                <a href="../khr/MovieGift"><span>무비기프트</span></a>
                                         <ul class="m_sub_gnb">
 
                                         </ul>
