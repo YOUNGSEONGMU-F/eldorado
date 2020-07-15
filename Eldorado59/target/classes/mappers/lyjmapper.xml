@@ -28,5 +28,14 @@ select pass from member where id=#{id}
 select id from member where email= #{userEmail}
 </select>
 
+<select id="bringTheaters" resultType="map">
+select th_name from theater
+</select>
+
+<select id="bringEachTheaters" resultType="map" parameterType="map">
+select th_name from theater where th_addr= #{area}
+</select>
+
+
 </mapper>
 

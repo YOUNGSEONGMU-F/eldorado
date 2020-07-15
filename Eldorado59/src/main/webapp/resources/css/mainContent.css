@@ -16,7 +16,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 630px;S
+  height: 630px;
   background-color: #f5f5f5;
 }
 .event {
@@ -182,6 +182,7 @@ a {
 
 .rl_info_box {
   position: absolute;
+  width:256px;
   top: 0;
   bottom: 0;
   left: 0;
@@ -255,6 +256,13 @@ a {
   /* padding-left: 80px; */
 }
 
+/* test */
+.bx-wrapper{width: 95vw; margin: auto;}
+
+.bx-viewport{
+	width: 96%;
+}
+
 #r_item {
   display: flex;
 }
@@ -276,7 +284,7 @@ a {
   padding: 150px 0;
   position: absolute;
   font-size: 50px;
-  left: 0;
+  left: -66px;
   top: 0;
   width: 200px;
   height: 380px;
@@ -294,7 +302,7 @@ a {
   text-align: right;
   padding: 150px 0;
   font-size: 50px;
-  right: 0;
+  right: -77px;
   top: 0;
   position: absolute;
   width: 200px;

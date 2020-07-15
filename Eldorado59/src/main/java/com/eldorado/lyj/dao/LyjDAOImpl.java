@@ -1,6 +1,7 @@
 package com.eldorado.lyj.dao;
 
 
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -50,6 +51,22 @@ public class LyjDAOImpl implements LyjDAO{
 		
 		return session.selectOne("lyj.idfind",userEmail);
 	}
+
+
+	@Override
+	public List<Map<String, Object>> bringthetheaters() {
+		
+		return session.selectList("lyj.bringTheaters");
+	}
+
+
+	@Override
+	public List<Map<String, Object>> bringEachTheaters(Map<String, Object> map) {
+		System.out.println("map  DAO: "+map);
+		
+		return session.selectList("lyj.bringEachTheaters",map);
+	}
+	
 	
 	
 	

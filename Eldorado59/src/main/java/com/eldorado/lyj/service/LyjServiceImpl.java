@@ -1,6 +1,7 @@
 package com.eldorado.lyj.service;
 
 import java.io.File;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -111,6 +112,20 @@ public class LyjServiceImpl implements LyjService {
 		
 		
 		return dao.findIdresult(userEmail);
+	}
+
+	@Override
+	public List<Map<String, Object>> bringthetheaters() {
+		
+		
+		return dao.bringthetheaters();
+	}
+
+	@Override
+	public List<Map<String, Object>> bringEachTheaters(Map<String, Object> map) {
+		System.out.println("map : "+ map);
+		
+		return dao.bringEachTheaters(map);
 	}
 	
 	
