@@ -1,5 +1,6 @@
 package com.eldorado.lyj.service;
 
+import java.util.List;
 import java.util.Map;
 
 public interface LyjService {
@@ -19,7 +20,10 @@ public interface LyjService {
 	//아이디찾기
 	public String findIdresult(String userEmail);
 	
+	//영화관가져오기
+	public List<Map<String, Object>> bringthetheaters();
 	
-	
+	//지역에 따른 영화관이름 가져오기
+	public List<Map<String, Object>> bringEachTheaters(Map<String,Object> map);
 	
 }

@@ -2,6 +2,7 @@ package com.eldorado.lyj;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
@@ -239,15 +240,22 @@ public class LyjController {
 
 	}
 	
-	@RequestMapping(value = "movieTicket", method = RequestMethod.GET)
-	public String movieTicket() {
+	
+	  @RequestMapping(value = "movieTicket", method = RequestMethod.GET) 
+	  public String movieTicket(Model model) {
+	  List<Map<String, Object>> theaterList = service.bringthetheaters();
+	  System.out.println("@@@@@@@ : " + theaterList);
+	  model.addAttribute("theaterList", theaterList);
+	  
+	  return "lyj/toReserve"; }
+	 
+
+	@RequestMapping(value = "movieTicket2", method = RequestMethod.GET)
+	public String movieTicket2() {
 
 		
 		
-		
-		
-		
-		return "lyj/toReserve";
+		return "lyj/toReserve2";
 	}
 
 }

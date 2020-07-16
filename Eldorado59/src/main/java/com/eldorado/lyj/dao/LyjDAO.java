@@ -1,5 +1,6 @@
 package com.eldorado.lyj.dao;
 
+import java.util.List;
 import java.util.Map;
 
 public interface LyjDAO {
@@ -15,4 +16,11 @@ public interface LyjDAO {
 
 	//아이디찾기
 	public String findIdresult(String userEmail);
+
+	//영화관가져오기
+	public List<Map<String, Object>> bringthetheaters();
+	
+	//지역 영화관 가져오기
+	public List<Map<String, Object>> bringEachTheaters(Map<String,Object> map);
+	
 }
