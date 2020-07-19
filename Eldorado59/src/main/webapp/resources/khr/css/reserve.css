@@ -1,0 +1,438 @@
+@charset "utf-8";
+.reserve_area {position: relative;padding-bottom:120px;}
+.reserve_top {position: relative;;padding:30px 0 16px;}
+.reserve_top .btn_area {text-align:right;}
+
+/* 예매 */
+.reserve_container {position: relative;}
+/*왼쪽 배너*/
+.side_left_banner {position:absolute;top:35px;left:-118px;width:89px;}
+.res_guide_banner {margin-bottom:30px;padding:0 10px;background:#fff;border:1px solid #e5e5e5;}
+.res_guide_banner > li {border-top:1px solid #e5e5e5;}
+.res_guide_banner > li:first-child {border-top:none;}
+.res_guide_banner a {padding:20px 0;display:block;font-size:12px;line-height:14px;color:#1a1a1a;text-align: center; }
+.res_guide_banner a:before {content:'';margin:0 auto 10px;display:block;background:url('//movie-img.yes24.com/NYes24/new/bg_icon.png') no-repeat 0 0;}
+.res_guide_banner .discount a:before {width:32px;height:23px;}
+.res_guide_banner .dis_guide a:before {width:32px;height:28px;background-position:-62px 0;}
+.res_guide_banner .res_guide a:before {width:26px;height:30px;background-position:-124px 0;}
+
+.mania_banner {padding:20px 10px;border:1px solid #e5e5e5;background:#fff;font-size:12px;line-height:14px;color:#1a1a1a;text-align: center;}
+.mania_banner .mania_sub_txt {margin-top:15px;padding-top:10px;border-top:1px solid #e5e5e5;}
+.mania_banner .mania_info {position: relative;;padding-top:38px;font-size:12px;line-height:16px;border:none;color:#777;font-weight:normal;}
+.mania_banner .mania_info:before {content:'';position:absolute;top:0;left:50%;display:block;width:23px;height:31px;transform:translate(-50%, 0);background:url('//movie-img.yes24.com/NYes24/new/bg_icon.png') no-repeat 0 -60px;}
+.mania_banner .mania_info .grade_txt {font-weight:bold;color:#a9a9a9;}
+.mania_banner.mania_offline {background:#eee;}
+.mania_banner.grade_normal .mania_info:before {width:25px;}
+.mania_banner.grade_normal .grade_txt {color:#a9a9a9;}
+.mania_banner.grade_royal .mania_info:before {background-position-x:-55px;}
+.mania_banner.grade_royal .grade_txt {color:#73d077;}
+.mania_banner.grade_gold  .mania_info:before {background-position-x:-108px;}
+.mania_banner.grade_gold  .grade_txt {color:#dfc14a;}
+.mania_banner.grade_platinum .mania_info:before {width:25px;background-position-x:-161px;}
+.mania_banner.grade_platinum  .grade_txt {color:#6699cc;}
+
+/*영화예약*/
+.reserve_content .ms_title {position: relative;height:35px;font-size:0;z-index:3;}
+.reserve_content .ms_title .tit {font-size:20px; color: #2b2b2b;letter-spacing:-1px;vertical-align:top; }
+
+.movie_select_area {line-height:1;}
+.movie_select_area .ms_search_box {position: relative;;float:right;width:calc(100% - 90px);height:20px;}
+.movie_select_area .ms_search_box .inp_clar_box {width:0;overflow:hidden;transition:width .3s;}
+.movie_select_area .ms_search_box input {padding-bottom:9px;width:100%;}
+.movie_select_area .ms_search_box.active .inp_clar_box {padding-left:50px;width:calc(100% - 50px);transition:width .3s;}
+.movie_select_area .ms_search_box.active .btn_searchBlack {margin-left:10px;}
+.movie_select_area .ms_tit_noti {margin-top:2px;padding-left:13px;display:inline-block;font-size:14px;}
+.search_result {margin-left:50px;padding:10px 0;display:none;width:calc(100% - 100px);max-height:430px;overflow:hidden;overflow-y:auto;background:#fff;border:1px solid #1a1a1a;border-top:none;}
+.search_result.active {display:block;}
+
+.movie_select_area .ms_box {height:582px;border:1px solid #e5e5e5;border-left:none;background:#fff;}
+
+/*영화선택*/
+.movie_list {width:430px;}
+.movie_list .ms_box {border-left:1px solid #e5e5e5;}
+.mov_rank_box {height:46px;transition:height .3s;overflow:hidden;border-top:1px solid #e5e5e5;}
+.mov_rank_box em {font-style: normal;}
+
+.mov_rank_box:first-child {border-top:none;}
+.mov_rank_box .mov_rank_top a {position: relative;padding-left:20px;display:block;height:46px;line-height:46px;font-size:15px; }
+.mov_rank_box .mov_rank_top a:after {content:'';position: absolute;top:18px;right:20px;width:16px;height:8px;background:url('//movie-img.yes24.com/NYes24/new/all_sprite.png') no-repeat -298px -182px;}
+.mov_rank_box .mov_rank_list  {display:none;}
+.mov_rank_box .rating_list > li {position: relative;z-index:1; padding:1px 0 0 20px; }
+.mov_rank_box .rating_list > li.active {z-index:2;}
+.mov_rank_box.active {height:488px;transition:height .3s;}
+.mov_rank_box.active .mov_rank_top {border-bottom:1px solid #e5e5e5;}
+.mov_rank_box.active .mov_rank_top a:after {background-position-x:-252px; }
+.mov_rank_box.active .mov_rank_list {position:relative;display:block;height:440px;overflow:hidden;overflow-y:auto; }
+.eve_movetype_parent .movie_type_selectbox.active {display:block;right:0;top:0;}
+.eve_movetype_parent .movie_type_selectbox {display:none;}
+.eve_movetype_parent .movie_type_selectbox .btn_x_sm {position:absolute;top:12px;right:18px;z-index:2; width:13px; height:13px;}
+.eve_movetype_parent .movie_type_selectbox .mt_selbox_list {max-height:238px;overflow: hidden;overflow-y:auto;}
+/*극장선택*/
+.cinema_list {width:469px;overflow:hidden;}
+.cinema_list .rating_list > li .rating_tit_box  {padding-left:20px;}
+.cinema_name {padding:0 20px;height:47px;line-height:45px;font-size:0;border-bottom:1px solid #e5e5e5;}
+.cinema_name > a {margin-left:58px;display:inline-block;vertical-align:top;font-size:14px;color:#666;}
+.cinema_name > a:first-child {margin-left:0;}
+.cinema_name > a:hover, .cinema_name > a.active {color:#ec6159;}
+
+.my_cinema .my_cinema_tit {border-bottom:1px solid #e5e5e5;}
+.my_cinema .my_cinema_tit a {position: relative;padding-left:20px;display:block;height:45px;line-height:45px;font-size:15px;}
+.my_cinema .my_cinema_tit a:after {content:'';position: absolute;top:18px;right:20px;width:16px;height:8px;background:url('//movie-img.yes24.com/NYes24/new/all_sprite.png') no-repeat -298px -182px;}
+
+.my_cinema .my_cinema_list {height:0;overflow: hidden;transition:height .3s;}
+.my_cinema .my_cinema_list > div {padding:15px 15px 8px 15px;font-size:0;}
+.my_cinema .my_cinema_list a {margin:0 7px 6px 0;}
+.my_cinema .my_cinema_list .round_st {margin:0 7px 6px 0;border:1px solid #ededed;color:#ccc;}
+.my_cinema .my_cinema_list .round_st.active {border:1px solid #dbdbdb;color:#777;}
+.my_cinema .my_cinema_list .round_st.active:hover {color:#ec6159; border:1px solid #ec6159;}
+
+
+.my_cinema.active .my_cinema_tit a:after {background-position-x: -252px;}
+.my_cinema.active .my_cinema_list {height:55px;border-bottom:1px solid #e5e5e5;transition:height .3s;}
+
+.my_cinema .my_cinema_list .no_cinema {padding-top:0px;text-align: center; height:55px;}
+.my_cinema .my_cinema_list .no_cinema:after {content:'';display:block;clear: both;}
+.my_cinema .my_cinema_list .no_cinema .no_cinema_txt {padding-bottom:0px;font-size:14px;color:#999; float:left; line-height:55px;}
+.my_cinema .my_cinema_list .no_cinema .no_cinema_txt:last-child {float:right;}
+.my_cinema .my_cinema_list .no_cinema .no_cinema_txt a {font-size:13px; color:#777; border:1px solid #e5e5e5; padding:7px 15px; background:#fff; }
+
+.cinema_location {height:488px;font-size:0;}
+.cinema_location > div {display:inline-block;height:100%;vertical-align:top;}
+.cinema_location .cinema_city {padding:0;width:160px;height:100%;overflow:hidden;border-right:1px solid #e5e5e5;}
+.cinema_location .cinema_state {width:calc(100% - 160px);height:100%;overflow:hidden;overflow-y:auto;}
+.cinema_location.active {height:430px;}
+
+.cinema_city_list a {position: relative;padding:17px 20px 15px;display:block;font-size:15px;color:#777;border:1px solid #fff;border-left:none;border-right:none;}
+.cinema_city_list a:hover {color:#1a1a1a}
+.cinema_city_list >li:first-child a {border:none;border-bottom:1px solid #fff;}
+
+.cinema_city_list > li.active a {color:#1a1a1a;border:1px solid #e5e5e5;border-left:none;border-right:none; background:#eaeaea;}
+.cinema_city_list > li.active:last-child a {border-bottom:1px solid #f2f2f2;}
+.cinema_city_list > li.active:first-child a {border:none;border-bottom:1px solid #e5e5e5}
+.cinema_city_list > li.active a:before {content:'';position:absolute;top:16px;right:10px;width:8px;height:14px;background:url('//movie-img.yes24.com/NYes24/new/all_sprite.png') no-repeat -478px -180px;}
+
+.cinema_state_box {border-top:1px solid #e5e5e5;}
+.cinema_state_box:first-child {border-top:none;}
+.cinema_state_box .tit {padding:20px 20px 12px; color:#2b2b2b;font-size:15px; border-top:1px solid #e5e5e5; }
+.cinema_state_box .tit:first-child {border-top:0; padding-top:17px;}
+
+/*상형유형 셀렉트 박스*/
+.movie_type_selectbox {position:absolute;display:none;width:190px;border:1px solid #ec6159;background:#fff;}
+.mt_selbox_list a {padding:15px;display:block;font-size:13px; color:#777; line-height:18px;}
+.mt_selbox_list a:hover, .mt_selbox_list > li.active a {color:#ec6159;}
+
+
+/*스텝버튼*/
+.step_btn_area {position: absolute;top:340px;left:0;right:0;z-index:11;}
+.step_btn_area.resize {left:50%;width:1500px;transform:translate(-50%, 0);}
+.step_btn_area > button {position: absolute;}
+.step_btn_area .btn_step_prev {left:40px; bottom:10px;}
+.step_btn_area .btn_step_next {right:40px; bottom:10px;}
+
+/*관람일 선택*/
+.movie_date .ms_box {position: relative;}
+.calendar_alea {padding:30px 20px 45px;}
+.cal_select_info {font-size:0;text-align: center;line-height:13px;}
+.cal_select_info > span {display:inline-block;vertical-align:top;font-size:12px;}
+.cal_select_info > span::before {content:'';margin-right:5px;display:inline-block;width:12px;height:13px;vertical-align:top;box-sizing:border-box;}
+.cal_select_info .day_select_txt {margin-left:11px;}
+.cal_select_info .day_reserve_txt::before {border:1px solid #ccc;}
+.cal_select_info .day_select_txt::before {background:#ec6159;}
+
+.movie_date_noti {position: absolute;bottom:30px;left:0;right:0;font-size:12px;line-height:18px;text-align: center; border-top:1px solid #e5e5e5; padding-top:28px;}
+
+/*시간선택*/
+.time_select_area {padding-top:60px;}
+.time_select_area .time_select_noti {padding-top:20px;font-size:12px;line-height:1;text-align: right;}
+.time_sel_area {padding:30px 30px 10px;}
+
+/*선택영화 정보*/
+.sel_movie_info {position: relative;margin:40px auto 0;width:1200px;height:190px;font-size:0;border:1px solid #e5e5e5; background:#fff;z-index:10; /* box-shadow:0 0 5px 0 rgba(0,0,0,.05); */}
+/* .sel_movie_info.scroll {position: absolute;bottom:100px;} */
+.sel_movie_info .lay_inner > div {/*display:inline-block;*/display:table-cell;height:188px;vertical-align:top;}
+.sel_movie_info .sel_movie_info_area {padding:0 10px 0 30px;width:480px;}
+.sel_movie_info .sel_movie_info_area > div {display:inline-block;vertical-align:top;}
+.sel_movie_info .poster_thumb {margin:24px 35px 0 0;width:95px;height:138px;overflow:hidden;border:1px solid #eaeaea;}
+.sel_movie_info .movie_info {padding-top:42px;color:#b2b2b2;line-height:1;font-size:13px;}
+.sel_movie_info .movie_info > div {padding-bottom:7px;}
+.sel_movie_info .movie_info .movie_sel_tit {position: relative;;padding-bottom:24px;font-size:18px;}
+.sel_movie_info .price_info_area {padding:0 50px;width:350px;vertical-align:middle !important;font-size:14px;color:#fff;border-left:1px solid rgba(229,229,229,.15);border-right:1px solid rgba(229,229,229,.15);}
+.sel_movie_info .price_info_area > p {padding-bottom:10px;}
+.sel_movie_info .price_info_area > p:last-child {padding-bottom:0;}
+.sel_movie_info .price_info_area .pi_tit {float:left;width:100px;}
+.sel_movie_info .price_info_area .pi_info {float:right;width:calc(100% - 100px);text-align: right;}
+.sel_movie_info .last_price_area {padding:42px 30px 0 0;width:340px;}
+.sel_movie_info .last_price_area .lp_txt {padding:30px 0 0 13px;display:inline-block;width:calc(100% - 111px);text-align: center;font-size:13px;color:#fff;vertical-align:top;}
+.sel_movie_info .last_price_area .lp_price {padding-top:14px;font-size:24px;color:#ec6159; }
+.sel_movie_info .last_price_area .bnt_payment {width:111px;height:111px;line-height:111px;text-align: center;font-size:22px;color:#fff;background:#ec6159; cursor: pointer;}
+.sel_movie_info .last_price_area .unable {width:111px;height:111px;line-height:111px;text-align: center;font-size:22px; color:rgba(255,255,255,.3); cursor: default; border:1px solid rgba(255,255,255,.3); background:none;}
+
+.sel_movie_info .bg_blur_area {position:absolute;top:0;left:50%;width:1200px;height:188px;overflow:hidden;transform: translate(-50%, 0);}
+.sel_movie_info .bg_blur_area:after {content:'';position:absolute;top:0;bottom:0;left:0;right:0;display:block;background:rgba(0,0,0,.4);}
+.sel_movie_info .bg_blur_area .svg_blur {width:100%;height:100%;}
+
+.sel_movie_info.default  .sel_movie_info_area {width:auto;}
+.sel_movie_info.default .poster_thumb {padding-top:47px;text-align:center;}
+.sel_movie_info.default .poster_thumb img {vertical-align:top;}
+.sel_movie_info.default .movie_info > div {display:block;}
+
+.sel_movie_info.selected .lay_inner {position: relative;display:table;font-size:0;}
+.sel_movie_info.selected .poster_thumb {border:none;}
+.sel_movie_info.selected .poster_thumb img {width:100%; max-height:140px;}
+.sel_movie_info.selected .movie_info {width:calc(100% - 132px);color:#fff;}
+.sel_movie_info.selected .movie_sel_tit {padding-left:32px;line-height:22px;}
+.sel_movie_info.selected .movie_sel_tit .ic_rating {position:absolute;top:0;left:0;}
+
+.sel_movie_info.no_thumb {background:#000;}
+.sel_movie_info.no_thumb .bg_blur_area {display:none;}
+.sel_movie_info.no_thumb .poster_thumb {padding-top:47px;text-align: center;border:0px solid #eaeaea;background:#a2a2a2;}
+.sel_movie_info.no_thumb .poster_thumb img {width:auto;vertical-align: top;}
+
+
+.lt-ie9 .sel_movie_info {background:none;}
+.lt-ie9 .bg_blur_area .svg_blur {display:none;}
+
+/*개인정보*/
+.user_info_cont {padding:90px 70px 60px;}
+.user_info_cont .tbl_col {vertical-align:top;}
+.user_info_cont .tbl_col td {padding:7px 0 4px 10px !important;}
+.user_info_cont .tbl_col:first-child {padding-right:50px;width:420px;}
+.user_info_cont .tbl_col:first-child .tbl_st01 th {height:30px;}
+.user_info_cont .tbl_col:first-child .tbl_st01 td {height:30px;}
+.user_info_cont .li_bar > li {font-size:13px;}
+.user_info_tbl table {margin-right:60px;width:calc(100% - 0px);}
+.user_info_tbl .userinfo_chk {margin:0px 0 50px 0px;}
+.user_info_tbl .userinfo_chk .chkbx_area .ck_txt {font-size:15px;color:#2b2b2b;font-weight:normal;}
+.user_info_tbl .tbl_st01 {font-size:12px; line-height:13px; margin-bottom:15px;}
+.user_info_inp {margin:0 auto 80px;width:570px; border:1px solid #777; padding:30px 50px;}
+.user_info_inp .inp_line {padding-top:15px;font-size:0;}
+.user_info_inp .inp_line > div {display:inline-block;vertical-align:top;}
+.user_info_inp .ui_tit {width:70px;font-size:13px;line-height:1;}
+.user_info_inp .ui_inp {padding-top:2px;width:calc(100% - 70px);}
+.user_info_inp .ui_inp .ui_txt {font-size:13px;color:#2b2b2b}
+.user_info_inp .ui_inp .ui_inp_para {display:inline-block;vertical-align: top;font-size:14px;color:#2b2b2b;}
+.user_info_inp .ui_inp .select_area {margin-right:15px;display:inline-block;width:99px;vertical-align:top;font-size:14px;color:#2b2b2b;}
+.user_info_inp .ui_inp .inp_st {margin-right:15px;width:99px;height:26px;vertical-align: top; padding-top:2px; }
+.user_info_inp .ui_email .ui_inp_para:first-child .inp_st {margin-right:0;}
+.user_info_inp .ui_email .select_area {width:125px;}
+.user_info_inp .at_sign {width:15px;text-align: center;}
+
+.user_info_inp .li_bar {margin:30px 0 0 70px; font-size:13px;}
+.user_info_inp .inp_line:first-child {padding-top: 0;}
+.user_info_inp .inp_line:first-child .ui_inp {padding-top: 0;}
+.all_user_chk {text-align: center;}
+.all_user_chk .txt {line-height:25px; font-size:13px;}
+.all_user_chk .chkbx_area {margin-left:30px;vertical-align: middle;}
+.all_user_chk .chkbx_area .ck_txt {font-size:15px;color:#2b2b2b;font-weight:normal;}
+
+
+/*엘포인트*/
+.lotte_point_area .lotte_point_cont {padding:80px 0;text-align: center;}
+.lotte_point_area .sub_title {padding-bottom:15px;font-size:20px;font-weight:normal;color:#2b2b2b}
+.lotte_point_area .noit_area {margin-left:200px;padding-left:0px;text-align: left;}
+.lotte_point_area .ic_call {position: relative;margin-top:15px;padding-left:20px;font-size:13px;color:#2b2b2b;}
+.lotte_point_area .ic_call:before {content:'';position: absolute;top:50%;left:0;width:13px;height:9px;background:url('//movie-img.yes24.com/NYes24/new/all_sprite.png') no-repeat -342px -182px;transform: translate(0, -50%);}
+/*엘포인트 카드넘버 박스*/
+.lotte_point_area .point_num_box {margin:50px auto 40px;width:818px;}
+.lotte_point_area .point_num_box .number_insert_box {padding:50px 0;font-size:0;}
+.lotte_point_area .point_num_box .number_insert_box .inp_st {margin-right:30px;width:91px;vertical-align:top;}
+.lotte_point_area .point_num_box .number_insert_box .btn_defaultM {margin-right:10px;min-width:75px; }
+.lotte_point_area .point_num_box .pn_noti_cont {padding:30px 0;background:#f5f5f5;line-height:20px;font-size:13px;}
+
+.lotte_point_area .point_num_box + .btn_bottom_area {padding:0 0 60px;}
+
+/*인원/좌석 선택*/
+.seat_area .ms_title .btn_tooltip {margin:-1px 0 0 11px;vertical-align: top;}
+
+.peo_num_cont {padding:50px;font-size:0;}
+.peo_num_cont > div {padding:0 0 0 50px;display:inline-block;vertical-align:top;}
+.peo_num_cont > div:first-child {padding:0;width:410px}
+.peo_num_cont > div:nth-child(2) {width:350px;}
+
+.peo_num_info {}
+.peo_num_info .sc_tit {font-size:15px; font-weight:bold; color:#2b2b2b; }
+.peo_num_info .sc_txt {margin-top:15px; font-size:15px;}
+
+/*인원선택*/
+.select_people > div {margin-top:4px;}
+.select_people > div:first-child {margin-top:0;}
+.select_people .pt_tit {padding-top:9px;width:95px;font-size:14px;font-weight:bold;color:#2b2b2b;}
+.select_people .pt_tit .pt_tit_s {font-weight: normal;font-size:12px; color:#777;}
+.select_people .pt_price {padding:9px 15px 0 0;width:105px;font-size:12px;color:#999;text-align: right;}
+.select_people .pt_num_peo > button {position: relative;;margin-left:-1px;width:30px;height:30px;font-size:15px;font-weight:normal;color:#777;text-align:center;border:1px solid #e5e5e5;vertical-align:top;z-index:1;cursor: pointer;}
+.select_people .pt_num_peo > button.active {color:#fff;border:1px solid #ec6159;background:#ec6159;z-index:2; }
+.select_people .pt_num_peo > button.disabled {color:#cbcbcb;}
+.select_people .noti_star {margin-top:20px; font-size:13px; color:#999; line-height:20px;}
+.people_type > span {display:inline-block;height:30px;vertical-align:top;}
+
+/*인원선택이 없을 경우 */
+.sc_dmm {position:absolute;top:0;bottom:0;left:0;right:0;z-index:10;background:rgba(0,0,0,.7);}
+.sc_dmm  .sc_dmm_txt {position:absolute;top:50%;left:50%;font-size:20px;color:#fff;text-align: center;transform:translate(-50%, -50%);}
+.sc_dmm  .sc_dmm_txt:before {content:'';margin:0 auto 24px;display:block;width:33px;height:42px;background:url('//movie-img.yes24.com/NYes24/new/all_sprite.png') no-repeat -530px -382px;}
+
+/*좌석표시*/
+.seating_cont {position: relative;padding:100px 0 0;border-top:1px solid #e5e5e5;background:url('//movie-img.yes24.com/NYes24/new/reserve_seat_bg.png') no-repeat center 50px;}
+.seating_cont .btn_refresh {position:absolute;top:50px;right:50px;}
+.seating_cont .seating_list {position: relative;margin:0 20px 20px 20px;}
+.seating_cont .seating_list span {font-size:12px; text-align:center; width:20px; height:16px; margin:3px 20px 0 0; }
+.seating_cont .no_seating {position: relative;padding:25px 0 100px;text-align: center;}
+.seating_cont .no_seating .tit {font-size:20px; color:#2b2b2b;}
+.seating_cont .no_seating .txt {margin-top: 30px;font-size:14px;line-height:20px;}
+
+.seating_chair {width:18px;height:15px;background:#848484; border-radius:5px 5px 0 0; color:#fff; font-size:10px; padding-top:1px;}
+.seating_chair.enabled {background:#848484; border:1px solid #848484; font-family:tahoma,'맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif; }
+.seating_chair.prime {border:1px solid #f71708; padding-top:1px;}
+.seating_chair.standard {border:1px solid #53da3f; padding-top:1px;}
+.seating_chair.economy {border:1px solid #ef8200; padding-top:1px;}
+
+.seating_chair.prime_mega {border:1px solid #f71708;}
+.seating_chair.Green_mega {border:1px solid #02bfd3;}
+.seating_chair.economy_mega {border:1px solid #ef8200;}
+
+.seating_info {margin-top:50px;padding:30px 50px 30px;font-size:0;border-top:1px solid #e5e5e5;}
+.seating_info > div {display: inline-block;width:68%;vertical-align:top;}
+.seating_info .si_noti {padding:10px 0 0 0; width:32%;}
+.seating_info .ic_seaing_box {margin-right:5px;}
+.seating_info .ic_seating {margin-bottom:5px; transform: translate(0%,100%);}
+.seating_info .si_noti .li_bar > li {padding-bottom:5px;font-size:12px;}
+
+.ic_seating {display: inline-block;vertical-align:top;}
+.ic_seating .ic_s {display:inline-block;width:15px;height:11px;vertical-align:top; border-radius:5px 5px 0 0 ;}
+.ic_seating .txt {margin:0 20px 0 5px;font-size:12px;}
+.ic_seating.enabled .ic_s {background:#848484;}
+.ic_seating.disabled .ic_s {background:#cccbcb url('//movie-img.yes24.com/NYes24/new/all_sprite.png') no-repeat -239px -113px;background-size:375px auto;}
+.ic_seating.selected .ic_s {background:#ec6159;}
+.ic_seating.tempselected .ic_s {background:#ec6159;}
+
+.ic_seaing_box {padding-top:2px;display:inline-block;width:103px;height:16px;vertical-align:top;text-align: center;font-size:11px; font-family:nanumB,'맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;}
+
+.cgv_seat_info .ic_seaing_box.prime {border:1px solid #f71708;color:#f71708}  /* 메가박스좌석 추가_20200325 */
+.cgv_seat_info .ic_seaing_box.standard {border:1px solid #53da3f;color:#53da3f;}
+.cgv_seat_info .ic_seaing_box.economy {border:1px solid #ef8200;color:#ef8200;}
+.megabox_seat_info .ic_seaing_box.prime {border:1px solid #f71708;color:#f71708}
+.megabox_seat_info .ic_seaing_box.Green {border:1px solid #02bfd3;color:#02bfd3;}
+.megabox_seat_info .ic_seaing_box.economy {border:1px solid #ef8200;color:#ef8200;}
+
+
+/*롯데시네마 복층 표시*/
+.duplex_txt {margin:10px auto 20px auto;padding:4px 0;text-align: center;border-bottom:3px solid #e0dfdf;  font-size:12px; width:40px; border-radius:0px; color:#777}
+
+.lotte_seat_info {margin-top: 10px;font-size:0;}
+.lotte_seat_info .lot_info {position:relative;margin:5px 10px 0 0;display:inline-block;vertical-align: top;cursor: pointer;}
+.lotte_seat_info .seating_chair {display:inline-block;vertical-align:middle; width:15px; height:11px;}
+.lotte_seat_info .seat_name {margin-left:5px;display:inline-block;font-size:11px; line-height:13px; vertical-align: top; position:relative;}
+.lotte_seat_info .lot_info:hover .tooltip_arrow {display:block;}
+
+.seating_chair.sweetspot {background:#656565; border:1px solid #d01616; }
+.seating_chair.cinecouple {background:#e40b8b; border:1px solid #e40b8b;}
+.seating_chair.cinefamily {background:#3a7cc7; border:1px solid #3a7cc7;}
+.seating_chair.cinecomfort {background:#1eaffe; border:1px solid #1eaffe;}
+.seating_chair.disseat {background:#3e7d0f; border:1px solid #3e7d0f;}
+.seating_chair.staging {background:#848484; border:1px solid #848484;}
+.seating_chair.staging_bar {padding:2px;}
+.seating_chair.staging_bar:after {content:'';display:block; height:1px;background:#fff; /* width:calc(100% - 5px); */ width:12px; position:absolute; top:1px; left:2px; }
+.seating_chair.disabled {background:#cbcbcb url('//movie-img.yes24.com/NYes24/new/all_sprite.png') no-repeat -384px -182px;border:none;font-size:0; cursor:default !important;}
+.seating_chair.selected {background:#ec6159; border:1px solid #ec6159; font-family:tahoma,'맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif; }
+.seating_chair.tempdisabled {background:#cbcbcb url('//movie-img.yes24.com/NYes24/new/all_sprite.png') no-repeat -384px -182px;border:none;font-size:0; cursor:default !important;}
+.seating_chair.tempselected {background:#ec6159; border:1px solid #ec6159;}
+.seating_chair.tempdisabled:hover {background:#cbcbcb url('//movie-img.yes24.com/NYes24/new/all_sprite.png') no-repeat -384px -182px;border:none;font-size:0; cursor:default !important;}
+
+.tooltip_arrow {position:absolute;bottom:200%;left:-10px;padding:20px;display: none;width:300px;font-size:13px;line-height:18px;color:#777;text-align: left;background:#fff;border:1px solid #7b7b7b;z-index:2;}
+.tooltip_arrow::before, .tooltip_arrow::after {content:'';position:absolute;bottom:-16px;left:8px;display:block;width:0;height:0;border-style: solid;border-width: 16px 8px 0 8px;border-color: #7b7b7b transparent transparent transparent;}
+.tooltip_arrow::after {bottom:-14px;left:9px;width:0;height:0;border-style: solid;border-width: 14px 7px 0 7px;border-color: #fff transparent transparent transparent;}
+
+/*할인 선택*/
+.reserve_payment_area {margin-top:70px;}
+/* .rd_cont_parent.active:after {background-position:-431px -182px;} */
+.rd_cont_parent.active a {color:#2b2b2b; font-weight:bold;}
+.rd_cont_parent.active .sub_txt {color:#ec6159;}
+.rd_cont_parent.active .small_txt {color:#fff;}
+.reserve_discount_area .rd_cont_parent.active a {border-top:2px solid #2b2b2b; border-left:2px solid #2b2b2b; border-right:2px solid #2b2b2b;}
+/* .reserve_discount_area .rd_cont_parent.active a:last-child {border-top:2px solid #2b2b2b; border-left:2px solid #2b2b2b; border-right:2px solid #2b2b2b;} */
+.reserve_discount_area .rd_cont_child > .rd_cont {border-bottom:2px solid #2b2b2b; border-left:2px solid #2b2b2b; border-right:2px solid #2b2b2b;}
+.reserve_discount_area .rd_cont_parent.active:last-child a {border-bottom:2px solid #2b2b2b;}
+
+/* okcash */
+.rd_cont_child .point_num_box.two_block {padding:0;}
+.rd_cont_child .two_block .gray_area {padding:40px 195px;background:#f5f5f5;}
+.rd_cont_child .two_block .white_area {padding:20px 0;min-height:77px;border-top:1px solid #e5e5e5;}
+.rd_cont_child .two_block .ni_tit {width:82px;font-size:14px;color:#777;}
+.rd_cont_child .two_block .ni_inp {width:320px;}
+.rd_cont_child .two_block .txt_minus {display:inline-block;width:15px;text-align:center;font-size:14px;font-weight:bold;}
+.rd_cont_child .two_block .ni_b_btn {margin-left:10px;}
+.rd_cont_child .two_block .ni_b_btn button {margin-left:10px;}
+
+.rd_cont_child .two_block .card_insert_box > span {display:inline-block;vertical-align: top; }
+.rd_cont_child .two_block .card_insert_box .inp_st {width:calc((100% - 45px) / 4);text-align: center;;}
+.rd_cont_child .two_block .pw_insert_box {margin-top:15px;}
+.rd_cont_child .two_block .pw_insert_box > span {display:inline-block;vertical-align: top;}
+.rd_cont_child .two_block .pw_insert_box .inp_st {width:100%;} 
+
+/* happycash */
+.rd_cont_child.happymoney .point_num_box.two_block {padding:0;}
+.rd_cont_child.happymoney .two_block .gray_area {padding:40px 212px 40px 134px;background:#f5f5f5;}
+.rd_cont_child.happymoney .two_block .white_area {padding:40px 0;min-height:77px;border-top:1px solid #e5e5e5;}
+.rd_cont_child.happymoney .two_block .ni_tit {width:50px; font-size:14px;color:#777;}
+.rd_cont_child.happymoney .two_block .ni_tit_2 {width:100px; font-size:14px;color:#777;}
+.rd_cont_child.happymoney .two_block .ni_inp {width:170px;}
+.rd_cont_child.happymoney .two_block .txt_minus {display:inline-block;width:15px;text-align:center;font-size:14px;font-weight:bold;}
+.rd_cont_child.happymoney .two_block .ni_b_btn {margin-left:10px; position:absolute; right:0;}
+.rd_cont_child.happymoney .two_block .ni_b_btn button {margin-left:10px;}
+
+.rd_cont_child.happymoney .two_block .card_insert_box {width:50%; display:inline-block; padding-left:80px;}
+.rd_cont_child.happymoney .two_block .card_insert_box > span {display:inline-block;vertical-align: top;}
+.rd_cont_child.happymoney .two_block .card_insert_box .inp_st {width:170px; padding-bottom:5px;}
+.rd_cont_child.happymoney .two_block .pw_insert_box {margin-top:0px; width:50%; display:inline-block; position:relative;}
+.rd_cont_child.happymoney .two_block .pw_insert_box > span {display:inline-block;vertical-align: top;}
+.rd_cont_child.happymoney .two_block .pw_insert_box .inp_st {width:100%; padding-bottom:5px; } 
+
+.rd_cont_child .two_block .noti_area {margin:30px 0 0 82px;}
+.rd_cont_child .point_num_box.disabled {position: relative;opacity:.3;}
+.rd_cont_child .point_num_box.disabled:after {content:'';position: absolute;top:0;bottom:0;left:0;right:0;z-index:10;}
+
+.rd_cont_child .tbl_area {margin-top:0;text-align: center;}
+.rd_cont_child .tbl_area .al_l {padding-left:10px;}
+.rd_cont_child .tbl_area .al_r {padding-right:40px;}
+.rd_cont_child .tbl_area .select_box {margin:auto;}
+.rd_cont_child .noti_area {position: relative;;margin-top: 22px;}
+.rd_cont_child .noti_area .noti_txt {font-size:13px;color:#999;}
+.rd_cont_child .noti_area .li_bar > li {font-size:13px; padding-bottom:0px;}
+.rd_cont_child .noti_area .btn_whiteM {position:absolute;bottom:0;right:0;padding-left:30px;padding-right:30px;} 
+.rd_cont_child .noti_area:first-child {margin: 0 0 20px;}
+.rd_cont_child .noti_area:first-child + .title {margin-top: 0;}
+
+.rd_cont_parent.active + .rd_cont_child {height:auto;transition:height .3s;}
+
+/*결제선택*/
+.reserve_payment_cont .tab_menu > li button {font-size:17px;}
+.reserve_payment_cont .rp_txt + .rp_txt {margin-top: 10px;}
+.reserve_payment_cont .rp_tit {padding:30px 0 10px; line-height:1; color:#2b2b2b; margin-bottom:5px;}
+.reserve_payment_cont .tab_content {position:relative;padding:50px 50px;background:#fff; font-size:13px; border-left:1px solid #e5e5e5; border-right:1px solid #e5e5e5; border-bottom:1px solid #e5e5e5;}
+.reserve_payment_cont .credit_card .rp_txt {padding-top:0px;height:32px;}
+.reserve_payment_cont .credit_card .btn_defautS {position: absolute;bottom:50px;right:50px;font-weight:bold;}
+.credit_card_list {margin:-10px 0 40px;font-size:0;}
+.credit_card_list > li {display: inline-block;width:calc(100% / 5);vertical-align:top;}
+.credit_card_list > li a {display:block;font-size:15px;line-height:30px;color:#2b2b2b;}
+.credit_card_list > li a:hover, .credit_card_list > li a.active {color:#ec6159;}
+
+/*예매 결과*/
+.reserve_resulte_area {padding:100px 50px;}
+.reserve_resulte_area .ret_title {padding-bottom:60px;font-size:28px;color:#2b2b2b;text-align:center;font-family:nanumB,'맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;}
+.reserve_resulte_area .movie_result_box {margin:0 auto 50px;width:773px;font-size:0;}
+.reserve_resulte_area .movie_result_box > div {display:inline-block;height:412px;vertical-align:top;}
+.reserve_resulte_area .movie_ret_thumb {width:287px;overflow:hidden;}
+.reserve_resulte_area .movie_ret_thumb > img {width:100%;}
+.reserve_resulte_area .movie_ret_info {padding:80px 70px 0;width:calc(100% - 287px);border:1px solid #e5e5e5;border-left:none;background:#fff;}
+.reserve_resulte_area .movie_ret_info .mov_ri_tit {padding-bottom: 20px;color:#2b2b2b;font-size:20px;font-family:nanumB,'맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;}
+.reserve_resulte_area .movie_ret_info .noti_txt {font-size:11px;line-height:1;color:#999;}
+.reserve_resulte_area .movie_ret_info .mov_ri_list {margin-top: 50px;}
+.reserve_resulte_area .movie_ret_info .mov_ri_list > li {margin-bottom: 15px;font-size:14px;}
+.reserve_resulte_area .movie_ret_info .mov_ri_list .ic_rating {margin-right: 5px;}
+.reserve_resulte_area .noti_area {margin:0 auto 50px; padding-left:0px;width:800px; }
+.reserve_resulte_area .noti_area .noti_txt {color:#2b2b2b; line-height:22px; }
+.reserve_resulte_area .noti_area .li_bar {margin-top: 12px;}
+.reserve_resulte_area .ret_btn_area {text-align: center;}
+.reserve_resulte_area .movie_ret_info .mov_ri_list .f_txt_line {position: relative;margin-bottom:12px;padding-left:35px;line-height:20px;}
+.reserve_resulte_area .movie_ret_info .mov_ri_list .mov_tit_s {position:absolute;top:1px;left:0;}
+.reserve_resulte_area .movie_result_box .movie_fail {padding:80px 0;display:block;width:100%;height:auto;font-size:14px;text-align:center;border:1px solid #e5e5e5;background:#fff;}
+

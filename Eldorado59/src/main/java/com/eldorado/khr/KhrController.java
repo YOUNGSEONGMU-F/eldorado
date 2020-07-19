@@ -190,5 +190,19 @@ public class KhrController {
 
 		return "khr/MovieGift";
 	}
+	
+	// 좌석선택
+	@RequestMapping(value = "selectSeat", method = RequestMethod.GET)
+	public String selectSeat(Locale locale, Model model) {
+
+		return "khr/selectSeat";
+	}
+	@RequestMapping(value = "selectSeat", method = RequestMethod.POST)
+	public String selectSeat_post(Locale locale, Model model) {
+		
+		
+		
+		return "khr/selectSeat";
+	}
 
 }

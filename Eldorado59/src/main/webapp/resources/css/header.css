@@ -52,7 +52,7 @@ header{
 #sc_nav, #m_nav{
 /* 	border: 1px pink solid; */
 	display:flex;
-/*	background-color: rgba(26,26,26,.95);*/
+	background-color: rgba(26,26,26,.95);
 /*  background-color: transparent; */
 	justify-content: space-between;
 	width: 100vw;

@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
+
 <!DOCTYPE html>
 <link
 	href="${pageContext.request.contextPath }/resources/lyj/css/toReserve.css"
 	rel="stylesheet" type="text/css" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <script src='https://movie.yes24.com/Scripts/date.js'></script>
 <script src='../resources/lyj/js/main.min.js'></script>
@@ -322,14 +321,13 @@
 							</div>
 						</div>
 					</div>
-					<form method="post">
+					<form method="post" action="../khr/selectSeat">
 					<div class="NextButtoncss">
 					<div class="btn-next">
-					<input id="tmp_movieName" name="">
-					<input id="tmp_theater" name="">
-					<input id="tmp_day" name="">
-					<input id="tmp_timesch" name="">
-					
+					<input id="tmp_movieName" name="mvName">
+					<input id="tmp_theater" name="th">
+					<input id="tmp_day" name="date">
+					<input id="tmp_timesch" name="time">
 					
 					<button type="submit" class="btn-b" style="display: none;"><img class="next-img" alt="" src="${pageContext.request.contextPath }/resources/lyj/img/next.png">다음</button>
 					</div>

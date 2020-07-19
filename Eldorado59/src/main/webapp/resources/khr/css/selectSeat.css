@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+.wrap {
+	margin-top: 120px;
+}
+
+.reserve_top {
+	border: 1px solid red;
+	position: relative;
+	padding:30px 0 75px;
+	text-align:right;
+}
+
+.reserve_area {
+	border: 1px solid blue;
+	position: relative;
+	padding-bottom:963px;
+}
+
+.reserve_container {position: relative;}
+
+.seat_area {
+	border: 1px solid pink;
+	width: 1200px;
+	height: 613px;
+	margin: 70px auto;
+}
+
+.seat_area .ms_title .btn_tooltip {margin:-1px 0 0 11px;vertical-align: top;}
+
+.tit {
+	font-size: 20px;
+    color: #2b2b2b;
+    letter-spacing: -1px;
+    vertical-align: top;
+}
+
+.sel_movie_info .lay_inner {
+	/*display:inline-block;*/
+	border: 1px solid;
+	width: 1200px;
+	height: 220px;
+	margin: 100px auto;
+}
+
+
+
+
+
+
+
+
+
+
+
