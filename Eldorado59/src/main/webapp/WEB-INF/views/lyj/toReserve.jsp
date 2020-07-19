@@ -3,6 +3,7 @@
 	
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
 <!DOCTYPE html>
+<html>
 <link
 	href="${pageContext.request.contextPath }/resources/lyj/css/toReserve.css"
 	rel="stylesheet" type="text/css" />
@@ -24,8 +25,8 @@
 
   table
     {
-        border:1px solid #BDBDBD;
-        text-align:center;
+      /*   border:1px solid #BDBDBD; */
+       /*  text-align:center; */
         width:100%;
     }
 
@@ -41,7 +42,7 @@
 
 	<div class="lyjwrap">
 		<!--헤더  -->
-		<div style="z-index: 9999;">
+		<div>
 			<header class="sticky">
 				<div id="stc">
 					<div class="header sc">
@@ -190,20 +191,23 @@
 		<div id="">
 			<div id="lyjbody">
 				<div class="inside">1</div>
-				<div class="inside">2</div>
-				<div class="inside">3</div>
+				<div class="insideShow">예매하기</div>
 
 				<div class="lyjinside2">
-					<button>처음부터다시선택</button>
+				
+				
+				
+					<button onclick='location.href="movieTicket";'>처음부터다시선택</button>
+				
 				</div>
 				<div class="lyjinside3">
 					<div id="choosethemovie">
 						<div id="titlelyj">
+							<img src="../resources/lyj/img/one.png" width="40" height="40">
 							<h4>영화 선택</h4>
 						</div>
 						<div id="top10" class="top_movieName">
-							<a href="#">예매 top 10</a><br>
-							
+							<div><h5>현재 박스오피스</h5></div>
 						</div>
 
 
@@ -211,15 +215,14 @@
 					</div>
 					<div id="choosethemovie">
 						<div id="titlelyj">
-							<h4>극장 선택</h4>
+						<img src="../resources/lyj/img/two.png" width="40" height="40">
+							<h4>극장 선택(안보이면 먼저 예매할 영화를 클릭해주세요)</h4>
 						</div>
 						<div id="top10" class="top_theater">
-							<a href="#">전체</a>
+			<!-- 				<a href="#">전체</a>
 					 <input type="button" class="btn_theater" onclick="m_theater(this);" value="CGV"> 
 					 <input type="button" class="btn_theater" onclick="m_theater(this);" value="롯데시네마">
-					 <input type="button" class="btn_theater" onclick="m_theater(this);" value="메가박스">
-					<br>
-					<br>
+					 <input type="button" class="btn_theater" onclick="m_theater(this);" value="메가박스"> -->
 					
 		<div class="wrap_entirecityandDo" style="display: none;">
 		<!-- 전체 도시및 도 -->
@@ -245,7 +248,6 @@
 					</div>
 					<div class="CityAndDo">
 					<div class="lyj_area">전라/광주</div><br>
-				<!-- 	<input type="button" value="전라/광주"> -->
 					</div>
 					<div class="CityAndDo">
 					<div class="lyj_area">강원/제주</div><br>
@@ -256,17 +258,10 @@
 			
 			<div class="branch">
 				<div class="theater_cityandDo">
-				
-				<h5>도시별영화관 가져오기</h5>
-			
                <table>
-                
-                 <tr>
-                 	<td class="area_name">
-                 	
-                 	</td>
-              	</tr>
-                
+	                 <tr>
+	                 	<td class="area_name"></td>
+	              	</tr>
                </table>
              
 				
@@ -281,9 +276,10 @@
 					</div>
 					<div id="choosethemovie">
 						<div id="titlelyj">
+						<img src="../resources/lyj/img/three.png" width="40" height="40">
 							<h4>관람일 선택</h4>
 						</div>
-						<div id="top10">달력부분</div>
+						<!-- <div id="top10">달력부분</div> -->
     					
 		<table align="center" id="calendar">
 		        <tr>
@@ -304,46 +300,84 @@
 					</div>
 </div>
 
-					<div id="selectHour"><h4>시간선택</h4></div>
+					<div id="selectHour">
+					<img src="../resources/lyj/img/four.png" width="40" height="40">
+					<h4>시간 선택</h4>
+					<h6> >> 30분전 예매, 30분전 취소 가능</h6>
+					
+					</div>
 					<div class="selectHourContent">
 						<div class="view_date" style="display: none;">
-						
-							<div>
-							<button class="Timebox" >11:00</button>
+							
+							<div class="">
+						<!-- 	<h4>1관</h4> -->
+						<br>
+								<div>
+								<button class="Timebox" >11:00</button>
+								</div>
+								<div>
+								<button class="Timebox" >13:00</button>
+								</div>
+								<div>
+								<button class="Timebox" >14:20</button>
+								</div>
+								<div>
+								<button class="Timebox" >15:00</button>
+								</div>
+								<div>
+								<button class="Timebox" >14:30</button>
+								</div>
+								<div>
+								<button class="Timebox" >16:10</button>
+								</div>
 							</div>
-							<div>
-							<button class="Timebox" >13:00</button>
+							
+							<br>
+							<div class="">
+							<!-- <h4>2관</h4> -->
+							<br>
+								<div>
+								<button class="Timebox" >19:00</button>
+								</div>
+								<div>
+								<button class="Timebox" >21:00</button>
+								</div>
+								<div>
+								<button class="Timebox" >23:20</button>
+								</div>
+							
 							</div>
-							<div>
-							<button class="Timebox" >14:20</button>
-							</div>
-							<div>
-							<button class="Timebox" >15:00</button>
-							</div>
+							
+							
+							
+							
 						</div>
 					</div>
-					<form method="post">
+					
+					
 					<div class="NextButtoncss">
-					<div class="btn-next">
-					<input id="tmp_movieName" name="">
-					<input id="tmp_theater" name="">
-					<input id="tmp_day" name="">
-					<input id="tmp_timesch" name="">
+					<img src="../resources/lyj/img/five.png" width="40" height="40">
+					<h4>영화 정보</h4>
+							<div class="btn-next">
+						<form method="post">
+						<input id="tmp_movieName" name=""><br>
+						<input id="tmp_theater" name=""><br>
+						<input id="tmp_day" name=""><br>
+						<input id="tmp_timesch" name=""><br>
+						<button type="submit" class="btn-b" style="display: none;"><img class="next-img" alt="" src="${pageContext.request.contextPath }/resources/lyj/img/next.png">다음</button>
+						</form>
+							</div>
+					</div>
 					
 					
-					<button type="submit" class="btn-b" style="display: none;"><img class="next-img" alt="" src="${pageContext.request.contextPath }/resources/lyj/img/next.png">다음</button>
+					
+					
+					
 					</div>
-					</div>
-					</form>
 					
 			</div>
 		</div>
 
-
-	</div>
-
-	
-</body>
 
 <script id="jsbin-javascript">
 	window.onscroll = function() {
@@ -578,3 +612,7 @@
 	    
 		
 </script>
+	
+</body>
+<jsp:include page="../include/footer.jsp"></jsp:include>
+</html>
