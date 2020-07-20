@@ -352,20 +352,17 @@
 							
 						</div>
 					</div>
-<<<<<<< HEAD
+
 					<form method="post" action="../khr/selectSeat">
-=======
-					
-					
->>>>>>> refs/remotes/origin/khr_lyj
+
 					<div class="NextButtoncss">
-<<<<<<< HEAD
+
 					<div class="btn-next">
 					<input id="tmp_movieName" name="mvName">
 					<input id="tmp_theater" name="th">
 					<input id="tmp_day" name="date">
 					<input id="tmp_timesch" name="time">
-=======
+
 					<img src="../resources/lyj/img/five.png" width="40" height="40">
 					<h4>영화 정보</h4>
 							<div class="btn-next">
@@ -378,8 +375,7 @@
 						</form>
 							</div>
 					</div>
-					
->>>>>>> refs/remotes/origin/khr_lyj
+
 					
 					
 					
