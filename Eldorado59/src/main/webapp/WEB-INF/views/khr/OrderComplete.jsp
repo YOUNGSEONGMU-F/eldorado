@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +8,7 @@
 <link href="//movie-img.yes24.com/NYes24/yes24movie.ico" rel="shortcut icon" type="image/x-icon" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="${pageContext.request.contextPath }/resources/css/header.css" rel="stylesheet" type="text/css" />
-<link href="${pageContext.request.contextPath }/resources/khr/css/selectSeat.css" rel="stylesheet" type="text/css" />
+<link href="${pageContext.request.contextPath }/resources/khr/css/OrderComplete.css" rel="stylesheet" type="text/css" />
 <%-- <link href="${pageContext.request.contextPath }/resources/khr/css/slick.css" rel="stylesheet" type="text/css" />
 <link href="${pageContext.request.contextPath }/resources/khr/css/swiper.css" rel="stylesheet" type="text/css" />
 <link href="${pageContext.request.contextPath }/resources/khr/css/reserve.css" rel="stylesheet" type="text/css" /> --%>
@@ -25,9 +24,7 @@
 <div id="ad">
 	<img id="imgTopBanner" src="https://movie-simg.yes24.com/NYes24//MgrMain//20/06/betterdays_1200x70_181431.jpg" alt="소년">
 </div>
-
 </head>
-
 <body>
 
 <header class="sticky"> 
@@ -176,180 +173,14 @@
 </header>
 
 <div class="wrap">
-	<div class="reserve_top lay_inner">
-		
-	</div>
-	
-	<div class="reserve_area">
-		<div class="reserve_container lay_inner">
-			<div class="reserve_content">
-				<!-- 좌석선택 -->
-				<div id="divSeatMap">
-					<div class="seat_area">
-						<div class="ms_title">
-							<span class="tit">인원/좌석 선택</span>
-						</div>
-						<div class="white_box seat_cont">
-							<div class="peo_num_cont">
-								<!-- 인원 선택 -->
-								<div class="select_people peo_num_info" id="priceList">
-									<div class="people_type">
-										<span class="pt_tit">성인</span>
-										<span class="pt_num_peo" id="THPRICE100">
-											<!-- 버튼 0-8까지 -->
-											<!-- 버튼 클릭하면 class="active" 생성-->
-											<button type="button" onclick="CountA('0')" id="THPRICE100" class="" value="0">0</button>
-											<button type="button" onclick="CountA('1')" id="THPRICE100" class="" value="1">1</button>
-											<button type="button" onclick="CountA('2')" id="THPRICE100" class="" value="2">2</button>
-											<button type="button" onclick="CountA('3')" id="THPRICE100" class="" value="3">3</button>
-											<button type="button" onclick="CountA('4')" id="THPRICE100" class="" value="4">4</button>
-											<button type="button" onclick="CountA('5')" id="THPRICE100" class="" value="5">5</button>
-											<button type="button" onclick="CountA('6')" id="THPRICE100" class="" value="6">6</button>
-											<button type="button" onclick="CountA('7')" id="THPRICE100" class="" value="7">7</button>
-											<button type="button" onclick="CountA('8')" id="THPRICE100" class="" value="8">8</button>
-										</span>
-									</div>
-									<div  class="people_type">
-										<span class="pt_tit">청소년</span>
-										<span class="pt_num_peo" id="THPRICE200">
-											<!-- 버튼 0-8까지 -->
-											<!-- 버튼 클릭하면 class="active" 생성-->
-											<button type="button" onclick="CountB('0')" id="THPRICE200" class="">0</button>
-											<button type="button" onclick="CountB('1')" class="">1</button>
-											<button type="button" onclick="CountB('2')" class="">2</button>
-											<button type="button" onclick="CountB('3')" class="">3</button>
-											<button type="button" onclick="CountB('4')" class="">4</button>
-											<button type="button" onclick="CountB('5')" class="">5</button>
-											<button type="button" onclick="CountB('6')" class="">6</button>
-											<button type="button" onclick="CountB('7')" class="">7</button>
-											<button type="button" onclick="CountB('8')" class="">8</button>
-										</span>
-									</div>
-								</div>
-								<!--// 인원 선택 -->
-								<!--선택된 상영관-->
-								<div class="peo_num_info">
-									<p class="sc_tit">선택한 상영관 및 시간</p>
-									<p class="sc_txt" data-bind="with:theaterViewModel.theater()"><%=request.getAttribute("th_name") %></p>
-									<p class="sc_txt">
-										<span data-bind="with:theaterDateViewModel.movieDate()"><%=request.getAttribute("date") %> /</span>
-										<span data-bind="with:theaterMovieTimeViewModel.movieTime()"><%=request.getAttribute("time") %></span>
-									</p>
-								</div>
-								<!--// 선택된 상영관-->
-								<!--선택 좌석-->
-								<div class="peo_num_info">
-									<p class="sc_tit">선택한 좌석</p>
-									<p class="sc_txt" id="SeatInfo">좌석 선택</p>
-								</div>
-							</div>
-							<!--좌석 위치-->
-							<div class="seating_cont">
-								<!-- 인원 선택이 0일 경우 활성 / 선택 인원이 있을 경우 사라짐-->
-								
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<!-- 선택한 영화 정보 -->
-		<form method="post" action="TicketOrder">
-		<div class="sel_movie_info selected">
-			<div class="lay_inner">
-				<div class="sel_movie_info_area" data-bind="with:movieViewModel">
-					<div class="movie_info">
-						<div class="movie_sel_tit" data-bind="with:theaterMovieTimeViewModel.movie()">
-							<input name="title" value="<%=request.getAttribute("title") %>">
-						</div>
-						<div class="movie_sel_cinema" data-bind="with:theaterViewModel.theater()">
-							<input name="th_name" value="<%=request.getAttribute("th_name") %>">
-						</div>
-						<div class="movie_sel_date">
-                            <span data-bind="with:theaterDateViewModel.movieDate()">
-                            	<input name="date" value="<%=request.getAttribute("date") %>"> 
-                            </span> <br>
-                            <span data-bind="with:theaterMovieTimeViewModel.movieTime()">
-                            	<input name="time" value="<%=request.getAttribute("time") %>">
-                            </span>
-                        </div>
-                        <div class="movie_sel_seat"><input name="seat" value="좌석을 선택하세요."></div>
-					</div>
-				</div>
-				<div class="price_info_area">
-					<p class="clear">
-						<!-- 성인 -->
-						<span class="pi_tit"><input id="peo_num" name="adult"></span>
-						<span class="pi_info"><input id="tk_price" name="a_price"></span><br>
-						<!-- 청소년 -->
-						<span class="pi_tit"><input id="peo_num2" name="kid"></span>
-						<span class="pi_info"><input id="tk_price2" name="k_price"></span>
-					</p>
-				</div>
-				<div class="last_price_area">
-                    <div class="lp_txt">
-                    	<p>최종결제금액</p>
-                    	<p class="lp_price"><input id="total_price" name="" value="해야 됨"></p>
-                    </div>
-                    <div class="fr">
-                        <button id="btnPay" type="submit" class="bnt_payment">다음</button>
-                    </div>
-                </div>
-			</div>
-		</div>
-		</form>
-		<!--//선택 영화 정보-->
-		<!--step 버튼 영역 -->
-		
-	</div>
-	
+	<h1>예매 완료</h1>
 </div>
+
 
 
 </body>
 
 <jsp:include page="../include/footer.jsp"></jsp:include>
-
-<script id="jsbin-javascript">
-// 헤더
-window.onscroll = function() {myFunction()};
-
-var sc = document.getElementById("stc");
-var tt = sc.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset >= tt) {
-      document.getElementById("sc_nav").style.display = "inline-block"; 
-      document.getElementById("sc_nav").style.backgroundColor = "rgba(26,26,26,.95)"; 
-      document.getElementById("m_nav").style.backgroundColor = "rgba(26,26,26,.95)"; 
-  }
-}
-
-
-</script>
-
-<script type="text/javascript">
-
-var total_price;
-
-function CountA(seq) {
-	$('#peo_num').val('성인('+seq+')');
-	
-	$('#tk_price').val((seq * 10000) +'원');
-
-}
-
-function CountB(seq) {
-	$('#peo_num2').val('청소년('+seq+')');
-
-	$('#tk_price2').val((seq * 8000) +'원');
-}
-
-$('#total_price') = 
-	Number($('#tk_price').val) + Number($('#tk_price2').val);
-
-</script>
 
 
 </html>

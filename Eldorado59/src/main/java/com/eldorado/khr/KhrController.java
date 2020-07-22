@@ -2,10 +2,12 @@ package com.eldorado.khr;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.eldorado.khr.service.KhrService;
 import com.eldorado.khr.service.KhrServiceImpl;
 import com.fasterxml.jackson.databind.JsonNode;
 
@@ -193,16 +196,72 @@ public class KhrController {
 	
 	// 좌석선택
 	@RequestMapping(value = "selectSeat", method = RequestMethod.GET)
-	public String selectSeat(Locale locale, Model model) {
+	public String selectSeat(Locale locale, Model model, @RequestParam String title,
+			@RequestParam String th_name, @RequestParam String date, @RequestParam String time ,
+			HttpServletRequest request) {
 
+		request.setAttribute("title", title);
+		request.setAttribute("th_name", th_name);
+		request.setAttribute("date", date);
+		request.setAttribute("time", time);
+		
+		
+		
 		return "khr/selectSeat";
 	}
 	@RequestMapping(value = "selectSeat", method = RequestMethod.POST)
-	public String selectSeat_post(Locale locale, Model model) {
+	public String selectSeat_post(Locale locale, Model model, @RequestParam String title,
+			@RequestParam String th_name, @RequestParam String date, @RequestParam String time ) {
+		
 		
 		
 		
 		return "khr/selectSeat";
 	}
+	
+	// 결제
+	@RequestMapping(value = "TicketOrder", method = RequestMethod.GET)
+	public String TicketOrder(Locale locale, Model model) {
+
+		return "khr/TicketOrder";
+	}
+
+	@RequestMapping(value = "TicketOrder", method = RequestMethod.POST)
+	public String TicketOrder_post(Locale locale, Model model, HttpServletRequest request, @RequestParam String title,
+			@RequestParam String th_name, @RequestParam String date, @RequestParam String time ,
+			@RequestParam String adult, @RequestParam String kid, @RequestParam String a_price, @RequestParam String k_price) {
+			
+		request.setAttribute("title", title);
+		request.setAttribute("th_name", th_name);
+		request.setAttribute("date", date);
+		request.setAttribute("time", time);
+		request.setAttribute("adult", adult);
+		request.setAttribute("kid", kid);
+		request.setAttribute("a_price", a_price);
+		request.setAttribute("k_price", k_price);
+		
+
+		return "khr/TicketOrder";
+	}
+	
+	//결제 완료
+	@RequestMapping(value = "OrderComplete", method = RequestMethod.GET)
+	public String OrderComplete() {
+
+		return "khr/OrderComplete";
+	}
+	
+	@RequestMapping(value = "OrderComplete", method = RequestMethod.POST)
+	public String OrderComplete_post(Locale locale, Model model,HttpServletRequest req,
+			@RequestParam Map<String, Object> reserve, HttpSession session) {
+		
+		service.insertReserve(reserve);
+		
+		return "khr/OrderComplete";
+	}
+	
+	
+	
+
 
 }

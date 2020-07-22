@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+.wrap {
+	margin-top: 120px;
+}
+
+/*할인 선택*/
+.reserve_discount_area {
+	border: 1px solid;
+	margin: 0 auto;
+	width: 64%; height: 342px;
+}
+
+/*결제 선택*/
+.reserve_payment_area {
+	border: 1px solid;
+	margin: 0 auto;
+	margin-top:70px; margin-bottom: 9%;
+	width: 64%; height: 520px;
+}
+
+.reserve_payment_cont .tab_menu > li button {font-size:17px;}
+.reserve_payment_cont .rp_txt + .rp_txt {margin-top: 10px;}
+.reserve_payment_cont .rp_tit {padding:30px 0 10px; line-height:1; color:#2b2b2b; margin-bottom:5px;}
+.reserve_payment_cont .tab_content {position:relative;padding:50px 50px;background:#fff; font-size:13px; border-left:1px solid #e5e5e5; border-right:1px solid #e5e5e5; border-bottom:1px solid #e5e5e5;}
+.reserve_payment_cont .credit_card .rp_txt {padding-top:0px;height:32px;}
+.reserve_payment_cont .credit_card .btn_defautS {position: absolute;bottom:50px;right:50px;font-weight:bold;}
+
+/*선택영화 정보*/
+.sel_movie_info .lay_inner {
+	/* display:inline-block; */
+	border: 1px solid;
+	width: 1200px;
+	height: 220px;
+	margin: 100px auto;
+}
+
+.sel_movie_info .sel_movie_info_area {
+	float: left;
+	border: 1px solid;
+	padding:0 10px 0 30px;
+	width:480px;
+}
+.sel_movie_info .movie_info {
+	padding-top:42px;
+	color:#000000;
+	line-height:1;
+	font-size:15px;
+}
+.sel_movie_info .movie_info > div {padding-bottom:7px;}
+.sel_movie_info .movie_info .movie_sel_tit {
+		position: relative;
+		padding-bottom:24px;
+		font-size:18px;
+}
+
+
+.sel_movie_info .price_info_area {
+	float: left;
+	padding:0 50px;
+	width:350px;
+	vertical-align:middle !important;
+	font-size:16px;/* color:#fff; */
+	border: 1px solid;
+	/* border-left:1px solid rgba(229,229,229,.15);
+	border-right:1px solid rgba(229,229,229,.15); */
+}
+.sel_movie_info .price_info_area > p {padding-bottom:10px;}
+.sel_movie_info .price_info_area > p:last-child {padding-bottom:0;}
+.sel_movie_info .price_info_area .pi_tit {float:left;width:100px;}
+.sel_movie_info .price_info_area .pi_info {float:right;width:calc(100% - 100px);text-align: right;}
+
+
+.sel_movie_info .last_price_area {
+	float: left;
+	padding:42px 30px 0 0;
+	width:340px;
+	border: 1px solid;
+}
+.sel_movie_info .last_price_area .lp_txt {
+	padding:30px 0 0 13px;
+	display:inline-block;
+	width:calc(100% - 111px);
+	text-align: center;
+	font-size:15px;
+	color:#000000;
+	vertical-align:top;
+}
+.sel_movie_info .last_price_area .lp_price {
+	padding-top:14px;
+	font-size:24px;
+	color:#ec6159; 
+}
+
+.sel_movie_info .last_price_area .bnt_payment {
+	width:75px;height:30px;
+	/* line-height:111px; */text-align: center;
+	font-size:15px;color:#fff;
+	background:#ec6159; cursor: pointer;
+	float: right;
+}
+
+
+
