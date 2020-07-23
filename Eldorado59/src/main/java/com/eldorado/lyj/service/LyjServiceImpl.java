@@ -127,6 +127,13 @@ public class LyjServiceImpl implements LyjService {
 		
 		return dao.bringEachTheaters(map);
 	}
+
+	@Override
+	public List<Map<String, Object>> bringReservations(String id) {
+		
+		
+		return dao.bringReservations(id);
+	}
 	
 	
 	

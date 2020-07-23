@@ -257,5 +257,26 @@ public class LyjController {
 		
 		return "lyj/toReserve2";
 	}
+	
+	@RequestMapping(value = "Mypage", method = RequestMethod.GET)
+	public String Mypage(Model model, HttpSession session, HttpServletRequest request) {
+		
+		String id = (String)session.getAttribute("id");
+		
+		if(id == null) {
+			
+			return "redirect:login2";
+		}
+		//jsp로 아이디값 넘겨주기
+		request.setAttribute("id", id);
+		
+		
+		List<Map<String, Object>> ReservationList = service.bringReservations(id);
+		
+		//request.setAttribute("ReservationList", ReservationList);
+		model.addAttribute("ReservationList", ReservationList);
+		
+		return "lyj/Mypage";
+	}
 
 }
