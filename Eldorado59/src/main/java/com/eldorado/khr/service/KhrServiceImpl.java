@@ -53,6 +53,12 @@ public class KhrServiceImpl implements KhrService{
 		return dao.getMember(id);
 	}
 
+	@Override
+	public int insertReserve(Map<String, Object> reserve) {
+		
+		return dao.insertReserve(reserve);
+	}
+
 	
 	
 	

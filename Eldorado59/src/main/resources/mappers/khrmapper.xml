@@ -29,6 +29,13 @@
 </select>
 
 
+<insert id="insertReserve" parameterType="map" > 
+	insert into reservation (title,th_name,date,time) 
+	values (#{title},#{th_name},#{date},#{time}) 
+</insert>
+
+
+
 
 </mapper>
 

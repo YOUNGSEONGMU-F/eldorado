@@ -47,6 +47,14 @@ public class KhrDAOImpl implements KhrDAO{
 		return session.selectOne("khr.selectMember", id);
 	}
 
+
+
+	@Override
+	public int insertReserve(Map<String, Object> reserve) {
+		
+		return session.insert("khr.insertReserve", reserve);
+	}
+
 	
 	
 	
