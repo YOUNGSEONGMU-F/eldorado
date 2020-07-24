@@ -37,5 +37,10 @@ select th_name from theater where th_addr= #{area}
 </select>
 
 
+<select id="bringReservations" resultType="map">
+select * from reservation where id=#{id}
+
+</select>
+
 </mapper>
 

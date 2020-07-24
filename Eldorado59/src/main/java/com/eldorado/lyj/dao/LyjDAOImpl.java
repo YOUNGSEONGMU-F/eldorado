@@ -66,6 +66,17 @@ public class LyjDAOImpl implements LyjDAO{
 		
 		return session.selectList("lyj.bringEachTheaters",map);
 	}
+
+
+	@Override
+	public List<Map<String, Object>> bringReservations(String id) {
+		
+		System.out.println(" 예매내역 dao : "+id);
+		
+		
+		return session.selectList("lyj.bringReservations", id);
+	}
+	
 	
 	
 	

@@ -1,14 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
    
-<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   --%> 
+
 <!DOCTYPE html>
 <html>
+<title>ELDORADO - 예매하기</title>
 <link
    href="${pageContext.request.contextPath }/resources/lyj/css/toReserve.css"
    rel="stylesheet" type="text/css" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
+
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <script src='https://movie.yes24.com/Scripts/date.js'></script>
 <script src='../resources/lyj/js/main.min.js'></script>
@@ -358,15 +359,15 @@
                <div class="NextButtoncss">
                <img src="../resources/lyj/img/five.png" width="40" height="40">
                <h4>영화 정보</h4>
-                 <div class="btn-next">
-                  <form method="get" action="../khr/selectSeat">
+                     <div class="btn-next">
+                  <form method="get">
                   <input id="tmp_movieName" name="title"><br>
                   <input id="tmp_theater" name="th_name"><br>
-                  <input id="tmp_day" name="date"><br>
-                  <input id="tmp_timesch" name="time"><br>
+                  <input id="tmp_day" name=""><br>
+                  <input id="tmp_timesch" name=""><br>
                   <button type="submit" class="btn-b" style="display: none;"><img class="next-img" alt="" src="${pageContext.request.contextPath }/resources/lyj/img/next.png">다음</button>
                   </form>
-                 </div>
+                     </div>
                </div>
                
                
@@ -463,12 +464,14 @@
        { 
            today = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
            build(); //만들기
+          $('.c_day').css('display','');
        }
        
        function nextm()  //다음 달을 today에 저장
        {
            today = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
            build();
+          $('.c_day').css('display','');
        }
        
        function build()
@@ -477,7 +480,7 @@
            var lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0); //현재 달의 마지막 날
            var tbcal = document.getElementById("calendar"); // 테이블 달력을 만들 테이블
            var yearmonth = document.getElementById("yearmonth"); //  년도와 월 출력할곳
-           yearmonth.innerHTML = today.getFullYear() + "년 "+ (today.getMonth() + 1) + "월"; //년도와 월 출력
+           yearmonth.innerHTML = today.getFullYear() + "년 "+ (today.getMonth() + 1) + "월"+'<span id="month" style="display:none;">'+(today.getMonth()+1)+'</span>'; //년도와 월 출력
            
            if(today.getMonth()+1==12) //  눌렀을 때 월이 넘어가는 곳
            {
@@ -518,6 +521,7 @@
                cell = row.insertCell();
                cell.innerHTML = i;
                cell.classList.add('c_day');
+               cell.setAttribute('onclick','c_day(this)');
                cell.style.display="none";
                cnt = cnt + 1;
                if (cnt % 7 == 1) {//일요일 계산
@@ -536,22 +540,33 @@
        }
 
 
-       $(function(){
-         $('.c_day').click(function(){
-            var idx = $('.c_day').index(this);
+      // $(function(){
+        // $('.c_day').click(function(){
+        function c_day(dex){
+            var idx = $('.c_day').index(dex);
 
             var c_day = $('.c_day').eq(idx).text();
             console.log("c_day : " + c_day);
             $('.c_day').css('background-color','white');
             $('.c_day').eq(idx).css('background-color','orange');
             var date = new Date();
-               
-            $('#tmp_day').val((date.getMonth()+1)+"월"+c_day+"일");
+          	var month = document.getElementById('month').innerText;
+            if(month < 10){
+				if(c_day < 10){
+
+				$('#tmp_day').val("2020-0"+month+"-0"+c_day);
+				}else{
+				$('#tmp_day').val("2020-0"+month+"-"+c_day);
+				}
+            }else{
+            	$('#tmp_day').val("2020-"+month+"-"+c_day);
+            }
+            
 
             $('.view_date').css('display','');
-         })
-
-       })
+         //})
+        }
+       //})
        
       function getFormatDate(date){
          var year = date.getFullYear();

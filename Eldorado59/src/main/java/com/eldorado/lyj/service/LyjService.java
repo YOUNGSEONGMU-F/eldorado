@@ -26,4 +26,8 @@ public interface LyjService {
 	//지역에 따른 영화관이름 가져오기
 	public List<Map<String, Object>> bringEachTheaters(Map<String,Object> map);
 	
+	//예매한 내역 가져오기
+	public List<Map<String, Object>> bringReservations(String id);
+	
+	
 }

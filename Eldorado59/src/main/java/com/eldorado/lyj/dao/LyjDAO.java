@@ -23,4 +23,7 @@ public interface LyjDAO {
 	//지역 영화관 가져오기
 	public List<Map<String, Object>> bringEachTheaters(Map<String,Object> map);
 	
+	//예매한 내역 가져오기
+	public List<Map<String, Object>> bringReservations(String id);
+	
 }
