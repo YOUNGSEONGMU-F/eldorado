@@ -230,10 +230,10 @@
 								<!--선택된 상영관-->
 								<div class="peo_num_info">
 									<p class="sc_tit">선택한 상영관 및 시간</p>
-									<p class="sc_txt" data-bind="with:theaterViewModel.theater()"><%=request.getAttribute("th_name") %></p>
+									<p class="sc_txt" data-bind="with:theaterViewModel.theater()">${th_name}</p>
 									<p class="sc_txt">
-										<span data-bind="with:theaterDateViewModel.movieDate()"><%=request.getAttribute("date") %> /</span>
-										<span data-bind="with:theaterMovieTimeViewModel.movieTime()"><%=request.getAttribute("time") %></span>
+										<span data-bind="with:theaterDateViewModel.movieDate()">${date} /</span>
+										<span data-bind="with:theaterMovieTimeViewModel.movieTime()">${time}</span>
 									</p>
 								</div>
 								<!--// 선택된 상영관-->
@@ -245,7 +245,24 @@
 							</div>
 							<!--좌석 위치-->
 							<div class="seating_cont">
-								<!-- 인원 선택이 0일 경우 활성 / 선택 인원이 있을 경우 사라짐-->
+								<style>
+							        .seat {
+							            width: 30px;
+							            height: 30px;
+							            margin: 0 auto;
+							        }
+							        
+							        .clicked {
+							            background-color: red;
+							            color: white;
+							        }
+							    </style>
+							    
+							    <div class="seat-wrapper">
+							    	<div class="screen-view-wrapper">
+										<div class="screen-view">SCREEN</div>
+									</div>
+							    </div>
 								
 							</div>
 						</div>
@@ -261,20 +278,20 @@
 				<div class="sel_movie_info_area" data-bind="with:movieViewModel">
 					<div class="movie_info">
 						<div class="movie_sel_tit" data-bind="with:theaterMovieTimeViewModel.movie()">
-							<input name="title" value="<%=request.getAttribute("title") %>">
+							제목 : <input name="title" value="${title}">
 						</div>
 						<div class="movie_sel_cinema" data-bind="with:theaterViewModel.theater()">
-							<input name="th_name" value="<%=request.getAttribute("th_name") %>">
+							극장 : <input name="th_name" value="${th_name}">
 						</div>
 						<div class="movie_sel_date">
                             <span data-bind="with:theaterDateViewModel.movieDate()">
-                            	<input name="date" value="<%=request.getAttribute("date") %>"> 
+                            	날짜 : <input name="date" value="${date}"> 
                             </span> <br>
                             <span data-bind="with:theaterMovieTimeViewModel.movieTime()">
-                            	<input name="time" value="<%=request.getAttribute("time") %>">
+                            	시간 : <input name="time" value="${time}">
                             </span>
                         </div>
-                        <div class="movie_sel_seat"><input name="seat" value="좌석을 선택하세요."></div>
+                        <div class="movie_sel_seat"> 좌석 : <input id="selected_seats" name="seat" value="좌석을 선택하세요."></div>
 					</div>
 				</div>
 				<div class="price_info_area">
@@ -331,23 +348,110 @@ function myFunction() {
 
 <script type="text/javascript">
 
-var total_price;
+	var total_price;
 
-function CountA(seq) {
-	$('#peo_num').val('성인('+seq+')');
+	//인원수
+	function CountA(seq) {
+		$('#peo_num').val('성인('+seq+')');
+		
+		$('#tk_price').val((seq * 10000) +'원');
 	
-	$('#tk_price').val((seq * 10000) +'원');
+	}
+	
+	function CountB(seq) {
+		$('#peo_num2').val('청소년('+seq+')');
+	
+		$('#tk_price2').val((seq * 8000) +'원');
+	}
+	
+	/* $('#total_price') = 
+		Number($('#tk_price').val) + Number($('#tk_price2').val); */
 
-}
+	//좌석
+	let test = [];
+    let selectedSeats = new Array();
+    let selectedSeatsMap = [];
+    const seatWrapper = document.querySelector(".seat-wrapper");
+    let clicked = "";
+    let div = "";
 
-function CountB(seq) {
-	$('#peo_num2').val('청소년('+seq+')');
+    for (let i = 0; i < 7; i++) {
+        div = document.createElement("div");
+        seatWrapper.append(div);
+        for (let j = 0; j < 10; j++) {
+            const input = document.createElement('input');
+            input.type = "button";
+            input.name = "seats"
+            input.classList = "seat";
+            //3중포문을 사용하지 않기위해 
+            mapping(input, i, j);
+            div.append(input);
+            input.addEventListener('click', function(e) {
+                console.log(e.target.value);
+                //중복방지 함수
+                selectedSeats = selectedSeats.filter((element, index) => selectedSeats.indexOf(element) != index);
 
-	$('#tk_price2').val((seq * 8000) +'원');
-}
+                //click class가 존재할때(제거해주는 toggle)
+                if (input.classList.contains("clicked")) {
+                    input.classList.remove("clicked");
+                    clicked = document.querySelectorAll(".clicked");
+                    selectedSeats.splice(selectedSeats.indexOf(e.target.value), 1);
+                    clicked.forEach((data) => {
+                        selectedSeats.push(data.value);
+                    });
+                    //click class가 존재하지 않을때 (추가해주는 toggle)
+                } else {
+                    input.classList.add("clicked");
+                    clicked = document.querySelectorAll(".clicked");
 
-$('#total_price') = 
-	Number($('#tk_price').val) + Number($('#tk_price2').val);
+                    clicked.forEach((data) => {
+                        selectedSeats.push(data.value);
+                    })
+                }
+                //console.log(selectedSeats);
+            })
+        }
+    }
+
+    function mapping(input, i, j) {
+        if (i === 0) {
+            input.value = "A" + j;
+        } else if (i === 1) {
+            input.value = "B" + j;
+        } else if (i === 2) {
+            input.value = "C" + j;
+        } else if (i === 3) {
+            input.value = "D" + j;
+        } else if (i === 4) {
+            input.value = "E" + j;
+        } else if (i === 5) {
+            input.value = "F" + j;
+        } else if (i === 6) {
+            input.value = "G" + j;
+        }
+    }
+
+	$(function(){
+		$('.seat').click(function(){
+
+			var idx = $('.seat').index(this);
+			var seatclick = $('.seat').eq(idx).val();
+			console.log("seatclick : " + seatclick);
+			var selected_seats = $('#selected_seats').val(seatclick);
+			var tmp = "";
+
+
+			 for (var i=0; i<selected_seats.length;i++){ 
+				//console.log();
+				tmp += ',' + seatclick;
+		
+				 } 
+			$('#selected_seats').append(tmp);
+			
+			});
+
+		});   
+    
 
 </script>
 
