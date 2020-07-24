@@ -19,10 +19,10 @@
 	<div id="kakao_id_login" style="text-align: left;"> 
 		카카오톡 로그인 <br>
 		<a href="https://kauth.kakao.com/oauth/authorize?client_id=37c9bbc47d6241ab8e229dbd6a15e1f3&redirect_uri=http://localhost:8080/team/Main/index&response_type=code"> 
-			<img width="223" src="kakao_login_medium_narrow.png" />
+			<img width="223" src="${pageContext.request.contextPath }/resources/khr/img/kakao_login_img.png" />
 		</a> 
 	</div>
-	
+	</form>
 	<!-- 세션에서 token을 가져와서 출력한다. -->
 	${sessionScope.token}
 	

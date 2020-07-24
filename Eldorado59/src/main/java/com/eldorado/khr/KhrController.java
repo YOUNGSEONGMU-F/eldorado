@@ -56,7 +56,7 @@ public class KhrController {
         System.out.println("로그인 할때 임시 코드값");
         //카카오 홈페이지에서 받은 결과 코드
         System.out.println(code);
-        System.out.println("로그인 후 결과값");
+        System.out.println("로그인 후 결과값 : "+code);
         
         //카카오 rest api 객체 선언
         kakao_restapi kr = new kakao_restapi();
