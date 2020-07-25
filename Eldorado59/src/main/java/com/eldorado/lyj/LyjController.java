@@ -23,10 +23,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.eldorado.khr.kakao_restapi;
 import com.eldorado.lyj.service.Email;
 import com.eldorado.lyj.service.EmailSender;
 import com.eldorado.lyj.service.LyjServiceImpl;
 import com.eldorado.lyj.service.MailService;
+import com.fasterxml.jackson.databind.JsonNode;
 
 @Controller
 @RequestMapping(value = "lyj/*")
@@ -86,7 +88,39 @@ public class LyjController {
 	  
 	  @Autowired private void setNaverLoginBO(NaverLoginBO naverLoginBO) {
 	  this.naverLoginBO = naverLoginBO; }
-	 
+	
+	// 카카오
+	private kakao_restapi kakao_restapi = new kakao_restapi();
+	
+	@RequestMapping(value = "login2", produces = "application/json")
+    public String kakaoLogin(@RequestParam("code") String code, Model model, HttpSession session) {
+        System.out.println("로그인 할때 임시 코드값");
+        //카카오 홈페이지에서 받은 결과 코드
+        System.out.println(code);
+        System.out.println("로그인 후 결과값 : "+code);
+        
+        //카카오 rest api 객체 선언
+        kakao_restapi kr = new kakao_restapi();
+        //결과값을 node에 담아줌
+        JsonNode node = kr.getAccessToken(code);
+        //결과값 출력
+        System.out.println(node);
+        //노드 안에 있는 access_token값을 꺼내 문자열로 변환
+        String token = node.get("access_token").toString();
+        //세션에 담아준다.
+        session.setAttribute("token", token);
+        System.out.println("카카오 로그인 token : "+token);
+        
+        return "lyj/login2";
+    }
+	
+	
+	
+	
+	
+	
+	
+	// 카카오
 
 	@RequestMapping(value = "login2", method = RequestMethod.POST)
 	public String logincss_post(@RequestParam Map<String, Object> map, HttpSession session,
@@ -250,14 +284,14 @@ public class LyjController {
 	  return "lyj/toReserve"; }
 	 
 
-	@RequestMapping(value = "movieTicket2", method = RequestMethod.GET)
-	public String movieTicket2() {
-
-		
-		
-		return "lyj/toReserve2";
-	}
-	
+	/*
+	 * @RequestMapping(value = "movieTicket2", method = RequestMethod.GET) public
+	 * String movieTicket2() {
+	 * 
+	 * 
+	 * 
+	 * return "lyj/toReserve2"; }
+	 */
 	@RequestMapping(value = "Mypage", method = RequestMethod.GET)
 	public String Mypage(Model model, HttpSession session, HttpServletRequest request) {
 		
@@ -278,5 +312,13 @@ public class LyjController {
 		
 		return "lyj/Mypage";
 	}
+	@RequestMapping(value = "Cancel", method = RequestMethod.GET)
+	public String movieTicket2() {
+
+		
+		
+		return "lyj/toCancel";
+	}
+	
 
 }

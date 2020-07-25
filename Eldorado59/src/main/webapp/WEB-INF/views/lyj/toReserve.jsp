@@ -419,11 +419,11 @@
              for (var i = 0; i < movieData.dailyBoxOfficeList.length; i++) {
                var movieName = movieData.dailyBoxOfficeList[i].movieNm;
                tmp += '<input type="button" class="m_movieName" value="'+movieName+'" onclick="m_fun(this);"><br>';
-               var movieCode = movieData.dailyBoxOfficeList[i].movieCd;
+             /*   var movieCode = movieData.dailyBoxOfficeList[i].movieCd;
                var Opendate = movieData.dailyBoxOfficeList[i].openDt;
                var movieGenre = movieData.dailyBoxOfficeList[i].genreAlt;
                var movieNation = movieData.dailyBoxOfficeList[i].nationAlt;
-               var movieDirectors = movieData.dailyBoxOfficeList[i].directors; 
+               var movieDirectors = movieData.dailyBoxOfficeList[i].directors;  */
                console.log("movieName : " + movieData.dailyBoxOfficeList[i].movieNm);
             } 
             $('.top_movieName').append(tmp);
