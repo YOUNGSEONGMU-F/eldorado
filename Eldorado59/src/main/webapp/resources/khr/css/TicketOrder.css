@@ -29,7 +29,7 @@
 /*선택영화 정보*/
 .sel_movie_info .lay_inner {
 	/* display:inline-block; */
-	border: 1px solid;
+	border: 1px solid #c0c0c0;
 	width: 1200px;
 	height: 220px;
 	margin: 100px auto;
@@ -37,9 +37,10 @@
 
 .sel_movie_info .sel_movie_info_area {
 	float: left;
-	border: 1px solid;
+	height: 219px;
+	border-right: 1px solid #c0c0c0;
 	padding:0 10px 0 30px;
-	width:480px;
+	width:400px;
 }
 .sel_movie_info .movie_info {
 	padding-top:42px;
@@ -58,10 +59,11 @@
 .sel_movie_info .price_info_area {
 	float: left;
 	padding:0 50px;
-	width:350px;
+	width:400px;
 	vertical-align:middle !important;
 	font-size:16px;/* color:#fff; */
-	border: 1px solid;
+	/* border: 1px solid; */
+	margin-top: 80px;
 	/* border-left:1px solid rgba(229,229,229,.15);
 	border-right:1px solid rgba(229,229,229,.15); */
 }
@@ -73,9 +75,10 @@
 
 .sel_movie_info .last_price_area {
 	float: left;
-	padding:42px 30px 0 0;
-	width:340px;
-	border: 1px solid;
+	height: 219px;
+	padding:20px 15px 20px 15px;
+	width:395px;
+	border-left: 1px solid #c0c0c0;
 }
 .sel_movie_info .last_price_area .lp_txt {
 	padding:30px 0 0 13px;

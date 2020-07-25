@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-   <title>YES24 - 대한민국 대표 인터넷서점</title>
+   <title>ELDORADO - 로그인</title>
    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
    <meta http-equiv='Content-Type' content='text/html; charset=euc-kr'>
    <link rel="shortcut icon" href="https://secimage.yes24.com/sysimage/renew/gnb/yes24.ico" type="image/x-icon"> 
@@ -65,17 +65,7 @@
             <div id="memLoginForm" class="loginFormGrp">
                     
 <form method="post" name="LoginSub" autocomplete="off" action="login2">
- <!--    <input name="FBLoginSub$hdfLoginToken" type="hidden" id="FBLoginSub_hdfLoginToken" value="jj+Q9vDc35+txh6eAqGPaL8pDYzzoyg2Rk9Ffb+ZhcMH4IoLakoDHVNxywh5bCFO" />
-    <input name="FBLoginSub$hdfLoginHash" type="hidden" id="FBLoginSub_hdfLoginHash" />
-    <input type="hidden" name="LoginType" />
-   <input name="FBLoginSub$ReturnURL" type="hidden" id="FBLoginSub_ReturnURL" />
-   <input name="FBLoginSub$ReturnParams" type="hidden" id="FBLoginSub_ReturnParams" />
-   <input type="hidden" name="RefererUrl" id="RefererUrl" value="https://movie.yes24.com/?pid=123487&EKAMS=realclick.546.1252.38.1393409481352.154481&gclid=EAIaIQobChMIkfWdlZ6X6gIVhlVgCh13wQ4VEAAYASAAEgLSBfD_BwE" />
-   <input type="hidden" name="AutoLogin" id="AutoLogin"  value="1" />
-   <input type="hidden" name="LoginIDSave" id="LoginIDSave" value="N" />
-    <input name="FBLoginSub$NaverCode" type="hidden" id="FBLoginSub_NaverCode" />
-    <input name="FBLoginSub$NaverState" type="hidden" id="FBLoginSub_NaverState" />
-     -->
+
    <fieldset class="loginForm">
       <legend class="blind">회원 로그인</legend>
       <span id="spanMemID" class="yesIpt b_size ipt_wSizeF focus_blue">
@@ -111,9 +101,13 @@
 <li class="oddCol"><div id="naver_id_login" style="text-align:center"><a href="${url}">
 <img width="223" src="https://developers.naver.com/doc/review_201802/CK_bEFnWMeEBjXpQ5o8N_20180202_7aot50.png"/></a></div>
 </li>
-   <li class="evenCol"><a href="javascript:void(0);" id="FBLoginSub_aBtnKakaoLogin" onClick="callKakaoLogin();" class="btn_social"><span class="bWrap"><em class="ico_social ico_ka bgMem"></em><em class="txt">카카오 아이디로 로그인</em></span></a>  </li>
-   
+   <!-- <li class="evenCol"><a href="javascript:void(0);" id="FBLoginSub_aBtnKakaoLogin" onClick="callKakaoLogin();" class="btn_social"><span class="bWrap"><em class="ico_social ico_ka bgMem"></em><em class="txt">카카오 아이디로 로그인</em></span></a>  </li> -->
+<li class="oddCol"><div style="text-align:center"><a href="https://kauth.kakao.com/oauth/authorize?client_id=37c9bbc47d6241ab8e229dbd6a15e1f3&redirect_uri=http://localhost:8080/team/Main/index&response_type=code"> 
+<img width="223" src="${pageContext.request.contextPath }/resources/khr/img/kakao_login_img.png" /></a></div>
+
+   </li>
 </ul>
+   ${sessionScope.token}
 
 <!-- ##### 쇼셜 로그인 영역 끝 ##### -->
 <!-- ##### 로그인 실패 안내 시작 ##### -->

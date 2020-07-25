@@ -255,28 +255,30 @@
 			<div class="sel_movie_info_area" data-bind="with:movieViewModel">
 				<div class="movie_info">
 					<div class="movie_sel_tit" data-bind="with:theaterMovieTimeViewModel.movie()">
-						<input name="title" value="<%=request.getAttribute("title") %>">
+						제목 : <input name="title" value="${title}">
 					</div>
 					<div class="movie_sel_cinema" data-bind="with:theaterViewModel.theater()">
-						<input name="th_name" value="<%=request.getAttribute("th_name") %>">
+						극장 : <input name="th_name" value="${th_name}">
 					</div>
 					<div class="movie_sel_date">
                         <span data-bind="with:theaterDateViewModel.movieDate()">
-                        	<input name="date" value="<%=request.getAttribute("date") %>"> 
+                        	날짜 : <input name="date" value="${date}"> 
                         </span> <br>
                         <span data-bind="with:theaterMovieTimeViewModel.movieTime()">
-                        	<input name="time" value="<%=request.getAttribute("time") %>">
+                        	시간 : <input name="time" value="${time}">
                         </span>
                     </div>
-                   	<div class="movie_sel_seat"><input name="seat" value="좌석을 선택하세요."></div>
+                   	<div class="movie_sel_seat"> 좌석 : <input name="seat" value="좌석을 선택하세요."></div>
 				</div>
 			</div>
 			<div class="price_info_area">
 				<p class="clear">
-					<span class="pi_tit"><input id="peo_num" name="" value="<%=request.getAttribute("adult")%>"></span>
-					<span class="pi_info"><input id="tk_price" name="" value="<%=request.getAttribute("a_price")%>"></span><br>
-					<span class="pi_tit"><input id="peo_num2" name="" value="<%=request.getAttribute("kid")%>"></span>
-					<span class="pi_info"><input id="tk_price2" name="" value="<%=request.getAttribute("k_price")%>"></span>
+					<!-- 성인 -->
+					<span class="pi_tit"><input id="peo_num" name="" value="${adult}"></span>
+					<span class="pi_info"><input id="tk_price" name="" value="${a_price}"></span><br>
+					<!-- 청소년 -->
+					<span class="pi_tit"><input id="peo_num2" name="" value="${kid}"></span>
+					<span class="pi_info"><input id="tk_price2" name="" value="${k_price}"></span>
 				</p>
 			</div>
 			<div class="last_price_area">

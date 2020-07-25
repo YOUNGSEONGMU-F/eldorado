@@ -32,11 +32,15 @@
     <meta property="og:site_name" content="yes24 영화">
     <meta property="og:description" content="영화 예매,영화 정보">
 
+<jsp:include page="../include/header.jsp"></jsp:include>
 </head>
 <body>
-
-
+		
 <div class="lyjtotalwrap">
+
+		
+
+
     <div id="wrap">
  
             <div class="content">
@@ -168,7 +172,7 @@
                	%>
                	<c:if test="${is_date > now_date }">
                	
-               		<a href="#" style="color:green;">취소하기</a>
+               		<a href="Cancel" style="color:green;">취소하기</a>
                	</c:if>
                	<c:if test="${is_date < now_date }">
                		<a href="#" style="color:red;">취소불가</a>
