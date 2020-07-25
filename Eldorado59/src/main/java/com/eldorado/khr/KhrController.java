@@ -68,6 +68,7 @@ public class KhrController {
         String token = node.get("access_token").toString();
         //세션에 담아준다.
         session.setAttribute("token", token);
+      
         
         return "khr/loginTest";
     }

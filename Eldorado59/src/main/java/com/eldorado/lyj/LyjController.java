@@ -116,7 +116,8 @@ public class LyjController {
 			String nickname = (String)response_obj.get("nickname");
 			System.out.println(nickname);
 			//4.파싱 닉네임 세션으로 저장
-			session.setAttribute("sessionId",nickname); //세션 생성
+			//session.setAttribute("sessionId",nickname); //세션 생성
+			session.setAttribute("id",nickname); //세션 생성
 			model.addAttribute("result", apiResult);
 			
 			return "lsy/main";
@@ -314,5 +315,6 @@ public class LyjController {
 		
 		return "lyj/Mypage";
 	}
-
+	
+	   
 }
