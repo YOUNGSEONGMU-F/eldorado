@@ -47,15 +47,6 @@ public class LsyController {
 	  return "lsy/main"; }
 	 
 	
-	
-	@RequestMapping(value = "index", method = {RequestMethod.GET, RequestMethod.POST} )
-	public String main_post(Locale locale, Model model,@RequestParam String code, @RequestParam String state, HttpSession session) throws IOException{
-		
-		
-		return "lsy/main";
-	}
-		
-
 
 
 		
