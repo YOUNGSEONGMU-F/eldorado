@@ -198,15 +198,15 @@
 										<span class="pt_num_peo" id="THPRICE100">
 											<!-- 버튼 0-8까지 -->
 											<!-- 버튼 클릭하면 class="active" 생성-->
-											<button type="button" onclick="CountA('0')" id="THPRICE100" class="" value="0">0</button>
-											<button type="button" onclick="CountA('1')" id="THPRICE100" class="" value="1">1</button>
-											<button type="button" onclick="CountA('2')" id="THPRICE100" class="" value="2">2</button>
-											<button type="button" onclick="CountA('3')" id="THPRICE100" class="" value="3">3</button>
-											<button type="button" onclick="CountA('4')" id="THPRICE100" class="" value="4">4</button>
-											<button type="button" onclick="CountA('5')" id="THPRICE100" class="" value="5">5</button>
-											<button type="button" onclick="CountA('6')" id="THPRICE100" class="" value="6">6</button>
-											<button type="button" onclick="CountA('7')" id="THPRICE100" class="" value="7">7</button>
-											<button type="button" onclick="CountA('8')" id="THPRICE100" class="" value="8">8</button>
+											<button type="button" onclick="Count('0')" id="THPRICE100" class="" value="0">0</button>
+											<button type="button" onclick="Count('1')" id="THPRICE100" class="" value="1">1</button>
+											<button type="button" onclick="Count('2')" id="THPRICE100" class="" value="2">2</button>
+											<button type="button" onclick="Count('3')" id="THPRICE100" class="" value="3">3</button>
+											<button type="button" onclick="Count('4')" id="THPRICE100" class="" value="4">4</button>
+											<button type="button" onclick="Count('5')" id="THPRICE100" class="" value="5">5</button>
+											<button type="button" onclick="Count('6')" id="THPRICE100" class="" value="6">6</button>
+											<button type="button" onclick="Count('7')" id="THPRICE100" class="" value="7">7</button>
+											<button type="button" onclick="Count('8')" id="THPRICE100" class="" value="8">8</button>
 										</span>
 									</div>
 									<div  class="people_type">
@@ -214,15 +214,15 @@
 										<span class="pt_num_peo" id="THPRICE200">
 											<!-- 버튼 0-8까지 -->
 											<!-- 버튼 클릭하면 class="active" 생성-->
-											<button type="button" onclick="CountB('0')" id="THPRICE200" class="">0</button>
-											<button type="button" onclick="CountB('1')" class="">1</button>
-											<button type="button" onclick="CountB('2')" class="">2</button>
-											<button type="button" onclick="CountB('3')" class="">3</button>
-											<button type="button" onclick="CountB('4')" class="">4</button>
-											<button type="button" onclick="CountB('5')" class="">5</button>
-											<button type="button" onclick="CountB('6')" class="">6</button>
-											<button type="button" onclick="CountB('7')" class="">7</button>
-											<button type="button" onclick="CountB('8')" class="">8</button>
+											<button type="button" onclick="Count('9')" id="THPRICE200" class="">0</button>
+											<button type="button" onclick="Count('10')" class="">1</button>
+											<button type="button" onclick="Count('11')" class="">2</button>
+											<button type="button" onclick="Count('12')" class="">3</button>
+											<button type="button" onclick="Count('13')" class="">4</button>
+											<button type="button" onclick="Count('14')" class="">5</button>
+											<button type="button" onclick="Count('15')" class="">6</button>
+											<button type="button" onclick="Count('16')" class="">7</button>
+											<button type="button" onclick="Count('17')" class="">8</button>
 										</span>
 									</div>
 								</div>
@@ -298,16 +298,16 @@
 					<p class="clear">
 						<!-- 성인 -->
 						<span class="pi_tit"><input id="peo_num" name="adult"></span>
-						<span class="pi_info"><input id="tk_price" name="a_price"></span><br>
+						<span class="pi_info"><input id="a_price" name="a_price"></span><br>
 						<!-- 청소년 -->
 						<span class="pi_tit"><input id="peo_num2" name="kid"></span>
-						<span class="pi_info"><input id="tk_price2" name="k_price"></span>
+						<span class="pi_info"><input id="k_price" name="k_price"></span>
 					</p>
 				</div>
 				<div class="last_price_area">
                     <div class="lp_txt">
                     	<p>최종결제금액</p>
-                    	<p class="lp_price"><input id="total_price" name="" value="해야 됨"></p>
+                    	<p class="lp_price"><input id="total_price" name="total_price"></p>
                     </div>
                     <div class="fr">
                         <button id="btnPay" type="submit" class="bnt_payment">다음</button>
@@ -348,24 +348,53 @@ function myFunction() {
 
 <script type="text/javascript">
 
-	var total_price;
-
 	//인원수
-	function CountA(seq) {
-		$('#peo_num').val('성인('+seq+')');
+// 	function CountA(seq) {
+// 		$('#peo_num').val('성인('+seq+')');
+		
+// 		$('#tk_price').val(seq * 10000);
+	
+// 	}
+	
+// 	function CountB(seq) {
+// 		$('#peo_num2').val('청소년('+seq+')');
+	
+// 		$('#tk_price2').val(seq * 8000);
+// 	} 
+
+	function Count(seq) {
+		/* $('#peo_num').val('성인('+seq+')');
 		
 		$('#tk_price').val((seq * 10000) +'원');
-	
-	}
-	
-	function CountB(seq) {
+
 		$('#peo_num2').val('청소년('+seq+')');
+		
+		$('#tk_price2').val((seq * 8000) +'원'); */
+		/* var total_price = document.getElementById('total_price').value; */
+		var a_price = 0; 
+		var k_price = 0;
+		
+		if(seq < 9){
+			
+			$('#peo_num').val('성인('+seq+')');
+			
+			a_price = $('#a_price').val(seq * 10000);
+
+			alert(a_price);
+			$('#total_price').val(a_price);
+			
+		}else{
+			$('#peo_num2').val('청소년('+(seq-9)+')');
+			
+			k_price = $('#k_price').val((seq-9) * 8000);
+		}
+		
+		
+		
 	
-		$('#tk_price2').val((seq * 8000) +'원');
 	}
-	
-	/* $('#total_price') = 
-		Number($('#tk_price').val) + Number($('#tk_price2').val); */
+// 	document.getElementById('total_price').value = $('#a_price').val();
+// 	$('#total_price').val($('#a_price').val()); 
 
 	//좌석
 	let test = [];
