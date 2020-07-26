@@ -80,7 +80,7 @@ gtag('config', 'AW-1056776890');
 	String id = (String)session.getAttribute("id");
 	
 	if(id == null){
-		response.sendRedirect("../lyj/login");
+		response.sendRedirect("../lyj/login2");
 	} 
 	
 	
@@ -114,7 +114,7 @@ gtag('config', 'AW-1056776890');
 		            <span class="servName">나의 정보</span>
 	            </h1>
 	            <div class="headerLnk">
-                    <a href="#" onclick="setWcode('001_003_013')" class="btnC m_size w_120">
+                    <a href="${pageContext.request.contextPath}/lyj/Mypage" onclick="setWcode('001_003_013')" class="btnC m_size w_120">
                     	<span class="bWrap"><em class="txt">마이페이지</em></span>
                     </a>
 	            </div>
@@ -229,66 +229,54 @@ gtag('config', 'AW-1056776890');
 								<th class="txt" scope="row">비밀번호</th>
 								<td colspan="3" class="inpArea lastCol">
 									<div class="inpRow">
-										<button onclick="window.open('changePW','window_name','width=430,height=500,location=no,status=no,scrollbars=yes');" class="btnC m_size w_120">
+										<!-- <button onclick="window.open('changePW','window_name','width=430,height=500,location=no,status=no,scrollbars=yes');" class="btnC m_size w_120">
 			                        		<span class="bWrap"><em class="txt">
 			                        				비밀번호 변경
 			                        		</em></span>
-			                       		</button>
+			                       		</button> -->
+			                       		<%-- <span class="setAlignL"><span id="CLabMemNm"><span class="yesIpt m_size w_200">
+											<input name="pass" type="text" id="name" autocomplete="off" maxlength="20" value="${mb.pass }"><br>
+										</span></span></span> --%>
+										<span class="setAlignL"><span id="CLabMemNm"><span class="yesIpt m_size w_200">
+											<input name="pass" type="text" id="name" autocomplete="off" maxlength="20" placeholder="새비밀번호">
+										</span></span></span>
+										<span class="setAlignL"><span id="CLabMemNm"><span class="yesIpt m_size w_200">
+											<input name="pass2" type="text" id="name" autocomplete="off" maxlength="20" placeholder="새비밀번호 확인">
+										</span></span></span>
 			                        </div>
 								</td>
-							</tr>
+							</tr>	
 							<!-- 주소 미완성 -->
 							<tr>
 								<th class="txt" scope="row">주소</th>
 								<td colspan="3" class="inpArea lastCol">
 									<div class="inpRow">
 										<span class="yesIpt m_size w_70">
-											<input name="Zip5" type="text" id="sample6_postcode" autocomplete="off" maxlength="5" value="우편번호" readonly>
+											<input  type="text" id="sample6_postcode" autocomplete="off" maxlength="5" placeholder="우편번호" readonly>
 										</span>
 			                            
-										<button onclick="sample6_execDaumPostcode()" class="btnC m_size w_80" >
-											<span class="bWrap"><em class="txt">
-												우편번호 찾기
-											</em></span>
-										</button>
-			                                    
+			                            <input type="button" class="btnC m_size w_80" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>        
 									</div>
-									
-									<!-- <input type="text" id="sample6_address" placeholder="주소"><br> -->
 									
 									<div id="div_ST_ADDR_TEXT" class="inpRow">
 										<span class="yesIpt m_size ipt_wSizeF">
-											<input name="ST_ADDR_TEXT" type="text" id="sample6_address" class="fwN" autocomplete="off" readonly="readonly" placeholder="주소">
+											<input type="text" name="addr" id="sample6_address" class="fwN" autocomplete="off" placeholder="주소">
 										</span>
 									</div>
-									
-									<!-- <input type="text" id="sample6_detailAddress" placeholder="상세주소"> -->
 									
 									<div id="div_OLD_ADDR_TEXT" class="inpRow">
 										<span class="yesIpt m_size ipt_wSizeF">
-											<input name="OLD_ADDR_TEXT" type="text" id="sample6_detailAddress" class="fwN" autocomplete="off" readonly="readonly" placeholder="상세주소">
+											<input type="text" id="sample6_detailAddress" class="fwN" autocomplete="off" placeholder="상세주소">
 										</span>
 									</div>
 									
-									<!-- <input type="text" id="sample6_extraAddress" placeholder="참고항목"> -->
 									<div id="div_OLD_ADDR_TEXT" class="inpRow">
 										<span class="yesIpt m_size ipt_wSizeF">
-											<input name="OLD_ADDR_TEXT" type="text" id="sample6_extraAddress" class="fwN" autocomplete="off" readonly="readonly" placeholder="참고항목">
+											<input type="text" id="sample6_extraAddress" class="fwN" autocomplete="off" placeholder="참고항목">
 										</span>
 									</div>
 									
-									<!-- <div id="div_FOREIGN_ADDR_TEXT1" class="dp_none">
-										<span id="span_FOREIGN_ADDR_TEXT1" class="yesIpt m_size ipt_wSizeF">
-											<label for="FOREIGN_ADDR_TEXT1" id="labelFOREIGN_ADDR_TEXT1">Street/Local address</label>
-											<input name="FOREIGN_ADDR_TEXT1" type="text" id="FOREIGN_ADDR_TEXT1" class="fwN" autocomplete="off" readonly="readonly">
-										</span>
-									</div>
-									<div id="div_FOREIGN_ADDR_TEXT2" class="dp_none">
-										<span id="span_FOREIGN_ADDR_TEXT2" class="yesIpt m_size ipt_wSizeF">
-											<label for="FOREIGN_ADDR_TEXT2" id="labelFOREIGN_ADDR_TEXT2">Address details</label>
-											<input name="FOREIGN_ADDR_TEXT2" type="text" id="FOREIGN_ADDR_TEXT2" class="fwN" autocomplete="off" readonly="readonly">
-										</span>
-									</div> -->
+									
 									<div class="inpDes">
 										정확하고 빠른 배송을 위해 입력된 주소를 확인하시고 업데이트해 주시기 바랍니다. 
 									</div>

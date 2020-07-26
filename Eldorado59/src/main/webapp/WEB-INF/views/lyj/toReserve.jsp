@@ -360,11 +360,11 @@
                <img src="../resources/lyj/img/five.png" width="40" height="40">
                <h4>영화 정보</h4>
                      <div class="btn-next">
-                  <form method="get">
+                  <form method="get" action="../khr/selectSeat">
                   <input id="tmp_movieName" name="title"><br>
                   <input id="tmp_theater" name="th_name"><br>
-                  <input id="tmp_day" name=""><br>
-                  <input id="tmp_timesch" name=""><br>
+                  <input id="tmp_day" name="date"><br>
+                  <input id="tmp_timesch" name="time"><br>
                   <button type="submit" class="btn-b" style="display: none;"><img class="next-img" alt="" src="${pageContext.request.contextPath }/resources/lyj/img/next.png">다음</button>
                   </form>
                      </div>

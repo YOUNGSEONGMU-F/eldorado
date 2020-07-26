@@ -174,6 +174,7 @@
 
 <div class="wrap">
 	<h1>예매 완료</h1>
+	<input type="text" value="<%=session.getAttribute("id") %>">
 </div>
 
 

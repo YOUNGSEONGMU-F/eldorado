@@ -174,7 +174,7 @@
 
 </div>
 </header>
-
+<input type="hidden" value="<%=session.getAttribute("id") %>">
 <div class="wrap">
 	<div class="reserve_top lay_inner">
 		
@@ -371,25 +371,38 @@ function myFunction() {
 		
 		$('#tk_price2').val((seq * 8000) +'원'); */
 		/* var total_price = document.getElementById('total_price').value; */
-		var a_price = 0; 
-		var k_price = 0;
+	
+		var adult_price  = "";
+		var final_childprice = "";
 		
 		if(seq < 9){
 			
 			$('#peo_num').val('성인('+seq+')');
 			
-			a_price = $('#a_price').val(seq * 10000);
+			$('#a_price').val(seq * 10000);
 
-			alert(a_price);
-			$('#total_price').val(a_price);
+			var adult_price = $('#a_price').val();
+			console.log("어른 :"+adult_price);
+
+			var final_childprice = $('#k_price').val();
+			$('#total_price').val(Number(adult_price)+Number(final_childprice));
+			
 			
 		}else{
 			$('#peo_num2').val('청소년('+(seq-9)+')');
 			
-			k_price = $('#k_price').val((seq-9) * 8000);
+			$('#k_price').val((seq-9) * 8000);
+
+			var final_childprice = $('#k_price').val();
+			console.log("청소년가 : "+final_childprice);
+			
+			var adult_price = $('#a_price').val();
+			$('#total_price').val(Number(adult_price)+Number(final_childprice));
+
+			
+			
 		}
-		
-		
+
 		
 	
 	}

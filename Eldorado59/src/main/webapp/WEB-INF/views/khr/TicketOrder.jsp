@@ -170,6 +170,8 @@
 
 <!-- body 시작 -->
 <div class="wrap">
+<div>로그인</div>
+<input type="text" value="<%=session.getAttribute("id") %>">
 	<!-- 주문 할인 시작 -->
 	<div id="divDiscount">
 		<div class="reserve_discount_area">
@@ -258,6 +260,7 @@
 			<div class="sel_movie_info_area" data-bind="with:movieViewModel">
 				<div class="movie_info">
 					<div class="movie_sel_tit" data-bind="with:theaterMovieTimeViewModel.movie()">
+	<input type="text" value="<%=session.getAttribute("id") %>" name="id">
 						제목 : <input name="title" value="${title}">
 					</div>
 					<div class="movie_sel_cinema" data-bind="with:theaterViewModel.theater()">
