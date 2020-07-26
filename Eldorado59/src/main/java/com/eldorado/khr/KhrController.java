@@ -204,7 +204,7 @@ public class KhrController {
 		
 		if(id == null) {
 			
-			return "redirect:login2";
+			return "redirect:/lyjlogin2";
 		}
 		//jsp로 아이디값 넘겨주기
 		session.setAttribute("id", id);
@@ -243,8 +243,8 @@ public class KhrController {
 	@RequestMapping(value = "TicketOrder", method = RequestMethod.POST)
 	public String TicketOrder_post(Locale locale, Model model, HttpSession session, HttpServletRequest request, @RequestParam String title,
 			@RequestParam String th_name, @RequestParam String date, @RequestParam String time ,
-			@RequestParam String adult, @RequestParam String kid, @RequestParam String a_price, @RequestParam String k_price
-			) {
+			@RequestParam String adult, @RequestParam String kid, @RequestParam String a_price, @RequestParam String k_price,
+			@RequestParam String total_price, @RequestParam String total_amount) {
 		
 		String id = (String)session.getAttribute("id");
 		
@@ -264,6 +264,8 @@ public class KhrController {
 		request.setAttribute("kid", kid);
 		request.setAttribute("a_price", a_price);
 		request.setAttribute("k_price", k_price);
+		request.setAttribute("total_price", total_price);
+		request.setAttribute("total_amount", total_amount);
 		
 
 		return "khr/TicketOrder";
@@ -277,14 +279,14 @@ public class KhrController {
 	}
 	
 	@RequestMapping(value = "OrderComplete", method = RequestMethod.POST)
-	public String OrderComplete_post(Locale locale, Model model, HttpServletRequest request, HttpServletRequest req,
+	public String OrderComplete_post(Locale locale, Model model,
 			@RequestParam Map<String, Object> reserve, HttpSession session) {
 		
 		String id = (String)session.getAttribute("id");
 		
 		if(id == null) {
 			
-			return "redirect:login2";
+			return "redirect:/lyjlogin2";
 		}
 		//jsp로 아이디값 넘겨주기
 		session.setAttribute("id", id);

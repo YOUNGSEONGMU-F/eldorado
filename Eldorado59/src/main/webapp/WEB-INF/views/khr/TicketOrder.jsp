@@ -285,12 +285,13 @@
 					<!-- 청소년 -->
 					<span class="pi_tit"><input id="peo_num2" name="" value="${kid}"></span>
 					<span class="pi_info"><input id="tk_price2" name="" value="${k_price}"></span>
+					<input type="text" id="total_amount" name="total_amount" value="${total_amount}">
 				</p>
 			</div>
 			<div class="last_price_area">
                 <div class="lp_txt">
                 	<p>최종결제금액</p>
-                	<p class="lp_price"><input id="total_price" name="" value="해야 됨"></p>
+                	<p class="lp_price"><input id="total_price" name="total_price" value="${total_price}"></p>
                 </div>
                 <div class="fr">
                     <button id="btnPay" type="submit" class="bnt_payment">결제</button>

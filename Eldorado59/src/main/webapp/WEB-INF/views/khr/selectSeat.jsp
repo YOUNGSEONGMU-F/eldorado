@@ -301,7 +301,10 @@
 						<span class="pi_info"><input id="a_price" name="a_price"></span><br>
 						<!-- 청소년 -->
 						<span class="pi_tit"><input id="peo_num2" name="kid"></span>
-						<span class="pi_info"><input id="k_price" name="k_price"></span>
+						<span class="pi_info"><input id="k_price" name="k_price"></span><br>
+						<input type="text" id="a_amount" name="a_amount">
+						<input type="text" id="k_amount" name="k_amount"><br>
+						<input type="text" id="total_amount" name="total_amount">
 					</p>
 				</div>
 				<div class="last_price_area">
@@ -348,45 +351,31 @@ function myFunction() {
 
 <script type="text/javascript">
 
-	//인원수
-// 	function CountA(seq) {
-// 		$('#peo_num').val('성인('+seq+')');
-		
-// 		$('#tk_price').val(seq * 10000);
-	
-// 	}
-	
-// 	function CountB(seq) {
-// 		$('#peo_num2').val('청소년('+seq+')');
-	
-// 		$('#tk_price2').val(seq * 8000);
-// 	} 
-
+	//인원수 & 총 가격
 	function Count(seq) {
-		/* $('#peo_num').val('성인('+seq+')');
 		
-		$('#tk_price').val((seq * 10000) +'원');
-
-		$('#peo_num2').val('청소년('+seq+')');
-		
-		$('#tk_price2').val((seq * 8000) +'원'); */
-		/* var total_price = document.getElementById('total_price').value; */
-	
 		var adult_price  = "";
 		var final_childprice = "";
 		
 		if(seq < 9){
-			
+			//성인(n) input
 			$('#peo_num').val('성인('+seq+')');
-			
+			//가격 input
 			$('#a_price').val(seq * 10000);
 
 			var adult_price = $('#a_price').val();
 			console.log("어른 :"+adult_price);
-
+			
+			//total_price
 			var final_childprice = $('#k_price').val();
 			$('#total_price').val(Number(adult_price)+Number(final_childprice));
-			
+
+			//total_amount
+			$('#a_amount').val(seq);
+			var a_amount = $('#a_amount').val();
+			console.log("seq1 : "+seq);
+			var k_amount = $('#k_amount').val();
+			$('#total_amount').val(Number(a_amount)+Number(k_amount));
 			
 		}else{
 			$('#peo_num2').val('청소년('+(seq-9)+')');
@@ -399,15 +388,15 @@ function myFunction() {
 			var adult_price = $('#a_price').val();
 			$('#total_price').val(Number(adult_price)+Number(final_childprice));
 
-			
-			
+			//total_amount
+			$('#k_amount').val(seq-9);
+			var k_amount = $('#k_amount').val();
+			console.log("seq2 : "+(seq-9));
+			var a_amount = $('#a_amount').val();
+			$('#total_amount').val(Number(a_amount)+Number(k_amount));
 		}
 
-		
-	
 	}
-// 	document.getElementById('total_price').value = $('#a_price').val();
-// 	$('#total_price').val($('#a_price').val()); 
 
 	//좌석
 	let test = [];
