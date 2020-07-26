@@ -174,10 +174,13 @@
 	<div id="divDiscount">
 		<div class="reserve_discount_area">
 			<div class="ms_title">
-                <span class="tit">할인선택</span>
-            </div>
-            <div class="white_box reserve_discount_cont eve_loot_parent">
-            	<!-- 선택된 할인의 타이틀 div active 추가-->
+	            <span class="tit">할인선택</span>
+	        </div>
+			<div class="white_box reserve_discount_cont eve_loot_parent">
+            	<div class="yes_dis"><a href="#">YES상품권/YES머니</a></div>
+            	<div class="rev_dis"><a href="#">예매권/할인권</a></div>
+            	<div class="ok_dis"><a href="#">OK캐쉬백</a></div>
+            	<div class="gift_dis"><a href="#">기프티쇼 교환</a></div>
             	
             </div>
 		</div>
