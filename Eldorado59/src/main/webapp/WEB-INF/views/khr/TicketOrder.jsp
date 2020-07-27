@@ -170,8 +170,8 @@
 
 <!-- body 시작 -->
 <div class="wrap">
-<div>로그인</div>
-<input type="text" value="<%=session.getAttribute("id") %>">
+
+<input type="hidden" value="<%=session.getAttribute("id") %>">
 	<!-- 주문 할인 시작 -->
 	<div id="divDiscount">
 		<div class="reserve_discount_area">
@@ -260,7 +260,7 @@
 			<div class="sel_movie_info_area" data-bind="with:movieViewModel">
 				<div class="movie_info">
 					<div class="movie_sel_tit" data-bind="with:theaterMovieTimeViewModel.movie()">
-	<input type="text" value="<%=session.getAttribute("id") %>" name="id">
+						<input type="hidden" value="<%=session.getAttribute("id") %>" name="id">
 						제목 : <input name="title" value="${title}">
 					</div>
 					<div class="movie_sel_cinema" data-bind="with:theaterViewModel.theater()">
@@ -285,7 +285,7 @@
 					<!-- 청소년 -->
 					<span class="pi_tit"><input id="peo_num2" name="" value="${kid}"></span>
 					<span class="pi_info"><input id="tk_price2" name="" value="${k_price}"></span>
-					<input type="text" id="total_amount" name="total_amount" value="${total_amount}">
+					<input type="hidden" id="total_amount" name="total_amount" value="${total_amount}">
 				</p>
 			</div>
 			<div class="last_price_area">

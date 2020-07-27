@@ -444,18 +444,18 @@ gtag('config', 'AW-1056776890');
 
 
 
-	<h1>회원정보 수정</h1>
+	<!-- <h1>회원정보 수정</h1>
 
 	<form action="updateMember" method="post" id="updateForm">
 		아이디 : <input type="text" name="id" value=""><br>
 		이름 : <input type="text" name="name"><br>
-		<!-- 비밀번호 변경 시, 다시 변경 한 비밀번호로 로그인 후 회원정보 수정 페이지로 -->
+		비밀번호 변경 시, 다시 변경 한 비밀번호로 로그인 후 회원정보 수정 페이지로
 		비밀번호 : <button onclick="window.open('changePW','window_name','width=430,height=500,location=no,status=no,scrollbars=yes');">비밀번호 변경</button><br>
-		<!-- 기존 비밀번호 : <input type="password" id="ori_pass"><br>
+		기존 비밀번호 : <input type="password" id="ori_pass"><br>
 		새 비밀번호 : <input type="password" id="pass" name="pass"><br>
-		새 비밀번호 확인 : <input type="password" id="pass2" name="pass2"><br> -->
-		<!-- 주소 다음api 가져오기 -->
-<!-- 		주소 : <input type="text" id="sample6_postcode" placeholder="우편번호">
+		새 비밀번호 확인 : <input type="password" id="pass2" name="pass2"><br>
+		주소 다음api 가져오기
+		주소 : <input type="text" id="sample6_postcode" placeholder="우편번호">
 			<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
 			<input type="text" id="sample6_address" placeholder="주소"><br>
 			<input type="text" id="sample6_detailAddress" placeholder="상세주소">
@@ -511,14 +511,14 @@ gtag('config', 'AW-1056776890');
         }).open();
     }
 </script>
- -->
+
 		
 		
 		전화번호 : <input type="text" name="tel" id="tel"><br>
 		이메일 : <input type="text" name="email" id="email"><br>
 		
 		<input type="button" id="submitBtn" value="수정하기">
-	</form>
+	</form> -->
 
 </body>
 

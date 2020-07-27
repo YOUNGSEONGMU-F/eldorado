@@ -173,8 +173,51 @@
 </header>
 
 <div class="wrap">
-	<h1>예매 완료</h1>
-	<input type="text" value="<%=session.getAttribute("id") %>">
+	<input type="hidden" value="<%=session.getAttribute("id") %>">
+	<div class="order_container">
+		<div class="tit">예매완료</div>
+		<div class="order_info">
+			<div class="movie_info">
+				<div class="movie_sel_tit" data-bind="with:theaterMovieTimeViewModel.movie()">
+					<span>${title}</span>
+				</div>
+				<div class="movie_sel_cinema" data-bind="with:theaterViewModel.theater()">
+					<span>${th_name} / ${total_amount}장</span>
+				</div>
+				<div class="movie_sel_seat"> 
+					<span><input name="seat" value="좌석을 선택하세요.">C4,C5,C6</span>
+				</div>
+				<div class="movie_sel_date">
+	                <span data-bind="with:theaterDateViewModel.movieDate()">
+	                	${date} / ${time}
+	                </span> 
+	            </div>
+	        </div>
+	        <div class="last_price_area">
+                	결제한 금액 <br>
+                	<p>${total_price}원</p>
+            </div>
+            <div class="eldorado_logo">
+            	<span>ELDORADO</span>
+            	<img src="${pageContext.request.contextPath }/resources/khr/img/barcode.png">
+            </div>
+	        <%-- <div class="price_info_area">
+	        	<p class="clear">
+					<!-- 성인 -->
+					<span class="pi_tit"><input id="peo_num" name="" value="${adult}"></span>
+					<span class="pi_info"><input id="tk_price" name="" value="${a_price}"></span><br>
+					<!-- 청소년 -->
+					<span class="pi_tit"><input id="peo_num2" name="" value="${kid}"></span>
+					<span class="pi_info"><input id="tk_price2" name="" value="${k_price}"></span>
+					수량 : ${total_amount}
+				</p>
+	        </div> --%>
+	        
+		</div>
+		<div class="order_mypage">
+			<button onclick="location.href='/lyj/Mypage';">마이페이지</button>
+		</div>
+	</div>
 </div>
 
 

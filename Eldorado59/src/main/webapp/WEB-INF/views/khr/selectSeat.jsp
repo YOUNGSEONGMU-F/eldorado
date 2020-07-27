@@ -273,6 +273,7 @@
 		
 		<!-- 선택한 영화 정보 -->
 		<form method="post" action="TicketOrder">
+		<input type="hidden" value="<%=session.getAttribute("id") %>">
 		<div class="sel_movie_info selected">
 			<div class="lay_inner">
 				<div class="sel_movie_info_area" data-bind="with:movieViewModel">
@@ -302,9 +303,9 @@
 						<!-- 청소년 -->
 						<span class="pi_tit"><input id="peo_num2" name="kid"></span>
 						<span class="pi_info"><input id="k_price" name="k_price"></span><br>
-						<input type="text" id="a_amount" name="a_amount">
-						<input type="text" id="k_amount" name="k_amount"><br>
-						<input type="text" id="total_amount" name="total_amount">
+						<input type="hidden" id="a_amount" name="a_amount">
+						<input type="hidden" id="k_amount" name="k_amount"><br>
+						<input type="hidden" id="total_amount" name="total_amount">
 					</p>
 				</div>
 				<div class="last_price_area">
