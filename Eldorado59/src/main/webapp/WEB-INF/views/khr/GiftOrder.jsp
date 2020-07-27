@@ -177,6 +177,8 @@
 			<div class="moviegift_banner_area">
                 <span>MOVIE GIFT</span>
             </div>
+            
+            
 			<div class="moviegift_pay_cont lay_inner">
 				<!--예매권 결재 정보-->
 				<div class="pay_info_area" id="divMovieGiftInfo">
@@ -231,7 +233,7 @@
 					<div class="form_tbl ">
 						<div class="form_tbl_row">
 			                <div class="form_tbl_col first">주문고객</div>
-			                <div class="form_tbl_col "><strong><text id="txtUserNm">김하림</text></strong></div>
+			                <div class="form_tbl_col "><strong><text id="txtUserNm">아이디</text></strong></div>
 			            </div>
 			            <div class="form_tbl_row">
 			                <div class="form_tbl_col first">받는고객</div>
