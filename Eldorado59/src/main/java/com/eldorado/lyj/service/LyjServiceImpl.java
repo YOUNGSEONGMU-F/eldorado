@@ -134,6 +134,13 @@ public class LyjServiceImpl implements LyjService {
 		
 		return dao.bringReservations(id);
 	}
+
+	@Override
+	public int CancelMovieTicket(String id, String reserv_num) {
+		System.out.println("서비스 페이지 예매취소 : "+id);
+		
+		return dao.CancelMovieTicket(id,reserv_num);
+	}
 	
 	
 	

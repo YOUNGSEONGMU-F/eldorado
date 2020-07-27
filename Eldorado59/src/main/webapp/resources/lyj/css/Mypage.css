@@ -2,9 +2,8 @@
 
 /*내가한거  */
 .lyjtotalwrap{
-	display: flex;
-	flex-direction: column;
-	margin-top: 150px;
+
+	margin-top: 70px;
 }
 
 
@@ -74,9 +73,15 @@ footer,header,hgroup,menu,nav,section {
     display:block;
 }
  */
-nav ul, li {
+/* nav ul, li {
     list-style:none;
+} */
+
+.notice_area > ul >li{
+	list-style:none;
+	
 }
+
 
 blockquote, q {
     quotes:none;
@@ -89,9 +94,9 @@ q:before, q:after {
 }
 
 a {
-    margin:0;
+   /*  margin:0;
     padding:0;
-    font-size:100%;
+    font-size:100%; */
     vertical-align:baseline;
     background:transparent;
     text-decoration:none;
@@ -120,11 +125,15 @@ input::-ms-clear {display: none;}
 @import 'reset.css';
 @import 'font.css';
 
-body {color:#777;font-size:15px;font-family: nanumBa, '맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif; }
-body.fixed {/*position: fixed;top:0;bottom:0;*/height:100%;width:100%;overflow: hidden;}
-a {color:#2b2b2b;outline:none;}
+body {/* color:#777;font-size:15px;font-family: nanumBa, '맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif; */ }
+body.fixed {/*position: fixed;top:0;bottom:0;*/
+/* 
+height:100%;width:100%;overflow: hidden; */}
+
+/* a {color:#2b2b2b;outline:none;} */
+
 textarea {resize: none;}
-button {cursor: pointer;font-family: nanumBa, '맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;}
+button {/* cursor: pointer;font-family: nanumBa, '맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif; */}
 button > span {position:relative}
 
 /*영역*/
@@ -508,19 +517,19 @@ button > span {position:relative}
 .container {position: relative;padding-top:70px;}
 .container.none_pt {padding-top: 0;}
 /*header 파트*/
-.none_pt .header {background:none;}
+/* .none_pt .header {background:none;}
 .header {position:absolute;top:0;width:100%;z-index:1000;background:rgba(26,26,26,.95);}
-.header.sc {min-width:1200px;background:rgba(26,26,26,.95); /* box-shadow: -8px 5px 30px -8px rgba(5,5,6,.5);  */}
+.header.sc {min-width:1200px;background:rgba(26,26,26,.95); box-shadow: -8px 5px 30px -8px rgba(5,5,6,.5); }
 .header.sc .sc_nav {height:28px;opacity:1;transition:height .2s, opacity .2s;border-bottom:1px solid rgba(255,255,255,.1); }
 .header.hover {min-width:1200px;background:rgba(26,26,26,.95);}
-
+ */
 /*상단 서브 메뉴*/
-.sc_nav {position: relative;;padding:0 40px;height:0;opacity:0;transition:height .2s, opacity .2s;}
+/* .sc_nav {position: relative;;padding:0 40px;height:0;opacity:0;transition:height .2s, opacity .2s;}
 .sc_nav > ul {font-size:0;display:inline-block;}
 .sc_nav > ul > li {position:relative;display:inline-block;}
 .sc_nav > ul > li a {padding:10px 9px 3px;display:block;font-size:11px;line-height:1;font-weight:normal;color:#939393;}
-
-.sc_g_left .sc_g_menu > a {position: relative;;padding-right:30px;}
+ */
+/* .sc_g_left .sc_g_menu > a {position: relative;;padding-right:30px;}
 .sc_g_left .sc_g_menu > a:after {content:'';position: absolute;top:11px;right:14px;display:block;width:9px;height:8px;background:url('//movie-img.yes24.com/NYes24/new/all_sprite.png') no-repeat -572px 0;}
 .sc_g_left .sc_g_sub {position: absolute;top:28px;left:-1px;right:-1px;padding:6px 0 11px;display:none;border:1px solid rgba(255,255,255,.1);z-index:10;border-top:none;background:#2b2b2b;letter-spacing:-1px;}
 .sc_g_left .sc_g_sub a {padding:5px 9px;}
@@ -530,9 +539,9 @@ button > span {position:relative}
 
 .sc_g_right {position:absolute;right:40px;}
 .sc_g_right > li:last-child a:after {display: none;}
-
+ */
 /*기본 메뉴*/
-.m_nav {position: relative;min-height:70px;z-index:100;}
+/* .m_nav {position: relative;min-height:70px;z-index:100;}
 .m_nav .logo {position: absolute;left:50px;width:114px;height:70px;font-size:0;text-indent:-9999px;}
 .m_nav .logo a {padding-top:25px;display:block;height:100%;line-height:100%;}
 .m_nav .logo a:after {content:'';display:block;width:114px;height:19px;background:url('//movie-img.yes24.com/NYes24/new/logo.png') no-repeat 0 0;}
@@ -547,7 +556,7 @@ button > span {position:relative}
 .m_gnb_list > li > a > span {position: relative;;display:inline-block;}
 .m_gnb_list > li:hover  > a > span:after {content:'';position:absolute;bottom:-8px;left:0;right:0;display:block;height:2px;background:#ec6159;}
 .m_gnb_list > li.active  > a {color:#ec6159;}
-/* .m_gnb_list > li.active  > a > span:after {content:'';position:absolute;bottom:-8px;left:0;right:0;display:block;height:2px;background:#ec6159;} */
+.m_gnb_list > li.active  > a > span:after {content:'';position:absolute;bottom:-8px;left:0;right:0;display:block;height:2px;background:#ec6159;}
 .m_gnb_list:hover {height:280px;transition: height 0.5s;}
 .m_sub_gnb {
     font-size:14px;text-align: left;font-weight:normal; 
@@ -572,10 +581,10 @@ button > span {position:relative}
 .as_rng_list .btn_my .st_cycle {position:absolute;top:-7px;right:-10px;}
 .as_rng_list .btn_quick_on {margin-left:20px;width:21px;background-position:-464px -232px;}
 
-/*서브페이지 gnb*/
+서브페이지 gnb
 .main_area .sp_gnb, .none_pt .sp_gnb {display:none;}
 
-.sp_gnb {/*position:absolute;top:80px;left:0;right:0;*/width:100%;min-width:1200px;height:45px;background:#e5e5e5;z-index:1; display:none; }
+.sp_gnb {position:absolute;top:80px;left:0;right:0;width:100%;min-width:1200px;height:45px;background:#e5e5e5;z-index:1; display:none; }
 .sp_gnb_list {margin:auto;font-size:0;text-align:center; font-family:YesGR,'맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif ; }
 .sp_gnb_list > li {display:inline-block;font-size:13px;}
 .sp_gnb_list > li a {padding:15px 17px 16px;display:block;line-height:1;color:#777;}
@@ -615,7 +624,7 @@ button > span {position:relative}
 .aside_rnb.on .aside_menu {right:-50px;transition:right .5s;}
 .aside_menu.search_on .search_area {display:block;}
 .aside_menu.quick_on .quick_area {display:block;}
-
+ */
 /*폼요소가 있는 영역*/
 .pay_form_area .mc_title {margin:80px 0 20px !important; }
 .pay_form_area .form_tbl {position: relative;padding:50px;border:1px solid #e5e5e5;background:#fff;}
@@ -2837,7 +2846,7 @@ button.swiper-pagination-bullet {
 .detail_pohto_area .detail_pohto_slider .slick-next {right:0;background-position:-120px 0;}
 .detail_pohto_area .detail_pohto_slider .dp_slide {height:500px; background:#000;} /* height:650px; */
 .detail_pohto_area .detail_pohto_slider .dp_slide img {margin:auto;height:100%;}
-
+/* 
 .detail_pohto_area .detail_pohto_nav_slider {margin-top: 30px;width:1220px;}
 .detail_pohto_area .detail_pohto_nav_slider .slick-track {margin-left:inherit;margin-right:inherit;}
 .detail_pohto_area .detail_pohto_nav_slider .slick-arrow  {top:50%;transform:translate(0, -50%)}
@@ -2846,7 +2855,7 @@ button.swiper-pagination-bullet {
 .detail_pohto_area .detail_pohto_nav_slider .dpn_slide {position: relative;;padding-right:20px;height:94px;cursor: pointer;}
 .detail_pohto_area .detail_pohto_nav_slider .dpn_slide img {width:100%;}
 .detail_pohto_area .detail_pohto_nav_slider .dpn_slide.active:after {content:'';position: absolute;top:0;bottom:0;left:0;right:20px;background:rgba(0,0,0,.5);cursor: pointer;}
-
+ */
 .detail_news_area {font-size:0;}
 .detail_news_area .detail_news_box {margin:0 0 30px 30px;display:inline-block;width:calc((100% - 60px) / 3);height:176px;overflow:hidden;vertical-align:top;}
 .detail_news_area .detail_news_box:nth-child(3n + 1) {margin-left: 0;}

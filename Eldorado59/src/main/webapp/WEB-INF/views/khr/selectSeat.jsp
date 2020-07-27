@@ -291,7 +291,7 @@
                             	시간 : <input name="time" value="${time}">
                             </span>
                         </div>
-                        <div class="movie_sel_seat"> 좌석 : <input id="selected_seats" name="seat" value="좌석을 선택하세요."></div>
+                        <div class="movie_sel_seat"> 좌석 : <input id="selected_seats" name="seat" value="" placeholder="좌석을 선택하세요."></div>
 					</div>
 				</div>
 				<div class="price_info_area">
@@ -472,29 +472,68 @@ function myFunction() {
             input.value = "G" + j;
         }
     }
-
+    var array = new Array();
+    var array_str = new Array();
 	$(function(){
 		$('.seat').click(function(){
 
 			var idx = $('.seat').index(this);
 			var seatclick = $('.seat').eq(idx).val();
 			console.log("seatclick : " + seatclick);
-			var selected_seats = $('#selected_seats').val(seatclick);
-			var tmp = "";
-
-
-			 for (var i=0; i<selected_seats.length;i++){ 
-				//console.log();
-				tmp += ',' + seatclick;
-		
-				 } 
-			$('#selected_seats').append(tmp);
+			var selected_seats = $('#selected_seats').val();
+			var innerHtml = "";
+			var tmp = 0;
+			if(selected_seats == ""){
+				console.log("첫번째");
+				$('#selected_seats').val(seatclick);
+			}else{
+				var arrays = selected_seats.split(',');
+				console.log(arrays);
+				var len = arrays.length;
+				for(var i=0; i<arrays.length; i++){
+					if(arrays[i] == seatclick){
+						console.log("중복");
+						arrays.splice(arrays[seatclick],1);
+						console.log("arrays_중복제거 : " + arrays);
+						tmp = 1;
+						if(arrays[seatclick] == arrays[0]){
+							innerHtml += ''+arrays[i]+'';
+						}
+						else{
+							
+							innerHtml += ''+arrays[i]+'';
+						}
+						
+					}else{
+					if(tmp == 1){
+					innerHtml += ','+arrays[i]+'';
+					}else{
+						innerHtml += ''+arrays[i]+',';
+						
+					}
+					}
+					
+				}
+				$('#selected_seats').val("");
+				if(tmp == 1){
+					var arr = innerHtml.split(',');
+					console.log('arr1 : ' + arr);
+					arr = arr.filter(function(item){
+						return item !== null && item !== 'undefined' && item !== '';
+					});
+					console.log("arr : " + arr);
+					innerHtml = arr;
+					console.log("inner중복 : " + innerHtml);
+					
+				$('#selected_seats').val(innerHtml);
+				}else{
+				$('#selected_seats').val(innerHtml+seatclick);
+				}
+			}
 			
-			});
-
 		});   
     
-
+	});
 </script>
 
 

@@ -204,7 +204,7 @@ public class KhrController {
 		
 		if(id == null) {
 			
-			return "redirect:login2";
+			return "redirect:/lyj/login2";
 		}
 		//jsp로 아이디값 넘겨주기
 		session.setAttribute("id", id);
@@ -284,7 +284,7 @@ public class KhrController {
 		
 		if(id == null) {
 			
-			return "redirect:login2";
+			return "redirect:lyj/login2";
 		}
 		//jsp로 아이디값 넘겨주기
 		session.setAttribute("id", id);

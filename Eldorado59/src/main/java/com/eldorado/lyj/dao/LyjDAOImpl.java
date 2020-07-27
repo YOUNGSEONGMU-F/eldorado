@@ -1,13 +1,13 @@
 package com.eldorado.lyj.dao;
 
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
 
 import org.apache.ibatis.session.SqlSession;
-
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -75,6 +75,16 @@ public class LyjDAOImpl implements LyjDAO{
 		
 		
 		return session.selectList("lyj.bringReservations", id);
+	}
+
+
+	@Override
+	public int CancelMovieTicket(String id,String reserv_num) {
+		System.out.println(" 예매취소하기 dao : "+id);
+		Map<String,Object> map = new HashMap<String,Object>();
+		map.put("id", id);
+		map.put("reserv_num", reserv_num);
+		return session.delete("lyj.CancelMovieTicket", map);
 	}
 	
 	
