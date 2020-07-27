@@ -244,7 +244,7 @@ public class KhrController {
 	public String TicketOrder_post(Locale locale, Model model, HttpSession session, HttpServletRequest request, @RequestParam String title,
 			@RequestParam String th_name, @RequestParam String date, @RequestParam String time ,
 			@RequestParam String adult, @RequestParam String kid, @RequestParam String a_price, @RequestParam String k_price,
-			@RequestParam String total_price, @RequestParam String total_amount) {
+			@RequestParam String total_price, @RequestParam String total_amount, @RequestParam String seat) {
 		
 		String id = (String)session.getAttribute("id");
 		
@@ -267,6 +267,7 @@ public class KhrController {
 		request.setAttribute("k_price", k_price);
 		request.setAttribute("total_price", total_price);
 		request.setAttribute("total_amount", total_amount);
+		request.setAttribute("seat", seat);
 		
 
 		return "khr/TicketOrder";
@@ -284,7 +285,7 @@ public class KhrController {
 			@RequestParam Map<String, Object> reserve, HttpSession session, HttpServletRequest request, @RequestParam String title,
 			@RequestParam String th_name, @RequestParam String date, @RequestParam String time ,
 			@RequestParam(value="adult", required=false) String adult, @RequestParam(value="kid", required=false) String kid, @RequestParam(value="a_price", required=false) String a_price, @RequestParam(value="k_price", required=false) String k_price,
-			@RequestParam String total_price, @RequestParam String total_amount) {
+			@RequestParam String total_price, @RequestParam String total_amount, @RequestParam String seat) {
 		
 		String id = (String)session.getAttribute("id");
 		
@@ -306,7 +307,7 @@ public class KhrController {
 		request.setAttribute("k_price", k_price);
 		request.setAttribute("total_price", total_price);
 		request.setAttribute("total_amount", total_amount);
-		
+		request.setAttribute("seat", seat);
 	
 		service.insertReserve(reserve);
 		

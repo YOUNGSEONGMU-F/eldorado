@@ -185,7 +185,7 @@
 					<span>${th_name} / ${total_amount}장</span>
 				</div>
 				<div class="movie_sel_seat"> 
-					<span><input name="seat" value="좌석을 선택하세요.">C4,C5,C6</span>
+					<span>${seat}</span>
 				</div>
 				<div class="movie_sel_date">
 	                <span data-bind="with:theaterDateViewModel.movieDate()">

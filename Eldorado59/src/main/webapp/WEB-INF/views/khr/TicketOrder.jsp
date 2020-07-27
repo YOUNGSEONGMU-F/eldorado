@@ -274,7 +274,7 @@
                         	시간 : <input name="time" value="${time}">
                         </span>
                     </div>
-                   	<div class="movie_sel_seat"> 좌석 : <input name="seat" value="좌석을 선택하세요."></div>
+                   	<div class="movie_sel_seat"> 좌석 : <input name="seat" value="${seat}"></div>
 				</div>
 			</div>
 			<div class="price_info_area">
