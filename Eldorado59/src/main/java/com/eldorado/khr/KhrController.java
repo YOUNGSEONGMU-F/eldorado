@@ -195,6 +195,20 @@ public class KhrController {
 		return "khr/MovieGift";
 	}
 	
+	//무비기프트 -> 기프트 예매권 결제
+	@RequestMapping(value = "GiftOrder", method = RequestMethod.GET)
+	public String GiftOrder(Locale locale, Model model) {
+
+		return "khr/GiftOrder";
+	}
+	
+	@RequestMapping(value = "GiftOrder", method = RequestMethod.POST)
+	public String GiftOrder_post(Locale locale, Model model) {
+		
+		return "khr/GiftOrder";
+	}
+	
+	
 	// 좌석선택
 	@RequestMapping(value = "selectSeat", method = RequestMethod.GET)
 	public String selectSeat(Locale locale, Model model, HttpSession session, @RequestParam String title,
