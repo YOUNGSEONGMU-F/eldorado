@@ -114,7 +114,7 @@ public class KhrController {
 		return null;
 	}
 
-	// 회원정보 수정
+	// 회원정보 조회 & 수정
 	@RequestMapping(value = "updateMember", method = RequestMethod.GET)
 	public String updateMember(Locale locale, Model model,HttpSession session) {
 
@@ -133,17 +133,7 @@ public class KhrController {
 
 		service.updateMember(user);
 
-		return "khr/updateMember";
-	}
-
-	// 회원정보조회
-	@RequestMapping(value = "/info", method = RequestMethod.GET)
-	public String info(HttpSession session, Model model) {
-		System.out.println("정보 조회");
-		// 데이터 가져오기
-		String id = (String) session.getAttribute("id");
-
-		return "info";
+		return "lyj/Mypage";
 	}
 
 	// 회원정보 삭제

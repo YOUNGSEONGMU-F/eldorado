@@ -12,7 +12,7 @@
 
 <update id="updateMember" parameterType="map">
 	update member 
-	set name=#{name},pass=#{pass},addr=#{addr},tel=#{tel},email=#{email} 
+	set pass=#{pass},name=#{name},email=#{email},zipcode=#{zipcode},addr=#{addr},tel=#{tel}
 	where id=#{id}
 
 </update>
