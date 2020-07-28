@@ -138,8 +138,16 @@ public class KhrController {
 
 	// 회원정보 삭제
 	@RequestMapping(value = "deleteMember", method = RequestMethod.GET)
-	public String deleteMember(Locale locale, Model model) {
-
+	public String deleteMember(Locale locale, Model model,HttpSession session) {
+		
+		String id = (String) session.getAttribute("id");
+		if(id == null) {
+			
+			return "redirect:/lyj/login2";
+		}
+		//jsp로 아이디값 넘겨주기
+		session.setAttribute("id", id);
+		
 		return "khr/deleteMember";
 	}
 
@@ -147,8 +155,8 @@ public class KhrController {
 	public String deleteMember_post(Locale locale, Model model, @RequestParam Map<String, Object> user) {
 
 		service.deleteMember(user);
-
-		return "khr/deleteMember";
+		//리턴 주소 수정
+		return "../Main/index";
 	}
 
 	// 비밀번호 수정
@@ -310,7 +318,7 @@ public class KhrController {
 		
 		if(id == null) {
 			
-			return "redirect:/lyjlogin2";
+			return "redirect:/lyj/login2";
 		}
 		//jsp로 아이디값 넘겨주기
 		session.setAttribute("id", id);
