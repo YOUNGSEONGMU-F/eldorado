@@ -233,7 +233,7 @@
 					<div class="form_tbl ">
 						<div class="form_tbl_row">
 			                <div class="form_tbl_col first">주문고객</div>
-			                <div class="form_tbl_col "><strong><text id="txtUserNm">아이디</text></strong></div>
+			                <div class="form_tbl_col "><strong><text id="txtUserNm">이름</text></strong></div>
 			            </div>
 			            <div class="form_tbl_row">
 			                <div class="form_tbl_col first">받는고객</div>

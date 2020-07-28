@@ -218,7 +218,7 @@ public class KhrController {
 		
 		if(id == null) {
 			
-			return "redirect:/lyjlogin2";
+			return "redirect:/lyj/login2";
 		}
 		//jsp로 아이디값 넘겨주기
 		session.setAttribute("id", id);
@@ -233,8 +233,16 @@ public class KhrController {
 		return "khr/selectSeat";
 	}
 	@RequestMapping(value = "selectSeat", method = RequestMethod.POST)
-	public String selectSeat_post(Locale locale, Model model, @RequestParam String title,
+	public String selectSeat_post(Locale locale, Model model,HttpSession session, @RequestParam String title,
 			@RequestParam String th_name, @RequestParam String date, @RequestParam String time ) {
+		
+		/*
+		 * String id = (String)session.getAttribute("id");
+		 * 
+		 * if(id == null) {
+		 * 
+		 * return "redirect:/lyj/login2"; }
+		 */
 		
 		return "khr/selectSeat";
 	}
@@ -243,12 +251,13 @@ public class KhrController {
 	@RequestMapping(value = "TicketOrder", method = RequestMethod.GET)
 	public String TicketOrder(Locale locale, Model model,HttpSession session) {
 		
-		String id = (String)session.getAttribute("id");
 		
-		if(id == null) {
-			
-			return "redirect:/lyj/login2";
-		}
+		  String id = (String)session.getAttribute("id");
+		  
+		  if(id == null) {
+		  
+		  return "redirect:/lyj/login2"; }
+		 
 		
 		
 		return "khr/TicketOrder";
