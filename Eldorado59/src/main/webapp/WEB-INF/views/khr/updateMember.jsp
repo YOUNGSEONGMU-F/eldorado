@@ -209,7 +209,7 @@ gtag('config', 'AW-1056776890');
 								<th class="txt" scope="row">아이디</th>
 								<td colspan="3" class="txt lastCol">
 									<span id="CLabMemId"><span class="yesIpt m_size w_200">
-										<input name="id" type="text" id="id" autocomplete="off" maxlength="20" value="${getMember.id} " readonly>
+										<input name="id" type="text" id="id" autocomplete="off" maxlength="20" value="${GetMember.id} " readonly>
 									</span></span>
 								</td>
 							</tr>
@@ -219,7 +219,7 @@ gtag('config', 'AW-1056776890');
 								<td colspan="3" class="inpArea lastCol">
 									<div class="inpRow">
 										<span class="setAlignL"><span id="CLabMemNm"><span class="yesIpt m_size w_200">
-											<input name="name" type="text" id="name" autocomplete="off" maxlength="20" value="${member.name}">
+											<input name="name" type="text" id="name" autocomplete="off" maxlength="20" value="${GetMember.name}">
 										</span></span></span>
 									</div>
 								</td>
@@ -261,7 +261,7 @@ gtag('config', 'AW-1056776890');
 									
 									<div id="div_ST_ADDR_TEXT" class="inpRow">
 										<span class="yesIpt m_size ipt_wSizeF">
-											<input type="text" name="addr" id="sample6_address" class="fwN" autocomplete="off" placeholder="주소" value="${member.addr}">
+											<input type="text" name="addr" id="sample6_address" class="fwN" autocomplete="off" placeholder="주소" value="${GetMember.addr}">
 										</span>
 									</div>
 									
@@ -306,7 +306,7 @@ gtag('config', 'AW-1056776890');
 								<td colspan="3" class="inpArea lastCol">
 									<div id="CTxtTelNoA" class="inpRow">
 										<span class="setAlignL" id="sTelNo"><span class="yesIpt m_size w_200">
-											<input name="tel" type="text" id="tel" autocomplete="off" maxlength="20" value="${member.tel}">
+											<input name="tel" type="text" id="tel" autocomplete="off" maxlength="20" value="${GetMember.tel}">
 										</span></span>
 									</div>
 								</td>
@@ -318,7 +318,7 @@ gtag('config', 'AW-1056776890');
 									<input type="hidden" name="email" id="email" value="">
 									<div class="inpRow" id="CTxtEmlA">
 										<span id="sEmailAddress" class="setAlignL"><span class="yesIpt m_size w_200">
-											<input name="email" type="text" id="email" autocomplete="off" maxlength="20" value="${member.email}">
+											<input name="email" type="text" id="email" autocomplete="off" maxlength="20" value="${GetMember.email}">
 										</span></span>
 			                        </div>
 								</td>

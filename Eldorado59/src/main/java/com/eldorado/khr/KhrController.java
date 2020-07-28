@@ -116,8 +116,14 @@ public class KhrController {
 
 	// 회원정보 수정
 	@RequestMapping(value = "updateMember", method = RequestMethod.GET)
-	public String updateMember(Locale locale, Model model) {
+	public String updateMember(Locale locale, Model model,HttpSession session) {
 
+		String id = (String) session.getAttribute("id");
+		
+		Map<String, Object> GetMember = service.getMember(id);
+		model.addAttribute("GetMember", GetMember);
+		
+		
 		return "khr/updateMember";
 	}
 
