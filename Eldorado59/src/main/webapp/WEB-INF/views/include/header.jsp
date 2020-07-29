@@ -23,14 +23,14 @@
                           
                         </ul>
                         <ul class="sc_g_right">
-                        
-                            <li><a href="/Login">로그인</a></li>
+                        <% if(session.getAttribute("id") == null){ %>
+                             <li><a href="${pageContext.request.contextPath}/lyj/login2">로그인</a></li>
+                        <%}else{ %>
+                             <li><a href="${pageContext.request.contextPath}/lyj/logout">로그아웃</a></li>
+						<%} %>
 
-                            <li><a href="/MyPage">마이페이지</a></li>
+                            <li><a href="/Mypage">마이페이지</a></li>
                             <li><a href="/Customer">고객센터</a></li>
-
-                            <li><a href="/Movie/movieAdmin">영화관리자</a></li>
-
                         </ul>
                     </div>
 					<div id="m_nav">
