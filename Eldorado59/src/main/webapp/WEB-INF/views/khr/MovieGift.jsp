@@ -22,7 +22,7 @@
                 </p>
                 <div class="mg_vou_list_area" id="divMovieGiftTop">
                 	<div class="mg_vou_box">
-                		<a href="Ticket?id=1296">
+                		<a href="GiftOrder">
                 			<div class="mg_vou_img">
                 				<img src="https://movie-simg.yes24.com/NYes24//MovieGift/Image/202001/img_mg01_130913(0).png" alt="">
                 			</div>
@@ -36,7 +36,7 @@
                 		</a>
                 	</div>
                 	<div class="mg_vou_box">
-                		<a href="Ticket?id=1297">
+                		<a href="GiftOrder">
                 			<div class="mg_vou_img">
                 				<img src="https://movie-simg.yes24.com/NYes24//MovieGift/Image/202001/img_mg02_145927(0).png" alt="">
                 			</div>

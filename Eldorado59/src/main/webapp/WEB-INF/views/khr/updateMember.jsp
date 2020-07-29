@@ -148,6 +148,7 @@ gtag('config', 'AW-1056776890');
 		</script>
 		
 		<form name="updateForm" action="updateMember" method="post" id="updateForm">
+			<input type="text" value="<%=session.getAttribute("id")%>">
 			<!-- #################### 간략 NAVI 영역 시작 #################### -->
 			<div id="ySNavi">
 				<ul class="mnu">
@@ -208,7 +209,7 @@ gtag('config', 'AW-1056776890');
 								<th class="txt" scope="row">아이디</th>
 								<td colspan="3" class="txt lastCol">
 									<span id="CLabMemId"><span class="yesIpt m_size w_200">
-										<input name="id" type="text" id="id" autocomplete="off" maxlength="20" value="${mb.id} " readonly>
+										<input name="id" type="text" id="id" autocomplete="off" maxlength="20" value="${getMember.id} " readonly>
 									</span></span>
 								</td>
 							</tr>
@@ -218,7 +219,7 @@ gtag('config', 'AW-1056776890');
 								<td colspan="3" class="inpArea lastCol">
 									<div class="inpRow">
 										<span class="setAlignL"><span id="CLabMemNm"><span class="yesIpt m_size w_200">
-											<input name="name" type="text" id="name" autocomplete="off" maxlength="20" value="${mb.name }">
+											<input name="name" type="text" id="name" autocomplete="off" maxlength="20" value="${member.name}">
 										</span></span></span>
 									</div>
 								</td>
@@ -260,7 +261,7 @@ gtag('config', 'AW-1056776890');
 									
 									<div id="div_ST_ADDR_TEXT" class="inpRow">
 										<span class="yesIpt m_size ipt_wSizeF">
-											<input type="text" name="addr" id="sample6_address" class="fwN" autocomplete="off" placeholder="주소">
+											<input type="text" name="addr" id="sample6_address" class="fwN" autocomplete="off" placeholder="주소" value="${member.addr}">
 										</span>
 									</div>
 									
@@ -305,7 +306,7 @@ gtag('config', 'AW-1056776890');
 								<td colspan="3" class="inpArea lastCol">
 									<div id="CTxtTelNoA" class="inpRow">
 										<span class="setAlignL" id="sTelNo"><span class="yesIpt m_size w_200">
-											<input name="tel" type="text" id="tel" autocomplete="off" maxlength="20" value="${mb.tel }">
+											<input name="tel" type="text" id="tel" autocomplete="off" maxlength="20" value="${member.tel}">
 										</span></span>
 									</div>
 								</td>
@@ -317,7 +318,7 @@ gtag('config', 'AW-1056776890');
 									<input type="hidden" name="email" id="email" value="">
 									<div class="inpRow" id="CTxtEmlA">
 										<span id="sEmailAddress" class="setAlignL"><span class="yesIpt m_size w_200">
-											<input name="email" type="text" id="email" autocomplete="off" maxlength="20" value="${mb.email }">
+											<input name="email" type="text" id="email" autocomplete="off" maxlength="20" value="${member.email}">
 										</span></span>
 			                        </div>
 								</td>
@@ -443,18 +444,18 @@ gtag('config', 'AW-1056776890');
 
 
 
-	<h1>회원정보 수정</h1>
+	<!-- <h1>회원정보 수정</h1>
 
 	<form action="updateMember" method="post" id="updateForm">
 		아이디 : <input type="text" name="id" value=""><br>
 		이름 : <input type="text" name="name"><br>
-		<!-- 비밀번호 변경 시, 다시 변경 한 비밀번호로 로그인 후 회원정보 수정 페이지로 -->
+		비밀번호 변경 시, 다시 변경 한 비밀번호로 로그인 후 회원정보 수정 페이지로
 		비밀번호 : <button onclick="window.open('changePW','window_name','width=430,height=500,location=no,status=no,scrollbars=yes');">비밀번호 변경</button><br>
-		<!-- 기존 비밀번호 : <input type="password" id="ori_pass"><br>
+		기존 비밀번호 : <input type="password" id="ori_pass"><br>
 		새 비밀번호 : <input type="password" id="pass" name="pass"><br>
-		새 비밀번호 확인 : <input type="password" id="pass2" name="pass2"><br> -->
-		<!-- 주소 다음api 가져오기 -->
-<!-- 		주소 : <input type="text" id="sample6_postcode" placeholder="우편번호">
+		새 비밀번호 확인 : <input type="password" id="pass2" name="pass2"><br>
+		주소 다음api 가져오기
+		주소 : <input type="text" id="sample6_postcode" placeholder="우편번호">
 			<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
 			<input type="text" id="sample6_address" placeholder="주소"><br>
 			<input type="text" id="sample6_detailAddress" placeholder="상세주소">
@@ -510,14 +511,14 @@ gtag('config', 'AW-1056776890');
         }).open();
     }
 </script>
- -->
+
 		
 		
 		전화번호 : <input type="text" name="tel" id="tel"><br>
 		이메일 : <input type="text" name="email" id="email"><br>
 		
 		<input type="button" id="submitBtn" value="수정하기">
-	</form>
+	</form> -->
 
 </body>
 

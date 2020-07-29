@@ -102,7 +102,7 @@
 <img width="223" src="https://developers.naver.com/doc/review_201802/CK_bEFnWMeEBjXpQ5o8N_20180202_7aot50.png"/></a></div>
 </li>
    <!-- <li class="evenCol"><a href="javascript:void(0);" id="FBLoginSub_aBtnKakaoLogin" onClick="callKakaoLogin();" class="btn_social"><span class="bWrap"><em class="ico_social ico_ka bgMem"></em><em class="txt">카카오 아이디로 로그인</em></span></a>  </li> -->
-<li class="oddCol"><div style="text-align:center"><a href="https://kauth.kakao.com/oauth/authorize?client_id=37c9bbc47d6241ab8e229dbd6a15e1f3&redirect_uri=http://localhost:8080/team/Main/index&response_type=code"> 
+<li class="oddCol"><div style="text-align:center"><a href="https://kauth.kakao.com/oauth/authorize?client_id=37c9bbc47d6241ab8e229dbd6a15e1f3&redirect_uri=http://localhost:8080/Main/index&response_type=code"> 
 <img width="223" src="${pageContext.request.contextPath }/resources/khr/img/kakao_login_img.png" /></a></div>
 
    </li>

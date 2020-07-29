@@ -166,11 +166,29 @@ public class LyjController {
 		return null;
 	}
 
+	
+	
+	
+	
+	
+	
 	// 로그아웃
-	@RequestMapping(value = "/logout", method = { RequestMethod.GET, RequestMethod.POST })
-	public String logout(HttpSession session) throws IOException {
-		System.out.println("여기는 logout");
+	@RequestMapping(value = "/logout", method = RequestMethod.GET,produces = "text/html; charset=UTF-8")
+	public String logout(HttpSession session,HttpServletResponse response, Model model) throws IOException {
+	
 		session.invalidate();
+		System.out.println("여기는 logout");
+	    model.addAttribute("msg","로그아웃완료");
+        model.addAttribute("url","/Main/index");
+		
+		return "/lyj/logout";
+	}
+	
+	// 로그아웃포스트
+	@RequestMapping(value = "/logout", method = RequestMethod.POST,produces = "text/html; charset=UTF-8" )
+	public String logout_post(HttpSession session,HttpServletResponse response, Model model) throws IOException {
+		
+		
 		return "lsy/main";
 	}
 
@@ -279,7 +297,18 @@ public class LyjController {
 	
 	
 	  @RequestMapping(value = "movieTicket", method = RequestMethod.GET) 
-	  public String movieTicket(Model model) {
+	  public String movieTicket(Model model,HttpSession session) {
+		
+		  
+		  String id = (String)session.getAttribute("id");
+			
+		if(id == null) {
+				
+				return "redirect:login2";
+			}  
+		  
+		  
+		  
 	  List<Map<String, Object>> theaterList = service.bringthetheaters();
 	  System.out.println("@@@@@@@ : " + theaterList);
 	  model.addAttribute("theaterList", theaterList);

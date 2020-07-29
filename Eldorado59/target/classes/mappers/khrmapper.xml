@@ -30,8 +30,8 @@
 
 
 <insert id="insertReserve" parameterType="map" > 
-	insert into reservation (reserv_num,id,title,th_name,date,time) 
-	values (2,#{id},#{title},#{th_name},#{date},#{time}) 
+	insert into reservations (id,title,t_amount,th_name,seat,date,time,total_price) 
+	values (#{id},#{title},#{total_amount},#{th_name},#{seat},#{date},#{time},#{total_price})
 </insert>
 
 

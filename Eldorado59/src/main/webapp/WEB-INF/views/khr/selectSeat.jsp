@@ -14,7 +14,7 @@
 <link href="${pageContext.request.contextPath }/resources/khr/css/swiper.css" rel="stylesheet" type="text/css" />
 <link href="${pageContext.request.contextPath }/resources/khr/css/reserve.css" rel="stylesheet" type="text/css" /> --%>
 <%-- <link href="${pageContext.request.contextPath }/resources/khr/css/main.css" rel="stylesheet" type="text/css" /> --%>
-	
+   
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <script
   src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -23,7 +23,7 @@
 </script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div id="ad">
-	<img id="imgTopBanner" src="https://movie-simg.yes24.com/NYes24//MgrMain//20/06/betterdays_1200x70_181431.jpg" alt="소년">
+   <img id="imgTopBanner" src="https://movie-simg.yes24.com/NYes24//MgrMain//20/06/betterdays_1200x70_181431.jpg" alt="소년">
 </div>
 
 </head>
@@ -48,7 +48,7 @@
                             <li><a href="/Customer">고객센터</a></li>
                         </ul>
                     </div>
-					<div id="m_nav">
+               <div id="m_nav">
                         <h1 class="logo"><a href="${pageContext.request.contextPath }/Main/index">ELDORADO59</a></h1>
                         <div class="m_gnb_area">
                             <ul class="m_gnb_list">
@@ -174,153 +174,158 @@
 
 </div>
 </header>
+
 <input type="hidden" value="<%=session.getAttribute("id") %>">
 <div class="wrap">
-	<div class="reserve_top lay_inner">
-		
-	</div>
-	
-	<div class="reserve_area">
-		<div class="reserve_container lay_inner">
-			<div class="reserve_content">
-				<!-- 좌석선택 -->
-				<div id="divSeatMap">
-					<div class="seat_area">
-						<div class="ms_title">
-							<span class="tit">인원/좌석 선택</span>
-						</div>
-						<div class="white_box seat_cont">
-							<div class="peo_num_cont">
-								<!-- 인원 선택 -->
-								<div class="select_people peo_num_info" id="priceList">
-									<div class="people_type">
-										<span class="pt_tit">성인</span>
-										<span class="pt_num_peo" id="THPRICE100">
-											<!-- 버튼 0-8까지 -->
-											<!-- 버튼 클릭하면 class="active" 생성-->
-											<button type="button" onclick="Count('0')" id="THPRICE100" class="" value="0">0</button>
-											<button type="button" onclick="Count('1')" id="THPRICE100" class="" value="1">1</button>
-											<button type="button" onclick="Count('2')" id="THPRICE100" class="" value="2">2</button>
-											<button type="button" onclick="Count('3')" id="THPRICE100" class="" value="3">3</button>
-											<button type="button" onclick="Count('4')" id="THPRICE100" class="" value="4">4</button>
-											<button type="button" onclick="Count('5')" id="THPRICE100" class="" value="5">5</button>
-											<button type="button" onclick="Count('6')" id="THPRICE100" class="" value="6">6</button>
-											<button type="button" onclick="Count('7')" id="THPRICE100" class="" value="7">7</button>
-											<button type="button" onclick="Count('8')" id="THPRICE100" class="" value="8">8</button>
-										</span>
-									</div>
-									<div  class="people_type">
-										<span class="pt_tit">청소년</span>
-										<span class="pt_num_peo" id="THPRICE200">
-											<!-- 버튼 0-8까지 -->
-											<!-- 버튼 클릭하면 class="active" 생성-->
-											<button type="button" onclick="Count('9')" id="THPRICE200" class="">0</button>
-											<button type="button" onclick="Count('10')" class="">1</button>
-											<button type="button" onclick="Count('11')" class="">2</button>
-											<button type="button" onclick="Count('12')" class="">3</button>
-											<button type="button" onclick="Count('13')" class="">4</button>
-											<button type="button" onclick="Count('14')" class="">5</button>
-											<button type="button" onclick="Count('15')" class="">6</button>
-											<button type="button" onclick="Count('16')" class="">7</button>
-											<button type="button" onclick="Count('17')" class="">8</button>
-										</span>
-									</div>
-								</div>
-								<!--// 인원 선택 -->
-								<!--선택된 상영관-->
-								<div class="peo_num_info">
-									<p class="sc_tit">선택한 상영관 및 시간</p>
-									<p class="sc_txt" data-bind="with:theaterViewModel.theater()">${th_name}</p>
-									<p class="sc_txt">
-										<span data-bind="with:theaterDateViewModel.movieDate()">${date} /</span>
-										<span data-bind="with:theaterMovieTimeViewModel.movieTime()">${time}</span>
-									</p>
-								</div>
-								<!--// 선택된 상영관-->
-								<!--선택 좌석-->
-								<div class="peo_num_info">
-									<p class="sc_tit">선택한 좌석</p>
-									<p class="sc_txt" id="SeatInfo">좌석 선택</p>
-								</div>
-							</div>
-							<!--좌석 위치-->
-							<div class="seating_cont">
-								<style>
-							        .seat {
-							            width: 30px;
-							            height: 30px;
-							            margin: 0 auto;
-							        }
-							        
-							        .clicked {
-							            background-color: red;
-							            color: white;
-							        }
-							    </style>
-							    
-							    <div class="seat-wrapper">
-							    	<div class="screen-view-wrapper">
-										<div class="screen-view">SCREEN</div>
-									</div>
-							    </div>
-								
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<!-- 선택한 영화 정보 -->
-		<form method="post" action="TicketOrder">
-		<div class="sel_movie_info selected">
-			<div class="lay_inner">
-				<div class="sel_movie_info_area" data-bind="with:movieViewModel">
-					<div class="movie_info">
-						<div class="movie_sel_tit" data-bind="with:theaterMovieTimeViewModel.movie()">
-							제목 : <input name="title" value="${title}">
-						</div>
-						<div class="movie_sel_cinema" data-bind="with:theaterViewModel.theater()">
-							극장 : <input name="th_name" value="${th_name}">
-						</div>
-						<div class="movie_sel_date">
+   <div class="reserve_top lay_inner">
+      
+   </div>
+   
+   <div class="reserve_area">
+      <div class="reserve_container lay_inner">
+         <div class="reserve_content">
+            <!-- 좌석선택 -->
+            <div id="divSeatMap">
+               <div class="seat_area">
+                  <div class="ms_title">
+                     <span class="tit">인원/좌석 선택</span>
+                  </div>
+                  <div class="white_box seat_cont">
+                     <div class="peo_num_cont">
+                        <!-- 인원 선택 -->
+                        <div class="select_people peo_num_info" id="priceList">
+                           <div class="people_type">
+                              <span class="pt_tit">성인</span>
+                              <span class="pt_num_peo" id="THPRICE100">
+                                 <!-- 버튼 0-8까지 -->
+                                 <!-- 버튼 클릭하면 class="active" 생성-->
+                                 <button type="button" onclick="Count('0')" id="THPRICE100" class="" value="0">0</button>
+                                 <button type="button" onclick="Count('1')" id="THPRICE100" class="" value="1">1</button>
+                                 <button type="button" onclick="Count('2')" id="THPRICE100" class="" value="2">2</button>
+                                 <button type="button" onclick="Count('3')" id="THPRICE100" class="" value="3">3</button>
+                                 <button type="button" onclick="Count('4')" id="THPRICE100" class="" value="4">4</button>
+                                 <button type="button" onclick="Count('5')" id="THPRICE100" class="" value="5">5</button>
+                                 <button type="button" onclick="Count('6')" id="THPRICE100" class="" value="6">6</button>
+                                 <button type="button" onclick="Count('7')" id="THPRICE100" class="" value="7">7</button>
+                                 <button type="button" onclick="Count('8')" id="THPRICE100" class="" value="8">8</button>
+                              </span>
+                           </div>
+                           <div  class="people_type">
+                              <span class="pt_tit">청소년</span>
+                              <span class="pt_num_peo" id="THPRICE200">
+                                 <!-- 버튼 0-8까지 -->
+                                 <!-- 버튼 클릭하면 class="active" 생성-->
+                                 <button type="button" onclick="Count('9')" id="THPRICE200" class="">0</button>
+                                 <button type="button" onclick="Count('10')" class="">1</button>
+                                 <button type="button" onclick="Count('11')" class="">2</button>
+                                 <button type="button" onclick="Count('12')" class="">3</button>
+                                 <button type="button" onclick="Count('13')" class="">4</button>
+                                 <button type="button" onclick="Count('14')" class="">5</button>
+                                 <button type="button" onclick="Count('15')" class="">6</button>
+                                 <button type="button" onclick="Count('16')" class="">7</button>
+                                 <button type="button" onclick="Count('17')" class="">8</button>
+                              </span>
+                           </div>
+                        </div>
+                        <!--// 인원 선택 -->
+                        <!--선택된 상영관-->
+                        <div class="peo_num_info">
+                           <p class="sc_tit">선택한 상영관 및 시간</p>
+                           <p class="sc_txt" data-bind="with:theaterViewModel.theater()">${th_name}</p>
+                           <p class="sc_txt">
+                              <span data-bind="with:theaterDateViewModel.movieDate()">${date} /</span>
+                              <span data-bind="with:theaterMovieTimeViewModel.movieTime()">${time}</span>
+                           </p>
+                        </div>
+                        <!--// 선택된 상영관-->
+                        <!--선택 좌석-->
+                        <div class="peo_num_info">
+                           <p class="sc_tit">선택한 좌석</p>
+                           <p class="sc_txt" id="SeatInfo">좌석 선택</p>
+                        </div>
+                     </div>
+                     <!--좌석 위치-->
+                     <div class="seating_cont">
+                        <style>
+                             .seat {
+                                 width: 30px;
+                                 height: 30px;
+                                 margin: 0 auto;
+                             }
+                             
+                             .clicked {
+                                 background-color: red;
+                                 color: white;
+                             }
+                         </style>
+                         
+                         <div class="seat-wrapper">
+                            <div class="screen-view-wrapper">
+                              <div class="screen-view">SCREEN</div>
+                           </div>
+                         </div>
+                        
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <!-- 선택한 영화 정보 -->
+      <form method="post" action="TicketOrder">
+      <input type="hidden" value="<%=session.getAttribute("id") %>">
+      <div class="sel_movie_info selected">
+         <div class="lay_inner">
+            <div class="sel_movie_info_area" data-bind="with:movieViewModel">
+               <div class="movie_info">
+                  <div class="movie_sel_tit" data-bind="with:theaterMovieTimeViewModel.movie()">
+                     제목 : <input name="title" value="${title}">
+                  </div>
+                  <div class="movie_sel_cinema" data-bind="with:theaterViewModel.theater()">
+                     극장 : <input name="th_name" value="${th_name}">
+                  </div>
+                  <div class="movie_sel_date">
                             <span data-bind="with:theaterDateViewModel.movieDate()">
-                            	날짜 : <input name="date" value="${date}"> 
+                               날짜 : <input name="date" value="${date}"> 
                             </span> <br>
                             <span data-bind="with:theaterMovieTimeViewModel.movieTime()">
-                            	시간 : <input name="time" value="${time}">
+                               시간 : <input name="time" value="${time}">
                             </span>
                         </div>
-                        <div class="movie_sel_seat"> 좌석 : <input id="selected_seats" name="seat" value="" placeholder="좌석을 선택하세요."></div>
-					</div>
-				</div>
-				<div class="price_info_area">
-					<p class="clear">
-						<!-- 성인 -->
-						<span class="pi_tit"><input id="peo_num" name="adult"></span>
-						<span class="pi_info"><input id="a_price" name="a_price"></span><br>
-						<!-- 청소년 -->
-						<span class="pi_tit"><input id="peo_num2" name="kid"></span>
-						<span class="pi_info"><input id="k_price" name="k_price"></span>
-					</p>
-				</div>
-				<div class="last_price_area">
+                        <div class="movie_sel_seat"> 좌석 : <input id="selected_seats" name="seat" value=""></div>
+               </div>
+            </div>
+            <div class="price_info_area">
+               <p class="clear">
+                  <!-- 성인 -->
+                  <span class="pi_tit"><input id="peo_num" name="adult"></span>
+                  <span class="pi_info"><input id="a_price" name="a_price"></span><br>
+                  <!-- 청소년 -->
+                  <span class="pi_tit"><input id="peo_num2" name="kid"></span>
+                  <span class="pi_info"><input id="k_price" name="k_price"></span><br>
+                  <input type="hidden" id="a_amount" name="a_amount">
+                  <input type="hidden" id="k_amount" name="k_amount"><br>
+                  <input type="hidden" id="total_amount" name="total_amount">
+               </p>
+            </div>
+            <div class="last_price_area">
                     <div class="lp_txt">
-                    	<p>최종결제금액</p>
-                    	<p class="lp_price"><input id="total_price" name="total_price"></p>
+                       <p>최종결제금액</p>
+                       <p class="lp_price"><input id="total_price" name="total_price"></p>
                     </div>
                     <div class="fr">
                         <button id="btnPay" type="submit" class="bnt_payment">다음</button>
                     </div>
                 </div>
-			</div>
-		</div>
-		</form>
-		<!--//선택 영화 정보-->
-		<!--step 버튼 영역 -->
-		
-	</div>
-	
+         </div>
+      </div>
+      </form>
+      <!--//선택 영화 정보-->
+      <!--step 버튼 영역 -->
+      
+   </div>
+   
 </div>
 
 
@@ -348,69 +353,55 @@ function myFunction() {
 
 <script type="text/javascript">
 
-	//인원수
-// 	function CountA(seq) {
-// 		$('#peo_num').val('성인('+seq+')');
-		
-// 		$('#tk_price').val(seq * 10000);
-	
-// 	}
-	
-// 	function CountB(seq) {
-// 		$('#peo_num2').val('청소년('+seq+')');
-	
-// 		$('#tk_price2').val(seq * 8000);
-// 	} 
+   //인원수 & 총 가격
+   function Count(seq) {
+      
+      var adult_price  = "";
+      var final_childprice = "";
+      
+      if(seq < 9){
+         //성인(n) input
+         $('#peo_num').val('성인('+seq+')');
+         //가격 input
+         $('#a_price').val(seq * 10000);
 
-	function Count(seq) {
-		/* $('#peo_num').val('성인('+seq+')');
-		
-		$('#tk_price').val((seq * 10000) +'원');
+         var adult_price = $('#a_price').val();
+         console.log("어른 :"+adult_price);
+         
+         //total_price
+         var final_childprice = $('#k_price').val();
+         $('#total_price').val(Number(adult_price)+Number(final_childprice));
 
-		$('#peo_num2').val('청소년('+seq+')');
-		
-		$('#tk_price2').val((seq * 8000) +'원'); */
-		/* var total_price = document.getElementById('total_price').value; */
-	
-		var adult_price  = "";
-		var final_childprice = "";
-		
-		if(seq < 9){
-			
-			$('#peo_num').val('성인('+seq+')');
-			
-			$('#a_price').val(seq * 10000);
+         //total_amount
+         $('#a_amount').val(seq);
+         var a_amount = $('#a_amount').val();
+         console.log("seq1 : "+seq);
+         var k_amount = $('#k_amount').val();
+         $('#total_amount').val(Number(a_amount)+Number(k_amount));
+         
+      }else{
+         $('#peo_num2').val('청소년('+(seq-9)+')');
+         
+         $('#k_price').val((seq-9) * 8000);
 
-			var adult_price = $('#a_price').val();
-			console.log("어른 :"+adult_price);
+         var final_childprice = $('#k_price').val();
+         console.log("청소년가 : "+final_childprice);
+         
+         var adult_price = $('#a_price').val();
+         $('#total_price').val(Number(adult_price)+Number(final_childprice));
 
-			var final_childprice = $('#k_price').val();
-			$('#total_price').val(Number(adult_price)+Number(final_childprice));
-			
-			
-		}else{
-			$('#peo_num2').val('청소년('+(seq-9)+')');
-			
-			$('#k_price').val((seq-9) * 8000);
+         //total_amount
+         $('#k_amount').val(seq-9);
+         var k_amount = $('#k_amount').val();
+         console.log("seq2 : "+(seq-9));
+         var a_amount = $('#a_amount').val();
+         $('#total_amount').val(Number(a_amount)+Number(k_amount));
+      }
 
-			var final_childprice = $('#k_price').val();
-			console.log("청소년가 : "+final_childprice);
-			
-			var adult_price = $('#a_price').val();
-			$('#total_price').val(Number(adult_price)+Number(final_childprice));
+   }
 
-			
-			
-		}
-
-		
-	
-	}
-// 	document.getElementById('total_price').value = $('#a_price').val();
-// 	$('#total_price').val($('#a_price').val()); 
-
-	//좌석
-	let test = [];
+   //좌석
+   let test = [];
     let selectedSeats = new Array();
     let selectedSeatsMap = [];
     const seatWrapper = document.querySelector(".seat-wrapper");
@@ -472,68 +463,73 @@ function myFunction() {
             input.value = "G" + j;
         }
     }
+
+
     var array = new Array();
     var array_str = new Array();
-	$(function(){
-		$('.seat').click(function(){
-
-			var idx = $('.seat').index(this);
-			var seatclick = $('.seat').eq(idx).val();
-			console.log("seatclick : " + seatclick);
-			var selected_seats = $('#selected_seats').val();
-			var innerHtml = "";
-			var tmp = 0;
-			if(selected_seats == ""){
-				console.log("첫번째");
-				$('#selected_seats').val(seatclick);
-			}else{
-				var arrays = selected_seats.split(',');
-				console.log(arrays);
-				var len = arrays.length;
-				for(var i=0; i<arrays.length; i++){
-					if(arrays[i] == seatclick){
-						console.log("중복");
-						arrays.splice(arrays[seatclick],1);
-						console.log("arrays_중복제거 : " + arrays);
-						tmp = 1;
-						if(arrays[seatclick] == arrays[0]){
-							innerHtml += ''+arrays[i]+'';
-						}
-						else{
-							
-							innerHtml += ''+arrays[i]+'';
-						}
-						
-					}else{
-					if(tmp == 1){
-					innerHtml += ','+arrays[i]+'';
-					}else{
-						innerHtml += ''+arrays[i]+',';
-						
-					}
-					}
-					
-				}
-				$('#selected_seats').val("");
-				if(tmp == 1){
-					var arr = innerHtml.split(',');
-					console.log('arr1 : ' + arr);
-					arr = arr.filter(function(item){
-						return item !== null && item !== 'undefined' && item !== '';
-					});
-					console.log("arr : " + arr);
-					innerHtml = arr;
-					console.log("inner중복 : " + innerHtml);
-					
-				$('#selected_seats').val(innerHtml);
-				}else{
-				$('#selected_seats').val(innerHtml+seatclick);
-				}
-			}
-			
-		});   
     
-	});
+   $(function(){
+      $('.seat').click(function(){
+
+         var idx = $('.seat').index(this);
+         var seatclick = $('.seat').eq(idx).val();
+         console.log("seatclick : " + seatclick);
+         var selected_seats = $('#selected_seats').val();
+         var innerHtml = "";
+         var tmp = 0;
+
+         if(selected_seats == ""){
+               console.log("첫번째");
+               $('#selected_seats').val(seatclick);
+            }else{
+               var arrays = selected_seats.split(',');
+                console.log(arrays);
+                var len = arrays.length;
+                for(var i=0; i<arrays.length; i++){
+                    if(arrays[i] == seatclick){
+                       console.log("중복");
+                       arrays.splice(arrays[seatclick],1);
+                       console.log("arrays_중복제거 : " + arrays);
+                       tmp = 1;
+                       if(arrays[seatclick] == arrays[0]){
+                          innerHtml += ''+arrays[i]+'';
+                       }
+                       else{
+                          
+                          innerHtml += ''+arrays[i]+'';
+                       }   
+                    }else{
+                        if(tmp == 1){
+                        innerHtml += ','+arrays[i]+'';
+                        }else{
+                           innerHtml += ''+arrays[i]+',';
+                           
+                        }
+                    }
+                        
+                }
+                $('#selected_seats').val("");
+                if(tmp == 1){
+                   var arr = innerHtml.split(',');
+                   console.log('arr1 : ' + arr);
+                   arr = arr.filter(function(item){
+                      return item !== null && item !== 'undefined' && item !== '';
+                   });
+                   console.log("arr : " + arr);
+                   innerHtml = arr;
+                   console.log("inner중복 : " + innerHtml);
+                   
+                $('#selected_seats').val(innerHtml);
+                }else{
+                $('#selected_seats').val(innerHtml+seatclick);
+                }
+           }
+
+      });
+
+   });   
+    
+
 </script>
 
 
