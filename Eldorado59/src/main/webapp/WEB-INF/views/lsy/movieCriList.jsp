@@ -48,8 +48,8 @@ display:none;
 	<article>
 		<div class="col-md-12">
 			<h1>상영 영화 조건 정렬
-			<button type='button' class="btn btn-info" onclick="location.href='/Movie/addMovie'">addMovie</button>
-			<button type='button' class="btn btn-primary" onclick="location.href='/Movie/movieAdmin'">movieAdmin</button>
+			<button type='button' class="btn btn-info" onclick="location.href='${pageContext.request.contextPath}/Movie/addMovie'">addMovie</button>
+			<button type='button' class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/Movie/movieAdmin'">movieAdmin</button>
 			</h1>
 			
 			<p>*참고: status(0:미상영/1:상영/2:상영예정) 개별 영화 창에서 수정, 예매율 => 참고사이트 보고 수기작성(네이버API에는 없는 데이터)</p>

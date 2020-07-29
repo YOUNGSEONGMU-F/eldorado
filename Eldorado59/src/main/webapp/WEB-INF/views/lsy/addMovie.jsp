@@ -62,8 +62,8 @@ display:none;
 	<article>
 		<div class="col-md-12">
 			<h1>영화 등록
-			<button type='button' class="btn btn-primary" onclick="location.href='/Movie/movieAdmin'">movieAdmin</button>
-			<button type='button' class="btn btn-primary" onclick="location.href='/Movie/movieCriList'">movieCriList</button>
+			<button type='button' class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/Movie/movieAdmin'">movieAdmin</button>
+			<button type='button' class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/Movie/movieCriList'">movieCriList</button>
 			
 			</h1>
 		

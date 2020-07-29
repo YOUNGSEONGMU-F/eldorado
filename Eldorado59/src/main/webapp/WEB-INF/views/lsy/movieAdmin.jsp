@@ -46,8 +46,8 @@ display:none;
 	<article>
 		<div class="col-md-12">
 			<h1>등록된 영화 목록
-			<button type='button' class="btn btn-info" onclick="location.href='/Movie/addMovie'">addMovie</button>
-			<button type='button' class="btn btn-primary" onclick="location.href='/Movie/movieCriList'">movieCriList</button>
+			<button type='button' class="btn btn-info" onclick="location.href='${pageContext.request.contextPath}/Movie/addMovie'">addMovie</button>
+			<button type='button' class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/Movie/movieCriList'">movieCriList</button>
 			</h1>
 			
 			<p>DB에 등록된 영화 목록 관리 페이지</p>

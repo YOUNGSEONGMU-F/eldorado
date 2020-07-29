@@ -53,9 +53,9 @@ display:none;
 	<article>
 		<div class="col-md-12">
 			<h1>영화 상세
-			<button type='button' class="btn btn-info" onclick="location.href='/Movie/addMovie'">addMovie</button>
-			<button type='button' class="btn btn-primary" onclick="location.href='/Movie/movieAdmin'">movieAdmin</button>
-			<button type='button' class="btn btn-primary" onclick="location.href='/Movie/movieCriList'">movieCriList</button>
+			<button type='button' class="btn btn-info" onclick="location.href='${pageContext.request.contextPath}/Movie/addMovie'">addMovie</button>
+			<button type='button' class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/Movie/movieAdmin'">movieAdmin</button>
+			<button type='button' class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/Movie/movieCriList'">movieCriList</button>
 			</h1>
 			<p>*참고: status 영화등록시 설정가능하도록 수정중, 예매율 => 참고사이트 보고 수기작성(API에 없는 데이터)</p>
 			<p>이미지 주소는, api 제공 이미지 화질이 너무 구려서 눈물을 머금고 추가합니다..</p>
