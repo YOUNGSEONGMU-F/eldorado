@@ -174,6 +174,7 @@
 
 </div>
 </header>
+
 <input type="hidden" value="<%=session.getAttribute("id") %>">
 <div class="wrap">
 	<div class="reserve_top lay_inner">
