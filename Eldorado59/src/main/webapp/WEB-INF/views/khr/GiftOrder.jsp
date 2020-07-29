@@ -28,6 +28,9 @@
             
 			<div class="moviegift_pay_cont lay_inner">
 				<!--예매권 결재 정보-->
+				<!-- 폼 시작@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+				<form method="post" action="giftComplete"> 
+				<input type="hidden" name="id" value="<%=session.getAttribute("id")%>">
 				<div class="pay_info_area" id="divMovieGiftInfo">
 					<div class="pay_thumb">             
 						<img src="https://movie-simg.yes24.com/NYes24//MovieGift/Image/202001/img_mg01_130913(0).png" alt=""> 
@@ -57,7 +60,7 @@
 									<li value="7">7 매</li>
 									<li value="8">8 매</li>
 								</ul> -->
-								<select id="ticket" onchange="changeSelect()">
+								<select id="ticket" name="t_amount" onchange="changeSelect()">
 									<option value="" selected disabled>=== 매수 ===</option>
 									<option value="1">1 매</option>
 									<option value="2">2 매</option>
@@ -73,7 +76,7 @@
 						<div class="pay_price">
 							<span class="pri_tit">결제금액</span>
 							<span class="pi_price" id="spPrice">
-								<text class="currency"><input type="text" id="t_price"></text>원
+								<text class="currency"><input type="text" name="price" id="t_price"></text>원
 							</span>
 						</div>
 						<ul class="li_bar">
@@ -91,7 +94,7 @@
 					<div class="form_tbl ">
 						<div class="form_tbl_row">
 			                <div class="form_tbl_col first">주문고객</div>
-			                <div class="form_tbl_col "><strong><text id="txtUserNm">이름</text></strong></div>
+			                <div class="form_tbl_col "><strong><text id="txtUserNm"><input type="text" name="name" value="${GetName.name}"></text></strong></div>
 			            </div>
 			            <div class="form_tbl_row">
 			                <div class="form_tbl_col first">받는고객</div>
@@ -215,10 +218,6 @@
                     </div>
                 </div>
                 <!--결제선택-->
-                <form method="post" action=""> 
-                	<input type="text" name="id" value="<%=session.getAttribute("id")%>">
-                	
-                </form>
                 <div class="pay_form_area select_pay_area">
                 	<div class="select_pay_cont">
                 		<p class="mc_title">결제선택</p>
@@ -228,7 +227,7 @@
                 					<input type="checkbox" class="chk_st chk_left" id="cbCreditCard">
                 					<label for="cbCreditCard"><span class="ck_txt">무통장 결제</span></label>
                 				</span>
-                				<button type="button" id="btnPay">결제</button>
+                				<button type="submit" id="btnPay">결제</button>
                 			</div>
                 			<div class="sp_noti_box" id="divNotiCreditCard" style="">
 			                    <!-- 신용카드결제 하단 -->
@@ -237,6 +236,8 @@
                 		</div>
                 	</div>
                 </div>
+                </form>
+             	<!-- 폼 끝@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
                 <!--// 결제선택 끝-->
                 <div class="notice_area">
                     <p class="noti_titleB">구매 및 사용안내</p>

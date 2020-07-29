@@ -212,6 +212,8 @@ public class KhrController {
 		//jsp로 아이디값 넘겨주기
 		session.setAttribute("id", id);
 		
+		Map<String, Object> GetName = service.getName(id);
+		model.addAttribute("GetName", GetName);
 		
 		return "khr/GiftOrder";
 	}
@@ -220,6 +222,22 @@ public class KhrController {
 	public String GiftOrder_post(Locale locale, Model model) {
 		
 		return "khr/GiftOrder";
+	}
+	
+	// 무비기프트 결제완료
+	@RequestMapping(value = "giftComplete", method = RequestMethod.GET)
+	public String giftComplete() {
+
+		return "khr/giftComplete";
+	}
+	
+	@RequestMapping(value = "giftComplete", method = RequestMethod.POST)
+	public String giftComplete_post(Locale locale, Model model,@RequestParam Map<String, Object> giftOrder) {
+		
+		
+		service.insertGift(giftOrder);
+		
+		return "khr/giftComplete";
 	}
 	
 	

@@ -15,8 +15,13 @@ public interface KhrDAO {
 	
 	//회원정보 가져오기
 	public Map<String, Object> getMember(String id);
-//	public int getMember(Map<String, Object> getMember);
 
 	//예매 완료
 	public int insertReserve(Map<String, Object> reserve);
+	
+	//무비기프트 이름 불러오기
+	public Map<String, Object> getName(String id);
+		
+	//무비기프트 예매
+	public int insertGift(Map<String, Object> giftOrder);
 }

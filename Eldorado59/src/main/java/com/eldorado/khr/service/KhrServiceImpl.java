@@ -53,11 +53,6 @@ public class KhrServiceImpl implements KhrService{
 		return dao.getMember(id);
 	}
 
-	/*
-	 * @Override public int getMember(Map<String, Object> getMember) { // TODO
-	 * Auto-generated method stub return dao.getMember(getMember); }
-	 */
-
 
 	@Override
 	public int insertReserve(Map<String, Object> reserve) {
@@ -66,7 +61,26 @@ public class KhrServiceImpl implements KhrService{
 	}
 
 
+	@Override
+	public int insertGift(Map<String, Object> giftOrder) {
+		// TODO Auto-generated method stub
+		return dao.insertGift(giftOrder);
+	}
 
+	
+	@Override
+	public Map<String, Object> getName(String id) {
+		// TODO Auto-generated method stub
+		return dao.getName(id);
+	}
+
+
+
+
+	
+
+
+	
 
 	
 	

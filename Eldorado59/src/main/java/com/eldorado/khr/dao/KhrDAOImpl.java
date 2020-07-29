@@ -41,19 +41,12 @@ public class KhrDAOImpl implements KhrDAO{
 
 
 	
-	  @Override public Map<String, Object> getMember(String id) {
+	@Override public Map<String, Object> getMember(String id) {
 	  
 	  
-	  return session.selectOne("khr.selectMember", id); }
+	  return session.selectOne("khr.selectMember", id); 
+	 }
 	 
-	/*
-	 * @Override public int getMember(Map<String, Object> getMember) { // TODO
-	 * Auto-generated method stub return session.selectOne("khr.selectMember",
-	 * getMember); }
-	 */
-
-
-
 	@Override
 	public int insertReserve(Map<String, Object> reserve) {
 		
@@ -62,6 +55,25 @@ public class KhrDAOImpl implements KhrDAO{
 
 
 
+	@Override
+	public int insertGift(Map<String, Object> giftOrder) {
+		// TODO Auto-generated method stub
+		return session.insert("khr.insertGift", giftOrder);
+	}
+
+
+
+	@Override
+	public Map<String, Object> getName(String id) {
+		// TODO Auto-generated method stub
+		return session.selectOne("khr.selectName", id);
+	}
+
+
+	
+
+
+	
 	
 
 	
