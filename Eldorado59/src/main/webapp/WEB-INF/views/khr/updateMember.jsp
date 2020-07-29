@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
-<title>회원정보 수정</title>
+<title>ELDORADO</title>
 <meta name="title" content="YES24 - 대한민국 대표 인터넷서점">
 <meta name="description" content="YES24는 대한민국 1위 인터넷 온라인 서점 입니다. 국내 최대의 도서정보를 보유하고 있으며, 음반, DVD, 공연, 영화까지 다양한 문화 콘텐츠 및 서비스를 제공합니다.">
 <meta name="keywords" content="인터넷 서점, 온라인 쇼핑, 상품 추천, 쇼핑몰, 상품 검색, 도서 정보, 국내도서, 외국도서, 전자책, eBook, 이북, 크레마, 공연, 콘서트, 뮤지컬, 영화, 음반, 예매, DVD, 블루레이, 예스24, YES24, 교보문고, 알라딘">
@@ -148,7 +148,7 @@ gtag('config', 'AW-1056776890');
 		</script>
 		
 		<form name="updateForm" action="updateMember" method="post" id="updateForm">
-			<input type="text" value="<%=session.getAttribute("id")%>">
+			<input type="hidden" value="<%=session.getAttribute("id")%>">
 			<!-- #################### 간략 NAVI 영역 시작 #################### -->
 			<div id="ySNavi">
 				<ul class="mnu">
@@ -156,7 +156,7 @@ gtag('config', 'AW-1056776890');
 						<a href="/Member/FTMemberInfoMgmtUpt.aspx"><em class="txt">회원정보</em></a>
 					</li>
 					<li>
-						<a href="/Member/FTMemDereg.aspx"><em class="txt">회원탈퇴</em></a>
+						<a href="../khr/deleteMember"><em class="txt">회원탈퇴</em></a>
 					</li>
 				</ul>
 			</div>
@@ -209,7 +209,7 @@ gtag('config', 'AW-1056776890');
 								<th class="txt" scope="row">아이디</th>
 								<td colspan="3" class="txt lastCol">
 									<span id="CLabMemId"><span class="yesIpt m_size w_200">
-										<input name="id" type="text" id="id" autocomplete="off" maxlength="20" value="${getMember.id} " readonly>
+										<input name="id" type="text" id="id" autocomplete="off" maxlength="20" value="${GetMember.id} " readonly>
 									</span></span>
 								</td>
 							</tr>
@@ -219,7 +219,7 @@ gtag('config', 'AW-1056776890');
 								<td colspan="3" class="inpArea lastCol">
 									<div class="inpRow">
 										<span class="setAlignL"><span id="CLabMemNm"><span class="yesIpt m_size w_200">
-											<input name="name" type="text" id="name" autocomplete="off" maxlength="20" value="${member.name}">
+											<input name="name" type="text" id="name" autocomplete="off" maxlength="20" value="${GetMember.name}">
 										</span></span></span>
 									</div>
 								</td>
@@ -239,10 +239,10 @@ gtag('config', 'AW-1056776890');
 											<input name="pass" type="text" id="name" autocomplete="off" maxlength="20" value="${mb.pass }"><br>
 										</span></span></span> --%>
 										<span class="setAlignL"><span id="CLabMemNm"><span class="yesIpt m_size w_200">
-											<input name="pass" type="text" id="name" autocomplete="off" maxlength="20" placeholder="새비밀번호">
+											<input type="password" name="pass" type="text" id="pass" autocomplete="off" maxlength="20" placeholder="새비밀번호">
 										</span></span></span>
 										<span class="setAlignL"><span id="CLabMemNm"><span class="yesIpt m_size w_200">
-											<input name="pass2" type="text" id="name" autocomplete="off" maxlength="20" placeholder="새비밀번호 확인">
+											<input type="password" name="pass2" type="text" id="pass2" autocomplete="off" maxlength="20" placeholder="새비밀번호 확인">
 										</span></span></span>
 			                        </div>
 								</td>
@@ -253,7 +253,7 @@ gtag('config', 'AW-1056776890');
 								<td colspan="3" class="inpArea lastCol">
 									<div class="inpRow">
 										<span class="yesIpt m_size w_70">
-											<input  type="text" id="sample6_postcode" autocomplete="off" maxlength="5" placeholder="우편번호" readonly>
+											<input  type="text" name="zipcode" id="sample6_postcode" autocomplete="off" maxlength="5" placeholder="우편번호" value="${GetMember.zipcode}" readonly>
 										</span>
 			                            
 			                            <input type="button" class="btnC m_size w_80" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>        
@@ -261,7 +261,7 @@ gtag('config', 'AW-1056776890');
 									
 									<div id="div_ST_ADDR_TEXT" class="inpRow">
 										<span class="yesIpt m_size ipt_wSizeF">
-											<input type="text" name="addr" id="sample6_address" class="fwN" autocomplete="off" placeholder="주소" value="${member.addr}">
+											<input type="text" name="addr" id="sample6_address" class="fwN" autocomplete="off" placeholder="주소" value="${GetMember.addr}">
 										</span>
 									</div>
 									
@@ -306,7 +306,7 @@ gtag('config', 'AW-1056776890');
 								<td colspan="3" class="inpArea lastCol">
 									<div id="CTxtTelNoA" class="inpRow">
 										<span class="setAlignL" id="sTelNo"><span class="yesIpt m_size w_200">
-											<input name="tel" type="text" id="tel" autocomplete="off" maxlength="20" value="${member.tel}">
+											<input name="tel" type="text" id="tel" autocomplete="off" maxlength="20" value="${GetMember.tel}">
 										</span></span>
 									</div>
 								</td>
@@ -315,10 +315,9 @@ gtag('config', 'AW-1056776890');
 							<tr>
 								<th class="txt" scope="row">이메일 주소</th>
 								<td class="inpArea lastCol">
-									<input type="hidden" name="email" id="email" value="">
 									<div class="inpRow" id="CTxtEmlA">
 										<span id="sEmailAddress" class="setAlignL"><span class="yesIpt m_size w_200">
-											<input name="email" type="text" id="email" autocomplete="off" maxlength="20" value="${member.email}">
+											<input name="email" type="text" id="email" autocomplete="off" maxlength="20" value="${GetMember.email}">
 										</span></span>
 			                        </div>
 								</td>
@@ -561,7 +560,7 @@ $('#submitBtn').click(function(){
 	// 기존 비밀번호 맞게 입력(로그인된 회원 정보 먼저 가져와야 함.)
 	
 	// 새 비밀번호는 기존 비밀번호와 달라야 함(마찬가지로 로그인된 회원정보 먼저 가져와야 함.)
-	/* if ($("#pass").val() == "") {
+	if ($("#pass").val() == "") {
 	   $("#pass").focus();
 	   alert("비밀번호를 입력하세요.");
 	   return false;
@@ -570,7 +569,7 @@ $('#submitBtn').click(function(){
 	   $("#pass").focus();
 	   alert("비밀번호는 6~12자리 영어대소문자, 숫자 조합으로 사용해주세요.");
 	   return false;
-	}
+	} 
 	//비밀번호 확인란 공백 확인
 	if ($("#pass2").val() == "") {
 	   $("#pass2").focus();
@@ -582,7 +581,18 @@ $('#submitBtn').click(function(){
 	   $("#pass2").val("");
 	   $("#pass2").focus();
 	   return false;
-	} */
+	} 
+	//전화번호
+	if ($('#tel').val() == "") {
+	   alert("전화번호를 입력해주세요");
+	   $('#tel').focus();
+	   return false;   
+	}
+	if(!getTel.test($('#tel').val())){
+	   alert("휴대폰번호는 11자리입니다");
+	   $("#tel").focus();
+	   return false;
+	}
 	//이메일 공백 확인
 	if(blank_pattern.test($('#email').val()) == true){
 	    alert(' 공백은 사용할 수 없습니다.');
@@ -600,17 +610,7 @@ $('#submitBtn').click(function(){
 	   $("#email").focus();
 	   return false;
 	}
-	//전화번호
-	if ($('#tel').val() == "") {
-	   alert("전화번호를 입력해주세요");
-	   $('#tel').focus();
-	   return false;   
-	}
-	if(!getTel.test($('#tel').val())){
-	   alert("휴대폰번호는 11자리입니다");
-	   $("#tel").focus();
-	   return false;
-	}
+	
 	document.getElementById('updateForm').submit();
 	
 });

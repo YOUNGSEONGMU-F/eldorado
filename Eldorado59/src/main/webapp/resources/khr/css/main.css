@@ -1,23 +1,7 @@
-/* 축소하지 못했습니다. 축소되지 않은 콘텐츠를 반환합니다.
-(83,1): run-time error CSS1019: Unexpected token, found '@import'
-(83,9): run-time error CSS1019: Unexpected token, found ''reset.css''
-(84,1): run-time error CSS1019: Unexpected token, found '@import'
-(84,9): run-time error CSS1019: Unexpected token, found ''font.css''
-(2038,1): run-time error CSS1019: Unexpected token, found '@-webkit-keyframes'
-(2039,3): run-time error CSS1062: Expected semicolon or closing curly-brace, found '100%'
-(2044,1): run-time error CSS1019: Unexpected token, found '@keyframes'
-(2045,3): run-time error CSS1062: Expected semicolon or closing curly-brace, found '100%'
- */
-@charset "utf-8";
-/* 
-html5doctor.com Reset Stylesheet
-v1.6.1
-Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com 
-Twitter: @rich_clark
-*/
 
-html, body, div, span, object, iframe,
+@charset "utf-8";
+
+/* html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
 del, dfn, em, img, ins, kbd, q, samp,
@@ -49,7 +33,7 @@ footer,header,hgroup,menu,nav,section {
 
 nav ul, li {
     list-style:none;
-}
+} */
 
 blockquote, q {
     quotes:none;
@@ -62,9 +46,9 @@ q:before, q:after {
 }
 
 a {
-    margin:0;
+    /* margin:0;
     padding:0;
-    font-size:100%;
+    font-size:100%; */
     vertical-align:baseline;
     background:transparent;
     text-decoration:none;
@@ -93,11 +77,11 @@ input::-ms-clear {display: none;}
 @import 'reset.css';
 @import 'font.css';
 
-body {color:#777;font-size:15px;font-family: nanumBa, '맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif; }
-body.fixed {/*position: fixed;top:0;bottom:0;*/height:100%;width:100%;overflow: hidden;}
-a {color:#2b2b2b;outline:none;}
+body {/* color:#777;font-size:15px;font-family: nanumBa, '맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;  */}
+body.fixed {/*position: fixed;top:0;bottom:0;*//* height:100%;width:100%;overflow: hidden; */}
+/* a {color:#2b2b2b;outline:none;} */
 textarea {resize: none;}
-button {cursor: pointer;font-family: nanumBa, '맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;}
+button {/* cursor: pointer;font-family: nanumBa, '맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif; */}
 button > span {position:relative}
 
 /*영역*/
@@ -481,14 +465,14 @@ button > span {position:relative}
 .container {position: relative;padding-top:70px;}
 .container.none_pt {padding-top: 0;}
 /*header 파트*/
-.none_pt .header {background:none;}
+/* .none_pt .header {background:none;}
 .header {position:absolute;top:0;width:100%;z-index:1000;background:rgba(26,26,26,.95);}
-.header.sc {min-width:1200px;background:rgba(26,26,26,.95); /* box-shadow: -8px 5px 30px -8px rgba(5,5,6,.5);  */}
+.header.sc {min-width:1200px;background:rgba(26,26,26,.95); box-shadow: -8px 5px 30px -8px rgba(5,5,6,.5); }
 .header.sc .sc_nav {height:28px;opacity:1;transition:height .2s, opacity .2s;border-bottom:1px solid rgba(255,255,255,.1); }
-.header.hover {min-width:1200px;background:rgba(26,26,26,.95);}
+.header.hover {min-width:1200px;background:rgba(26,26,26,.95);} */
 
 /*상단 서브 메뉴*/
-.sc_nav {position: relative;;padding:0 40px;height:0;opacity:0;transition:height .2s, opacity .2s;}
+/* .sc_nav {position: relative;;padding:0 40px;height:0;opacity:0;transition:height .2s, opacity .2s;}
 .sc_nav > ul {font-size:0;display:inline-block;}
 .sc_nav > ul > li {position:relative;display:inline-block;}
 .sc_nav > ul > li a {padding:10px 9px 3px;display:block;font-size:11px;line-height:1;font-weight:normal;color:#939393;}
@@ -502,10 +486,10 @@ button > span {position:relative}
 .sc_g_left > li:last-child a:after {display: none;}
 
 .sc_g_right {position:absolute;right:40px;}
-.sc_g_right > li:last-child a:after {display: none;}
+.sc_g_right > li:last-child a:after {display: none;} */
 
 /*기본 메뉴*/
-.m_nav {position: relative;min-height:70px;z-index:100;}
+/* .m_nav {position: relative;min-height:70px;z-index:100;}
 .m_nav .logo {position: absolute;left:50px;width:114px;height:70px;font-size:0;text-indent:-9999px;}
 .m_nav .logo a {padding-top:25px;display:block;height:100%;line-height:100%;}
 .m_nav .logo a:after {content:'';display:block;width:114px;height:19px;background:url('//movie-img.yes24.com/NYes24/new/logo.png') no-repeat 0 0;}
@@ -519,18 +503,18 @@ button > span {position:relative}
 }
 .m_gnb_list > li > a > span {position: relative;;display:inline-block;}
 .m_gnb_list > li:hover  > a > span:after {content:'';position:absolute;bottom:-8px;left:0;right:0;display:block;height:2px;background:#ec6159;}
-.m_gnb_list > li.active  > a {color:#ec6159;}
+.m_gnb_list > li.active  > a {color:#ec6159;} */
 /* .m_gnb_list > li.active  > a > span:after {content:'';position:absolute;bottom:-8px;left:0;right:0;display:block;height:2px;background:#ec6159;} */
-.m_gnb_list:hover {height:280px;transition: height 0.5s;}
+/* .m_gnb_list:hover {height:280px;transition: height 0.5s;}
 .m_sub_gnb {
     font-size:14px;text-align: left;font-weight:normal; 
     font-family:nanumBa,'맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif ;
 }
 .m_sub_gnb a {padding:7px 0 7px 30px;display:block;line-height:1;color:#fff;}
 .m_sub_gnb a:hover {color:#ec6159;}
-.m_sub_gnb li.active a {color:#ec6159;}
+.m_sub_gnb li.active a {color:#ec6159;} */
 
-.sb_link {padding:22px 0 0 22px;display:inline-block;vertical-align:top;font-size:0;}
+/* .sb_link {padding:22px 0 0 22px;display:inline-block;vertical-align:top;font-size:0;}
 .sb_link > a {margin-right:14px;padding-top:8px;display:inline-block;width:35px;height:35px;text-align:center;vertical-align:top;border-radius:50%;background:rgba(235,234,234,.4);font-size:0;}
 .sb_link > a:before {content:'';display:inline-block;background:url('//movie-img.yes24.com/NYes24/new/all_sprite.png') no-repeat;}
 .sb_link > a.link_star:before {width:20px;height:20px;background-position:-209px -232px;}
@@ -544,11 +528,11 @@ button > span {position:relative}
 .as_rng_list .btn_my {position:relative;margin:0 20px 0 17px;width:23px;background-position:-411px -232px;}
 .as_rng_list .btn_my .st_cycle {position:absolute;top:-7px;right:-10px;}
 .as_rng_list .btn_quick_on {margin-left:20px;width:21px;background-position:-464px -232px;}
-
+ */
 /*서브페이지 gnb*/
-.main_area .sp_gnb, .none_pt .sp_gnb {display:none;}
+/* .main_area .sp_gnb, .none_pt .sp_gnb {display:none;}
 
-.sp_gnb {/*position:absolute;top:80px;left:0;right:0;*/width:100%;min-width:1200px;height:45px;background:#e5e5e5;z-index:1; display:none; }
+.sp_gnb {position:absolute;top:80px;left:0;right:0;width:100%;min-width:1200px;height:45px;background:#e5e5e5;z-index:1; display:none; }
 .sp_gnb_list {margin:auto;font-size:0;text-align:center; font-family:YesGR,'맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif ; }
 .sp_gnb_list > li {display:inline-block;font-size:13px;}
 .sp_gnb_list > li a {padding:15px 17px 16px;display:block;line-height:1;color:#777;}
@@ -587,7 +571,7 @@ button > span {position:relative}
 
 .aside_rnb.on .aside_menu {right:-50px;transition:right .5s;}
 .aside_menu.search_on .search_area {display:block;}
-.aside_menu.quick_on .quick_area {display:block;}
+.aside_menu.quick_on .quick_area {display:block;} */
 
 /*폼요소가 있는 영역*/
 .pay_form_area .mc_title {margin:80px 0 20px !important; }

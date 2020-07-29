@@ -114,10 +114,16 @@ public class KhrController {
 		return null;
 	}
 
-	// 회원정보 수정
+	// 회원정보 조회 & 수정
 	@RequestMapping(value = "updateMember", method = RequestMethod.GET)
-	public String updateMember(Locale locale, Model model) {
+	public String updateMember(Locale locale, Model model,HttpSession session) {
 
+		String id = (String) session.getAttribute("id");
+		
+		Map<String, Object> GetMember = service.getMember(id);
+		model.addAttribute("GetMember", GetMember);
+		
+		
 		return "khr/updateMember";
 	}
 
@@ -127,23 +133,21 @@ public class KhrController {
 
 		service.updateMember(user);
 
-		return "khr/updateMember";
-	}
-
-	// 회원정보조회
-	@RequestMapping(value = "/info", method = RequestMethod.GET)
-	public String info(HttpSession session, Model model) {
-		System.out.println("정보 조회");
-		// 데이터 가져오기
-		String id = (String) session.getAttribute("id");
-
-		return "info";
+		return "lyj/Mypage";
 	}
 
 	// 회원정보 삭제
 	@RequestMapping(value = "deleteMember", method = RequestMethod.GET)
-	public String deleteMember(Locale locale, Model model) {
-
+	public String deleteMember(Locale locale, Model model,HttpSession session) {
+		
+		String id = (String) session.getAttribute("id");
+		if(id == null) {
+			
+			return "redirect:/lyj/login2";
+		}
+		//jsp로 아이디값 넘겨주기
+		session.setAttribute("id", id);
+		
 		return "khr/deleteMember";
 	}
 
@@ -151,8 +155,8 @@ public class KhrController {
 	public String deleteMember_post(Locale locale, Model model, @RequestParam Map<String, Object> user) {
 
 		service.deleteMember(user);
-
-		return "khr/deleteMember";
+		//리턴 주소 수정
+		return "../Main/index";
 	}
 
 	// 비밀번호 수정
@@ -197,8 +201,18 @@ public class KhrController {
 	
 	//무비기프트 -> 기프트 예매권 결제
 	@RequestMapping(value = "GiftOrder", method = RequestMethod.GET)
-	public String GiftOrder(Locale locale, Model model) {
-
+	public String GiftOrder(Locale locale, Model model, HttpSession session,
+			HttpServletRequest request) {
+		String id = (String)session.getAttribute("id");
+		
+		if(id == null) {
+			
+			return "redirect:/lyj/login2";
+		}
+		//jsp로 아이디값 넘겨주기
+		session.setAttribute("id", id);
+		
+		
 		return "khr/GiftOrder";
 	}
 	
@@ -233,8 +247,16 @@ public class KhrController {
 		return "khr/selectSeat";
 	}
 	@RequestMapping(value = "selectSeat", method = RequestMethod.POST)
-	public String selectSeat_post(Locale locale, Model model, @RequestParam String title,
+	public String selectSeat_post(Locale locale, Model model,HttpSession session, @RequestParam String title,
 			@RequestParam String th_name, @RequestParam String date, @RequestParam String time ) {
+		
+		/*
+		 * String id = (String)session.getAttribute("id");
+		 * 
+		 * if(id == null) {
+		 * 
+		 * return "redirect:/lyj/login2"; }
+		 */
 		
 		return "khr/selectSeat";
 	}
@@ -243,12 +265,13 @@ public class KhrController {
 	@RequestMapping(value = "TicketOrder", method = RequestMethod.GET)
 	public String TicketOrder(Locale locale, Model model,HttpSession session) {
 		
-		String id = (String)session.getAttribute("id");
 		
-		if(id == null) {
-			
-			return "redirect:/lyj/login2";
-		}
+		  String id = (String)session.getAttribute("id");
+		  
+		  if(id == null) {
+		  
+		  return "redirect:/lyj/login2"; }
+		 
 		
 		
 		return "khr/TicketOrder";
@@ -298,7 +321,7 @@ public class KhrController {
 		
 		if(id == null) {
 			
-			return "redirect:lyj/login2";
+			return "redirect:/lyj/login2";
 		}
 		//jsp로 아이디값 넘겨주기
 		session.setAttribute("id", id);
