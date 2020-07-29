@@ -36,7 +36,7 @@
                 		</a>
                 	</div>
                 	<div class="mg_vou_box">
-                		<a href="GiftOrder">
+                		<a href="GiftOrders">
                 			<div class="mg_vou_img">
                 				<img src="https://movie-simg.yes24.com/NYes24//MovieGift/Image/202001/img_mg02_145927(0).png" alt="">
                 			</div>
