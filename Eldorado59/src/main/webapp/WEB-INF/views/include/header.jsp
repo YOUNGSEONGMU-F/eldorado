@@ -27,16 +27,18 @@
                           
                         </ul>
                         <ul class="sc_g_right">
-                                    <li><a href="../lyj/login2">로그인</a></li>
-                                    <li><a href="../khr/loginTest">로그인(임시)</a></li>
+                        <% if(session.getAttribute("id") == null){ %>
+                             <li><a href="${pageContext.request.contextPath}/lyj/login2">로그인</a></li>
+                        <%}else{ %>
+                             <li><a href="${pageContext.request.contextPath}/lyj/logout">로그아웃</a></li>
+						<%} %>
 
-
-                            <li><a href="/MyPage">마이페이지</a></li>
+                            <li><a href="/Mypage">마이페이지</a></li>
                             <li><a href="/Customer">고객센터</a></li>
                         </ul>
                     </div>
 					<div id="m_nav">
-                        <h1 class="logo"><a href="${pageContext.request.contextPath }/Main/index">ELDORADO59</a></h1>
+                        <h1 class="logo"><a href="${pageContext.request.contextPath}/Main/index">ELDORADO59</a></h1>
                         <div class="m_gnb_area">
                             <ul class="m_gnb_list">
                                     <li class="m_gnb">

@@ -201,8 +201,18 @@ public class KhrController {
 	
 	//무비기프트 -> 기프트 예매권 결제
 	@RequestMapping(value = "GiftOrder", method = RequestMethod.GET)
-	public String GiftOrder(Locale locale, Model model) {
-
+	public String GiftOrder(Locale locale, Model model, HttpSession session,
+			HttpServletRequest request) {
+		String id = (String)session.getAttribute("id");
+		
+		if(id == null) {
+			
+			return "redirect:/lyj/login2";
+		}
+		//jsp로 아이디값 넘겨주기
+		session.setAttribute("id", id);
+		
+		
 		return "khr/GiftOrder";
 	}
 	

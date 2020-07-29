@@ -46,8 +46,8 @@
 							<div class="sel_val eve_sel">                     
 								<p class="sv_txt">매수선택</p>                 
 							</div>
-							<div class="sel_option eve_list">
-								<ul id="ulCnt" data-max_ticket="8">
+							<!-- <div class="sel_option eve_list"> -->
+								<!-- <ul id="ulCnt" data-max_ticket="8">
 									<li value="1">1 매</li>
 									<li value="2">2 매</li>
 									<li value="3">3 매</li>
@@ -56,13 +56,24 @@
 									<li value="6">6 매</li>
 									<li value="7">7 매</li>
 									<li value="8">8 매</li>
-								</ul>
-							</div>
+								</ul> -->
+								<select id="ticket" onchange="changeSelect()">
+									<option value="" selected disabled>=== 매수 ===</option>
+									<option value="1">1 매</option>
+									<option value="2">2 매</option>
+									<option value="3">3 매</option>
+									<option value="4">4 매</option>
+									<option value="5">5 매</option>
+									<option value="6">6 매</option>
+									<option value="7">7 매</option>
+									<option value="8">8 매</option>
+								</select>
+							<!-- </div> -->
 						</div>
 						<div class="pay_price">
 							<span class="pri_tit">결제금액</span>
 							<span class="pi_price" id="spPrice">
-								<text class="currency">0</text>원
+								<text class="currency"><input type="text" id="t_price"></text>원
 							</span>
 						</div>
 						<ul class="li_bar">
@@ -205,7 +216,7 @@
                 </div>
                 <!--결제선택-->
                 <form method="post" action=""> 
-                	<input type="text" name="id" value="아이디 세션값">
+                	<input type="text" name="id" value="<%=session.getAttribute("id")%>">
                 	
                 </form>
                 <div class="pay_form_area select_pay_area">
@@ -264,10 +275,22 @@
 
 </body>
 
+<script type="text/javascript">
+	
+	function changeSelect(){
+
+		var ticket = document.getElementById("ticket");
+
+		// select element에서 선택된 option의 value가 저장된다. 
+		var selectValue = ticket.options[ticket.selectedIndex].value;
+		
+		$('#t_price').val(Number(selectValue) * Number(10500));
+
+	}
+	
 
 
-
-
+</script>
 
 
 
