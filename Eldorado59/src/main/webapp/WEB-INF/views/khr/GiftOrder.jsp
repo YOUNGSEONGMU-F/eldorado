@@ -36,6 +36,7 @@
 						<img src="https://movie-simg.yes24.com/NYes24//MovieGift/Image/202001/img_mg01_130913(0).png" alt=""> 
 					</div>
 					<div class="pay_info_txt">
+						<input type="hidden" name="ticket_kinds" value="일반예매권">
 						<p class="pi_tit">일반 예매권</p>
 						<div class="pi_prcie_box">
 							<span class="pri_tit">판매가격</span>
