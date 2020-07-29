@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <div id="ad">
-<img id="imgTopBanner" src="https://movie-simg.yes24.com/NYes24//MgrMain//20/06/betterdays_1200x70_181431.jpg" alt="소년">
+<img id="imgTopBanner" src="https://movie-simg.yes24.com/NYes24//MgrMain//20/07/Super_Price_Top(1200x70)_093107.jpg" alt="반도">
 
   </div>
 
@@ -23,9 +23,7 @@
 <div class="header sc">
                 <div class="nav_area" style="height: 0px;">
                     <div id="sc_nav" style="display: none;">
-                        <ul class="sc_g_left">
-                          
-                        </ul>
+
                         <ul class="sc_g_right">
                         <% if(session.getAttribute("id") == null){ %>
                              <li><a href="${pageContext.request.contextPath}/lyj/login2">로그인</a></li>
@@ -35,6 +33,8 @@
 
                             <li><a href="/Mypage">마이페이지</a></li>
                             <li><a href="/Customer">고객센터</a></li>
+                            
+       <!-- 임시메뉴 -->    <li><a href="${pageContext.request.contextPath}/Movie/movieAdmin">영화관리자</a></li>
                         </ul>
                     </div>
 					<div id="m_nav">
@@ -53,30 +53,30 @@
                                     <li class="m_gnb">
                                                 <a href="/MovieInfo/TicketRank"><span>영화</span></a>
                                         <ul class="m_sub_gnb">
-                                                        <li><a href="/MovieInfo/TicketRank">예매순위</a></li>
-                                                        <li><a href="/MovieInfo/NowPlayRank">현재상영작</a></li>
-                                                        <li><a href="/MovieInfo/PromotionMovie">개봉예정작</a></li>
-                                                        <li><a href="/MovieInfo/BoxOfficeRank">박스오피스</a></li>
-                                                        <li><a href="/MovieInfo/FestivalMovie">영화제영화</a></li>
-                                                        <li><a href="/MovieInfo/Trailer">예고편</a></li>
+                                                        <li><a href="${pageContext.request.contextPath}/MovieInfo/TicketRank">예매순위</a></li>
+                                                        <li><a href="${pageContext.request.contextPath}/MovieInfo/NowPlayRank">현재상영작</a></li>
+                                                        <li><a href="${pageContext.request.contextPath}/MovieInfo/PromotionMovie">개봉예정작</a></li>
+                                                        <li><a href="${pageContext.request.contextPath}/MovieInfo/BoxOfficeRank">박스오피스</a></li>
+                                                        <li><a href="${pageContext.request.contextPath}/MovieInfo/FestivalMovie">영화제영화</a></li>
+                                                        <li><a href="${pageContext.request.contextPath}/MovieInfo/Trailer">예고편</a></li>
 
                                         </ul>
                                     </li>
                                     <li class="m_gnb">
                                                 <a href="/Event/Index"><span>이벤트</span></a>
                                         <ul class="m_sub_gnb">
-                                                        <li><a href="/Event/Index?tab=PREVIEW">시사회</a></li>
-                                                        <li><a href="/Event/Index?tab=EVENT">이벤트</a></li>
-                                                        <li><a href="/Event/Winner">당첨자 발표</a></li>
+                                                        <li><a href="${pageContext.request.contextPath}/Event/Index?tab=PREVIEW">시사회</a></li>
+                                                        <li><a href="${pageContext.request.contextPath}/Event/Index?tab=EVENT">이벤트</a></li>
+                                                        <li><a href="${pageContext.request.contextPath}/Event/Winner">당첨자 발표</a></li>
 
                                         </ul>
                                     </li>
                                     <li class="m_gnb">
                                                 <a href="/Magazine/Index"><span>매거진</span></a>
                                         <ul class="m_sub_gnb">
-                                                        <li><a href="/Magazine/Index?GC=NEWS">뉴스</a></li>
-                                                        <li><a href="/Magazine/Index?GC=STAR">스타</a></li>
-                                                        <li><a href="/Magazine/Poll">금주의 폴</a></li>
+                                                        <li><a href="${pageContext.request.contextPath}/Magazine/Index?GC=NEWS">뉴스</a></li>
+                                                        <li><a href="${pageContext.request.contextPath}/Magazine/Index?GC=STAR">스타</a></li>
+                                                        <li><a href="${pageContext.request.contextPath}/Magazine/Poll">금주의 폴</a></li>
 
                                         </ul>
                                     </li>

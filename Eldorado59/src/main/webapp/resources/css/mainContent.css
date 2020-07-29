@@ -59,10 +59,15 @@ a {
 
 .item {
   /* border: steelblue 1px solid; */
-  width: 380px;
+  width: calc((100% - 60px) / 3);
+/*   width: 380px; */
   height: 390px;
   overflow: hidden;
   /* background-color: beige; */
+}
+
+.item img{
+	width: 100%;
 }
 
 .mg_info_box {
@@ -182,7 +187,7 @@ a {
 
 .rl_info_box {
   position: absolute;
-  width:256px;
+  width:95%;
   top: 0;
   bottom: 0;
   left: 0;
@@ -273,7 +278,7 @@ a {
 }
 
 #rk_item img {
-  width: 256px;
+  width: 95%;
   height: 372px;
   border: none 0;
   vertical-align: top;
@@ -302,7 +307,7 @@ a {
   text-align: right;
   padding: 150px 0;
   font-size: 50px;
-  right: -77px;
+  right: -65px;
   top: 0;
   position: absolute;
   width: 200px;

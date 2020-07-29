@@ -11,7 +11,7 @@ function currentSlide(n) {
 }
 function carousel() {
 
-	/* sleep(2000); */
+//	 sleep(2000); 
 
 	  var i;
 	  var x = document.getElementsByClassName("mySlides");
@@ -25,7 +25,7 @@ function carousel() {
 	  if (slideIndex > x.length) {slideIndex = 1}	/*max 보다 크면 1로변환  */
 	  dots[slideIndex-1].className += " active";	/*클래스 추가 */
 	  x[slideIndex-1].style.display = "block";		/*보이게  */
-	  setTimeout(carousel, 5000); // 이미지 변환 시간
+	  setTimeout(carousel, 8000); // 이미지 변환 시간
 	}
 
 function showSlides(n) {
@@ -54,7 +54,7 @@ $(function(){
         slideWidth:400,    // 슬라이드 너비를 설정한다.
         minSlides:5,    // 최소 노출 개수를 설정한다.
         maxSlides:5,    // 최대 노출 개수를 설정한다.
-        slideMargin:10, // 슬라이드 간의 간격을 설정한다.
+        slideMargin:5, // 슬라이드 간의 간격을 설정한다.
         auto:true,         // 자동으로 흐를지 여부를 설정한다.
         autoHover:true, // 마우스오버 시 정지할지를 설정한다.
         controls:false    // 이전 버튼, 다음 버튼 노출 여부를 설정한다.
@@ -76,3 +76,4 @@ $(function(){
         return false;
     });
 });
+

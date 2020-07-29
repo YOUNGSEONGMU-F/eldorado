@@ -25,7 +25,6 @@
 
 <select id="selectMember" resultType="map">
 	select * from member where id=#{id}
-
 </select>
 
 
@@ -34,8 +33,16 @@
 	values (#{id},#{title},#{total_amount},#{th_name},#{seat},#{date},#{time},#{total_price})
 </insert>
 
+<select id="selectName" resultType="map">
+	select name from member where id=#{id}
+</select>
 
+<insert id="insertGift" parameterType="map" > 
+	insert into moviegifts (id,name,ticket_kinds,t_amount,price) 
+	values (#{id},#{name},#{ticket_kinds},#{t_amount},#{price})
+</insert>
 
 
 </mapper>
+
 
