@@ -1,0 +1,150 @@
+@charset "utf-8";
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#ad{
+	height: 70px;
+	background-color: #191514;
+	margin-bottom: -1px;
+}
+
+
+.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+header a{
+	text-decoration: none;
+	color: #ffffff;
+}
+
+header{
+	background: transparent;
+	z-index: 9999;
+}
+
+.sticky:hover #m_nav,.sticky:hover #sc_nav {
+	background-color: rgba(26,26,26,.95);
+}
+.nav_area {
+	width: 100vw;
+}
+
+#sc_nav {
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    height: 28px;
+    position: relative;
+    padding: 0 2rem;
+}
+
+
+#sc_nav a{
+	color: #939393;
+	font-size: 12px;
+	font-weight: 900;
+}
+	
+#sc_nav, #m_nav{
+/* 	border: 1px pink solid; */
+	display:flex;
+/*	background-color: rgba(26,26,26,.95);*/
+/*  background-color: transparent; */
+	justify-content: space-between;
+	width: 100vw;
+	min-width: 925px;
+}
+
+
+.m_gnb_area{
+/* 	border: 1px red solid;	 */
+flex: 3;
+padding: 0 8rem;
+}
+
+.logo{
+	font-size:24px;
+	display: inline-block;
+    padding: .5rem 2rem;
+    flex: 1;
+}
+
+.m_gnb_list, .as_rng_list{
+/*  border: 1px red solid;	 */
+	display: flex;
+	justify-content:space-around;
+}
+.sc_g_left, .sc_g_right{
+/*  border: 1px red solid;	 */
+	display: flex;
+	justify-content:flex-end;
+}
+
+.m_gnb_list, .as_rng_list{
+	padding: 1rem;
+}
+
+
+.sc_g_right>li{
+	list-style:none;
+	margin: 0 1rem;
+}
+.m_gnb_list>li, .as_rng_list>li {
+	list-style:none;
+}
+
+.m_gnb_list>li{
+	white-space: nowrap;
+/* 	padding: 0; */
+}
+
+/* hover시 red */
+.m_gnb:hover > a{
+    border-bottom: 3px #ec6159 solid;
+    padding-bottom: 2px;
+}
+.m_sub_gnb>li:hover > a{
+    color: #ec6159;;
+    font-weight: normal;
+}
+
+.m_gnb_list>li{
+	margin: 0 0.5rem;
+}
+
+.m_sub_gnb{
+	display: none;
+	margin-top: 1rem;
+}
+.m_sub_gnb>li{
+	list-style: none;
+	margin-top: .5rem;
+}
+
+.m_sub_gnb a{
+	font-size: 14px;
+	font-weight: normal;
+}
+
+
+.m_gnb_area:hover .m_sub_gnb {
+	display: block;
+}
+
+.aside_rnb{
+	flex: 1;
+	margin-right: 1rem;
+}
+
+.search_area, .quick_area{
+	display: none;
+}
+
+as_rng_list i{
+	vertical-align: bottom;
+}

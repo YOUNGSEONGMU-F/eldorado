@@ -3,6 +3,51 @@
 
 <mapper namespace="lyj">
 
+<insert id="insertMember" parameterType="map">
+insert into member(id,pass,name,email,addr,tel) 
+values(#{id},#{pass},#{name},#{email},#{addr},#{tel})
+</insert>
+
+<select id="getPass" resultType="String">
+
+select pass from member where id=#{id}
+</select>
+
+
+<update id="newPassword" parameterType="map">
+
+		update member
+
+		set pass = #{pass}
+
+		where email=#{email}
+
+</update>
+
+<select id="idfind" parameterType="String" resultType="String" >
+select id from member where email= #{userEmail}
+</select>
+
+<select id="bringTheaters" resultType="map">
+select th_name from theater
+</select>
+
+<select id="bringEachTheaters" resultType="map" parameterType="map">
+select th_name from theater where th_addr= #{area}
+</select>
+
+
+<select id="bringReservations" resultType="map">
+select * from reservations where id=#{id}
+
+</select>
+
+<delete id="CancelMovieTicket">
+delete from reservations where id=#{id} and reserv_num=#{reserv_num}
+
+</delete>
+
+
 
 </mapper>
 
