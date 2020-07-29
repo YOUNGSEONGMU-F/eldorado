@@ -212,6 +212,8 @@ public class KhrController {
 		//jsp로 아이디값 넘겨주기
 		session.setAttribute("id", id);
 		
+		Map<String, Object> GetName = service.getName(id);
+		model.addAttribute("GetName", GetName);
 		
 		return "khr/GiftOrder";
 	}
@@ -220,6 +222,22 @@ public class KhrController {
 	public String GiftOrder_post(Locale locale, Model model) {
 		
 		return "khr/GiftOrder";
+	}
+	
+	// 무비기프트 결제완료
+	@RequestMapping(value = "giftComplete", method = RequestMethod.GET)
+	public String giftComplete() {
+
+		return "khr/giftComplete";
+	}
+	
+	@RequestMapping(value = "giftComplete", method = RequestMethod.POST)
+	public String giftComplete_post(Locale locale, Model model,@RequestParam Map<String, Object> giftOrder) {
+		
+		
+		service.insertGift(giftOrder);
+		
+		return "khr/giftComplete";
 	}
 	
 	
@@ -280,8 +298,8 @@ public class KhrController {
 	@RequestMapping(value = "TicketOrder", method = RequestMethod.POST)
 	public String TicketOrder_post(Locale locale, Model model, HttpSession session, HttpServletRequest request, @RequestParam String title,
 			@RequestParam String th_name, @RequestParam String date, @RequestParam String time ,
-			@RequestParam String adult, @RequestParam String kid, @RequestParam String a_price, @RequestParam String k_price
-			) {
+			@RequestParam String adult, @RequestParam String kid, @RequestParam String a_price, @RequestParam String k_price,
+			@RequestParam String total_price, @RequestParam String total_amount, @RequestParam String seat) {
 		
 		String id = (String)session.getAttribute("id");
 		
@@ -293,6 +311,7 @@ public class KhrController {
 		session.setAttribute("id", id);
 		//request.setAttribute("id", id);
 		
+		//예매 정보 가져오기
 		request.setAttribute("title", title);
 		request.setAttribute("th_name", th_name);
 		request.setAttribute("date", date);
@@ -301,6 +320,9 @@ public class KhrController {
 		request.setAttribute("kid", kid);
 		request.setAttribute("a_price", a_price);
 		request.setAttribute("k_price", k_price);
+		request.setAttribute("total_price", total_price);
+		request.setAttribute("total_amount", total_amount);
+		request.setAttribute("seat", seat);
 		
 
 		return "khr/TicketOrder";
@@ -314,8 +336,11 @@ public class KhrController {
 	}
 	
 	@RequestMapping(value = "OrderComplete", method = RequestMethod.POST)
-	public String OrderComplete_post(Locale locale, Model model, HttpServletRequest request, HttpServletRequest req,
-			@RequestParam Map<String, Object> reserve, HttpSession session) {
+	public String OrderComplete_post(Locale locale, Model model,
+			@RequestParam Map<String, Object> reserve, HttpSession session, HttpServletRequest request, @RequestParam String title,
+			@RequestParam String th_name, @RequestParam String date, @RequestParam String time ,
+			@RequestParam(value="adult", required=false) String adult, @RequestParam(value="kid", required=false) String kid, @RequestParam(value="a_price", required=false) String a_price, @RequestParam(value="k_price", required=false) String k_price,
+			@RequestParam String total_price, @RequestParam String total_amount, @RequestParam String seat) {
 		
 		String id = (String)session.getAttribute("id");
 		
@@ -326,6 +351,19 @@ public class KhrController {
 		//jsp로 아이디값 넘겨주기
 		session.setAttribute("id", id);
 		
+		//예매 정보 가져오기
+		request.setAttribute("title", title);
+		request.setAttribute("th_name", th_name);
+		request.setAttribute("date", date);
+		request.setAttribute("time", time);
+		request.setAttribute("adult", adult);
+		request.setAttribute("kid", kid);
+		request.setAttribute("a_price", a_price);
+		request.setAttribute("k_price", k_price);
+		request.setAttribute("total_price", total_price);
+		request.setAttribute("total_amount", total_amount);
+		request.setAttribute("seat", seat);
+	
 		service.insertReserve(reserve);
 		
 		return "khr/OrderComplete";
@@ -336,3 +374,4 @@ public class KhrController {
 
 
 }
+
