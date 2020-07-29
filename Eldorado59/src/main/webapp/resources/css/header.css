@@ -8,9 +8,10 @@
 
 #ad{
 	height: 70px;
-	background-color: beige;
+	background-color: #191514;
 	margin-bottom: -1px;
 }
+
 
 .sticky {
   position: -webkit-sticky; /* Safari */
@@ -28,7 +29,7 @@ header{
 	z-index: 9999;
 }
 
-.sticky:hover #m_nav {
+.sticky:hover #m_nav,.sticky:hover #sc_nav {
 	background-color: rgba(26,26,26,.95);
 }
 .nav_area {

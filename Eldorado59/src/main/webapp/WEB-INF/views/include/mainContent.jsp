@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>	
     <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/mainContent.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-  
+    
       <section class="magazine">
         <h1 class="magazine_title">MAGAZINE</h1>
         <div class="mg_item">
@@ -116,103 +119,28 @@
             </div>  
             <div id="bannerWrap">
               <ul id="rk_item">
+            <c:forEach var="movieListCri" items="${movieListCri }" varStatus="rank" end="9">
+            <c:set var="imgArr" value="${fn:split(movieListCri.image,';') }"/>
                 <li>
                   <a href="#">
                     <div class="rl_info_box">                                                                  
-                    <p class="rank_num">8</p>                                                                  
+                    <p class="rank_num">${rank.count }</p>                                                                  
                       <div>                                     
-                        <span>야구소녀</span>                                                                          
-                        <span>1.71%</span>                                                                      
+                        <span>${movieListCri.title }</span>                                                                          
+                        <span>${movieListCri.advance_rate }%</span>                                                                      
                       </div>                             
+             <div class="over_dmm">
+                 <div class="over_btn">
+                     <button type="button" onclick="javascript: fnTicketReserve('M000071414');">예매</button>
+                     <button type="button" onclick="javascript:fnMovieInfo('M000071414');">정보</button>
+                 </div>
+             </div>
                     </div>
-                    <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M75/M57/M000077557_091604.jpg/dims/optimize" onerror="fnImgError(this);" alt="야구소녀">
+<!--                     <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M75/M57/M000077557_091604.jpg/dims/optimize" onerror="fnImgError(this);" alt="야구소녀"> -->
+					<img src="<c:out value="${imgArr[0] }"/>">   
                     </a>
                 </li>
-                <!--  -->
-                 <li>
-                   <a href="#">
-                      <div class="rl_info_box">                                                                  
-                      <p class="rank_num">1</p>                                                                  
-                        <div>                                     
-                          <span>결백</span>                                                                          
-                          <span>32.16%</span>                                                                      
-                        </div>                             
-                      </div>
-                      <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M14/M14/M000071414_132337.jpg/dims/optimize" onerror="fnImgError(this);" alt="결백">
-                    </a>
-                 </li>
-                 <li>
-                   <a href="#">
-                      <div class="rl_info_box">                                                                  
-                      <p class="rank_num">2</p>                                                                  
-                        <div>                                     
-                          <span>온워드</span>                                                                          
-                          <span>25.03%</span>                                                                      
-                        </div>                             
-                      </div>
-                     <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M61/M88/M000076188_133743.jpg/dims/optimize" onerror="fnImgError(this);" alt="온워드: 단 하루의 기적">
-                    </a>
-                 </li>
-                 <li>
-                   <a href="#">
-                      <div class="rl_info_box">                                                                  
-                      <p class="rank_num">3</p>                                                                  
-                        <div>                                     
-                          <span>사라진 시간</span>                                                                          
-                          <span>20.28%</span>                                                                      
-                        </div>                             
-                      </div>
-                     <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M11/M89/M00007118950_134307.jpg/dims/optimize" onerror="fnImgError(this);" alt="사라진 시간">                      
-                    </a>
-                 </li>
-                 <li>
-                   <a href="#">
-                      <div class="rl_info_box">                                                                  
-                      <p class="rank_num">4</p>                                                                  
-                        <div>                                     
-                          <span>침입자</span>                                                                          
-                          <span>5.1%</span>                                                                      
-                        </div>                             
-                      </div>
-                     <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M25/M93/M00007259350_162353.jpg/dims/optimize" onerror="fnImgError(this);" alt="침입자">
-                    </a>
-                  </li>
-                  <li>
-                   <a href="#">
-                      <div class="rl_info_box">                                                                  
-                        <p class="rank_num">5</p>                                                                  
-                        <div>                                     
-                          <span>위대한 쇼맨</span>                                                                          
-                          <span>2.56%</span>                                                                      
-                        </div>                             
-                      </div>
-                     <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M58/M84/M000065884_135714.jpg/dims/optimize" onerror="fnImgError(this);" alt="위대한 쇼맨">
-                    </a>
-                 </li>
-                 <li>
-                   <a href="#">
-                      <div class="rl_info_box">                                                                  
-                      <p class="rank_num">6</p>                                                                  
-                        <div>                                     
-                          <span>에어로너츠</span>                                                                          
-                          <span>2.01%</span>                                                                      
-                        </div>                             
-                      </div>
-                     <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M69/M29/M000076929_150901.jpg/dims/optimize" onerror="fnImgError(this);" alt="에어로너츠">
-                    </a>
-                 </li>
-                 <li>
-                   <a href="#">
-                      <div class="rl_info_box">                                                                  
-                      <p class="rank_num">7</p>                                                                  
-                        <div>                                     
-                          <span>나의 첫 번째 슈퍼스타</span>                                                                          
-                          <span>1.99%</span>                                                                      
-                        </div>                             
-                      </div>
-                     <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M76/M40/M000077640_142244.jpg/dims/optimize" onerror="fnImgError(this);" alt="나의 첫 번째 슈퍼스타">
-                    </a>
-                 </li>
+            </c:forEach>
 
               </ul>
                   <a href="#" class="prevBtn">&#10094;</a>

@@ -11,7 +11,7 @@ function currentSlide(n) {
 }
 function carousel() {
 
-	/* sleep(2000); */
+//	 sleep(2000); 
 
 	  var i;
 	  var x = document.getElementsByClassName("mySlides");
@@ -25,7 +25,7 @@ function carousel() {
 	  if (slideIndex > x.length) {slideIndex = 1}	/*max 보다 크면 1로변환  */
 	  dots[slideIndex-1].className += " active";	/*클래스 추가 */
 	  x[slideIndex-1].style.display = "block";		/*보이게  */
-	  setTimeout(carousel, 5000); // 이미지 변환 시간
+	  setTimeout(carousel, 8000); // 이미지 변환 시간
 	}
 
 function showSlides(n) {
@@ -76,3 +76,12 @@ $(function(){
         return false;
     });
 });
+
+//
+function fnTicketReserve(grpmId) {
+    location.href = '/Movie/Ticket?gId=' + grpmId;
+}
+
+function fnMovieInfo(mId) {
+    location.href = '/MovieInfo/Index?mId=' + mId;
+}

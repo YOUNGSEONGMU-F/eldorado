@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <div id="ad">
-<img id="imgTopBanner" src="https://movie-simg.yes24.com/NYes24//MgrMain//20/06/betterdays_1200x70_181431.jpg" alt="소년">
+<img id="imgTopBanner" src="https://movie-simg.yes24.com/NYes24//MgrMain//20/07/Super_Price_Top(1200x70)_093107.jpg" alt="반도">
 
   </div>
 
@@ -23,11 +23,14 @@
                           
                         </ul>
                         <ul class="sc_g_right">
-                                    <li><a href="/Login">로그인</a></li>
-
+                        
+                            <li><a href="/Login">로그인</a></li>
 
                             <li><a href="/MyPage">마이페이지</a></li>
                             <li><a href="/Customer">고객센터</a></li>
+
+                            <li><a href="/Movie/movieAdmin">영화관리자</a></li>
+
                         </ul>
                     </div>
 					<div id="m_nav">
