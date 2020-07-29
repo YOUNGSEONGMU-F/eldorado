@@ -62,8 +62,8 @@ display:none;
 	<article>
 		<div class="col-md-12">
 			<h1>영화 등록
-			<button type='button' class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/Movie/movieAdmin'">movieAdmin</button>
-			<button type='button' class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/Movie/movieCriList'">movieCriList</button>
+			<button type='button' class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath }/Movie/movieAdmin'">movieAdmin</button>
+			<button type='button' class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath }/Movie/movieCriList'">movieCriList</button>
 			
 			</h1>
 		
@@ -99,7 +99,7 @@ let main = {
 			let keyword = $('#keyword').val();
 			$.ajax({
 				type : 'GET',
-				url : '/api/v1/movies/' + keyword,
+				url : '/team/api/v1/movies/' + keyword, //contextPath(team) 빠지면 작동안함.error발생!
 				dataType : 'json',
 				contentType : 'application/json; charset=utf-8',
 			}).done(function(res) {

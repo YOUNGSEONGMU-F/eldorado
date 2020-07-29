@@ -28,21 +28,7 @@ public class LsyController {
 	@Inject
 	private LsyService service;
 
-	
-	/*
-	 * @RequestMapping(value = "test", method = RequestMethod.GET) public String
-	 * home(Locale locale, Model model) {
-	 * 
-	 * return "home"; }
-	 */
 
-	/*
-	 * @RequestMapping(value = "footer", method = RequestMethod.GET) public String
-	 * header(Locale locale, Model model) { logger.info("/footer 실행");
-	 * 
-	 * return "include/footer"; }
-	 */
-	
 	//메인페이지
 	@RequestMapping(value = "Main/index", method = RequestMethod.GET)
 	public String main(Locale locale, Model model) throws Exception {
