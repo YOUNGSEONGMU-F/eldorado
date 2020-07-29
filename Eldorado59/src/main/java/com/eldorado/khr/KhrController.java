@@ -199,7 +199,7 @@ public class KhrController {
 		return "khr/MovieGift";
 	}
 	
-	//무비기프트 -> 기프트 예매권 결제
+	//무비기프트 -> 기프트 예매권 결제 일반예매
 	@RequestMapping(value = "GiftOrder", method = RequestMethod.GET)
 	public String GiftOrder(Locale locale, Model model, HttpSession session,
 			HttpServletRequest request) {
@@ -222,6 +222,31 @@ public class KhrController {
 	public String GiftOrder_post(Locale locale, Model model) {
 		
 		return "khr/GiftOrder";
+	}
+	
+	//무비기프트 -> 기프트 예매권 결제 3d예매
+	@RequestMapping(value = "GiftOrders", method = RequestMethod.GET)
+	public String GiftOrders(Locale locale, Model model, HttpSession session,
+			HttpServletRequest request) {
+		String id = (String)session.getAttribute("id");
+		
+		if(id == null) {
+			
+			return "redirect:/lyj/login2";
+		}
+		//jsp로 아이디값 넘겨주기
+		session.setAttribute("id", id);
+		
+		Map<String, Object> GetName = service.getName(id);
+		model.addAttribute("GetName", GetName);
+		
+		return "khr/GiftOrders";
+	}
+	
+	@RequestMapping(value = "GiftOrders", method = RequestMethod.POST)
+	public String GiftOrders_post(Locale locale, Model model) {
+		
+		return "khr/GiftOrders";
 	}
 	
 	// 무비기프트 결제완료

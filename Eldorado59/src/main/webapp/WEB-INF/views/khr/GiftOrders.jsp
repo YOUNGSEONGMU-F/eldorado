@@ -36,13 +36,13 @@
 						<img src="https://movie-simg.yes24.com/NYes24//MovieGift/Image/202001/img_mg01_130913(0).png" alt=""> 
 					</div>
 					<div class="pay_info_txt">
-						<input type="hidden" name="ticket_kinds" value="일반예매권">
-						<p class="pi_tit">일반 예매권</p>
+						<input type="hidden" name="ticket_kinds" value="3D예매권">
+						<p class="pi_tit">3D 예매권</p>
 						<div class="pi_prcie_box">
 							<span class="pri_tit">판매가격</span>
 							<div class="pi_price">
-								<span class="fir_pri"><text class="currency">12,000</text></span>
-								<span class="las_pri"><text class="currency">10,500</text>원</span>
+								<span class="fir_pri"><text class="currency">14,000</text></span>
+								<span class="las_pri"><text class="currency">13,000</text>원</span>
 							</div>
 						</div>
 						<div class="select_line select_big select_area">
@@ -286,7 +286,7 @@
 		// select element에서 선택된 option의 value가 저장된다. 
 		var selectValue = ticket.options[ticket.selectedIndex].value;
 		
-		$('#t_price').val(Number(selectValue) * Number(10500));
+		$('#t_price').val(Number(selectValue) * Number(13000));
 
 	}
 	

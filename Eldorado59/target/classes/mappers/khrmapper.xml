@@ -38,8 +38,8 @@
 </select>
 
 <insert id="insertGift" parameterType="map" > 
-	insert into moviegifts (id,name,t_amount,price) 
-	values (#{id},#{name},#{t_amount},#{price})
+	insert into moviegifts (id,name,ticket_kinds,t_amount,price) 
+	values (#{id},#{name},#{ticket_kinds},#{t_amount},#{price})
 </insert>
 
 
