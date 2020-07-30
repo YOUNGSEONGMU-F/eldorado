@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -308,343 +311,39 @@ button {
                     </div>
                 </div>
 
+<c:forEach var="movieRank" items="${movieListCri }" varStatus="rank" end="20">
+<c:set var="imgArr" value="${fn:split(movieRank.image,';') }"/>
                     <div class="movie_info_card">
                         <div class="img_thumb">
-                            <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M14/M14/M000071414_132337.jpg/dims/optimize" onerror="fnNoImg(this);" alt="결백" />
-                            
-                            <div class="over_dmm">
-                                <div class="over_btn">
-                                        <button type="button" onclick="javascript: fnTicketReserve('M000071414');">예매</button>
-                                    <button type="button" onclick="javascript:fnMovieInfo('M000071414');">정보</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mv_info">
-                            <p class="mv_tit">
-                                    <span class="ic_rating rating_15">15</span>
-                                결백
-                            </p>
-                            <p class="mv_txt">
-                                <span>예매율 : 32.21%</span>
-                                <span>평점 : 8.2</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="movie_info_card">
-                        <div class="img_thumb">
-                            <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M61/M88/M000076188_133743.jpg/dims/optimize" onerror="fnNoImg(this);" alt="온워드: 단 하루의 기적" />
+                        	<img src="<c:out value="${imgArr[0] }"/>"> 
+<!--                             <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M61/M88/M000076188_133743.jpg/dims/optimize" onerror="fnNoImg(this);" alt="온워드: 단 하루의 기적" /> -->
                             
                             <div class="over_dmm">
                                 <div class="over_btn">
                                         <button type="button" onclick="javascript: fnTicketReserve('M000076188');">예매</button>
-                                    <button type="button" onclick="javascript:fnMovieInfo('M000076188');">정보</button>
+                                    <button type="button" onclick="javascript:fnMovieInfo('${movieRank.movie_id }');">정보</button>
                                 </div>
                             </div>
                         </div>
                         <div class="mv_info">
                             <p class="mv_tit">
-                                    <span class="ic_rating rating_all">전체</span>
-                                온워드: 단 하루의 기적
+                                    <span class="ic_rating rating_15">${movieRank.grade }</span>
+                                ${movieRank.title }
                             </p>
                             <p class="mv_txt">
-                                <span>예매율 : 25.27%</span>
-                                <span>평점 : 9</span>
+                                <span>예매율 : ${movieRank.advance_rate }%</span>
+                                <span>평점 : ${movieRank.user_rating }</span>
                             </p>
                         </div>
                     </div>
-                    <div class="movie_info_card">
-                        <div class="img_thumb">
-                            <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M11/M89/M00007118950_134307.jpg/dims/optimize" onerror="fnNoImg(this);" alt="사라진 시간" />
-                            
-                            <div class="over_dmm">
-                                <div class="over_btn">
-                                        <button type="button" onclick="javascript: fnTicketReserve('M000071189');">예매</button>
-                                    <button type="button" onclick="javascript:fnMovieInfo('M000071189');">정보</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mv_info">
-                            <p class="mv_tit">
-                                    <span class="ic_rating rating_15">15</span>
-                                사라진 시간
-                            </p>
-                            <p class="mv_txt">
-                                <span>예매율 : 20.08%</span>
-                                <span>평점 : 8</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="movie_info_card">
-                        <div class="img_thumb">
-                            <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M25/M93/M00007259350_162353.jpg/dims/optimize" onerror="fnNoImg(this);" alt="침입자" />
-                            
-                            <div class="over_dmm">
-                                <div class="over_btn">
-                                        <button type="button" onclick="javascript: fnTicketReserve('M000072593');">예매</button>
-                                    <button type="button" onclick="javascript:fnMovieInfo('M000072593');">정보</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mv_info">
-                            <p class="mv_tit">
-                                    <span class="ic_rating rating_15">15</span>
-                                침입자
-                            </p>
-                            <p class="mv_txt">
-                                <span>예매율 : 5.08%</span>
-                                <span>평점 : 5.8</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="movie_info_card">
-                        <div class="img_thumb">
-                            <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M58/M84/M000065884_135714.jpg/dims/optimize" onerror="fnNoImg(this);" alt="위대한 쇼맨" />
-                            
-                            <div class="over_dmm">
-                                <div class="over_btn">
-                                        <button type="button" onclick="javascript: fnTicketReserve('M000065884');">예매</button>
-                                    <button type="button" onclick="javascript:fnMovieInfo('M000065884');">정보</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mv_info">
-                            <p class="mv_tit">
-                                    <span class="ic_rating rating_12">12</span>
-                                위대한 쇼맨
-                            </p>
-                            <p class="mv_txt">
-                                <span>예매율 : 2.56%</span>
-                                <span>평점 : 8.2</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="movie_info_card">
-                        <div class="img_thumb">
-                            <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M69/M29/M000076929_150901.jpg/dims/optimize" onerror="fnNoImg(this);" alt="에어로너츠" />
-                            
-                            <div class="over_dmm">
-                                <div class="over_btn">
-                                        <button type="button" onclick="javascript: fnTicketReserve('M000076929');">예매</button>
-                                    <button type="button" onclick="javascript:fnMovieInfo('M000076929');">정보</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mv_info">
-                            <p class="mv_tit">
-                                    <span class="ic_rating rating_12">12</span>
-                                에어로너츠
-                            </p>
-                            <p class="mv_txt">
-                                <span>예매율 : 1.99%</span>
-                                <span>평점 : 8.7</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="movie_info_card">
-                        <div class="img_thumb">
-                            <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M76/M40/M000077640_142244.jpg/dims/optimize" onerror="fnNoImg(this);" alt="나의 첫 번째 슈퍼스타" />
-                            
-                            <div class="over_dmm">
-                                <div class="over_btn">
-                                        <button type="button" onclick="javascript: fnTicketReserve('M000077640');">예매</button>
-                                    <button type="button" onclick="javascript:fnMovieInfo('M000077640');">정보</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mv_info">
-                            <p class="mv_tit">
-                                    <span class="ic_rating rating_12">12</span>
-                                나의 첫 번째 슈퍼스타
-                            </p>
-                            <p class="mv_txt">
-                                <span>예매율 : 1.98%</span>
-                                <span>평점 : 9</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="movie_info_card">
-                        <div class="img_thumb">
-                            <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M75/M57/M000077557_091604.jpg/dims/optimize" onerror="fnNoImg(this);" alt="야구소녀" />
-                            
-                            <div class="over_dmm">
-                                <div class="over_btn">
-                                        <button type="button" onclick="javascript: fnTicketReserve('M000077557');">예매</button>
-                                    <button type="button" onclick="javascript:fnMovieInfo('M000077557');">정보</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mv_info">
-                            <p class="mv_tit">
-                                    <span class="ic_rating rating_12">12</span>
-                                야구소녀
-                            </p>
-                            <p class="mv_txt">
-                                <span>예매율 : 1.71%</span>
-                                <span>평점 : 8</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="movie_info_card">
-                        <div class="img_thumb">
-                            <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M65/M75/M000076575_144052.jpg/dims/optimize" onerror="fnNoImg(this);" alt="슈퍼스타 뚜루" />
-                            
-                            <div class="over_dmm">
-                                <div class="over_btn">
-                                        <button type="button" onclick="javascript: fnTicketReserve('M000076575');">예매</button>
-                                    <button type="button" onclick="javascript:fnMovieInfo('M000076575');">정보</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mv_info">
-                            <p class="mv_tit">
-                                    <span class="ic_rating rating_all">전체</span>
-                                슈퍼스타 뚜루
-                            </p>
-                            <p class="mv_txt">
-                                <span>예매율 : 1.31%</span>
-                                <span>평점 : 10</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="movie_info_card">
-                        <div class="img_thumb">
-                            <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M79/M44/M00006794458_144840.jpg/dims/optimize" onerror="fnNoImg(this);" alt="콜 미 바이 유어 네임" />
-                            
-                            <div class="over_dmm">
-                                <div class="over_btn">
-                                        <button type="button" onclick="javascript: fnTicketReserve('M000067944');">예매</button>
-                                    <button type="button" onclick="javascript:fnMovieInfo('M000067944');">정보</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mv_info">
-                            <p class="mv_tit">
-                                    <span class="ic_rating rating_19">청불</span>
-                                콜 미 바이 유어 네임
-                            </p>
-                            <p class="mv_txt">
-                                <span>예매율 : 1.06%</span>
-                                <span>평점 : 7.6</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="movie_info_card">
-                        <div class="img_thumb">
-                            <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M27/M70/M00002277053_110308.jpg/dims/optimize" onerror="fnNoImg(this);" alt="레옹 " />
-                            
-                            <div class="over_dmm">
-                                <div class="over_btn">
-                                        <button type="button" onclick="javascript: fnTicketReserve('M000022770');">예매</button>
-                                    <button type="button" onclick="javascript:fnMovieInfo('M000022770');">정보</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mv_info">
-                            <p class="mv_tit">
-                                    <span class="ic_rating rating_19">청불</span>
-                                레옹 
-                            </p>
-                            <p class="mv_txt">
-                                <span>예매율 : 0.41%</span>
-                                <span>평점 : 8.3</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="movie_info_card">
-                        <div class="img_thumb">
-                            <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M76/M28/M000077628_114641.jpg/dims/optimize" onerror="fnNoImg(this);" alt="와일드 시티" />
-                            
-                            <div class="over_dmm">
-                                <div class="over_btn">
-                                        <button type="button" onclick="javascript: fnTicketReserve('M000077628');">예매</button>
-                                    <button type="button" onclick="javascript:fnMovieInfo('M000077628');">정보</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mv_info">
-                            <p class="mv_tit">
-                                    <span class="ic_rating rating_19">청불</span>
-                                와일드 시티
-                            </p>
-                            <p class="mv_txt">
-                                <span>예매율 : 0.4%</span>
-                                <span>평점 : 0</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="movie_info_card">
-                        <div class="img_thumb">
-                            <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M85/M61/M00006856152_145858.jpg/dims/optimize" onerror="fnNoImg(this);" alt="아이 캔 온리 이매진" />
-                            
-                            <div class="over_dmm">
-                                <div class="over_btn">
-                                        <button type="button" onclick="javascript: fnTicketReserve('M000068561');">예매</button>
-                                    <button type="button" onclick="javascript:fnMovieInfo('M000068561');">정보</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mv_info">
-                            <p class="mv_tit">
-                                    <span class="ic_rating rating_12">12</span>
-                                아이 캔 온리 이매진
-                            </p>
-                            <p class="mv_txt">
-                                <span>예매율 : 0.37%</span>
-                                <span>평점 : 6.2</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="movie_info_card">
-                        <div class="img_thumb">
-                            <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M10/M31/M000071031_093726.jpg/dims/optimize" onerror="fnNoImg(this);" alt="국도극장" />
-                            
-                            <div class="over_dmm">
-                                <div class="over_btn">
-                                        <button type="button" onclick="javascript: fnTicketReserve('M000071031');">예매</button>
-                                    <button type="button" onclick="javascript:fnMovieInfo('M000071031');">정보</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mv_info">
-                            <p class="mv_tit">
-                                    <span class="ic_rating rating_12">12</span>
-                                국도극장
-                            </p>
-                            <p class="mv_txt">
-                                <span>예매율 : 0.37%</span>
-                                <span>평점 : 7.5</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="movie_info_card">
-                        <div class="img_thumb">
-                            <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M71/M46/M000027146_140147.jpg/dims/optimize" onerror="fnNoImg(this);" alt="전망 좋은 방" />
-                            
-                            <div class="over_dmm">
-                                <div class="over_btn">
-                                        <button type="button" onclick="javascript: fnTicketReserve('M000027146');">예매</button>
-                                    <button type="button" onclick="javascript:fnMovieInfo('M000027146');">정보</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mv_info">
-                            <p class="mv_tit">
-                                    <span class="ic_rating rating_15">15</span>
-                                전망 좋은 방
-                            </p>
-                            <p class="mv_txt">
-                                <span>예매율 : 0.34%</span>
-                                <span>평점 : 8</span>
-                            </p>
-                        </div>
-                    </div>
-
-            </div>
+</c:forEach>
+ 
             <div class="btn_bottom_area" id="dvNowPlayMore">
                 <button type="button" class="btn_defaultB" onclick="javascript: fnMore();">더보기</button>
             </div>
         </div>
     </div>
+ </div>
 
 
 </body>

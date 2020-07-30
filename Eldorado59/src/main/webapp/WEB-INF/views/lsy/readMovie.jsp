@@ -64,7 +64,7 @@ display:none;
 			</div>
 			<div class="justify-content-center form-inline mb-2"> <!-- col-md-4 -->
 			
-<!--  -->	<form action="/modifyMovie" method="post" id="form_action">
+<!--  -->	<form action="modifyMovie" method="post" id="form_action">
 			
 				<table class="table p-3">
 				<tr>
@@ -150,7 +150,7 @@ display:none;
 					</video>
 <!--  -->	</form>
 				<!-- 삭제폼 -->
-				<form action="/deleteMovie" id="delete_form" method="post">
+				<form action="deleteMovie" id="delete_form" method="post">
 				<input type="hidden" name="movie_id" value="${about_movie.movie_id }">		
 				</form>
 				

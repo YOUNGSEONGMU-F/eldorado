@@ -47,7 +47,6 @@ public class LsyController {
 	
 	
 	  //무비인포
-	  
 	  @RequestMapping(value = "MovieInfo/Index", method = RequestMethod.GET) public
 	  String MovieInfo(@RequestParam("mId") String movie_id, Model model) throws
 	  Exception { logger.info("/MovieInfo 실행");
@@ -59,6 +58,24 @@ public class LsyController {
 	  
 	  model.addAttribute("about_movie",about_movie); return "jsa/Index"; }
 	 
+	//메인페이지
+	@RequestMapping(value = "MovieInfo/NowPlayRank", method = RequestMethod.GET)
+	public String NowPlayRank(Model model) throws Exception {
+		logger.info("NowPlayRank 실행");
+		
+		//DB 등록된 영화 가져와서 출력
+		//서비스계층 메서드 호출
+		List<Map<String,Object>>movieListCri=service.movieListCri();
+		
+		logger.info("영화 목록 가져오기 성공");
+		logger.info("영화 목록: "+movieListCri );
+		
+		model.addAttribute("movieListCri",movieListCri);
+
+		return "jsa/NowPlayRank";
+	}
+	  
+	  
 	
 	//네이버 영화검색 API호출, 검색 및 영화등록 페이지
 	@RequestMapping(value = "Movie/addMovie", method = RequestMethod.GET)
@@ -135,7 +152,7 @@ public class LsyController {
 		return "lsy/readMovie";
 	}
 	//영화 상세 => 수정(post)
-	@RequestMapping(value = "/modifyMovie", method = RequestMethod.POST)
+	@RequestMapping(value = "modifyMovie", method = RequestMethod.POST)
 	public String modifyMoviePOST(@RequestParam Map<String,Object>map) throws Exception {
 		logger.info("/modifyMovie요청(POST) 실행");
 		service.modifyMovie(map);
@@ -152,7 +169,7 @@ public class LsyController {
 		return "redirect:/Movie/movieAdmin";
 	}
 	// 영화 삭제 post
-	@RequestMapping(value = "/deleteMovie", method = RequestMethod.POST)
+	@RequestMapping(value = "deleteMovie", method = RequestMethod.POST)
 	public String deleteMoviePOST(@RequestParam String movie_id) throws Exception {
 		logger.info("/deleteMovie요청(POST) 실행");
 		service.deleteMovie(movie_id);;

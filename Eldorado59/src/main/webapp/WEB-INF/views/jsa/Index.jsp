@@ -51,7 +51,12 @@
 		   <p class="dmb_txt">
 <!-- 		    <span>2020.06.10 개봉</span> -->
 <!-- 		    <span>110 분</span> -->
-		    <span>${about_movie.grade }세이상관람가</span>
+		    <span>
+		    <c:if test="${about_movie.grade eq '12' }">${about_movie.grade}세이상 관람가 </c:if>
+		    <c:if test="${about_movie.grade eq '15' }">${about_movie.grade}세이상 관람가 </c:if>
+		    <c:if test="${about_movie.grade eq '전체' }">${about_movie.grade} 관람가 </c:if>
+		    <c:if test="${about_movie.grade eq '청불' }">청소년 관람불가 </c:if> 
+		    </span>
 <!-- 		    <span>드라마</span> -->
 <!-- 		    <span>한국</span> -->
 		   </p>
