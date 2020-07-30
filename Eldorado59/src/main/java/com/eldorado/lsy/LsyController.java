@@ -152,7 +152,7 @@ public class LsyController {
 		return "lsy/readMovie";
 	}
 	//영화 상세 => 수정(post)
-	@RequestMapping(value = "modifyMovie", method = RequestMethod.POST)
+	@RequestMapping(value = "Movie/modifyMovie", method = RequestMethod.POST)
 	public String modifyMoviePOST(@RequestParam Map<String,Object>map) throws Exception {
 		logger.info("/modifyMovie요청(POST) 실행");
 		service.modifyMovie(map);
@@ -161,7 +161,7 @@ public class LsyController {
 	}
 	
 	// 영화 삭제 get
-	@RequestMapping(value = "deleteMovie", method = RequestMethod.GET)
+	@RequestMapping(value = "Movie/deleteMovie", method = RequestMethod.GET)
 	public String deleteMovieGET(@RequestParam("m_id") String movie_id) throws Exception {
 		logger.info("/deleteMovie요청(POST) 실행");
 		service.deleteMovie(movie_id);;
@@ -169,7 +169,7 @@ public class LsyController {
 		return "redirect:/Movie/movieAdmin";
 	}
 	// 영화 삭제 post
-	@RequestMapping(value = "deleteMovie", method = RequestMethod.POST)
+	@RequestMapping(value = "Movie/deleteMovie", method = RequestMethod.POST)
 	public String deleteMoviePOST(@RequestParam String movie_id) throws Exception {
 		logger.info("/deleteMovie요청(POST) 실행");
 		service.deleteMovie(movie_id);;
