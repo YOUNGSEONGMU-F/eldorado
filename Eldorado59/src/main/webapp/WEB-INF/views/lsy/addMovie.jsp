@@ -176,6 +176,7 @@ $(document).on("click", "#selectBtn", function(){
 
  // console.log("title : " + title);
  // console.log("subtitle : " + subtitle);
+ // console.log("path : " + ${pageContext.request.contextPath });
     
 	});
 
@@ -189,13 +190,13 @@ $(document).on("click", "#selectBtn", function(){
 		} 
 
 		$.ajax({
-			url: "${contextPath}/registeMovie",
+			url: "${pageContext.request.contextPath }/registeMovie",
 			data: {target:JSON.stringify(rowData)},  //요 부분이다.
 			type: 'POST',
 			success: function(result){
 				console.log(result);
 				if(confirm("movieAdmin으로 이동할까요?")==true){
-					location.href="${contextPath}/Movie/movieAdmin"
+					location.href="${pageContext.request.contextPath }/Movie/movieAdmin"
 				}else{
 				 return;
 				}
