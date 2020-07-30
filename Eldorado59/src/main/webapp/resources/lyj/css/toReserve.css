@@ -1,0 +1,284 @@
+@charset "utf-8";
+
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+html{
+ 
+   background-color: black;
+/*  height: 1200px; */
+
+}
+.lyjwrap {
+   display: flex; 
+   flex-direction: column;   
+}
+#lyjbody {
+   margin-top : 100px;
+   border: 1px solid #f5f5f5;
+   background-color: #f5f5f5;
+/*     width: 1263.33px; 
+    height: 1700px; */
+    width : 100%;
+    padding-left: 100px;
+    padding-right: 100px;
+ 
+}
+.inside{
+    background-color: #f5f5f5;
+     border: 1px solid #f5f5f5;
+     color: #f5f5f5;
+     overflow: hidden;
+}
+#lyjBigTitle{
+   
+   
+}
+
+
+.lyjinside2{
+   width: 100%; 
+   border: 1px solid gray;
+   margin: 10px auto;
+/*    padding-left: 1000px; */
+   padding-left: 80%; 
+   padding-top: 35px;
+   padding-bottom: 35px;
+   
+}
+#selectHour{
+/*    margin-left: 30px; */
+   
+}
+
+.NextButtoncss{
+   /* border: 1px solid gray; */
+   width: 600px;
+    
+    
+}
+
+.btn-next{
+   width: 500px;
+   
+}
+.next-img{
+   width:40px;
+}
+.btn-b{
+   border: 0;
+   background-color: #f5f5f5;
+}
+.selectHourContent{
+   width: 100%;
+/*    width: 1200px; 
+    height: 400px; */
+   border: 1px solid gray;
+   margin: 30px auto;
+   padding-left: 20px;
+   padding-top: 20px;
+   
+}
+
+.Timebox{
+   width: 90px;
+   height: 50px;
+}
+.btn_theater{
+   display: inline-block;
+}
+
+
+.selectHourContent>div div{
+   display: inline-block;
+}
+
+.CityAndDo{
+   width: 120px;
+   border: 1px solid gray;
+   text-align: center;
+   
+}
+
+.wrap_entirecityandDo{
+   display:flex;
+   flex-direction: row;
+}
+
+.lyjinside3{
+   /* width:  1200px;  */
+    width:  100%;
+   border: 1px solid gray;
+   margin: 10px auto;
+   display: flex;
+   flex-direction: row;
+}
+#choosethemovie{
+   
+   border:1px solid gray;
+   flex-grow:1;
+   
+}
+
+/* #choosethemovie:nth-child(2){
+
+      flex-grow:2;
+} */
+#titlelyj{
+   /* 
+   영화선택하는 곳
+   border: 1px solid blue; */
+   margin: 5px;
+   padding-left: 30;
+}
+#top10{
+   border: 1px solid gray;
+   margin: 8px;
+   padding: 5px;
+}
+
+
+#ad{
+   height: 70px;
+   background-color: beige;
+   margin-bottom: -1px;
+}
+
+.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+header a{
+   text-decoration: none;
+   color: #ffffff;
+}
+
+header{
+   background: transparent;
+   z-index: 9999;
+}
+
+.sticky:hover #m_nav {
+   background-color: rgba(26,26,26,.95);
+}
+.nav_area {
+   width: 100vw;
+}
+
+#sc_nav {
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    height: 28px;
+    position: relative;
+    padding: 0 2rem;
+}
+
+
+#sc_nav a{
+   color: #939393;
+   font-size: 12px;
+   font-weight: 900;
+}
+
+#sc_nav, #m_nav{
+/*    border: 1px pink solid; */
+   display:flex;
+/*   background-color: rgba(26,26,26,.95);*/
+/*  background-color: transparent; */
+   justify-content: space-between;
+   width: 100vw;
+   min-width: 925px;
+   background-color: rgba(26,26,26,.95);
+}
+
+
+.m_gnb_area{
+/*    border: 1px red solid;    */
+flex: 3;
+padding: 0 8rem;
+}
+
+.logo{
+   font-size:24px;
+   display: inline-block;
+    padding: .5rem 2rem;
+    flex: 1;
+}
+
+.m_gnb_list, .as_rng_list{
+/*  border: 1px red solid;    */
+   display: flex;
+   justify-content:space-around;
+}
+.sc_g_left, .sc_g_right{
+/*  border: 1px red solid;    */
+   display: flex;
+   justify-content:flex-end;
+}
+
+.m_gnb_list, .as_rng_list{
+   padding: 1rem;
+}
+
+
+.sc_g_right>li{
+   list-style:none;
+   margin: 0 1rem;
+}
+.m_gnb_list>li, .as_rng_list>li {
+   list-style:none;
+}
+
+.m_gnb_list>li{
+   white-space: nowrap;
+/*    padding: 0; */
+}
+
+/* hover시 red */
+.m_gnb:hover > a{
+    border-bottom: 3px #ec6159 solid;
+    padding-bottom: 2px;
+}
+.m_sub_gnb>li:hover > a{
+    color: #ec6159;;
+    font-weight: normal;
+}
+
+.m_gnb_list>li{
+   margin: 0 0.5rem;
+}
+
+.m_sub_gnb{
+   display: none;
+   margin-top: 1rem;
+}
+.m_sub_gnb>li{
+   list-style: none;
+   margin-top: .5rem;
+}
+
+.m_sub_gnb a{
+   font-size: 14px;
+   font-weight: normal;
+}
+
+
+.m_gnb_area:hover .m_sub_gnb {
+   display: block;
+}
+
+.aside_rnb{
+   flex: 1;
+   margin-right: 1rem;
+}
+
+.search_area, .quick_area{
+   display: none;
+}
+
+as_rng_list i{
+   vertical-align: bottom;
+}

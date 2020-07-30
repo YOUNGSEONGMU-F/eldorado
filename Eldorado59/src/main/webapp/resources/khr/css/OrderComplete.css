@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+.wrap {
+	margin-top: 120px;
+	width: 100%; height: 1000px;
+	/* border: 1px solid red; */
+}
+.order_container {
+	margin-top: 3%;
+	/* border: 1px solid blue; */
+	box-sizing: border-box;	
+}
+.order_container .tit {
+	margin-left: 47%;
+	font-size: 25px;
+}
+.order_container .order_info {
+	border: 3px solid #c0c0c0;
+	border-radius: 3%;
+	width: 33%; height: 700px;
+	margin: 1% auto;
+}
+.order_container .order_info .movie_sel_tit {
+	border-top: 4px solid;
+	border-bottom: 4px solid;
+	width: 90%; margin: 0 auto;
+	padding: 2% 0 2% 0;
+	margin-top: 6.5%;
+	font-size: 25px;
+	text-align: center;
+	color: #4c4c4c;
+}
+.order_container .order_info .movie_sel_cinema {
+	/* border: 1px solid; */
+	margin: 4% auto;
+	padding: 2% 0 2% 0;
+	font-size: 20px;
+	text-align: center;
+	color: #4c4c4c;
+}
+.order_container .order_info .movie_sel_seat {
+	/* border: 1px solid; */
+	margin: 4% auto;
+	padding: 2% 0 2% 0;
+	text-align: center;
+	font-weight: bold;
+	font-size: 33px;
+	color: #4c4c4c;
+}
+.order_container .order_info .movie_sel_date {
+	/* border: 1px solid; */
+	margin: 4% auto;
+	padding: 2% 0 2% 0;
+	font-size: 20px;
+	text-align: center;
+	color: #4c4c4c;
+}
+.order_container .order_info .last_price_area {
+	/* border: 1px solid; */
+	margin: 4% auto;
+	padding: 2% 0 2% 0;
+	font-size: 20px;
+	text-align: center;
+	color: #4c4c4c;
+}
+.order_container .order_info .last_price_area > p {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.order_container .order_info .eldorado_logo {
+	font-size: 27px;
+	font-weight: bold;
+	text-align: center;
+	color: #4c4c4c;
+} 
+.order_container .order_info .eldorado_logo > img {
+	width: 95%; height: 150px;
+}
+.order_container .order_mypage > button {
+	margin-top: 1%;
+	margin-left: 59%;
+	border: none;
+	width: 130px; height: 60px;
+}

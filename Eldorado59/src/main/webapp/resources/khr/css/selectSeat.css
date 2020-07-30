@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+.wrap {
+	margin-top: 120px;
+}
+
+.reserve_top {
+	border: 1px solid red;
+	position: relative;
+	padding:30px 0 75px;
+	text-align:right;
+}
+
+.reserve_area {
+	border: 1px solid blue;
+	position: relative;
+	/* padding-bottom:963px; */
+}
+
+.reserve_container {position: relative;}
+
+.seat_area {
+	border: 1px solid #c0c0c0;
+	width: 1200px;
+	height: 613px;
+	margin: 70px auto;
+}
+.seat_area .ms_title {
+	background-color: #808080;
+	height: 35px;
+}
+.seat_area .ms_title .btn_tooltip {margin:-1px 0 0 11px;vertical-align: top;}
+.tit {
+	font-size: 20px;
+    color: white;
+    letter-spacing: -1px;
+    vertical-align: top;
+    
+}
+
+.peo_num_cont {padding:50px;font-size:0; border-bottom: 1px solid #c0c0c0;}
+.peo_num_cont > div {padding:0 0 0 50px;display:inline-block;vertical-align:top;}
+.peo_num_cont > div:first-child {padding:0;width:410px}
+.peo_num_cont > div:nth-child(2) {width:350px;}
+
+.select_people > div {margin-top:4px;}
+.select_people > div:first-child {margin-top:0;}
+.select_people .pt_tit {padding-top:9px;width:95px;font-size:14px;font-weight:bold;color:#2b2b2b;}
+.select_people .pt_tit .pt_tit_s {font-weight: normal;font-size:12px; color:#777;}
+.select_people .pt_price {padding:9px 15px 0 0;width:105px;font-size:12px;color:#999;text-align: right;}
+.select_people .pt_num_peo > button {position: relative;;margin-left:-1px;width:30px;height:30px;font-size:15px;font-weight:normal;color:#777;text-align:center;border:1px solid #e5e5e5;vertical-align:top;z-index:1;cursor: pointer;}
+.select_people .pt_num_peo > button.active {color:#fff;border:1px solid #ec6159;background:#ec6159;z-index:2; }
+.select_people .pt_num_peo > button.disabled {color:#cbcbcb;}
+.select_people .noti_star {margin-top:20px; font-size:13px; color:#999; line-height:20px;}
+.people_type > span {display:inline-block;height:30px;vertical-align:top;}
+
+.peo_num_info {}
+.peo_num_info .sc_tit {font-size:15px; font-weight:bold; color:#2b2b2b; }
+.peo_num_info .sc_txt {margin-top:15px; font-size:15px;}
+
+
+.seating_cont .seat-wrapper {
+	/* padding-top: 7%;  */
+	padding-left: 37%;
+}
+.seating_cont .seat-wrapper .screen-view-wrapper {
+	/* border: 1px solid; */
+	margin-bottom: 7%;
+}
+.seating_cont .seat-wrapper .screen-view {
+	width: 140px;
+    color: #777777;
+    padding-top: 5px;
+    padding-left: 12%;
+    font-size: 30px;
+    text-align: center;
+    /* margin: 0 auto 30px auto; */
+    /* border-bottom: 1px solid #666666; */
+    letter-spacing: 4px;
+}
+
+
+
+.sel_movie_info .lay_inner {
+	/* display:inline-block; */
+	border: 1px solid #c0c0c0;
+	width: 1200px;
+	height: 220px;
+	margin: 100px auto;
+}
+
+.sel_movie_info .sel_movie_info_area {
+	float: left;
+	height: 219px;
+	border-right: 1px solid #c0c0c0;
+	padding:0 10px 0 30px;
+	width:400px;
+}
+.sel_movie_info .movie_info {
+	padding-top:42px;
+	color:#000000;
+	line-height:1;
+	font-size:15px;
+}
+.sel_movie_info .movie_info > div {padding-bottom:7px;}
+.sel_movie_info .movie_info .movie_sel_tit {
+		position: relative;
+		padding-bottom:24px;
+		font-size:18px;
+}
+
+
+.sel_movie_info .price_info_area {
+	float: left;
+	padding:0 50px;
+	width:400px;
+	vertical-align:middle !important;
+	font-size:16px;/* color:#fff; */
+	/* border: 1px solid; */
+	margin-top: 80px;
+	/* border-left:1px solid rgba(229,229,229,.15);
+	border-right:1px solid rgba(229,229,229,.15); */
+}
+.sel_movie_info .price_info_area > p {padding-bottom:10px;}
+.sel_movie_info .price_info_area > p:last-child {padding-bottom:0;}
+.sel_movie_info .price_info_area .pi_tit {float:left;width:100px;}
+.sel_movie_info .price_info_area .pi_info {float:right;width:calc(100% - 100px);text-align: right;}
+
+
+.sel_movie_info .last_price_area {
+	float: left;
+	height: 219px;
+	padding:20px 15px 20px 15px;
+	width:395px;
+	border-left: 1px solid #c0c0c0;
+}
+.sel_movie_info .last_price_area .lp_txt {
+	padding:30px 0 0 13px;
+	display:inline-block;
+	width:calc(100% - 111px);
+	text-align: center;
+	font-size:15px;
+	color:#000000;
+	vertical-align:top;
+}
+.sel_movie_info .last_price_area .lp_price {
+	padding-top:14px;
+	font-size:24px;
+	color:#ec6159; 
+}
+
+.sel_movie_info .last_price_area .bnt_payment {
+	width:75px;height:30px;
+	/* line-height:111px; */text-align: center;
+	font-size:15px;color:#fff;
+	background:#ec6159; cursor: pointer;
+	float: right;
+}
+
+
+
+
+
+
+
+
+
+

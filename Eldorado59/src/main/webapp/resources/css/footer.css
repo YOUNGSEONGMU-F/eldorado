@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+*{
+	margin: 0; padding: 0;
+}
+.footer {
+/* 	border: 1px blue solid; */
+    padding-bottom: 50px;
+    height: 500px;
+	white-space: nowrap;
+	overflow: hidden;
+/* 	width: 1519px; */
+	min-width: 925px;
+}
+.foot_banner {
+    position: relative;
+    height: 228px;
+    text-align: center;
+    background: #291c14;
+}
+.foot_banner img{
+	max-width: 1519px;
+	width: 100vw;
+	min-width: 925px;
+}
+
+.foot_area {
+	margin-top: 6rem;
+    padding: 1rem 2rem;
+    line-height: 1;
+}
+
+.policy_cont{
+/* 	border: 1px green solid; */
+	
+}
+.foot_call{
+	padding-left: 26px;
+/*     width: 248px; */
+    border-left: 1px solid #e4e4e4;
+	
+}
+
+.container{
+	display: flex;
+	justify-content: flex-start;
+}
+
+.f_item_1{
+	flex-basis: 80%;
+}
+.f_item_2{
+	flex-basis: 20%;
+}
+
+.foot_info_cont>dt{
+	padding-right: 75px;
+	display: inline-block;
+/* 	width: 150px; */
+	vertical-align: top;
+}
+.foot_info_cont h1{
+	font-size:24px;
+}
+.foot_info_cont>dd{
+	display: inline-block;
+	vertical-align: top;
+}
+
+dd a{
+	font-weight: 600;
+}
+
+.policy_cont a{
+    border-left: 1px solid #d0d0d0;
+	padding: 0 11px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 13px;
+    color: #2b2b2b;
+    text-decoration: none;
+}
+.addr_cont {
+    margin-top: 25px;
+    font-size: 12px;
+    color: #939393;
+    font-style: normal;
+    padding: 0 11px;
+}
+.addr_cont p {
+    padding-bottom: 8px;
+}
+
+.b_line{
+	    color: #2b2b2b;
+}
+
+.f_call_cont > p {
+    padding-bottom: 5px;
+    font-size: 12px;
+    color: #939393;
+}
+
+.f_call_cont .tit {
+    padding-bottom: 10px;
+    font-size: 14px;
+    color: #2b2b2b;
+}
+
+.f_call_cont .tell_num {
+    padding-bottom: 22px;
+    font-size: 20px;
+    color: #2b2b2b;
+    font-family: nanumEB,'맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;
+}
+
+.top_area {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+/*     display: none; */
+    z-index: 500;
+}
+
+.btn_top {
+    width: 38px;
+    height: 30px;
+    font-size: 0;
+    background: url(//movie-img.yes24.com/NYes24/new/all_sprite.png) no-repeat -240px 0;
+    border: none;
+}

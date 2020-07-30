@@ -1,0 +1,535 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #2b2b2b;
+}
+
+.magazine {
+  /* border: olive 1px solid; */
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 630px;
+  background-color: #f5f5f5;
+}
+.event {
+  /* border: springgreen 1px solid; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 1000px;
+  padding-bottom: 60px;
+  /* background-image: url("https://movie-simg.yes24.com/NYes24//new/main_evt_tit.png"); */
+  background-repeat: no-repeat;
+}
+.bg_color {
+  background-image: linear-gradient(
+    rgba(74, 154, 254, 1),
+    rgba(216, 241, 255, 1)
+  );
+}
+
+.magazine_title {
+  margin-bottom: 2rem;
+  flex-direction: column;
+  /* border: turquoise 1px solid; */
+  font-size: 40px;
+  line-height: 1;
+  text-align: center;
+  color: #2b2b2b;
+  font-family: nanumEB, "맑은 고딕", "Malgun Gothic", "Helvetica",
+    "Apple SD Gothic Neo", AppleGothic, "돋움", Dotum, "굴림", Gulim, Helvetica,
+    sans-serif;
+}
+.mg_item {
+  /* border: tomato 1px solid; */
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  height: 500px;
+}
+
+.item {
+  /* border: steelblue 1px solid; */
+  width: calc((100% - 60px) / 3);
+/*   width: 380px; */
+  height: 390px;
+  overflow: hidden;
+  /* background-color: beige; */
+}
+
+.item img{
+	width: 100%;
+}
+
+.mg_info_box {
+  position: relative;
+  margin: -30px 0 0 30px;
+  padding: 20px;
+  width: calc(100% - 30px);
+  line-height: 1;
+  background: #f5f5f5;
+  border: 0;
+}
+
+.mg_first span {
+  padding-bottom: 4px;
+  display: inline-block;
+  font-size: 13px;
+  border-bottom: 1px solid #5b5b5b;
+  font-family: "맑은 고딕", "Malgun Gothic", "Helvetica", "Apple SD Gothic Neo",
+    AppleGothic, "돋움", Dotum, "굴림", Gulim, Helvetica, sans-serif;
+  letter-spacing: -1px;
+}
+.mg_de_txt {
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 28px;
+  letter-spacing: -1px;
+  line-height: 34px;
+  font-family: nanumEB, "맑은 고딕", "Malgun Gothic", "Helvetica",
+    "Apple SD Gothic Neo", AppleGothic, "돋움", Dotum, "굴림", Gulim, Helvetica,
+    sans-serif;
+}
+.mg_title {
+  font-size: 15px;
+  font-weight: normal;
+  color: #777;
+}
+.dot_st {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.e_item {
+  /* border: tomato 1px solid; */
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center;
+  align-content: center; */
+  width: 1200px;
+  /* margin: auto; */
+}
+.item_2 {
+  /* border: steelblue 1px solid; */
+  width: calc((100% - 30px) / 2);
+  height: 406px;
+  /* background-color: beige; */
+}
+
+.item_2 img,
+.item_3 img {
+  width: 100%;
+}
+
+.item_3 {
+  /* border: steelblue 1px solid; */
+  width: calc((100% - 60px) / 3);
+  height: 263px;
+  background-color: beige;
+}
+
+/* 섹션 더 추가 */
+
+.ranking {
+  display: flex;
+  /* border: olive 1px solid; */
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(245, 245, 245, 1);
+  width: 100%;
+  padding: 30px 0 90px 0;
+}
+
+.r_list {
+  /* background-color: beige; */
+  /* border: olivedrab 1px solid; */
+  height: 200px;
+  width: 40%;
+  display: flex;
+  align-items: center;
+}
+
+.rk_list {
+  /* border: blueviolet; */
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.rk_list > li {
+  content: "RANKING";
+  top: 50px;
+}
+
+.rk_list > li > a {
+  position: relative;
+  padding-bottom: 5px;
+  display: block;
+  line-height: 1;
+  font-size: 19px;
+  font-weight: bold;
+  font-family: nanumEB, "맑은 고딕", "Malgun Gothic", "Helvetica",
+    "Apple SD Gothic Neo", AppleGothic, "돋움", Dotum, "굴림", Gulim, Helvetica,
+    sans-serif;
+  z-index: 2;
+}
+
+.rl_info_box {
+  position: absolute;
+  width:95%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 12px;
+  padding: 0px;
+  z-index: 2;
+  color: #fff;
+  line-height: 1;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  z-index: 1;
+}
+
+.rl_info_box > div {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  text-align: left;
+  z-index: 1;
+}
+.rl_info_box > div > span:first-child {
+  display: inline-block;
+  width: 160px;
+  font-size: 15px;
+  line-height: 18px;
+}
+.rl_info_box > div > span:nth-child(2) {
+  margin-top: 0px;
+  float: right;
+  font-size: 16px;
+  color: #ec6159;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.rank_num {
+  position: relative;
+  font-size: 25px;
+  font-style: normal;
+  z-index: 1;
+  font-family: nanumEB, "맑은 고딕", "Malgun Gothic", "Helvetica",
+    "Apple SD Gothic Neo", AppleGothic, "돋움", Dotum, "굴림", Gulim, Helvetica,
+    sans-serif;
+  width: 45px;
+  height: 40px;
+  background: url(//movie-img.yes24.com/NYes24/new/all_sprite.png) no-repeat -493px -629px;
+  padding: 6px 1px 0 0;
+  text-align: center;
+  letter-spacing: -1px;
+}
+
+#rk_item {
+  /* background-color: beige; */
+  /* border: olivedrab 1px solid; */
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  /* border: blue 1px solid; */
+  width: 90%;
+  /* margin-left: 3rem; */
+  position: relative;
+}
+
+#bannerWrap {
+  position: relative;
+  width: 90%;
+  /* margin: 0 auto; */
+  /* padding-left: 80px; */
+}
+
+/* test */
+.bx-wrapper{width: 95vw; margin: auto;}
+
+.bx-viewport{
+	width: 96%;
+}
+
+#r_item {
+  display: flex;
+}
+
+.bst_download {
+  display: flex;
+  border: springgreen 1px solid;
+}
+
+#rk_item img {
+  width: 95%;
+  height: 372px;
+  border: none 0;
+  vertical-align: top;
+}
+
+.prevBtn {
+  vertical-align: center;
+  padding: 150px 0;
+  position: absolute;
+  font-size: 50px;
+  left: -66px;
+  top: 0;
+  width: 200px;
+  height: 380px;
+  color: #eceff1;
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 245, 245, 1) 35%,
+    rgba(245, 245, 245, 0)
+  );
+  z-index: 2;
+}
+
+.nextBtn {
+  vertical-align: center;
+  text-align: right;
+  padding: 150px 0;
+  font-size: 50px;
+  right: -65px;
+  top: 0;
+  position: absolute;
+  width: 200px;
+  height: 380px;
+  color: #eceff1;
+  background-image: linear-gradient(
+    to left,
+    rgba(245, 245, 245, 1) 35%,
+    rgba(245, 245, 245, 0)
+  );
+  z-index: 2;
+}
+
+.prevBtn:hover, .nextBtn:hover {
+	color: #b0bec5;
+}
+
+.boff_more > a {
+  margin-top: 2rem;
+  padding-bottom: 4px;
+  display: inline-block;
+  font-size: 15px;
+  vertical-align: top;
+  border-bottom: 1px solid #2b2b2b;
+}
+
+/* 핫클립 섹션 */
+.hotClip {
+  display: flex;
+  height: 570px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* border: springgreen 1px solid; */
+  background-image: url(https://movie-simg.yes24.com/NYes24//MgrMain//20/06/tttt_094701.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.btn_vod,
+.hc_title,
+.info_text {
+  /* border: steelblue 1px solid; */
+  z-index: 999;
+}
+.hc_title {
+  padding-bottom: 15px;
+  font-size: 50px;
+  font-family: nanumEB, "맑은 고딕", "Malgun Gothic", "Helvetica",
+    "Apple SD Gothic Neo", AppleGothic, "돋움", Dotum, "굴림", Gulim, Helvetica,
+    sans-serif;
+}
+.hc_info {
+  /* border: blue 1px solid; */
+  margin-top: 55px;
+  width: auto;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 200px;
+  width: 700px;
+  z-index: 999;
+}
+.hc_item {
+  /* border: blue 1px solid; */
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 700px;
+  z-index: 999;
+}
+.info_text {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.small_item {
+  position: relative;
+  /* border: olive 1px solid; */
+  width: 220px;
+  height: 85px;
+}
+.ht_name {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  background-color: black;
+  opacity: 0.5;
+  width: 220px;
+  height: 85px;
+  z-index: 77;
+}
+.ht_name p {
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+  padding: 2rem;
+  z-index: 999;
+}
+
+.btn_vod {
+  width: 70px;
+  height: 70px;
+  background: url(//movie-img.yes24.com/NYes24/new/all_sprite.png) no-repeat -102px -286px;
+  font-size: 0;
+  text-indent: -9999px;
+}
+
+.hc {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 570px;
+  left: 0;
+  right: 0;
+  display: block;
+  z-index: 20;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+}
+
+/* 공지사항 */
+
+.notice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 500px;
+}
+
+.notice_board {
+  /* border: orange 1px solid; */
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  width: 70%;
+  padding: 2rem 0 0.5rem 0;
+  border-bottom: #2b2b2b 2px solid;
+}
+.help {
+  /* border: orange 1px solid; */
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  width: 70%;
+  padding: 5rem;
+}
+
+.help > li {
+  border-left: #eceff1 0.5px solid;
+  padding-left: 3rem;
+}
+
+.notice_title {
+  flex: 1;
+  text-align: left;
+  font-size: 24px;
+}
+
+.notice_main {
+  flex: 5;
+}
+
+.notice_more {
+  flex: 1;
+  text-align: right;
+  font-size: 24px;
+}
+
+.noti_ic:after {
+  content: "";
+  display: block;
+  background: url(//movie-img.yes24.com/NYes24/new/all_sprite.png) no-repeat 0 0;
+}
+
+.noti_ic.noti_ic01:after {
+  margin: 12px auto 0;
+  width: 48px;
+  height: 48px;
+  background-position: 0 -382px;
+}
+
+.noti_ic.noti_ic02:after {
+  margin: 16px auto 0;
+  width: 49px;
+  height: 44px;
+  background-position: -78px -382px;
+}
+
+.noti_ic.noti_ic03:after {
+  margin: 15px auto 0;
+  width: 54px;
+  height: 38px;
+  background-position: -157px -382px;
+}
+
+.noti_ic.noti_ic04:after {
+  margin: 14px auto 0;
+  width: 41px;
+  height: 42px;
+  background-position: -241px -382px;
+}
+
+.noti_ic.noti_ic05:after {
+  margin: 13px auto 0;
+  width: 42px;
+  height: 42px;
+  background-position: -312px -382px;
+}
+
+.noti_ic.noti_ic06:after {
+  margin: 14px auto 0;
+  width: 47px;
+  height: 44px;
+  background-position: -384px -382px;
+}

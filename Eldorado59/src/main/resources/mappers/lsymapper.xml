@@ -3,6 +3,83 @@
 
 <mapper namespace="lsy">
 
+<!-- 영화등록 API 정보만 이용. 추가정보는 개별 상세 페이지 수정으로 처리-->
+<insert id="registMovies" parameterType="Object">
+insert into movie(movie_id,title,director,cast,thumb_nail,pub_date,user_rating) 
+values(#{movie_id},#{object.title},#{object.director},#{object.cast},#{object.thumb_nail},#{object.pub_date},#{object.user_rating})
+</insert>
+<!-- 등록된 영화 개수count(movie_id에 사용) -->
+<select id="countRegisteredMovies" resultType="int">
+	<![CDATA[
+	select
+		substring(max(movie_id),3,4)
+	from
+		movie
+	]]>
+</select>
+<!-- 전체 : 영화목록(최근 등록순 정렬) -->
+<select id="movieListAll" resultType="map">
+	<![CDATA[
+	select 
+		*
+	from
+		movie
+	order by 
+		substring(movie_id,3) desc;
+	]]>
+</select>
+<!-- 썸네일/인포 컬럼 나누고, status 0:상영X/1:상영O, 평점 컬럼 넣고 -->
+<!-- 조건 : 영화목록 (현재 상영중 영화&예매율&평점&최근개봉 정렬) -->
+<select id="movieListCri" resultType="map">
+	<![CDATA[
+	select 
+		*
+	from
+		movie
+	where
+		status=1
+	order by 
+		advance_rate desc, user_rating desc, pub_date desc;
+	]]>
+</select>
+<!-- optional하게 추가정보 넣을 수 있도록 -->
+<!-- 개별 영화 상세 뷰페이지(read) -->
+<select id="readMovie" resultType="map">
+	<![CDATA[
+	select
+		*
+	from
+		movie
+	where
+		movie_id=#{movie_id}
+	]]>
+</select>
+
+<!-- 영화수정 : status, advance_rate, grade, info, image, video 추가 -->
+<update id="modifyMovie" parameterType="map">
+ 	<![CDATA[
+ 	update 
+ 		movie
+	set 
+		status=#{status},advance_rate=#{advance_rate},grade=#{grade},info=#{info},image=#{image},video=#{video}
+	where 
+		movie_id=#{movie_id};
+	]]>
+</update>
+
+
+<!-- 영화삭제 -->
+<delete id="deleteMovie">
+ 	<![CDATA[
+	delete
+	from
+		movie
+	where
+		movie_id=#{movie_id};
+	]]>
+</delete>
+
+<!-- 페이징처리도 해야함 -->
 
 </mapper>
 

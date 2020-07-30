@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: black;
+}
+
+
+html{
+ 
+ height: 1200px;
+
+}
+
+.lyjwrap {
+border: 1px;
+background: #f5f5f5;
+ width: 1519px; 
+ height: 1200px;
+font-size: 15px;
+display: flex;
+flex-direction: column;
+font-family: nanumBa, '맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif; }
+
+
