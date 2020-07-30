@@ -172,7 +172,7 @@ $(function(){
 		success:function(data){
 		if(data=="complete"){
 		alert("인증이 완료되었습니다.");
-		location.href="../lyj/findidresult?userEmail="+userEmail;
+		location.href="${pageContext.request.contextPath }/findidresult?userEmail="+userEmail;
 		
 		}else if(data == "false"){
 		alert("인증번호를 잘못 입력하셨습니다.")

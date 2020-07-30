@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.eldorado.lyj.service.LyjServiceImpl;
 
 @RestController
-@RequestMapping(value = "lyj/*")
+@RequestMapping(value = "/*")
 public class LyjRestController {
 
 	@Inject

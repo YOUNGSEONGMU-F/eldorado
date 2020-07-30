@@ -57,7 +57,7 @@
 	        
 		</div>
 		<div class="order_mypage">
-			<button onclick="location.href='/lyj/Mypage';">마이페이지</button>
+			<button onclick="location.href='${pageContext.request.contextPath }/Mypage';">마이페이지</button>
 		</div>
 	</div>
 </div>
