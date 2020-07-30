@@ -1,18 +1,18 @@
 @charset "UTF-8";
 
 .wrap {
-	margin-top: 120px;
+	margin-top: 80px;
 }
 
 .reserve_top {
-	border: 1px solid red;
+	/* border: 1px solid red; */
 	position: relative;
-	padding:30px 0 75px;
+	padding:30px 0 20px;
 	text-align:right;
 }
 
 .reserve_area {
-	border: 1px solid blue;
+	/* border: 1px solid blue; */
 	position: relative;
 	/* padding-bottom:963px; */
 }
