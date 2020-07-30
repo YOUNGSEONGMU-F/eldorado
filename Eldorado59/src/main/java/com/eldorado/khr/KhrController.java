@@ -97,7 +97,7 @@ public class KhrController {
 			if (getPass.equals(map.get("pass"))) {
 				System.out.println("로그인성공");
 				session.setAttribute("id", map.get("id"));
-				return "lsy/main";
+				return "Main/index";
 			} else {
 				System.out.println("패스워드 불일치");
 				response.setContentType("text/html; charset=utf-8");
