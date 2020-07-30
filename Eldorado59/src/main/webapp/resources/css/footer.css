@@ -6,25 +6,26 @@
 .footer {
 /* 	border: 1px blue solid; */
     padding-bottom: 50px;
-    height: 375px;
+    height: 500px;
 	white-space: nowrap;
 	overflow: hidden;
-	width: 1519px;
+/* 	width: 1519px; */
 	min-width: 925px;
 }
 .foot_banner {
     position: relative;
-    height: 180px;
+    height: 228px;
     text-align: center;
     background: #291c14;
 }
 .foot_banner img{
 	max-width: 1519px;
+	width: 100vw;
 	min-width: 925px;
 }
 
 .foot_area {
-	margin-top: 2rem;
+	margin-top: 6rem;
     padding: 1rem 2rem;
     line-height: 1;
 }

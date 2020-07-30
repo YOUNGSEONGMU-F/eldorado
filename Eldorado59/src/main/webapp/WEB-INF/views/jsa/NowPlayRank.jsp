@@ -741,11 +741,11 @@ button {
             });
         }
         function fnTicketReserve(grpmId) {
-            location.href = '/Movie/Ticket?gId=' + grpmId;
+            location.href = '${pageContext.request.contextPath}/Movie/Ticket?gId=' + grpmId;
         }
 
         function fnMovieInfo(mId) {
-            location.href = '/MovieInfo/Index?mId=' + mId;
+            location.href = '${pageContext.request.contextPath}/MovieInfo/Index?mId=' + mId;
         }
 
     </script>
