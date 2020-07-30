@@ -29,12 +29,15 @@
                              <li><a href="${pageContext.request.contextPath}/login2">로그인</a></li>
                         <%}else{ %>
                              <li><a href="${pageContext.request.contextPath}/logout">로그아웃</a></li>
-						<%} %>
+                             
+                        <% if(session.getAttribute("id").equals("admin")){ %>
+                             
+   <!-- 관리자메뉴 -->       <li><a href="${pageContext.request.contextPath}/Movie/movieAdmin">영화관리자</a></li>
+						<%} } %>
 
                             <li><a href="${pageContext.request.contextPath}/Mypage">마이페이지</a></li>
                             <li><a href="${pageContext.request.contextPath}/Customer">고객센터</a></li>
                             
-       <!-- 임시메뉴 -->    <li><a href="${pageContext.request.contextPath}/Movie/movieAdmin">영화관리자</a></li>
                         </ul>
                     </div>
 					<div id="m_nav">
@@ -99,11 +102,11 @@
                         <!-- on 추가/삭제로 사이드 영역 활성 -->
                         <div class="aside_rnb eve_parent">
                             <ul class="as_rng_list">
-                                <li style="margin-top: 2px;"><a href="#" class="as_btn btn_st btn_search_on eve_side_menu" data-cls="search_on"><i class="fas fa-search" style="font-size:20px;color:white" aria-hidden="true"></i></a></li>
+<!--                                 <li style="margin-top: 2px;"><a href="#" class="as_btn btn_st btn_search_on eve_side_menu" data-cls="search_on"><i class="fas fa-search" style="font-size:20px;color:white" aria-hidden="true"></i></a></li> -->
                                 <li>
                                     <a href="${pageContext.request.contextPath}/Mypage" class="as_btn btn_my eve_quick"><i class="material-icons" style="font-size:30px;color:white">person_outline</i></a>
                                 </li>
-                                <li><a href="#" class="as_btn btn_quick_on eve_side_menu" data-cls="quick_on"><i class="material-icons" style="font-size:28px;color:white">border_all</i></a></li>
+<!--                                 <li><a href="#" class="as_btn btn_quick_on eve_side_menu" data-cls="quick_on"><i class="material-icons" style="font-size:28px;color:white">border_all</i></a></li> -->
                             </ul>
                             <div class="aside_menu eve_content">
                                 <!-- 활성시 브라우저 높이 계산(aside_men 여기에 입력) / 클릭된 메뉴에 따라 quick_on, search_on 클래스 추가-->

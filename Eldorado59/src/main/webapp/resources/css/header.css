@@ -88,7 +88,9 @@ padding: 0 8rem;
 .m_gnb_list, .as_rng_list{
 	padding: 1rem;
 }
-
+.as_rng_list{
+	margin-left: 8rem;
+}
 
 .sc_g_right>li{
 	list-style:none;
