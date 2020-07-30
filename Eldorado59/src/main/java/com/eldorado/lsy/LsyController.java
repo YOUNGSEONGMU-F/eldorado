@@ -1,5 +1,4 @@
 package com.eldorado.lsy;
-import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -45,6 +44,21 @@ public class LsyController {
 
 		return "lsy/main";
 	}
+	
+	
+	  //무비인포
+	  
+	  @RequestMapping(value = "MovieInfo/Index", method = RequestMethod.GET) public
+	  String MovieInfo(@RequestParam("mId") String movie_id, Model model) throws
+	  Exception { logger.info("/MovieInfo 실행");
+	  
+	  //DB 등록된 영화 가져와서 출력 //서비스계층 메서드 호출
+	  Map<String,Object>about_movie=service.readMovie(movie_id);
+	  
+	  logger.info("영화 정보 가져오기 성공"); logger.info("영화 정보: "+about_movie );
+	  
+	  model.addAttribute("about_movie",about_movie); return "jsa/Index"; }
+	 
 	
 	//네이버 영화검색 API호출, 검색 및 영화등록 페이지
 	@RequestMapping(value = "Movie/addMovie", method = RequestMethod.GET)

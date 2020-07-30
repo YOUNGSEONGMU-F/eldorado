@@ -35,7 +35,7 @@
 		   	 <div class="over_dmm">
                  <div class="over_btn">
                      <button type="button" onclick="javascript: fnTicketReserve('M000071414');">예매</button>
-                     <button type="button" onclick="javascript:fnMovieInfo('M000071414');">정보</button>
+                     <button type="button" onclick="javascript:fnMovieInfo('${movieRank.movie_id }');">정보</button>
                  </div>
              </div>
 		    </div>
@@ -73,103 +73,8 @@
 
 </div>
 
-
-<jsp:include page="../include/mainContent.jsp"></jsp:include>
-</article>
-</body>  
-
 <script type="text/javascript">
-		var _pageNo = 2;
-		var _pageSize = 12;
-		var _pageSize1st = 15;
-        var _movieRankViewModel = new movieRankViewModel();
-        var _adUrl = 'https://movie-simg.yes24.com/NYes24//MgrMain/';
 
-        $(document).ready(function () {
-
-           // fnMore();   // 현재상영작
-            fnAd();     // 배너광고
-        });
-
-        function fnMore() {
-        	
-        	_movieRankViewModel.getMovieRankByPlaying('Y24', '1', _pageNo, _pageSize, _pageSize1st, function (data) {
-
-        	    if ((data == null) || (data.ResCd != '00'))
-        	    {
-        	        return;
-        	    }
-        	    else
-        	    {
-        	        if (data.ResCd == '00')
-        	        {
-        	            var element = document.getElementById('movieRank');
-        	            var outTotalCnt = data.ResOutParameters.TOTALCNT;
-        	            var rsLength = data.ResData.Table.length;
-
-        	            if ($(element).length == 0 || $('#MovieRankListByPlayingTemplate').length == 0) return;
-        	            $("#MovieRankListByPlayingTemplate").tmpl(data.ResData.Table).appendTo(element);
-        	            _pageNo = _pageNo + 1;
-
-        	            for (var i = 0; i < rsLength; i++) {
-        	                var rsSeq = data.ResData.Table[i].SEQ;
-
-        	                if (parseInt(outTotalCnt) == parseInt(rsSeq)) {
-        	                    $('#dvNowPlayMore').css('display', 'none');
-        	                    return;
-        	                }
-
-        	            }
-        	        }
-        	        else
-        	        {
-        	            alert('더 이상 내역이 없습니다.');
-        	        }
-        	    }
-            });
-        }
-
-        function fnAd() {
-            var now = new Date();
-            var year = now.getFullYear();
-            var mon = (now.getMonth() + 1) > 9 ? '' + (now.getMonth() + 1) : '0' + (now.getMonth() + 1);
-            var day = now.getDate() > 9 ? '' + now.getDate() : '0' + now.getDate();
-            var nowday = year + '-' + mon + '-' + day;
-
-
-            _movieRankViewModel.getMovieRankMiddleBanner(nowday, function (data) {
-                if ((data == null) || (data.ResCd != '00')) {
-                    return;
-                }
-                else {
-                    if (data.ResCd == '00')
-                    {
-                        var elementAd = document.getElementById('adArea');
-                        var rsLength = data.ResData.Table.length;
-
-                        for (var i = 0; i < rsLength ; i++)
-                        {
-
-                            var rndImg = Math.floor(Math.random() * rsLength);
-                            var adImg = data.ResData.Table[rndImg].IMG;
-                            var adTxt = data.ResData.Table[rndImg].TEXT1;
-                            var url = data.ResData.Table[rndImg].URL;
-                            var target = data.ResData.Table[rndImg].TARGET;
-                            var adBanner = _adUrl + adImg;
-
-                            var adParam = "<a href='" + url + "' target='" + target + "' >" +
-	                                    "    <div class='img_thumb'>" +
-		                                "        <img src='" + adBanner + "' alt='"+ adTxt +"'>" +
-		                                "        <span class='rank_ad'>AD</span>" +
-	                                    "    </div>" +
-                                        "</a>" ;
-
-                        }
-                        $('#adArea').append(adParam);
-                    }
-                }
-            });
-        }
         function fnTicketReserve(grpmId) {
             location.href = '${pageContext.request.contextPath}/Movie/Ticket?gId=' + grpmId;
         }
@@ -178,7 +83,12 @@
             location.href = '${pageContext.request.contextPath}/MovieInfo/Index?mId=' + mId;
         }
 
-    </script>
+</script>
+
+<jsp:include page="../include/mainContent.jsp"></jsp:include>
+</article>
+</body>  
+
 
 <jsp:include page="../include/footer.jsp"></jsp:include>
 </html>

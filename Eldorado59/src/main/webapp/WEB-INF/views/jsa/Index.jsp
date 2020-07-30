@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>	
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +15,10 @@
 </head>
 <body>
 <!-- 영화 -->
+
+		<c:set var="imgArr" value="${fn:split(about_movie.image,';') }"/>
+<%-- 				<img src="<c:out value="${imgArr[1] }"/>" width='400'> --%>
+				
     <div class="movie_area">
         <div class="detail_banner_area" id="movieDetail">
 		 <div class="bg_blur_area" style="display: block;">
@@ -23,27 +31,29 @@
 		    <feComponentTransfer><feFuncA type="discrete" tableValues="1 1"></feFuncA>
 		    </feComponentTransfer>
 		   </filter>
-		   <image xlink:href="https://movie-simg.yes24.com/NYes24//MOVIE//M14/M14/M00007141401_105043.jpg"
+		   <image xlink:href="${imgArr[1] }"
 		   filter="url(#svgFilter)" preserveAspectRatio="xMidYMin slice" width="100%" height="100%" x="0" y="0"></image>
 		  </svg>
 		 </div> <!-- 블러 끝 -->
 		 <div class="detail_movie_info">
 		  <div class="img_thumb">
-		   <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M14/M14/M000071414_132337.jpg" id="poster">
+				<img src="<c:out value="${imgArr[0] }"/>" width='400'>
+<!-- 		   <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M14/M14/M000071414_132337.jpg" id="poster"> -->
 		  </div>
 		  <div class="dm_info_txt"> 
-		   <p id="movieTitle" class="dmb_tit"> 결백 </p>
-		   <p class="dmb_eng_tit"> Innocence</p>
+<%-- 		  <p>${about_movie }</p> --%>
+		   <p id="movieTitle" class="dmb_tit">${about_movie.title }</p>
+		   <p class="dmb_eng_tit"> </p>
 		   <p class="dmb_txt"> 
-		    <span>예매율 1위  32.18% </span>
-		    <span>평점  8.2 </span>
+		    <span>예매율 ${about_movie.advance_rate }% </span>
+		    <span>평점  ${about_movie.user_rating } </span>
 		   </p>
 		   <p class="dmb_txt">
-		    <span>2020.06.10 개봉</span>
-		    <span>110 분</span>
-		    <span>15세이상관람가</span>
-		    <span>드라마</span>
-		    <span>한국</span>
+<!-- 		    <span>2020.06.10 개봉</span> -->
+<!-- 		    <span>110 분</span> -->
+		    <span>${about_movie.grade }세이상관람가</span>
+<!-- 		    <span>드라마</span> -->
+<!-- 		    <span>한국</span> -->
 		   </p>
 		   <div class="btn_area">
 		    <button type="button" class="btn_defaultB btn_line_whilte" id="btnReserve" onclick="javascript: fnTicket('M000071414');"
@@ -59,7 +69,6 @@
             <div class="detail_cont" id="test">
                 <!-- 예매분석 -->
                 
-
     <div class="graph_area" id="DetailAnalysis">
         <div class="mc_title al_c">
             예매분석
@@ -231,6 +240,7 @@
             <!--시놉시스-->
             <p class="mc_title" id="IndexSynopsisTitle">시놉시스</p>
             <p class="syn_txt" id="synopsis">
+            ${about_movie.info }
             </p>
             
             <!-- //시놉시스-->
@@ -249,9 +259,13 @@
             <!-- 동영상-->
             <p class="mc_title" id="indexVodTitle">동영상<!-- <a href="#" class="btn_more" onclick="javascript: fnShowMenuMovieDetail('Vod');"></a> --></p>
             <div class="detail_vod_area" id="indexVodContents">
+	        <video src='${about_movie.video }' width='1000' controls autoplay>
+			</video>
                 <div class="detail_vod_slider" id="indexVod"></div>
             </div>
             <!-- //동영상-->
+
+            
             <!-- 포토-->
             <p class="mc_title" id="indexPhotoTitle">포토<a href="#" class="btn_more" onclick="javascript: fnShowMenuMovieDetail('Photo');"></a></p>
             <div class="detail_pohto_area" id="indexPhotoContents">
