@@ -166,11 +166,29 @@ public class LyjController {
 		return null;
 	}
 
+	
+	
+	
+	
+	
+	
 	// 로그아웃
-	@RequestMapping(value = "/logout", method = { RequestMethod.GET, RequestMethod.POST })
-	public String logout(HttpSession session) throws IOException {
-		System.out.println("여기는 logout");
+	@RequestMapping(value = "/logout", method = RequestMethod.GET,produces = "text/html; charset=UTF-8")
+	public String logout(HttpSession session,HttpServletResponse response, Model model) throws IOException {
+	
 		session.invalidate();
+		System.out.println("여기는 logout");
+	    model.addAttribute("msg","로그아웃완료");
+        model.addAttribute("url","/Main/index");
+		
+		return "/lyj/logout";
+	}
+	
+	// 로그아웃포스트
+	@RequestMapping(value = "/logout", method = RequestMethod.POST,produces = "text/html; charset=UTF-8" )
+	public String logout_post(HttpSession session,HttpServletResponse response, Model model) throws IOException {
+		
+		
 		return "lsy/main";
 	}
 
@@ -279,7 +297,18 @@ public class LyjController {
 	
 	
 	  @RequestMapping(value = "movieTicket", method = RequestMethod.GET) 
-	  public String movieTicket(Model model) {
+	  public String movieTicket(Model model,HttpSession session) {
+		
+		  
+		  String id = (String)session.getAttribute("id");
+			
+		if(id == null) {
+				
+				return "redirect:login2";
+			}  
+		  
+		  
+		  
 	  List<Map<String, Object>> theaterList = service.bringthetheaters();
 	  System.out.println("@@@@@@@ : " + theaterList);
 	  model.addAttribute("theaterList", theaterList);
@@ -287,14 +316,14 @@ public class LyjController {
 	  return "lyj/toReserve"; }
 	 
 
-	@RequestMapping(value = "movieTicket2", method = RequestMethod.GET)
-	public String movieTicket2() {
-
-		
-		
-		return "lyj/toReserve2";
-	}
-	
+	/*
+	 * @RequestMapping(value = "movieTicket2", method = RequestMethod.GET) public
+	 * String movieTicket2() {
+	 * 
+	 * 
+	 * 
+	 * return "lyj/toReserve2"; }
+	 */
 	@RequestMapping(value = "Mypage", method = RequestMethod.GET)
 	public String Mypage(Model model, HttpSession session, HttpServletRequest request) {
 		
@@ -305,7 +334,7 @@ public class LyjController {
 			return "redirect:login2";
 		}
 		//jsp로 아이디값 넘겨주기
-		request.setAttribute("id", id);
+		session.setAttribute("id", id);
 		
 		
 		List<Map<String, Object>> ReservationList = service.bringReservations(id);
@@ -315,6 +344,70 @@ public class LyjController {
 		
 		return "lyj/Mypage";
 	}
+	
+	@RequestMapping(value = "Cancel", method = RequestMethod.GET)
+	public String Cancel(HttpSession session) {
+
+		String id = (String)session.getAttribute("id");
+		
+		if(id == null) {
+			
+			return "redirect:login2";
+		}
+		//jsp로 아이디값 넘겨주기
+		session.setAttribute("id", id);
+		
+		return "lyj/toCancel";
+	}
+	
+	@RequestMapping(value = "modaltest", method = RequestMethod.GET)
+	public String test(HttpSession session) {
+
+
+		return "lyj/test";
+	}
+	@RequestMapping(value = "submitCancel", method = RequestMethod.GET)
+	public String submitCancel(HttpSession session,HttpServletResponse response) {
+		
+
+		return null;
+	}
+	
+	@RequestMapping(value = "submitCancel", method = RequestMethod.POST)
+	public String submitCancel_post(HttpSession session,HttpServletResponse response
+			,@RequestParam String reserv_num) {
+			System.out.println("예매 취소 완료!");
+			
+			String id = (String)session.getAttribute("id");
+			
+			response.setContentType("text/html; charset=utf-8");
+			response.setCharacterEncoding("UTF-8");
+			System.out.println("id : " + id + ", num : " + reserv_num);
+			PrintWriter out;
+			try {
+				int result = service.CancelMovieTicket(id,reserv_num);
+				if(result == 0) {
+					out = response.getWriter();
+					out.print("<script>");
+					out.print("alert('예매 정보가 없음');");
+					out.print("location.href='Mypage';");
+					out.print("</script>");
+					out.flush();
+				}else {
+					out = response.getWriter();
+					out.print("<script>");
+					out.print("alert('예매 취소 완료!');");
+					out.print("location.href='Mypage';");
+					out.print("</script>");
+					out.flush();
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		return null;
+	}
+	
 	
 	   
 }

@@ -11,8 +11,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link
-   href="${pageContext.request.contextPath }/resources/lyj/css/Mypage.css"
-   rel="stylesheet" type="text/css" />
+	href="${pageContext.request.contextPath }/resources/lyj/css/Mypage.css"
+	rel="stylesheet" type="text/css" />
 
     <title>ELDORADO - 마이페이지</title>
     <link href="${pageContext.request.contextPath }/resources/css/header.css" rel="stylesheet" type="text/css" />
@@ -47,7 +47,7 @@
  >
 </script> -->
 <div id="ad">
-   <img id="imgTopBanner" src="https://movie-simg.yes24.com/NYes24//MgrMain//20/06/betterdays_1200x70_181431.jpg" alt="소년">
+	<img id="imgTopBanner" src="https://movie-simg.yes24.com/NYes24//MgrMain//20/06/betterdays_1200x70_181431.jpg" alt="소년">
 </div>
 
 <style>
@@ -103,15 +103,19 @@
                           
                         </ul>
                         <ul class="sc_g_right">
-                                    <li><a href="../lyj/login2">로그인</a></li>
-                                    <li><a href="../khr/loginTest">로그인(임시)</a></li>
+                        <% if(session.getAttribute("id")== null) { %>
+                                    <li><a href="${pageContext.request.contextPath }/lyj/login2">로그인</a></li>
+                                    <%}else{ %>
+                                    
+                                    
+                                    <li><a href="${pageContext.request.contextPath }/lyj/logout">로그아웃</a></li>
+									<%} %>
 
-
-                            <li><a href="/MyPage">마이페이지</a></li>
+                            <li><a href="${pageContext.request.contextPath }/lyj/Mypage">마이페이지</a></li>
                             <li><a href="/Customer">고객센터</a></li>
                         </ul>
                     </div>
-               <div id="m_nav" style="font-size: 20px; font-style:  Malgun Gothic;">
+					<div id="m_nav" style="font-size: 20px; font-style:  Malgun Gothic;">
                         <h1 class="logo"><a href="${pageContext.request.contextPath }/Main/index">ELDORADO59</a></h1>
                         <div class="m_gnb_area">
                             <ul class="m_gnb_list">
@@ -240,10 +244,10 @@
 
 <!--위에 상단바  끝 -->
 
-      
+		
 <div class="lyjtotalwrap">
 
-      
+		
 
 
     <div id="wrap">
@@ -312,9 +316,9 @@
                     </div>
                 </div> -->
                 <div class="my_movie_area">
-                    <div class="mc_title">MY영화</div>
+                    <div class="mc_title">내 정보</div>
                     <div class="mi_cont_box">
-                        <div><a href="MyRating" class="link_my_movie lmy01">나의 평점 모아보기</a></div>
+                        <div><a href="${pageContext.request.contextPath }/khr/updateMember" class="link_my_movie lmy01">내 정보 수정하기</a></div>
                         <!--MyPage/MyRating -->
                         <div><a href="MyMovie" class="link_my_movie lmy02">내가 본 영화</a></div>
                     </div>
@@ -332,67 +336,67 @@
 
              <div class="lyjReserveTable">
         
-              <table>
-                 <tr class="lyjTabletr">
-                   <th class="lyjTabletd">예매번호</th>
-                   <th class="lyjTabletd">영화제목</th>
-                   <th class="lyjTabletd">영화관이름</th>
-                   <th class="lyjTabletd">좌석</th>
-                   <th class="lyjTabletd">날짜</th>
-                   <th class="lyjTabletd">상영시간</th>
-                   <th class="lyjTabletd">개수</th>
-                   <th class="lyjTabletd">취소하기</th>
-                   
-                </tr>
-              
-              
+        		<table>
+        		   <tr class="lyjTabletr">
+	             	<th class="lyjTabletd">예매번호</th>
+	             	<th class="lyjTabletd">영화제목</th>
+	             	<th class="lyjTabletd">영화관이름</th>
+	             	<th class="lyjTabletd">좌석</th>
+	             	<th class="lyjTabletd">날짜</th>
+	             	<th class="lyjTabletd">상영시간</th>
+	             	<th class="lyjTabletd">개수</th>
+	             	<th class="lyjTabletd">취소하기</th>
+	             	
+	             </tr>
+        		
+        		
              <c:forEach items="${ReservationList }" var="list">
-            
+	         
              
              
                <tr class="lyjTabletr">
-                  <td class="lyjcontentTd Bringreserve">${list.reserv_num }</td>
-                  <td class="lyjcontentTd">${list.title }</td>
-                  <td class="lyjcontentTd">${list.th_name }</td>
-                  <fmt:parseDate var="date" value="${list.date}" pattern="yyyy-MM-dd"/>
+               	<td class="lyjcontentTd Bringreserve">${list.reserv_num }</td>
+               	<td class="lyjcontentTd">${list.title }</td>
+               	<td class="lyjcontentTd">${list.th_name }</td>
+               	<fmt:parseDate var="date" value="${list.date}" pattern="yyyy-MM-dd"/>
                 <fmt:formatDate var="dateFormat" value="${date }" pattern="yyyy-MM-dd"/>
-                 <fmt:parseDate var="strDate" value="${dateFormat}" pattern="yyyy-MM-dd"/>
-                  <fmt:parseNumber value="${strDate.time / (1000*60*60*24)}" integerOnly="true" var="is_date"></fmt:parseNumber>
-                  <jsp:useBean id="toDay" class="java.util.Date"/>
-                  
+           		<fmt:parseDate var="strDate" value="${dateFormat}" pattern="yyyy-MM-dd"/>
+               	<fmt:parseNumber value="${strDate.time / (1000*60*60*24)}" integerOnly="true" var="is_date"></fmt:parseNumber>
+               	<jsp:useBean id="toDay" class="java.util.Date"/>
+               	
                 <fmt:formatDate value="${toDay }" pattern="yyyy-MM-dd" var="nowDate"/>
                 <fmt:parseDate var="strDate2" value="${nowDate}" pattern="yyyy-MM-dd"/>
                <fmt:parseNumber value="${strDate2.time / (1000*60*60*24)}" integerOnly="true" var="now_date"></fmt:parseNumber>
                 
-                  
-                  <td class="lyjcontentTd">${list.seat }</td>
-                  <td class="lyjcontentTd">${dateFormat}</td>
-                  <td class="lyjcontentTd">${list.time }</td>
-                  <td class="lyjcontentTd">${list.t_amount }</td>
-                  <td class="lyjcontentTd">
-                  <% 
-                     
-                  
-                  
-                  %>
-                  <c:if test="${is_date > now_date }">
-                  
-                     <!-- <a href="Cancel" style="color:green;">취소하기</a> -->
-             <!-- <button id="myModal" class="modal">취소하기</button> -->
-              <button id="myBtn" class="cancelbutton" type="button">취소하기</button>
+               	
+               	<td class="lyjcontentTd">${list.seat }</td>
+               	<td class="lyjcontentTd">${dateFormat}</td>
+               	<td class="lyjcontentTd">${list.time }</td>
+               	<td class="lyjcontentTd">${list.t_amount }</td>
+               	<td class="lyjcontentTd">
+               	<% 
+               		
+               	
+               	
+               	%>
+               	<c:if test="${is_date > now_date }">
+               	
+               		<!-- <a href="Cancel" style="color:green;">취소하기</a> -->
+			 	<!-- <button id="myModal" class="modal">취소하기</button> -->
+			 	 <button id="myBtn" class="cancelbutton" type="button">취소하기</button>
  
    
 
-                  </c:if>
-                  <c:if test="${is_date < now_date }">
-                     <a href="#" style="color:red;" class="cancelbutton">취소불가</a>
-                  </c:if>
-                  </td>
+               	</c:if>
+               	<c:if test="${is_date < now_date }">
+               		<a href="#" style="color:red;" class="cancelbutton">취소불가</a>
+               	</c:if>
+               	</td>
                </tr>
                
-            </c:forEach>
-            
-            </table>
+         	</c:forEach>
+         	
+         	</table>
              
              
              </div>
@@ -405,14 +409,13 @@
         <span class="close">&times;</span>      
                                                                  
         <form action="submitCancel" method="post">
-      <h4>예매를 취소하시겠습니까?</h4>
-      
-<!--       <input type="submit" value="예" style="-webkit-appearance: ;"> -->
-      <input type="text" id="reserve_numTicket" value="" name="reserv_num" >
-      <button type="submit">예</button>
-      <button type="button">이전으로</button>
-      
-      </form>
+		<h4>예매를 취소하시겠습니까?</h4>
+		
+		<input type="hidden" id="reserve_numTicket" value="" name="reserv_num" >
+		<button type="submit">예</button>
+		<button type="button">이전으로</button>
+		
+		</form>
         
         
         
@@ -440,14 +443,14 @@
   var span = document.getElementsByClassName("close")[0];                                          
 
   $(function(){
-   
-   $('.cancelbutton').click(function(){
-      var idx = $('.cancelbutton').index(this);
-      var is_cancelbutton = $('.cancelbutton').eq(idx).text();
-      if(is_cancelbutton == "취소하기"){
-      $('#myModal').css('display','block');
-      }
-   });
+	
+	$('.cancelbutton').click(function(){
+		var idx = $('.cancelbutton').index(this);
+		var is_cancelbutton = $('.cancelbutton').eq(idx).text();
+		if(is_cancelbutton == "취소하기"){
+		$('#myModal').css('display','block');
+		}
+	});
   });
   
   // When the user clicks on the button, open the modal 
@@ -467,20 +470,20 @@
       }
   }
 
-   $(function(){
-      $('.cancelbutton').click(function(){
-            var cancelButtonIndex = $('.cancelbutton').index(this);
-            console.log("버튼 idx : "+cancelButtonIndex);
-            var  reserve_value  = $('.Bringreserve').eq(cancelButtonIndex).text();
-            console.log("예약번호 : "+reserve_value);
+	$(function(){
+		$('.cancelbutton').click(function(){
+				var cancelButtonIndex = $('.cancelbutton').index(this);
+				console.log("버튼 idx : "+cancelButtonIndex);
+				var  reserve_value  = $('.Bringreserve').eq(cancelButtonIndex).text();
+				console.log("예약번호 : "+reserve_value);
 
-            $('#reserve_numTicket').val(reserve_value);
-            var ticket = $('#reserve_numTicket').val();
-            console.log(ticket);
-         });
-      
-   });
-      
+				$('#reserve_numTicket').val(reserve_value);
+				var ticket = $('#reserve_numTicket').val();
+				console.log(ticket);
+			});
+		
+	});
+		
 
 
 
@@ -526,7 +529,7 @@
             <p class="noti_titleB">예매를 취소하고 싶을 때</p>
             <ul class="li_bar">
                 <li>예매취소는 각 극장별 취소가능시간까지만 가능하며, 가능시간 이후에는 취소가 불가능하오니 반드시 취소가능시간을 확인하시기 바랍니다.</li>
-                <li><span class="col_default">YES24영화 고객센터 및 각 극장에 전화상으로 취소는 불가능</span>하며 인터넷상에서 취소가 불가능한 경우 관람시간 전에 극장에 방문하시어 현장 취소하셔야 합니다.</li>
+                <li><span class="col_default">엘도라도59영화 고객센터 및 각 극장에 전화상으로 취소는 불가능</span>하며 인터넷상에서 취소가 불가능한 경우 관람시간 전에 극장에 방문하시어 현장 취소하셔야 합니다.</li>
                 <li>단, 극장에서 발권한 후에는 시간에 관계없이 온라인 취소는 불가하며 현장취소만 가능 합니다.</li>
                 <li>예매완료 후에는 부분취소나 시간 변동을 할 수 없습니다. 예매내역 전체를 취소한 후 재예매를 하셔야 합니다.</li>
             </ul>
@@ -540,7 +543,7 @@
             <p class="noti_titleB">환불규정</p>
             <p class="noti_txt nt_unit">영화 예매 후, 취소 가능시간 내에 인터넷에서 취소를 하면 예매 수수료 포함 전액이 환불됩니다</p>
             <ul class="li_bar">
-                <li><span class="col_default">YES머니, YES상품권, 예매권, 할인권, 예치금, 가족계좌, OK캐시백</span> : 결제 취소시 자동 환불. 단 YES상품권, 예매권, 할인권의 경우 사용기간이 지난 시점이라면 환불 불가</li>
+                <li><span class="col_default">엘도라도머니, 엘도라도상품권, 예매권, 할인권, 예치금, 가족계좌, OK캐시백</span> : 결제 취소시 자동 환불. 단 YES상품권, 예매권, 할인권의 경우 사용기간이 지난 시점이라면 환불 불가</li>
                 <li><span class="col_default">신용카드</span> : 결제일과 취소일이 다를 경우 영업일 기준 3~5일 정도 소요</li>
                 <li><span class="col_default">체크카드</span> : 결제일과 취소일이 다를 경우 영업일 기준 3~5일 정도 소요</li>
                 <li><span class="col_default">계좌이체</span> : 취소한 시점의 은행 영업일로 부터 1~2일내 고객님 계좌로 자동 환불</li>
@@ -562,58 +565,9 @@
 
         
             </div>
-            <div class="footer">
-                <div class="qr_code" style="display:none" id="qrLink">
-                    <div class="lay_inner">
-                        <span>YES24 영화 앱에서 참여 가능한 이벤트 입니다!</span> <span class="qr_img"><img src="//movie-img.yes24.com/NYes24/new/evt/movieday/qr_code.png" alt=""></span>
-                    </div>
-                </div>
-                        <div class="foot_banner" style="background:#5422b9">
-                            <a href="https://movie.yes24.com/Event/EventDetail?eventId=100258" target="_self">
-                                <img src="https://movie-simg.yes24.com/NYes24//MgrMain//20/04/bot_1200x180_mania_132712.png" alt="마니아" />
-                            </a>
-                        </div>
-
-                <div class="lay_inner foot_area clear">
-                    <div class="foot_area">
-                        <dl class="foot_info_cont">
-                            <dt><span>YES24 영화</span></dt>
-                            <dd>
-                                <div class="policy_cont">
-                                    <a href="http://company.yes24.com/"  target="_blank">회사소개</a> 
-                                    <a href="http://www.yes24.com/notice/service.aspx"  target="_blank">이용약관</a>
-                                    <a href="http://www.yes24.com/notice/privacypolicy.aspx"  target="_blank">개인정보처리방침</a>
-                                    <a href="http://www.yes24.com/notice/youthpolicy.aspx"  target="_blank">청소년보호정책</a>
-                                    <a href="/HelpDesk/CouponDetail">영화예매권 구매문의</a>
-                                </div>
-                                <address class="addr_cont">
-                                    <span class="fCName">예스이십사(주)</span>
-                                    <p>서울시 영등포구 은행로 11, 5층 ~ 6층, 8층 (여의도동, 일신빌딩)</p>
-                                    <p>대표 : 김석환 &nbsp;&nbsp;&nbsp;&nbsp;   개인정보보호책임자 : 권민석 yes24help@yes24.com</p>
-                                    <p>사업자등록번호 : 229-81-37000  &nbsp;&nbsp;&nbsp;&nbsp;     통신판매업신고 : 제 2005-02682호 <a href="//www.ftc.go.kr/www/bizCommList.do?key=232"><span class="b_line">사업자 정보확인</span></a></p>
-                                    <p>Copyright  ⓒ YES24 Corp. All Rights Reserved.</p>
-                                </address>
-                            </dd>
-                        </dl>
-                    </div>
-                    <div class="foot_call">
-                        <div class="f_call_cont">
-                            <p class="tit">영화예매/다운로드 문의</p>
-                            <p class="tell_num">1544-7758</p>
-                            <p>평일 : 9시~12시, 13시~18시 </p>
-                            <p>주말/휴일 : 10시~12시, 13시~17시</p>
-                            <p>(단, 다운로드는 주말/공휴일 휴무)</p>
-                        </div>
-                        <div class="top_area">
-                            <button type="button" class="btn_top">최상단으로 이동</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            
 </div><!-- lyjtotalwrap 끝 -->
+<jsp:include page="../include/footer.jsp"></jsp:include>            
+            
 
 
 

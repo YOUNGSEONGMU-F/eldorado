@@ -42,5 +42,12 @@ select * from reservations where id=#{id}
 
 </select>
 
+<delete id="CancelMovieTicket">
+delete from reservations where id=#{id} and reserv_num=#{reserv_num}
+
+</delete>
+
+
+
 </mapper>
 

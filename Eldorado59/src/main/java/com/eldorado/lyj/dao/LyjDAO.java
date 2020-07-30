@@ -26,4 +26,7 @@ public interface LyjDAO {
 	//예매한 내역 가져오기
 	public List<Map<String, Object>> bringReservations(String id);
 	
+	//예매취소
+	public int CancelMovieTicket(String id, String reserv_num);
+	
 }
