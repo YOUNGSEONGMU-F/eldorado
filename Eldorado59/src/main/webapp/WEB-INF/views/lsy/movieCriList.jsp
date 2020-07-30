@@ -79,8 +79,8 @@ display:none;
 					<td>${movieListCri.user_rating }</td>
 					<td>${movieListCri.cast }</td>
 					<td>${movieListCri.director }</td>
-					<td><a href="/Movie/readMovie?m_id=${movieListCri.movie_id }">관리</a></td>
-					<td><a href="/Movie/deleteMovie?m_id=${movieList.movie_id }">삭제</a></td>
+					<td><a href="${pageContext.request.contextPath }/Movie/readMovie?m_id=${movieListCri.movie_id }">관리</a></td>
+					<td><a href="${pageContext.request.contextPath }/Movie/deleteMovie?m_id=${movieList.movie_id }">삭제</a></td>
 				</tr>
 				</c:forEach>					
 				</table>				
