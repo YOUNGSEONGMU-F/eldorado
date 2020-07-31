@@ -6,10 +6,10 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <title>YES24 - 비밀번호 찾기</title>
+    <title>ELDORADO59 - 비밀번호 찾기</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="Content-Type" content="text/html;charset=euc-kr" />
-    <link rel="shortcut icon" href="https://secimage.yes24.com/sysimage/renew/gnb/yes24.ico" type="image/x-icon"> 
+<link rel="shortcut icon" type="image⁄x-icon" href="https://image.flaticon.com/icons/svg/1040/1040240.svg">
     <script type="text/javascript" src="https://www.yes24.com/JavaScript/util.js?v=20200218"></script>
 	<script type="text/javascript" src="https://secimage.yes24.com/sysimage/Contents/Scripts/p/jquery/jquery-1.6.2.min.js"></script>
 	<script type="text/javascript" src="https://secimage.yes24.com/sysimage/Contents/Scripts/p/jquery/jquery.easing.1.3.min.js"></script>
@@ -33,7 +33,7 @@
 	<div id="ySHeader">
 		<div class="ySHeaderAera">
 			<h1>
-				<a href="http://www.yes24.com" id="aLogo" class="lnk_logo"><img src="https://secimage.yes24.com/sysimage/renew/sLayout/logo.png" border="0" alt="YES24"></a>
+            <a class="lnk_logo" href="Main/index"><img src="${pageContext.request.contextPath }/resources/img/logo_eldorado.png" width="300" style="margin-top: .7rem;"></a>
 				<span class="servName off"><a href="email.do" id="aForgetId">아이디 찾기</a></span>
 				<span class="servDivi">|</span>
 				<span class="servName"><a href="pass" id="aForgetPw">비밀번호 찾기</a></span>
@@ -108,16 +108,6 @@
 	</div>
 </div>
 
-	<!-- #################### 간략 FOOTER 영역 시작 #################### -->
-	<div id="ySFooter">
-		<div class="ySFooterAera pos_r">
-			<address>	
-				Copyright &#0169; <strong>YES24 Corp.</strong> All Rights Reserved. 
-                <div class="pos_a" style="left:0;top:0;color:#F8F8F8;">EQUUS12</div>
-			</address>
-		</div>
-	</div>
-	<!-- #################### 간략 FOOTER 영역 시작 #################### -->
 </div>
 
 <script type="text/javascript">

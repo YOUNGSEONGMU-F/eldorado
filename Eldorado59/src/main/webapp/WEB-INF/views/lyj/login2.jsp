@@ -6,10 +6,10 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-   <title>ELDORADO - 로그인</title>
+   <title>ELDORADO59 - 로그인</title>
    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
    <meta http-equiv='Content-Type' content='text/html; charset=euc-kr'>
-   <link rel="shortcut icon" href="https://secimage.yes24.com/sysimage/renew/gnb/yes24.ico" type="image/x-icon"> 
+<link rel="shortcut icon" type="image⁄x-icon" href="https://image.flaticon.com/icons/svg/1040/1040240.svg">
    <link title="YES24 검색" rel="search" type="application/opensearchdescription+xml" href="//www.yes24.com//searchCenter/YES24SearchCenter.xml">
     <script type="text/javascript" src="/JavaScript/util.js"></script>
    <script type="text/javascript" src="https://secimage.yes24.com/sysimage/Contents/Scripts/p/jquery/jquery-1.6.2.min.js"></script>
@@ -38,7 +38,8 @@
    <div id="ySHeader">
       <div class="ySHeaderAera">
          <h1>
-            <a class="lnk_logo" href="http://www.yes24.com"><img src="https://secimage.yes24.com/sysimage/renew/sLayout/logo.png" border="0" alt="YES24"></a>
+            <a class="lnk_logo" href="Main/index"><img src="${pageContext.request.contextPath }/resources/img/logo_eldorado.png" width="300" style="margin-top: .7rem;"></a>
+<!--             <img src="https://secimage.yes24.com/sysimage/renew/sLayout/logo.png" border="0" alt="YES24"> -->
             <span class="servName">로그인</span>
          </h1>
          <div class="headerLnk">
@@ -57,7 +58,7 @@
             <div id="divTabMemberArea" class="yesTab_nor yesTab_blue tab_2col">
                <ul id="ulTabMember">
                   <li id="liTabMember" class="on firstCol"><a href="javascript:void(0);" id="aTabMember" onClick="chgTabLogin(this,'mem');"><span class="txt">회원</span></a></li>
-                  <li id="liTabNoMember" class="lastCol"><a href="javascript:void(0);" id="aTabNoMember" onClick="chgTabLogin(this,'nMem');"><span class="txt">비회원 주문확인</span></a></li>
+<!--                   <li id="liTabNoMember" class="lastCol"><a href="javascript:void(0);" id="aTabNoMember" onClick="chgTabLogin(this,'nMem');"><span class="txt">비회원 주문확인</span></a></li> -->
                </ul>
             </div>
             <!-- ############### 탭 영역 끝 ############### -->
@@ -239,26 +240,15 @@
          <!-- ############################## 광고 관련 영역 시작 ############################## -->
          <div class="login_adArea">
             <div class="adBig">
-                    
-                    <iframe id="adframeRight" src="https://adgirl.yes24.com/RealMedia/ads/adstream_sx.ads/www.yes24.com/Templates/FTLogin.aspx@Right" width="100%" height="100%" noresize scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+                    <img src="${pageContext.request.contextPath }/resources/img/eldorado_summer_event.png" width="100%">
             </div>
-            <div class="adSmall">
-                    
-                    <iframe id="adframeBottom" src="https://adgirl.yes24.com/RealMedia/ads/adstream_sx.ads/www.yes24.com/Templates/FTLogin.aspx@Bottom" width="100%" height="100%" noresize scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe>
-            </div>
+
          </div>
          <!-- ############################## 광고 관련 영역 끝 ############################## -->
       </div>
    </div>
 
-   <!-- ##### 화면 관리자 광고 배너 시작 ##### -->
-    
-        <div id="loginBotBn"><a href="http://www.yes24.com/notice/FirstClass/newmemCoupon.aspx" target="_self"><img src="http://image.yes24.com/images/01_Banner/login/bn_login_960x60.gif" border="0" alt="회원가입"/></a></div>
-   <div id="loginBotBn" class="default" style="display:none;">
-      <a href="http://www.yes24.com/notice/FirstClass/newmemCoupon.aspx" target="_blank">
-            <img src="https://secimage.yes24.com/sysimage/renew/_temp/member/bn03.gif" border="0" alt="하단 배너"></a>
-   </div>
-   <!-- ##### 화면 관리자 광고 배너 끝 ##### -->
+ 
 
     <!-- ##### 로그아웃 관련 안내 시작 ##### -->
     <div id="pwForcedLogOutMsgPop" style="display:none;">
@@ -286,16 +276,7 @@
 
    <!-- #################### 간략 Content 영역 끝 #################### -->
    <hr/>
-   <!-- #################### 간략 FOOTER 영역 시작 #################### -->
-   <div id="ySFooter">
-      <div class="ySFooterAera pos_r">
-         <address>   
-            Copyright &#0169; <strong>YES24 Corp.</strong> All Rights Reserved. 
-                <div class="pos_a" style="left:0;top:0;color:#F8F8F8;">EQUUS13</div>
-         </address>
-      </div>
-   </div>
-   <!-- #################### 간략 FOOTER 영역 시작 #################### -->
+   
 </div>
 
 <script type="text/javascript">

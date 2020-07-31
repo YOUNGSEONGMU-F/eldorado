@@ -84,8 +84,8 @@
             <div class="item_3">
               <a href="">
                 <img
-                  src="https://movie-simg.yes24.com/NYes24//MgrMain//20/01/evt_mania_130156.png"
-                  alt="마니아"
+                  src="${pageContext.request.contextPath }/resources/img/eldorado_summer_event.png"
+                  alt="Summer_event" height="100%"
                 />
               </a>
             </div>
@@ -100,8 +100,8 @@
             <div class="item_3">
               <a href="">
                 <img
-                  src="https://movie-simg.yes24.com/NYes24//MgrMain//20/01/evt_skt_130332.png"
-                  alt="SKT"
+                  src="${pageContext.request.contextPath }/resources/img/eldorado_holiday_oct.png"
+                  alt="holiday" height="100%"
                 />
               </a>
             </div>

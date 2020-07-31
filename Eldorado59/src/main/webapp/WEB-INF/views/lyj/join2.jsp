@@ -13,13 +13,9 @@
 <meta http-equiv="Accept-CH" content="dpr, width, viewport-width, rtt, downlink, ect, UA, UA-Platform, UA-Arch, UA-Model, UA-Mobile, UA-Full-Version" />
 <meta http-equiv="Accept-CH-Lifetime" content="86400" />
 <meta name="viewport" content="width=1170" />
+<link rel="shortcut icon" type="image⁄x-icon" href="https://image.flaticon.com/icons/svg/1040/1040240.svg">
 
-<title>join</title>
-
-    <meta name="title" content="YES24 - 대한민국 대표 인터넷서점" />
-    <meta name="description" content="YES24는 대한민국 1위 인터넷 온라인 서점 입니다. 국내 최대의 도서정보를 보유하고 있으며, 음반, DVD, 공연, 영화까지 다양한 문화 콘텐츠 및 서비스를 제공합니다." />
-    <meta name="keywords" content="인터넷 서점, 온라인 쇼핑, 상품 추천, 쇼핑몰, 상품 검색, 도서 정보, 국내도서, 외국도서, 전자책, eBook, 이북, 크레마, 공연, 콘서트, 뮤지컬, 영화, 음반, 예매, DVD, 블루레이, 예스24, YES24, 교보문고, 알라딘" />
-    <meta property="og:image" content="https://secimage.yes24.com/sysimage/renew/logo_meta.png" />
+<title>ELDORADO59 - 회원가입</title>
 
 <script type="text/javascript" src="https://secimage.yes24.com/sysimage/Contents/Scripts/p/jquery/jquery-1.2.6.min.js"></script>
 <script type="text/javascript" src="https://secimage.yes24.com/sysimage/Contents/Scripts/p/jquery/jquery.menu-aim.js?v=20140801"></script>
@@ -116,7 +112,7 @@
 <tr bgcolor="#494949">
 	<td height="23" class="infoGray" valign="middle">
 		<div style="margin-top:2pt; margin-left:15pt;">
-		<img src="https://secimage.yes24.com/sysimage/order/indent_LocFull.gif" width="13" height="13" alt="" hspace="1"  vspace="0" align="absmiddle"> <a href="/default.aspx"><span class="infoGray">Welcome</span></a>
+		<img src="https://secimage.yes24.com/sysimage/order/indent_LocFull.gif" width="13" height="13" alt="" hspace="1"  vspace="0" align="absmiddle"><span class="infoGray">Welcome</span>
 		 > <span class="infoGray"><b>회원가입</b></span>
 
 		</div>
@@ -132,10 +128,11 @@
 <!--헤드 구분바 끝//-->
 <tr bgcolor="#F3F3F3">
 	<td width="700"><div style="margin-left:100;">
-		<img src="https://secimage.yes24.com/sysimage/member/h_member.gif" width="140 height="30" alt="회원가입" hspace="0"  vspace="0"></div>
+	<a class="lnk_logo" href="Main/index"><img src="${pageContext.request.contextPath }/resources/img/logo_eldorado.png" width="200" ></a>
+		<img src="https://secimage.yes24.com/sysimage/member/h_member.gif" width="140" style="margin-top: .7rem;" alt="회원가입" hspace="0"  vspace="0"></div>
 	</td>
 	<td align="right" width="210" valign="bottom">
-		<img src="https://secimage.yes24.com/sysimage/member/i_Progress02.gif" width="185" height="67" alt="회원가입" hspace="0"  vspace="0">
+<!-- 		<img src="https://secimage.yes24.com/sysimage/member/i_Progress02.gif" width="185" height="67" alt="회원가입" hspace="0"  vspace="0"> -->
 	</td>
 	<td align="right" width="100"><img src="https://secimage.yes24.com/sysimage/member/1px_blank.gif" width="50" height="1"></td>
 </tr>
@@ -160,7 +157,7 @@
 <input name="HFamilySiteYN" type="hidden" id="HFamilySiteYN" value="Y" />
 
 <table width="750" cellpadding="0" cellspacing="0"  align="center" bgcolor="#FFFFFF">
-    <tr><td><img src="https://secimage.yes24.com/sysimage/member/t_InputInform.gif" width="540" height="25" alt="-" hspace="0"  vspace="5"></td></tr>
+<!--     <tr><td><img src="https://secimage.yes24.com/sysimage/member/t_InputInform.gif" width="540" height="25" alt="-" hspace="0"  vspace="5"></td></tr> -->
     <tr><td background="https://secimage.yes24.com/sysimage/member/Line_BlueH5.gif" width="100%" height="5"></td></tr>
     <tr><td height="1"></td></tr>
     <tr>

@@ -27,7 +27,7 @@
       width="140" height="30" alt="회원가입" hspace="0" vspace="0"></div>
    </td>
    <td align="right" width="210" valign="bottom">
-      <img src="https://secimage.yes24.com/sysimage/member/i_Progress02.gif" width="185" height="67" alt="회원가입" hspace="0" vspace="0">
+<!--       <img src="https://secimage.yes24.com/sysimage/member/i_Progress02.gif" width="185" height="67" alt="회원가입" hspace="0" vspace="0"> -->
    </td>
    <td align="right" width="100"><img src="https://secimage.yes24.com/sysimage/member/1px_blank.gif" width="50" height="1"></td>
 </tr>
@@ -37,7 +37,7 @@
 <table width="750" align="center" bgcolor="#FFFFFF">
 <tbody>
 <tr>
-<td><img src="https://secimage.yes24.com/sysimage/member/t_InputInform.gif" width="540" height="25" alt="-" hspace="0" vspace="5"></td>
+<!-- <td><img src="https://secimage.yes24.com/sysimage/member/t_InputInform.gif" width="540" height="25" alt="-" hspace="0" vspace="5"></td> -->
 </tr>
 
 <tr><td background="https://secimage.yes24.com/sysimage/member/Line_BlueH5.gif" width="100%" height="5"></td></tr>
