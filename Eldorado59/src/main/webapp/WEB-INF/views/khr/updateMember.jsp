@@ -411,8 +411,7 @@ gtag('config', 'AW-1056776890');
 				
 				<!-- 수정 버튼 -->
 				<div class="rowBtn">
-					<input type="button" id="submitBtn" value="수정하기">
-		            <a href="javascript:void(0)" id="aBtnMemberUpdate" class="btnC xb_size btn_blue w_220" onclick="MyUpdate(); return false;"><span class="bWrap"><em class="txt">회원정보 수정</em></span></a>
+					<button id="submitBtn" class="btnC xb_size btn_blue w_220"><span class="bWrap"><em class="txt">회원정보 수정</em></span></button>
 		        </div>
 				
 				

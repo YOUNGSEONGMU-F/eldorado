@@ -366,7 +366,7 @@
                <img src="../resources/lyj/img/five.png" width="40" height="40">
                <h4>영화 정보</h4>
                      <div class="btn-next">
-                  <form method="get" action="../khr/selectSeat">
+                  <form method="get" action="../team/khr/selectSeat">
                   <input id="tmp_movieName" name="title"><br>
                   <input id="tmp_theater" name="th_name"><br>
                   <input id="tmp_day" name="date"><br>

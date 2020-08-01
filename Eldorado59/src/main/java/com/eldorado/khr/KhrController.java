@@ -219,9 +219,11 @@ public class KhrController {
 	}
 	
 	@RequestMapping(value = "GiftOrder", method = RequestMethod.POST)
-	public String GiftOrder_post(Locale locale, Model model) {
+	public String GiftOrder_post(Locale locale, Model model, @RequestParam Map<String, Object> giftOrder) {
 		
-		return "khr/GiftOrder";
+		service.insertGift(giftOrder);
+		
+		return "lyj/Mypage";
 	}
 	
 	//무비기프트 -> 기프트 예매권 결제 3d예매
@@ -246,7 +248,7 @@ public class KhrController {
 	@RequestMapping(value = "GiftOrders", method = RequestMethod.POST)
 	public String GiftOrders_post(Locale locale, Model model) {
 		
-		return "khr/GiftOrders";
+		return "lyj/Mypage";
 	}
 	
 	// 무비기프트 결제완료
