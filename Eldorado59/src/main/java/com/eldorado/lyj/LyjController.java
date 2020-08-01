@@ -33,7 +33,7 @@ import com.github.scribejava.core.model.OAuth2AccessToken;
 import com.google.auto.value.processor.escapevelocity.ParseException;
 
 @Controller
-@RequestMapping(value = "lyj/*")
+@RequestMapping(value = "/*")
 public class LyjController {
 
 	@Inject
@@ -63,10 +63,10 @@ public class LyjController {
 		PrintWriter out = response.getWriter();
 		out.print("<script>");
 		out.print("alert('회원가입 성공');");
-		out.print("location.href='login';");
+		out.print("location.href='login2';");
 		out.print("</script>");
 		out.flush();
-		return "lyj/login";
+		return "lyj/login2";
 	}
 
 	
@@ -91,7 +91,7 @@ public class LyjController {
 	  @Autowired private void setNaverLoginBO(NaverLoginBO naverLoginBO) {
 	  this.naverLoginBO = naverLoginBO; }
 	 
-	  @RequestMapping(value = "main", method = {RequestMethod.GET, RequestMethod.POST} )
+	  @RequestMapping(value = "lyj/main", method = {RequestMethod.GET, RequestMethod.POST} )
 		public String main_post(Locale locale, Model model,@RequestParam String code, @RequestParam String state, HttpSession session) throws IOException, ParseException, org.json.simple.parser.ParseException {
 			//logger.info("/main 실행");
 			System.out.println("여기는 callback : main/lyj");
@@ -141,12 +141,7 @@ public class LyjController {
 			out.print("</script>");
 			out.flush();
 		} else {
-			if (getPass.equals(map.get("pass"))) {
-				System.out.println("로그인성공");
-				session.setAttribute("id", map.get("id"));
-				return "lsy/main";
-
-			} else {
+			 if(!getPass.equals(map.get("pass"))) {
 				System.out.println("패스워드 불일치");
 				response.setContentType("text/html; charset=utf-8");
 				response.setCharacterEncoding("UTF-8");
@@ -156,14 +151,24 @@ public class LyjController {
 				out.print("location.href='login2';");
 				out.print("</script>");
 				out.flush();
-			}
+			} 
+				
+			 
 
 		}
-	
+				System.out.println("로그인성공");
+				session.setAttribute("id", map.get("id"));
+				//return "location.href='Main/index';";
+				response.setContentType("text/html; charset=utf-8");
+				response.setCharacterEncoding("UTF-8");
+				PrintWriter out = response.getWriter();
+				out.print("<script>");
+				out.print("alert('로그인 성공');");
+				out.print("location.href='Main/index';");
+				out.print("</script>");
+				
+				return null;
 
-		
-
-		return null;
 	}
 
 	
@@ -173,7 +178,7 @@ public class LyjController {
 	
 	
 	// 로그아웃
-	@RequestMapping(value = "/logout", method = RequestMethod.GET,produces = "text/html; charset=UTF-8")
+	@RequestMapping(value = "logout", method = RequestMethod.GET,produces = "text/html; charset=UTF-8")
 	public String logout(HttpSession session,HttpServletResponse response, Model model) throws IOException {
 	
 		session.invalidate();
@@ -185,7 +190,7 @@ public class LyjController {
 	}
 	
 	// 로그아웃포스트
-	@RequestMapping(value = "/logout", method = RequestMethod.POST,produces = "text/html; charset=UTF-8" )
+	@RequestMapping(value = "logout", method = RequestMethod.POST,produces = "text/html; charset=UTF-8" )
 	public String logout_post(HttpSession session,HttpServletResponse response, Model model) throws IOException {
 		
 		
@@ -201,7 +206,7 @@ public class LyjController {
 		return "lyj/findidresult";
 	}
 
-	@RequestMapping(value = "/email.do")
+	@RequestMapping(value = "email.do")
 	public ModelAndView board2() {
 		ModelAndView mv = new ModelAndView();
 		int ran = new Random().nextInt(900000) + 100000;
@@ -210,7 +215,7 @@ public class LyjController {
 		return mv;
 	}
 
-	@RequestMapping(value = "/createEmailCheck.do", method = RequestMethod.GET)
+	@RequestMapping(value = "createEmailCheck.do", method = RequestMethod.GET)
 	@ResponseBody
 	public boolean createEmailCheck(@RequestParam String userEmail, @RequestParam int random, HttpServletRequest req) {
 		// 이메일 인증
@@ -226,7 +231,7 @@ public class LyjController {
 		return mailService.send(subject, sb.toString(), "yjblee12@gmail.com", userEmail, null);
 	}
 
-	@RequestMapping(value = "/emailAuth.do", method = RequestMethod.GET)
+	@RequestMapping(value = "emailAuth.do", method = RequestMethod.GET)
 	@ResponseBody
 	public ResponseEntity<String> emailAuth(@RequestParam String authCode, @RequestParam String random,
 			HttpSession session) {
@@ -253,7 +258,7 @@ public class LyjController {
 
 	// 새로운 비밀번호가 생성된다.
 
-	@RequestMapping("/newPassword")
+	@RequestMapping("newPassword")
 	// map에는 id와email이 들어오면 돼
 	public String newPassword(@RequestParam Map<String, Object> map, HttpSession session, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
