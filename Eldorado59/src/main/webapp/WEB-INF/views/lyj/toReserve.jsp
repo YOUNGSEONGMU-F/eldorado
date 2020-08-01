@@ -214,12 +214,12 @@
                <img src="${pageContext.request.contextPath}/resources/lyj/img/five.png" width="40" height="40">
                <h4>영화 정보</h4>
                      <div class="btn-next">
-                  <form method="get" action="${pageContext.request.contextPath }/khr/selectSeat">
+                  <form method="get" action="${pageContext.request.contextPath }/team/khr/selectSeat">
                   <input id="tmp_movieName" name="title"><br>
                   <input id="tmp_theater" name="th_name"><br>
                   <input id="tmp_day" name="date"><br>
                   <input id="tmp_timesch" name="time"><br>
-                  <button type="submit" class="btn-b" style="display: none;"><img class="next-img" alt="" src="${pageContext.request.contextPath }/resources/lyj/img/next.png">다음</button>
+                  <button type="submit" class="btn-b" style="display: none;"><img class="next-img" alt="" src="${pageContext.request.contextPath}/resources/lyj/img/next.png">다음</button>
                   </form>
                      </div>
                </div>
@@ -404,16 +404,16 @@
             $('.c_day').css('background-color','white');
             $('.c_day').eq(idx).css('background-color','orange');
             var date = new Date();
-          	var month = document.getElementById('month').innerText;
+             var month = document.getElementById('month').innerText;
             if(month < 10){
-				if(c_day < 10){
+            if(c_day < 10){
 
-				$('#tmp_day').val("2020-0"+month+"-0"+c_day);
-				}else{
-				$('#tmp_day').val("2020-0"+month+"-"+c_day);
-				}
+            $('#tmp_day').val("2020-0"+month+"-0"+c_day);
             }else{
-            	$('#tmp_day').val("2020-"+month+"-"+c_day);
+            $('#tmp_day').val("2020-0"+month+"-"+c_day);
+            }
+            }else{
+               $('#tmp_day').val("2020-"+month+"-"+c_day);
             }
             
 

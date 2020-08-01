@@ -109,7 +109,7 @@ gtag('config', 'AW-1056776890');
          <div class="ySHeaderAera">
             <h1>
                   <a class="lnk_logo" href="#">
-                     <img src="https://secimage.yes24.com/sysimage/renew/sLayout/logo.png" border="0" alt="YES24">
+            <a class="lnk_logo" href="Main/index"><img src="${pageContext.request.contextPath }/resources/img/logo_eldorado.png" width="300" style="margin-top: .7rem;"></a>
                   </a>
                   <span class="servName">나의 정보</span>
                </h1>
