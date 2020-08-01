@@ -70,11 +70,11 @@
          <version>1.10.3</version>
       </dependency>
       <!-- lombok -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.16.20</version>
-		</dependency>
+      <dependency>
+         <groupId>org.projectlombok</groupId>
+         <artifactId>lombok</artifactId>
+         <version>1.16.20</version>
+      </dependency>
       <!-- Test -->
       <dependency>
          <groupId>junit</groupId>
@@ -386,11 +386,11 @@
          <scope>provided</scope>
       </dependency>
 <!--      7/16 추가
-	<dependency>
-	    <groupId>taglibs</groupId>
-	    <artifactId>standard</artifactId>
-	    <version>1.1.2</version>
-	</dependency> -->
+   <dependency>
+       <groupId>taglibs</groupId>
+       <artifactId>standard</artifactId>
+       <version>1.1.2</version>
+   </dependency> -->
 
 
       <!-- Test -->
@@ -448,13 +448,13 @@
     </dependency>
      추가한거  -->
      
-   	<!-- 한글 파싱 오류 -->  
-   	<dependency>
-		<groupId>xerces</groupId>
-		<artifactId>xercesImpl</artifactId>
-		<version>2.9.1</version>
-	</dependency>
-	
+      <!-- 한글 파싱 오류 -->  
+      <dependency>
+      <groupId>xerces</groupId>
+      <artifactId>xercesImpl</artifactId>
+      <version>2.9.1</version>
+   </dependency>
+   
    </dependencies>
     <build>
         <plugins>
