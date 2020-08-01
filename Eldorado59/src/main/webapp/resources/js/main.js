@@ -57,7 +57,8 @@ $(function(){
         slideMargin:5, // 슬라이드 간의 간격을 설정한다.
         auto:true,         // 자동으로 흐를지 여부를 설정한다.
         autoHover:true, // 마우스오버 시 정지할지를 설정한다.
-        controls:false    // 이전 버튼, 다음 버튼 노출 여부를 설정한다.
+        controls:false,    // 이전 버튼, 다음 버튼 노출 여부를 설정한다.
+        touchEnabled : (navigator.maxTouchPoints > 0)
     });
     
     // 이전 버튼을 클릭하면 이전 슬라이드로 전환된다.

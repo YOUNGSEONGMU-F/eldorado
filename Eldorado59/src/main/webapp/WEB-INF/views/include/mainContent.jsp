@@ -130,7 +130,7 @@
                      </div>                             
 		             <div class="over_dmm">
 						 <div class="over_btn">
-		                     <button type="button" onclick="">예매</button>
+		                     <button type="button" onclick="javascript: fnTicketReserve('${movieRank.movie_id }');">예매</button>
 		                     <button type="button" onclick="javascript:fnMovieInfo('${movieListCri.movie_id }');">정보</button>
 		                 </div>
 		             </div>
@@ -244,4 +244,9 @@
         </ul>
       </section>
 
+
+<script>
+
+
+</script>
      
