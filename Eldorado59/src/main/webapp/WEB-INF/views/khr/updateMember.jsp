@@ -6,10 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta http-equiv="Content-Type" content="text/html;charset=euc-kr">
 <title>ELDORADO</title>
-<meta name="title" content="YES24 - 대한민국 대표 인터넷서점">
-<meta name="description" content="YES24는 대한민국 1위 인터넷 온라인 서점 입니다. 국내 최대의 도서정보를 보유하고 있으며, 음반, DVD, 공연, 영화까지 다양한 문화 콘텐츠 및 서비스를 제공합니다.">
-<meta name="keywords" content="인터넷 서점, 온라인 쇼핑, 상품 추천, 쇼핑몰, 상품 검색, 도서 정보, 국내도서, 외국도서, 전자책, eBook, 이북, 크레마, 공연, 콘서트, 뮤지컬, 영화, 음반, 예매, DVD, 블루레이, 예스24, YES24, 교보문고, 알라딘">
-<meta property="og:image" content="https://secimage.yes24.com/sysimage/renew/logo_meta.png">
+<link rel="shortcut icon" type="image⁄x-icon" href="https://image.flaticon.com/icons/svg/1040/1040240.svg">
 
 <link rel="stylesheet" type="text/css" href="https://www.yes24.com/Resource/css/httpspopup.css">
 <link rel="stylesheet" type="text/css" href="https://www.yes24.com/Resource/css/httpsbutton.css">
@@ -18,7 +15,6 @@
 <link rel="stylesheet" type="text/css" href="https://secimage.yes24.com/sysimage/yesUI/member/member.css?ver=20191113" media="all">
 <link rel="stylesheet" type="text/css" href="https://secimage.yes24.com/sysimage/yesUI/myInfo/myInfo.css?ver=20191113" media="all">
 <link rel="stylesheet" type="text/css" href="https://secimage.yes24.com/sysimage/yesUI/yesUI.css?ver=20191122" media="all">
-<link href="https://secimage.yes24.com/sysimage/renew/gnb/yes24.ico" type="image/x-icon" rel="shortcut icon">
 
 <script type="text/javascript" async="" src="https://www.googleadservices.com/pagead/conversion_async.js"></script>
 <script type="text/javascript" src="https://secimage.yes24.com/sysimage/Contents/Scripts/p/jquery/jquery-1.12.4.min.js"></script>
@@ -109,7 +105,7 @@ gtag('config', 'AW-1056776890');
          <div class="ySHeaderAera">
             <h1>
                   <a class="lnk_logo" href="#">
-            <a class="lnk_logo" href="Main/index"><img src="${pageContext.request.contextPath }/resources/img/logo_eldorado.png" width="300" style="margin-top: .7rem;"></a>
+            <a class="lnk_logo" href="${pageContext.request.contextPath }/Main/index"><img src="${pageContext.request.contextPath }/resources/img/logo_eldorado.png" width="300" style="margin-top: .7rem;"></a>
                   </a>
                   <span class="servName">나의 정보</span>
                </h1>
