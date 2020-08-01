@@ -75,7 +75,26 @@ public class LsyController {
 		return "jsa/NowPlayRank";
 	}
 	  
-	  
+	
+	
+	//메인페이지
+		@RequestMapping(value = "Magazine/Index", method = RequestMethod.GET)
+		public String magazine(Locale locale, Model model) throws Exception {
+			logger.info("/magazine 실행");
+			
+//			//DB 등록된 영화 가져와서 출력
+//			//서비스계층 메서드 호출
+//			List<Map<String,Object>>movieListCri=service.movieListCri();
+//			
+//			logger.info("영화 목록 가져오기 성공");
+//			logger.info("영화 목록: "+movieListCri );
+//			
+//			model.addAttribute("movieListCri",movieListCri);
+
+			return "lsy/magazine";
+		}
+	
+	
 	
 	//네이버 영화검색 API호출, 검색 및 영화등록 페이지
 	@RequestMapping(value = "Movie/addMovie", method = RequestMethod.GET)
