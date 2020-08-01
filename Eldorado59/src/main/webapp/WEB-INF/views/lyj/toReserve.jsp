@@ -9,6 +9,7 @@
    href="${pageContext.request.contextPath }/resources/lyj/css/toReserve.css"
    rel="stylesheet" type="text/css" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image⁄x-icon" href="https://image.flaticon.com/icons/svg/1040/1040240.svg">
 
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <script src='https://movie.yes24.com/Scripts/date.js'></script>
@@ -32,7 +33,7 @@
     }
 
 </style>
-\
+
 <body>
 
 
