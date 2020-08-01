@@ -98,6 +98,19 @@ height: 745px;
   font-weight: 200;
 }
 
+.sub_tit{
+	text-decoration: underline;
+    color: #f2f2f2;
+    font-size: 18px;
+    font-family: nanumEB,'맑은 고딕','Malgun Gothic','Helvetica','Apple SD Gothic Neo',AppleGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;
+    letter-spacing: -3px;
+    padding: 8px 12px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
 .down_tit{
 	top:60%;
 }

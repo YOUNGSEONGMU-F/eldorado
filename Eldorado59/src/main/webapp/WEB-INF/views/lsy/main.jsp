@@ -44,20 +44,24 @@
 </div>
 
  <div class="mySlides fade">
- <img src="https://movie-simg.yes24.com/NYes24//MgrMain//20/06/cats_085807.jpg/dims/optimize" alt="허남웅 영화경" >
-     <div class="title down_tit">＜프랑스여자＞</div>
-     <div class="text down_txt">기억의 유령이 주위를 배회하고 있다</div>
+<img src="https://movie-simg.yes24.com/NYes24//MgrMain//20/07/bam_092841.jpg/dims/optimize" alt="손희정의 더 페이보릿">   
+  <div class="title area" style="background-color:black;opacity: .3;height: 100%;top: 0;">
+   </div>
+     <div class="sub_tit down_tit">손희정의 더 페이보릿</div>
+     <div class="title down_txt">유령이 인간을 구할 때</div>
  </div>
 
- <div class="mySlides fade">
- <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M14/M14/M00007141401_105043.jpg/dims/optimize" id="M000071414" alt="결백">
-    <div class="title down_tit">결백</div>
- </div>
+<!--  <div class="mySlides fade"> -->
+<!--  <img src="https://movie-simg.yes24.com/NYes24//MOVIE//M14/M14/M00007141401_105043.jpg/dims/optimize" id="M000071414" alt="결백"> -->
+<!--     <div class="title down_tit">결백</div> -->
+<!--  </div> -->
 
   <div class="mySlides fade">
-   <img src="https://movie-simg.yes24.com/NYes24//MgrMain//20/06/0111_113611.jpg/dims/optimize" alt="저 산 너머">
-     <div class="title down_tit">저 산 너머</div>
-     <div class="text down_txt">가난하지만 행복했던 그시절</div>
+   <img src="https://movie-simg.yes24.com/NYes24//MgrMain//20/07/01_111729.jpg/dims/optimize" alt="#살아있다">
+   <div class="title area" style="background-color:black;opacity: .3;height: 100%;top: 0;">
+   </div>
+     <div class="title down_tit">#살아있다</div>
+     <div class="text down_txt">생존스릴러</div>
  </div>
 
 
@@ -68,7 +72,7 @@
   <span class="dot" onclick="currentSlide(1)"></span> 
   <span class="dot" onclick="currentSlide(2)"></span> 
   <span class="dot" onclick="currentSlide(3)"></span> 
-  <span class="dot" onclick="currentSlide(4)"></span> 
+<!--   <span class="dot" onclick="currentSlide(4)"></span>  -->
 </div>
 
 </div>
@@ -76,7 +80,7 @@
 <script type="text/javascript">
 
         function fnTicketReserve(grpmId) {
-            location.href = '${pageContext.request.contextPath}/Movie/Ticket?gId=' + grpmId;
+            location.href = '${pageContext.request.contextPath}/movieTicket?gId=' + grpmId;
         }
 
         function fnMovieInfo(mId) {
