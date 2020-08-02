@@ -43,6 +43,11 @@
 </insert>
 
 
+<select id="bringMovieGift" resultType="map">
+select * from moviegifts where id=#{id}
+</select>
+
+
 </mapper>
 
 

@@ -1,5 +1,6 @@
 package com.eldorado.khr.service;
 
+import java.util.List;
 import java.util.Map;
 
 public interface KhrService {
@@ -24,4 +25,7 @@ public interface KhrService {
 	
 	//무비기프트 예매
 	public int insertGift(Map<String, Object> giftOrder);
+	
+	//무비기프트 결제내역 가져오기
+	public List<Map<String, Object>> bringMovieGift(String id);
 }

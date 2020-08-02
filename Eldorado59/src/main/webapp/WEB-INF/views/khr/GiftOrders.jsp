@@ -29,7 +29,7 @@
 			<div class="moviegift_pay_cont lay_inner">
 				<!--예매권 결재 정보-->
 				<!-- 폼 시작@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-				<form method="post" action="giftComplete"> 
+				<form method="post" action="MypageGift"> 
 				<input type="hidden" name="id" value="<%=session.getAttribute("id")%>">
 				<div class="pay_info_area" id="divMovieGiftInfo">
 					<div class="pay_thumb">             

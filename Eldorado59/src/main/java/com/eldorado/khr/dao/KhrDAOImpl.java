@@ -1,5 +1,6 @@
 package com.eldorado.khr.dao;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -67,6 +68,16 @@ public class KhrDAOImpl implements KhrDAO{
 	public Map<String, Object> getName(String id) {
 		// TODO Auto-generated method stub
 		return session.selectOne("khr.selectName", id);
+	}
+
+
+
+	@Override
+	public List<Map<String, Object>> bringMovieGift(String id) {
+		
+		System.out.println("무비기프트 결제내역 dao: " + id);
+		
+		return session.selectList("khr.bringMovieGift", id);
 	}
 
 

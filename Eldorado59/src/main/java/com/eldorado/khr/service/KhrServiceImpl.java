@@ -1,5 +1,6 @@
 package com.eldorado.khr.service;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -76,6 +77,15 @@ public class KhrServiceImpl implements KhrService{
 
 
 
+
+	@Override
+	public List<Map<String, Object>> bringMovieGift(String id) {
+		// TODO Auto-generated method stub
+		return dao.bringMovieGift(id);
+	}
+
+
+	
 
 	
 
