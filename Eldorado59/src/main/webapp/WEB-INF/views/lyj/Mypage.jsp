@@ -178,9 +178,9 @@
         <!--예매 확인/취소 등록, 구매내역 부분 -->
         <div class="my_resinfo_area">
             <ul class="tab_menu02">
-                <li id="tabMenuOrder" class="active"><a href="${pageContext.request.contextPath}/MyPage">예매확인/취소</a></li>
+                <li id="tabMenuOrder" class="active"><a href="${pageContext.request.contextPath}/Mypage">예매확인/취소</a></li>
              <!--  삭제  <li id="tabMenuPreticket" class="active"><a href="/MyPage/Index?tab=coupon">예매권/할인권 등록</a></li> -->
-                <li id="tabMenuMovieGift"><a href="${pageContext.request.contextPath}/khr/MyPageGift">무비기프트 구매내역</a></li>
+                <li id="tabMenuMovieGift"><a href="${pageContext.request.contextPath}/khr/MypageGift">무비기프트 구매내역</a></li>
             </ul>
 
              <div class="lyjReserveTable">

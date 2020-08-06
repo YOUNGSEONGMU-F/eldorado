@@ -133,8 +133,9 @@ public class KhrController {
 			HttpSession session) {
 
 		service.updateMember(user);
+		
 
-		return "lyj/Mypage";
+		return "redirect:/Mypage";
 	}
 
 	// 회원정보 삭제
@@ -223,7 +224,7 @@ public class KhrController {
 	public String GiftOrder_post(Locale locale, Model model) {
 		
 		
-		return "khr/giftComplete";
+		return "redirect:/khr/MypageGift";
 	}
 	
 	//무비기프트 -> 기프트 예매권 결제 3d예매
@@ -248,7 +249,7 @@ public class KhrController {
 	@RequestMapping(value = "GiftOrders", method = RequestMethod.POST)
 	public String GiftOrders_post(Locale locale, Model model) {
 		
-		return "khr/giftComplete";
+		return "redirect:/khr/MypageGift";
 	}
 	
 	// 무비기프트 결제완료
@@ -294,7 +295,7 @@ public class KhrController {
 		
 		service.insertGift(giftOrder);
 		
-		return "khr/MypageGift";
+		return "redirect:/khr/MypageGift";
 	}
 	
 	
