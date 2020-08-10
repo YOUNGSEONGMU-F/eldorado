@@ -10,51 +10,34 @@
       <section class="magazine">
         <h1 class="magazine_title">MAGAZINE</h1>
         <div class="mg_item">
+      <c:forEach items="${magazineList }" var="magazineList" end="2">
+        <c:set var="imgArr_mgz" value="${fn:split(magazineList.mgz_img,',') }"/>
           <div class="item">
-            <a href="">
+            <a href="${pageContext.request.contextPath }/Magazine/Detail?num=${magazineList.mgz_num}">
               <img
-                src="https://movie-simg.yes24.com/NYes24//MgrMain//20/06/life_1_094253.jpg/dims/thumbnail/380x280/optimize"
+                src="<c:out value="${imgArr_mgz[0] }"/> "
                 width="380"
                 height="280"
-                alt="인비저블 라이프"
+                alt="${magazineList.title }"
               />
               <div class="mg_info_box">
-                <p class="mg_first"><span>최초공개</span></p>
-                <p class="mg_de_txt dot_st">인비저블 라이프</p>
-                <p class="mg_title dot_st">30초 예고편 공개</p>
+                <p class="mg_first"><span> 
+                						<c:set var="label" value="${magazineList.label}"/>
+                                        <c:if test="${label eq 0}"><c:out value="최초공개"/></c:if>
+                                        <c:if test="${label eq 1}"><c:out value="핫토픽"/></c:if>
+                                        <c:if test="${label eq 2}"><c:out value="전문가칼럼"/></c:if>
+                                        <c:if test="${label eq 3}"><c:out value="스타패션"/></c:if>
+                                        <c:if test="${label eq 4}"><c:out value="현장취재"/></c:if>
+                                        <c:if test="${label eq 5}"><c:out value="연예가쉿"/></c:if>
+                                        <%-- ${magazineList.label} --%>
+                                        </span></p>
+                <p class="mg_de_txt dot_st">${magazineList.title }</p>
+<%--                 <p class="mg_title dot_st">${magazineList.tag }</p> --%>
               </div>
             </a>
           </div>
-          <div class="item">
-            <a href="">
-              <img
-                src="https://movie-simg.yes24.com/NYes24//MgrMain//20/06/bomb_1_094322.jpg/dims/thumbnail/380x280/optimize"
-                width="380"
-                height="280"
-                alt="밤쉘: 세상을 바꾼 폭탄선언"
-              />
-              <div class="mg_info_box">
-                <p class="mg_first"><span>최초공개</span></p>
-                <p class="mg_de_txt dot_st">밤쉘: 세상을 바꾼 폭탄선언</p>
-                <p class="mg_title dot_st">미공개 스틸 공개</p>
-              </div>
-            </a>
-          </div>
-          <div class="item">
-            <a href="">
-              <img
-                src="https://movie-simg.yes24.com/NYes24//MgrMain//20/06/ending_1_094349.jpg/dims/thumbnail/380x280/optimize"
-                width="380"
-                height="280"
-                alt="엔딩스 비기닝스"
-              />
-              <div class="mg_info_box">
-                <p class="mg_first"><span>최초공개</span></p>
-                <p class="mg_de_txt dot_st">엔딩스 비기닝스</p>
-                <p class="mg_title dot_st">현장 스틸 공개</p>
-              </div>
-            </div>
-          </a>
+          </c:forEach>
+  
         </div>
       </section>
       <div class="bg_color">
@@ -66,16 +49,16 @@
             <div class="item_2">
               <a href="">
                 <img
-                  src="https://movie-simg.yes24.com/NYes24//MgrMain//20/06/yes24_720x500_181629.jpg"
-                  alt="미쟝셴"
+                  src="https://movie-simg.yes24.com/NYes24//MgrMain//20/08/b720x500_140301.jpg"
+                  alt="시사회"
                 />
               </a>
             </div>
             <div class="item_2">
               <a href="">
                 <img
-                  src="https://movie-simg.yes24.com/NYes24//MgrMain//20/06/evtlist_720x500_center_090816.jpg"
-                  alt="소리꾼"
+                  src="https://movie-simg.yes24.com/NYes24//MgrMain//20/07/play24_720x500_183031_130641.jpg"
+                  alt="이벤트"
                 />
               </a>
             </div>

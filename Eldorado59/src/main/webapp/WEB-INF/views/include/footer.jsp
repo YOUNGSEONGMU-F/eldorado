@@ -11,11 +11,11 @@
                     </div>
                 </div>
                 <!-- 광고 -->
-                        <div class="foot_banner" style="background:#FFFFFF">
-                            <a href="#" target="_self">
-                                <img src="https://movie-simg.yes24.com/NYes24//MgrMain//20/06/1200x1800_110347.jpg" alt="밤쉘">
-                            </a>
-                        </div>
+                <div style="background:#4f87e8">
+                       <a href="#" target="_self">
+                        <div class="foot_banner"></div>
+                       </a>
+                </div>
                 <!-- 광고 -->
 
                 <div class="foot_area container">

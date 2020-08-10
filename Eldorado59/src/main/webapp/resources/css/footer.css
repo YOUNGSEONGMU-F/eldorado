@@ -16,13 +16,12 @@
     position: relative;
     height: 228px;
     text-align: center;
-    background: #291c14;
+	background-image: url('https://movie-simg.yes24.com/NYes24//MgrMain//20/08/1200x180_132602.jpg');
+	background-size: contain;
+    background-repeat: no-repeat;
 }
-.foot_banner img{
-	max-width: 1519px;
-	width: 70vw;
-	min-width: 925px;
-}
+
+
 
 .foot_area {
 	margin-top: 6rem;

@@ -12,9 +12,8 @@
   crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <div id="ad">
-<img id="imgTopBanner" src="https://movie-simg.yes24.com/NYes24//MgrMain//20/07/Super_Price_Top(1200x70)_093107.jpg" alt="반도">
-
+  <div id="ad" style="background-color:#ffffff;">
+	<img id="imgTopBanner" src="https://movie-simg.yes24.com/NYes24//MgrMain//20/08/Super_Price_Top(1200x70)%20(2)_171408.jpg" alt="애니멀크래커">
   </div>
 
 <header class="sticky"> 
