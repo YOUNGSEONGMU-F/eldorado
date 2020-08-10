@@ -607,7 +607,7 @@ $('#submitBtn').click(function(){
    }
    
    document.getElementById('updateForm').submit();
-   
+   //location.href="../lyj/Mypage.jsp";
 });
       
 

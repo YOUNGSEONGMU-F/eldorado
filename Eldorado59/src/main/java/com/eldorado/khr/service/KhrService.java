@@ -1,27 +1,31 @@
 package com.eldorado.khr.service;
 
+import java.util.List;
 import java.util.Map;
 
 public interface KhrService {
-	
-	//로그인(임시)
-	public String getPass(Map<String,Object> map);
-	
-	// 회원정보 수정
-	public int updateMember(Map<String, Object> user);
-	
-	// 회원정보 삭제
-	public int deleteMember(Map<String, Object> user);
-	
-	//회원정보 가져오기
-	public Map<String, Object> getMember(String id); 
-	
-	//예매 완료
-	public int insertReserve(Map<String, Object> reserve);
-	
-	//무비기프트 이름 불러오기
-	public Map<String, Object> getName(String id);
-	
-	//무비기프트 예매
-	public int insertGift(Map<String, Object> giftOrder);
+   
+   //로그인(임시)
+   public String getPass(Map<String,Object> map);
+   
+   // 회원정보 수정
+   public int updateMember(Map<String, Object> user);
+   
+   // 회원정보 삭제
+   public int deleteMember(Map<String, Object> user);
+   
+   //회원정보 가져오기
+   public Map<String, Object> getMember(String id); 
+   
+   //예매 완료
+   public int insertReserve(Map<String, Object> reserve);
+   
+   //무비기프트 이름 불러오기
+   public Map<String, Object> getName(String id);
+   
+   //무비기프트 예매
+   public int insertGift(Map<String, Object> giftOrder);
+   
+   //무비기프트 결제내역 가져오기
+   public List<Map<String, Object>> bringMovieGift(String id);
 }

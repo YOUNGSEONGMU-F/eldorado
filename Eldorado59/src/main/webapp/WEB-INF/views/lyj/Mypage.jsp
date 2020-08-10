@@ -11,8 +11,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link
-	href="${pageContext.request.contextPath }/resources/lyj/css/Mypage.css"
-	rel="stylesheet" type="text/css" />
+   href="${pageContext.request.contextPath }/resources/lyj/css/Mypage.css"
+   rel="stylesheet" type="text/css" />
 
     <title>ELDORADO - 마이페이지</title>
     <link href="${pageContext.request.contextPath }/resources/css/header.css" rel="stylesheet" type="text/css" />
@@ -93,10 +93,10 @@
 <jsp:include page="../include/header.jsp"></jsp:include>
 <!--위에 상단바  끝 -->
 
-		
+      
 <div class="lyjtotalwrap">
 
-		
+      
 
 
     <div id="wrap">
@@ -178,74 +178,74 @@
         <!--예매 확인/취소 등록, 구매내역 부분 -->
         <div class="my_resinfo_area">
             <ul class="tab_menu02">
-                <li id="tabMenuOrder" class="active"><a href="/MyPage/Index?tab=order">예매확인/취소</a></li>
+                <li id="tabMenuOrder" class="active"><a href="${pageContext.request.contextPath}/Mypage">예매확인/취소</a></li>
              <!--  삭제  <li id="tabMenuPreticket" class="active"><a href="/MyPage/Index?tab=coupon">예매권/할인권 등록</a></li> -->
-                <li id="tabMenuMovieGift"><a href="/MyPage/Index?tab=moviegift">무비기프트 구매내역</a></li>
+                <li id="tabMenuMovieGift"><a href="${pageContext.request.contextPath}/khr/MypageGift">무비기프트 구매내역</a></li>
             </ul>
 
              <div class="lyjReserveTable">
         
-        		<table>
-        		   <tr class="lyjTabletr">
-	             	<th class="lyjTabletd">예매번호</th>
-	             	<th class="lyjTabletd">영화제목</th>
-	             	<th class="lyjTabletd">영화관이름</th>
-	             	<th class="lyjTabletd">좌석</th>
-	             	<th class="lyjTabletd">날짜</th>
-	             	<th class="lyjTabletd">상영시간</th>
-	             	<th class="lyjTabletd">개수</th>
-	             	<th class="lyjTabletd">취소하기</th>
-	             	
-	             </tr>
-        		
-        		
+              <table>
+                 <tr class="lyjTabletr">
+                   <th class="lyjTabletd">예매번호</th>
+                   <th class="lyjTabletd">영화제목</th>
+                   <th class="lyjTabletd">영화관이름</th>
+                   <th class="lyjTabletd">좌석</th>
+                   <th class="lyjTabletd">날짜</th>
+                   <th class="lyjTabletd">상영시간</th>
+                   <th class="lyjTabletd">개수</th>
+                   <th class="lyjTabletd">취소하기</th>
+                   
+                </tr>
+              
+              
              <c:forEach items="${ReservationList }" var="list">
-	         
+            
              
              
                <tr class="lyjTabletr">
-               	<td class="lyjcontentTd Bringreserve">${list.reserv_num }</td>
-               	<td class="lyjcontentTd">${list.title }</td>
-               	<td class="lyjcontentTd">${list.th_name }</td>
-               	<fmt:parseDate var="date" value="${list.date}" pattern="yyyy-MM-dd"/>
+                  <td class="lyjcontentTd Bringreserve">${list.reserv_num }</td>
+                  <td class="lyjcontentTd">${list.title }</td>
+                  <td class="lyjcontentTd">${list.th_name }</td>
+                  <fmt:parseDate var="date" value="${list.date}" pattern="yyyy-MM-dd"/>
                 <fmt:formatDate var="dateFormat" value="${date }" pattern="yyyy-MM-dd"/>
-           		<fmt:parseDate var="strDate" value="${dateFormat}" pattern="yyyy-MM-dd"/>
-               	<fmt:parseNumber value="${strDate.time / (1000*60*60*24)}" integerOnly="true" var="is_date"></fmt:parseNumber>
-               	<jsp:useBean id="toDay" class="java.util.Date"/>
-               	
+                 <fmt:parseDate var="strDate" value="${dateFormat}" pattern="yyyy-MM-dd"/>
+                  <fmt:parseNumber value="${strDate.time / (1000*60*60*24)}" integerOnly="true" var="is_date"></fmt:parseNumber>
+                  <jsp:useBean id="toDay" class="java.util.Date"/>
+                  
                 <fmt:formatDate value="${toDay }" pattern="yyyy-MM-dd" var="nowDate"/>
                 <fmt:parseDate var="strDate2" value="${nowDate}" pattern="yyyy-MM-dd"/>
                <fmt:parseNumber value="${strDate2.time / (1000*60*60*24)}" integerOnly="true" var="now_date"></fmt:parseNumber>
                 
-               	
-               	<td class="lyjcontentTd">${list.seat }</td>
-               	<td class="lyjcontentTd">${dateFormat}</td>
-               	<td class="lyjcontentTd">${list.time }</td>
-               	<td class="lyjcontentTd">${list.t_amount }</td>
-               	<td class="lyjcontentTd">
-               	<% 
-               		
-               	
-               	
-               	%>
-               	<c:if test="${is_date > now_date }">
-               	
-               		<!-- <a href="Cancel" style="color:green;">취소하기</a> -->
-			 	<!-- <button id="myModal" class="modal">취소하기</button> -->
-			 	 <button id="myBtn" class="cancelbutton" type="button">취소하기</button>
+                  
+                  <td class="lyjcontentTd">${list.seat }</td>
+                  <td class="lyjcontentTd">${dateFormat}</td>
+                  <td class="lyjcontentTd">${list.time }</td>
+                  <td class="lyjcontentTd">${list.t_amount }</td>
+                  <td class="lyjcontentTd">
+                  <% 
+                     
+                  
+                  
+                  %>
+                  <c:if test="${is_date > now_date }">
+                  
+                     <!-- <a href="Cancel" style="color:green;">취소하기</a> -->
+             <!-- <button id="myModal" class="modal">취소하기</button> -->
+              <button id="myBtn" class="cancelbutton" type="button">취소하기</button>
  
    
 
-               	</c:if>
-               	<c:if test="${is_date < now_date }">
-               		<a href="#" style="color:red;" class="cancelbutton">취소불가</a>
-               	</c:if>
-               	</td>
+                  </c:if>
+                  <c:if test="${is_date < now_date }">
+                     <a href="#" style="color:red;" class="cancelbutton">취소불가</a>
+                  </c:if>
+                  </td>
                </tr>
                
-         	</c:forEach>
-         	
-         	</table>
+            </c:forEach>
+            
+            </table>
              
              
              </div>
@@ -258,13 +258,13 @@
         <span class="close">&times;</span>      
                                                                  
         <form action="submitCancel" method="post">
-		<h4>예매를 취소하시겠습니까?</h4>
-		
-		<input type="hidden" id="reserve_numTicket" value="" name="reserv_num" >
-		<button type="submit">예</button>
-		<button type="button">이전으로</button>
-		
-		</form>
+      <h4>예매를 취소하시겠습니까?</h4>
+      
+      <input type="hidden" id="reserve_numTicket" value="" name="reserv_num" >
+      <button type="submit">예</button>
+      <button type="button">이전으로</button>
+      
+      </form>
         
         
         
@@ -292,14 +292,14 @@
   var span = document.getElementsByClassName("close")[0];                                          
 
   $(function(){
-	
-	$('.cancelbutton').click(function(){
-		var idx = $('.cancelbutton').index(this);
-		var is_cancelbutton = $('.cancelbutton').eq(idx).text();
-		if(is_cancelbutton == "취소하기"){
-		$('#myModal').css('display','block');
-		}
-	});
+   
+   $('.cancelbutton').click(function(){
+      var idx = $('.cancelbutton').index(this);
+      var is_cancelbutton = $('.cancelbutton').eq(idx).text();
+      if(is_cancelbutton == "취소하기"){
+      $('#myModal').css('display','block');
+      }
+   });
   });
   
   // When the user clicks on the button, open the modal 
@@ -319,20 +319,20 @@
       }
   }
 
-	$(function(){
-		$('.cancelbutton').click(function(){
-				var cancelButtonIndex = $('.cancelbutton').index(this);
-				console.log("버튼 idx : "+cancelButtonIndex);
-				var  reserve_value  = $('.Bringreserve').eq(cancelButtonIndex).text();
-				console.log("예약번호 : "+reserve_value);
+   $(function(){
+      $('.cancelbutton').click(function(){
+            var cancelButtonIndex = $('.cancelbutton').index(this);
+            console.log("버튼 idx : "+cancelButtonIndex);
+            var  reserve_value  = $('.Bringreserve').eq(cancelButtonIndex).text();
+            console.log("예약번호 : "+reserve_value);
 
-				$('#reserve_numTicket').val(reserve_value);
-				var ticket = $('#reserve_numTicket').val();
-				console.log(ticket);
-			});
-		
-	});
-		
+            $('#reserve_numTicket').val(reserve_value);
+            var ticket = $('#reserve_numTicket').val();
+            console.log(ticket);
+         });
+      
+   });
+      
 
 
 

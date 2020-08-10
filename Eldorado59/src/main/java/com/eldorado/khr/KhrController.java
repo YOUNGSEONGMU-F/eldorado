@@ -3,6 +3,7 @@ package com.eldorado.khr;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -132,8 +133,9 @@ public class KhrController {
          HttpSession session) {
 
       service.updateMember(user);
+      
 
-      return "lyj/Mypage";
+      return "redirect:/Mypage";
    }
 
    // 회원정보 삭제
@@ -219,11 +221,10 @@ public class KhrController {
    }
    
    @RequestMapping(value = "GiftOrder", method = RequestMethod.POST)
-   public String GiftOrder_post(Locale locale, Model model, @RequestParam Map<String, Object> giftOrder) {
+   public String GiftOrder_post(Locale locale, Model model) {
       
-      service.insertGift(giftOrder);
       
-      return "lyj/Mypage";
+      return "redirect:/khr/MypageGift";
    }
    
    //무비기프트 -> 기프트 예매권 결제 3d예매
@@ -248,7 +249,7 @@ public class KhrController {
    @RequestMapping(value = "GiftOrders", method = RequestMethod.POST)
    public String GiftOrders_post(Locale locale, Model model) {
       
-      return "lyj/Mypage";
+      return "redirect:/khr/MypageGift";
    }
    
    // 무비기프트 결제완료
@@ -265,6 +266,36 @@ public class KhrController {
       service.insertGift(giftOrder);
       
       return "khr/giftComplete";
+   }
+   
+   //마이페이지 무비기프트 내역확인
+   @RequestMapping(value = "MypageGift", method = RequestMethod.GET)
+   public String Mypage(Model model, HttpSession session, HttpServletRequest request) {
+      
+      String id = (String)session.getAttribute("id");
+      
+      if(id == null) {
+         
+         return "redirect:login2";
+      }
+      //jsp로 아이디값 넘겨주기
+      session.setAttribute("id", id);
+      
+      
+      List<Map<String, Object>> MovieGiftList = service.bringMovieGift(id);
+      
+      model.addAttribute("MovieGiftList", MovieGiftList);
+      
+      return "khr/MypageGift";
+   }
+   
+   @RequestMapping(value = "MypageGift", method = RequestMethod.POST)
+   public String MypageGift_post(Locale locale, Model model,@RequestParam Map<String, Object> giftOrder) {
+      
+      
+      service.insertGift(giftOrder);
+      
+      return "redirect:/khr/MypageGift";
    }
    
    
@@ -395,6 +426,7 @@ public class KhrController {
       
       return "khr/OrderComplete";
    }
+   
    
    
    

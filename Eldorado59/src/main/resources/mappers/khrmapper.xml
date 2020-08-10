@@ -5,44 +5,48 @@
 
 <select id="getPass" resultType="String">
 
-	select pass from member where id=#{id}
+   select pass from member where id=#{id}
 </select>
 
 
 
 <update id="updateMember" parameterType="map">
-	update member 
-	set pass=#{pass},name=#{name},email=#{email},zipcode=#{zipcode},addr=#{addr},tel=#{tel}
-	where id=#{id}
+   update member 
+   set pass=#{pass},name=#{name},email=#{email},zipcode=#{zipcode},addr=#{addr},tel=#{tel}
+   where id=#{id}
 
 </update>
 
 <delete id="deleteMember" parameterType="map">
-	delete from member 
-	where id=#{id}
+   delete from member 
+   where id=#{id}
 </delete>
 
 
 <select id="selectMember" resultType="map">
-	select * from member where id=#{id}
+   select * from member where id=#{id}
 </select>
 
 
 <insert id="insertReserve" parameterType="map" > 
-	insert into reservations (id,title,t_amount,th_name,seat,date,time,total_price) 
-	values (#{id},#{title},#{total_amount},#{th_name},#{seat},#{date},#{time},#{total_price})
+   insert into reservations (id,title,t_amount,th_name,seat,date,time,total_price) 
+   values (#{id},#{title},#{total_amount},#{th_name},#{seat},#{date},#{time},#{total_price})
 </insert>
 
 <select id="selectName" resultType="map">
-	select name from member where id=#{id}
+   select name from member where id=#{id}
 </select>
 
 <insert id="insertGift" parameterType="map" > 
-	insert into moviegifts (id,name,ticket_kinds,t_amount,price) 
-	values (#{id},#{name},#{ticket_kinds},#{t_amount},#{price})
+   insert into moviegifts (id,name,ticket_kinds,t_amount,price) 
+   values (#{id},#{name},#{ticket_kinds},#{t_amount},#{price})
 </insert>
 
 
-</mapper>
+<select id="bringMovieGift" resultType="map">
+select * from moviegifts where id=#{id}
+</select>
 
+
+</mapper>
 
