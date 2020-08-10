@@ -94,7 +94,7 @@
         <section class="ranking">
             <div class="r_list">
               <ul class="rk_list">
-                <li><a href="">예매순위</a></li>
+                <li><a href="${pageContext.request.contextPath}/MovieInfo/NowPlayRank">현재상영작</a></li>
 <!--                 <li><a href="">박스오피스</a></li> -->
 <!--                 <li><a href="">개봉예정작</a></li> -->
 <!--                 <li><a href="">영화제 영화</a></li> -->
@@ -127,7 +127,7 @@
                   <a href="#" class="nextBtn">&#10095;</a>
           </div>
           <div class="boff_more">
-            <a href="${pageContext.request.contextPath}/MovieInfo/TicketRank" id="rankText">예매순위 더보기+</a>
+            <a href="${pageContext.request.contextPath}/MovieInfo/NowPlayRank">현재상영작 더보기+</a>
           </div>
         </section>
               <!-- 핫클립 -->
@@ -193,34 +193,34 @@
         <ul class="help">
           <li style="border: none; padding: 0;">
             <a
-              href="http://www.yes24.com/Mall/Help/CS/Apply"
+              href="#"
               class="noti_ic noti_ic01"
             >
               <span>1:1상담</span>
             </a>
           </li>
           <li>
-            <a href="/HelpDesk/Faq" class="noti_ic noti_ic02">
+            <a href="${pageContext.request.contextPath}/HelpDesk/Faq" class="noti_ic noti_ic02">
               <span>FAQ</span>
             </a>
           </li>
           <li>
-            <a href="/HelpDesk/DiscountInfo" class="noti_ic noti_ic03">
+            <a href="${pageContext.request.contextPath}/HelpDesk/DiscountInfo" class="noti_ic noti_ic03">
               <span>할인안내</span>
             </a>
           </li>
           <li>
-            <a href="/HelpDesk/CouponInfo" class="noti_ic noti_ic04">
+            <a href="${pageContext.request.contextPath}/HelpDesk/CouponInfo" class="noti_ic noti_ic04">
               <span>예매권안내</span>
             </a>
           </li>
           <li>
-            <a href="/HelpDesk/GuideInfo" class="noti_ic noti_ic05">
+            <a href="${pageContext.request.contextPath}/HelpDesk/GuideInfo" class="noti_ic noti_ic05">
               <span>예매 안내</span>
             </a>
           </li>
           <li>
-            <a href="/HelpDesk/TheaterInfo" class="noti_ic noti_ic06">
+            <a href="${pageContext.request.contextPath}/HelpDesk/TheaterInfo" class="noti_ic noti_ic06">
               <span>극장안내</span>
             </a>
           </li>

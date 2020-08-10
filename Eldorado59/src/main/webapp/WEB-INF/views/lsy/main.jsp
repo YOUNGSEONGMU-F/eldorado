@@ -48,7 +48,8 @@
   <div class="title area" style="background-color:black;opacity: .3;height: 100%;top: 0;">
    </div>
      <div class="sub_tit down_tit">손희정의 더 페이보릿</div>
-     <div class="title down_txt">유령이 인간을 구할 때</div>
+      <a href="${pageContext.request.contextPath }/Magazine/Detail?num=31">
+     <div class="title down_txt">유령이 인간을 구할 때</div></a>
  </div>
 
 <!--  <div class="mySlides fade"> -->
@@ -60,7 +61,8 @@
    <img src="https://movie-simg.yes24.com/NYes24//MgrMain//20/07/01_111729.jpg/dims/optimize" alt="#살아있다">
    <div class="title area" style="background-color:black;opacity: .3;height: 100%;top: 0;">
    </div>
-     <div class="title down_tit">#살아있다</div>
+    <a href="${pageContext.request.contextPath }/Magazine/Detail?num=24">
+     <div class="title down_tit">#살아있다</div></a>
      <div class="text down_txt">생존스릴러</div>
  </div>
 
