@@ -95,9 +95,9 @@
             <div class="r_list">
               <ul class="rk_list">
                 <li><a href="">예매순위</a></li>
-                <li><a href="">박스오피스</a></li>
-                <li><a href="">개봉예정작</a></li>
-                <li><a href="">영화제 영화</a></li>
+<!--                 <li><a href="">박스오피스</a></li> -->
+<!--                 <li><a href="">개봉예정작</a></li> -->
+<!--                 <li><a href="">영화제 영화</a></li> -->
               </ul>
             </div>  
             <div id="bannerWrap">

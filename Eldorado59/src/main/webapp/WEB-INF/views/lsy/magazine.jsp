@@ -128,7 +128,9 @@
             </div>
 
             <div>
-            			<button type='button' class="btn_defaultB" onclick="location.href='${pageContext.request.contextPath }/registerMagazine'">매거진 등록</button>
+<% if(session.getAttribute("id")!=null && session.getAttribute("id").equals("admin")){ %>
+            	<button type='button' class="btn_defaultB" onclick="location.href='${pageContext.request.contextPath }/registerMagazine'">매거진 등록</button>
+<%} %>
             </div>
 
     <script>
