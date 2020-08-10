@@ -81,4 +81,50 @@ public class LsyServiceImpl implements LsyService{
 		logger.info("@ DAO : 처리완료. 결과 컨트롤러 전달");
 		
 	}
+	
+	@Override
+	public void registerMagazine(Map<String, Object> mgz) throws Exception {
+		logger.info("@ Service : 매거진 등록 동작 실행 -> DAO 메서드 호출, 정보:"+mgz);
+		
+
+		
+		dao.registerMagazine(mgz);
+		logger.info("@ DAO : 처리완료. 결과 컨트롤러 전달");
+		
+	}
+	
+	@Override
+	public List<Map<String, Object>> magazineList() throws Exception {
+		logger.info("@ Service : 매거진 목록 동작 실행-> DAO 메서드 호출");
+		List<Map<String,Object>>magazineList=dao.magazineList();
+		logger.info("@ DAO : 처리완료. 결과 컨트롤러 전달");
+		return magazineList;
+	}
+	
+	// 매거진 읽기 readMagazine()
+	@Override
+	public Map<String, Object> readMagazine(int mgz_num) throws Exception {
+		logger.info("@ Service : 매거진 읽기 실행-> DAO 메서드 호출");
+		Map<String,Object>magazine=dao.readMagazine(mgz_num);
+		logger.info("@ DAO : 처리완료. 결과 컨트롤러 전달");
+		return magazine;
+
+	}
+	
+	//매거진 수정
+	@Override
+	public void updateMagazine(Map<String, Object> mgz) throws Exception {
+		logger.info("@ Service : 매거진 수정 동작 실행-> DAO 메서드 호출");
+		dao.updateMagazine(mgz);
+		logger.info("@ DAO : 처리완료. 결과 컨트롤러 전달");
+	}
+	
+	//매거진 삭제
+	@Override
+	public void deleteMagazine(int mgz_num) throws Exception {
+		logger.info("@ Service : 매거진 삭제 실행-> DAO 메서드 호출");
+		dao.deleteMagazine(mgz_num);
+		logger.info("@ DAO : 처리완료. 결과 컨트롤러 전달");
+		
+	}
 }

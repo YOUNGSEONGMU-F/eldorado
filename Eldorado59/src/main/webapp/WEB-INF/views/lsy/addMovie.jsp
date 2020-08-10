@@ -190,7 +190,7 @@ $(document).on("click", "#selectBtn", function(){
 		} 
 
 		$.ajax({
-			url: "${pageContext.request.contextPath }/registeMovie",
+			url: "${pageContext.request.contextPath }/registerMovie",
 			data: {target:JSON.stringify(rowData)},  //요 부분이다.
 			type: 'POST',
 			success: function(result){

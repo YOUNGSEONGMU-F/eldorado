@@ -4,9 +4,11 @@
 <mapper namespace="lsy">
 
 <!-- 영화등록 API 정보만 이용. 추가정보는 개별 상세 페이지 수정으로 처리-->
-<insert id="registMovies" parameterType="Object">
-insert into movie(movie_id,title,director,cast,thumb_nail,pub_date,user_rating) 
-values(#{movie_id},#{object.title},#{object.director},#{object.cast},#{object.thumb_nail},#{object.pub_date},#{object.user_rating})
+<insert id="registerMovies" parameterType="Object">
+insert into 
+		movie(movie_id,title,director,cast,thumb_nail,pub_date,user_rating) 
+values
+		(#{movie_id},#{object.title},#{object.director},#{object.cast},#{object.thumb_nail},#{object.pub_date},#{object.user_rating})
 </insert>
 <!-- 등록된 영화 개수count(movie_id에 사용) -->
 <select id="countRegisteredMovies" resultType="int">
@@ -80,6 +82,63 @@ values(#{movie_id},#{object.title},#{object.director},#{object.cast},#{object.th
 </delete>
 
 <!-- 페이징처리도 해야함 -->
+
+
+<!-- 매거진 -->
+
+<!-- 매거진 등록-->
+<insert id="registerMagazine" parameterType="map">
+insert into 
+		magazine(category,title,label,content,mgz_img) 
+values
+		(#{category},#{title},#{label},#{content},#{mgz_img});
+</insert>
+
+
+<!-- 전체 : 매거진목록(최근 등록순 정렬) -->
+<select id="magazineList" resultType="map">
+	<![CDATA[
+	select 
+		*
+	from
+		magazine
+	order by 
+		mgz_num desc;
+	]]>
+</select>
+<!-- 매거진 읽기 -->
+<select id="readMagazine" resultType="map">
+	<![CDATA[
+	select 
+		*
+	from
+		magazine
+	where
+		mgz_num=#{mgz_num};
+	]]>
+</select>
+
+<!-- 매거진 수정 -->
+<update id="updateMagazine" parameterType="map">
+ 	<![CDATA[
+	update 
+		magazine
+	set
+		category=#{category},title=#{title},label=#{label},content=#{content},mgz_img=#{mgz_img}
+	where
+	 	mgz_num=#{mgz_num};
+	]]>
+</update>
+<!-- 매거진 삭제 -->
+<delete id="deleteMagazine">
+ 	<![CDATA[
+	delete
+	from
+		magazine
+	where
+		mgz_num=#{mgz_num};
+	]]>
+</delete>
 
 </mapper>
 

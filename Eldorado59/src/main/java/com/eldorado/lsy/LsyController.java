@@ -1,22 +1,33 @@
 package com.eldorado.lsy;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.UUID;
 
 import javax.inject.Inject;
 
+import org.apache.commons.io.FileUtils;
 import org.json.JSONArray;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.eldorado.lsy.service.LsyService;
+
 
 
 @Controller
@@ -38,9 +49,18 @@ public class LsyController {
 		List<Map<String,Object>>movieListCri=service.movieListCri();
 		
 		logger.info("영화 목록 가져오기 성공");
-		logger.info("영화 목록: "+movieListCri );
+//		logger.info("영화 목록: "+movieListCri );
 		
 		model.addAttribute("movieListCri",movieListCri);
+		
+		
+		//서비스계층 메서드 호출
+		List<Map<String,Object>>magazineList=service.magazineList();
+		
+		logger.info("매거진 목록 가져오기 성공");
+//		logger.info("매거진 목록: "+magazineList );
+		
+		model.addAttribute("magazineList",magazineList);
 
 		return "lsy/main";
 	}
@@ -68,7 +88,7 @@ public class LsyController {
 		List<Map<String,Object>>movieListCri=service.movieListCri();
 		
 		logger.info("영화 목록 가져오기 성공");
-		logger.info("영화 목록: "+movieListCri );
+//		logger.info("영화 목록: "+movieListCri );
 		
 		model.addAttribute("movieListCri",movieListCri);
 
@@ -76,26 +96,7 @@ public class LsyController {
 	}
 	  
 	
-	
-	//메인페이지
-		@RequestMapping(value = "Magazine/Index", method = RequestMethod.GET)
-		public String magazine(Locale locale, Model model) throws Exception {
-			logger.info("/magazine 실행");
-			
-//			//DB 등록된 영화 가져와서 출력
-//			//서비스계층 메서드 호출
-//			List<Map<String,Object>>movieListCri=service.movieListCri();
-//			
-//			logger.info("영화 목록 가져오기 성공");
-//			logger.info("영화 목록: "+movieListCri );
-//			
-//			model.addAttribute("movieListCri",movieListCri);
 
-			return "lsy/magazine";
-		}
-	
-	
-	
 	//네이버 영화검색 API호출, 검색 및 영화등록 페이지
 	@RequestMapping(value = "Movie/addMovie", method = RequestMethod.GET)
 	public String addMovie() throws Exception {
@@ -105,10 +106,10 @@ public class LsyController {
 	}
 
 	//addMovie 화면에서 체크 후 등록버튼 클릭-> 서비스 단으로 가서 DB에 등록
-	@RequestMapping(value = "/registeMovie", method =RequestMethod.POST)
+	@RequestMapping(value = "/registerMovie", method =RequestMethod.POST)
 	@ResponseBody
-	public String registeMovie(@RequestParam HashMap<Object, Object> param) throws Exception {
-		logger.info("/registeMovie 실행");
+	public String registerMovie(@RequestParam HashMap<Object, Object> param) throws Exception {
+		logger.info("/registerMovie 실행");
 	    try {
 	        JSONArray array = new JSONArray(param.get("target").toString());  //json 배열
 	        List<Object> list = array.toList(); //Object를 지닌 배열
@@ -133,7 +134,7 @@ public class LsyController {
 		List<Map<String,Object>>movieList=service.movieListAll();
 		
 		logger.info("영화 목록 가져오기 성공");
-		logger.info("영화 목록: "+movieList );
+//		logger.info("영화 목록: "+movieList );
 		
 		model.addAttribute("movieList",movieList);
 		return "lsy/movieAdmin";
@@ -149,7 +150,7 @@ public class LsyController {
 		List<Map<String,Object>>movieListCri=service.movieListCri();
 		
 		logger.info("영화 목록 가져오기 성공");
-		logger.info("영화 목록: "+movieListCri );
+//		logger.info("영화 목록: "+movieListCri );
 		
 		model.addAttribute("movieListCri",movieListCri);
 		return "lsy/movieCriList";
@@ -165,7 +166,7 @@ public class LsyController {
 		Map<String,Object>about_movie=service.readMovie(movie_id);
 		
 		logger.info("영화 정보 가져오기 성공");
-		logger.info("영화 정보: "+about_movie );
+//		logger.info("영화 정보: "+about_movie );
 		
 		model.addAttribute("about_movie",about_movie);
 		return "lsy/readMovie";
@@ -196,4 +197,155 @@ public class LsyController {
 		return "redirect:/Movie/movieAdmin";
 	}
 	
+	
+	
+	//매거진 페이지
+		@RequestMapping(value = "Magazine/Index", method = RequestMethod.GET)
+		public String magazine(Locale locale, Model model) throws Exception {
+			logger.info("/magazine 실행");
+			
+
+			//서비스계층 메서드 호출
+			List<Map<String,Object>>magazineList=service.magazineList();
+			
+			logger.info("매거진 목록 가져오기 성공");
+//			logger.info("매거진 목록: "+magazineList );
+			
+			model.addAttribute("magazineList",magazineList);
+
+			return "lsy/magazine";
+		}
+	
+	
+	
+	
+	// 매거진 등록 get
+	@RequestMapping(value = "/registerMagazine", method =RequestMethod.GET)
+	public String registerMagazine() throws Exception {
+		logger.info("/registerMagazine GET 실행");
+		
+		return "lsy/registerMagazine";
+	}
+	
+	
+	
+	// 매거진 등록 post
+	@RequestMapping(value = "/registerMagazine", method =RequestMethod.POST )
+	public String registerMagazinePOST(@RequestParam Map<String,Object>mgz, RedirectAttributes rttr) throws Exception {
+		logger.info("/registerMagazine POST 실행, 정보:" + mgz);
+		
+		service.registerMagazine(mgz);
+		
+		// rttr에 저장
+		rttr.addFlashAttribute("result","SUCCESS");
+	return "redirect:/Magazine/Index";
+	}
+	
+	//썸머에디터 이미지 업로드
+	@PostMapping(value="uploadSummernoteImageFile", produces = "application/json")
+	@ResponseBody
+	public String uploadSummernoteImageFile(@RequestParam("file") MultipartFile multipartFile) {
+
+		Map<String,String> map = new HashMap<String, String>();
+		JSONObject JsonData = new JSONObject();
+		
+		String fileRoot = "C:\\summernote_image\\";	//저장될 외부 파일 경로
+		String originalFileName = multipartFile.getOriginalFilename();	//오리지날 파일명
+		String extension = originalFileName.substring(originalFileName.lastIndexOf("."));	//파일 확장자
+		
+		String savedFileName = UUID.randomUUID() + extension;	//저장될 파일 명
+		
+		File targetFile = new File(fileRoot + savedFileName);	
+		
+		try {
+			InputStream fileStream = multipartFile.getInputStream();
+			FileUtils.copyInputStreamToFile(fileStream, targetFile);	//파일 저장
+			map.put("url", "/summernoteImage/"+savedFileName);
+			map.put("responseCode", "success");
+			
+		     for (Map.Entry<String, String> entry : map.entrySet()) {
+                 String key = entry.getKey();
+                 String value = entry.getValue();
+
+                 JsonData.put(key, value);
+
+		     }
+
+		     logger.info("성공@@@@@json 정보:" + JsonData);
+		} catch (IOException e) {
+			FileUtils.deleteQuietly(targetFile);	//저장된 파일 삭제
+			map.put("responseCode", "error");
+			
+		     for (Entry<String, String> entry : map.entrySet()) {
+		    	 String key = entry.getKey();
+                 String value = entry.getValue();
+
+                 JsonData.put(key, value);
+		     }
+		     logger.info("실패@@@@@json 정보:" + JsonData);
+			e.printStackTrace();
+		}
+		logger.info("최종@@@@@json 정보:" + JsonData);
+
+		return JsonData.toString();
+	}
+	
+    // 매거진 게시글 읽기Magazine/Detail
+	@RequestMapping(value = "Magazine/Detail", method = RequestMethod.GET)
+	public String magazineDetail(@RequestParam("num") int mgz_num, Model model) throws Exception {
+		logger.info("/magazine 실행");
+		
+
+		//서비스계층 메서드 호출
+		Map<String,Object>magazine=service.readMagazine(mgz_num);
+		
+		logger.info("매거진 목록 가져오기 성공");
+		logger.info("매거진 목록: "+magazine );
+		
+		model.addAttribute("magazine",magazine);
+
+		return "lsy/magazineDetail";
+	}
+
+	// 매거진 수정 get
+	@RequestMapping(value = "/updateMagazine", method =RequestMethod.GET)
+	public String updateMagazine(@RequestParam("num") int mgz_num, Model model) throws Exception {
+		logger.info("/updateMagazine GET 실행");
+		
+		//서비스계층 메서드 호출
+		Map<String,Object>magazine=service.readMagazine(mgz_num);
+		
+		logger.info("매거진 목록 가져오기 성공");
+		logger.info("매거진 목록: "+magazine );
+		
+		model.addAttribute("magazine",magazine);
+
+		return "lsy/updateMagazine";
+	}
+	
+	
+	
+	// 매거진 수정 post
+	@RequestMapping(value = "/updateMagazine", method =RequestMethod.POST )
+	public String updateMagazinePOST(@RequestParam Map<String,Object>mgz, RedirectAttributes rttr) throws Exception {
+		logger.info("/updateMagazine POST 실행, 정보:" + mgz);
+		
+		service.updateMagazine(mgz);
+		
+		// rttr에 저장
+		rttr.addFlashAttribute("result","SUCCESS");
+	return "redirect:/Magazine/Index";
+	}
+	
+	// 매거진 삭제 get
+		@RequestMapping(value = "/deleteMagazine", method =RequestMethod.GET)
+		public String deleteMagazine(@RequestParam("num") int mgz_num, Model model) throws Exception {
+			logger.info("/deleteMagazine GET 실행");
+			
+			//서비스계층 메서드 호출
+			service.deleteMagazine(mgz_num);
+
+
+			return "redirect:/Magazine/Index";
+		}
 }

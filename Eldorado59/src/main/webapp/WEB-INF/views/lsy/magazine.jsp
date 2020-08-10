@@ -19,6 +19,15 @@
 
 <link href="${pageContext.request.contextPath }/resources/css/magazine.css" rel="stylesheet" type="text/css" />
 
+<style type="text/css">
+.mg_modify {
+    margin-bottom: 15px;
+    font-size: 12px;
+    letter-spacing: -1px;
+    line-height: 30px;
+}
+
+</style>
 
 </head>
 <body>
@@ -43,7 +52,7 @@
             매거진
             </div>
             <div class="magazine_banner">
-                <div class="magazine_slider">
+              <!--   <div class="magazine_slider">
                                 <div class="magazine_slide" data-cid="343401">
                                     <img src="https://movie-simg.yes24.com/NYes24//LOUNGE/20/07/06_still04_094238.jpg" alt="＜오! 문희＞ 아무도 못 잡으면, 우리가 직접 잡는다!">
                                     <div class="sld_banner_info">
@@ -54,7 +63,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <div class="magazine_slide" data-cid="343399">
+                                <div class="magazine_slide" data-cid="343399">
                                     <img src="https://movie-simg.yes24.com/NYes24//LOUNGE/20/07/bam_094501.jpg" alt="[손희정의 더 페이보릿] 유령이 인간을 구할 때 - 유은정 감독">
                                     <div class="sld_banner_info">
                                         <div class="sld_banner_txt">
@@ -113,12 +122,14 @@
                                             <p class="sld_type">블랙아웃 : 인베이젼 어스</p>
                                         </div>
                                     </div>
-                                </div> -->
+                                </div> 
 
-                </div>
+                </div>-->
             </div>
 
-            
+            <div>
+            			<button type='button' class="btn_defaultB" onclick="location.href='${pageContext.request.contextPath }/registerMagazine'">매거진 등록</button>
+            </div>
 
     <script>
         function fnImgError(obj) {
@@ -130,21 +141,58 @@
     <!--탭영역-->
     <div class="magazine_tab_area">
         <ul class="tab_menu02">
-            <li class="active" id="tabMenu02_ALL"><a href="/Magazine/Index?GC=ALL">전체</a></li>
-            <li class="" id="tabMenu02_NEWS"><a href="/Magazine/Index?GC=NEWS">뉴스</a></li>
-            <li class="" id="tabMenu02_STAR"><a href="/Magazine/Index?GC=STAR">스타</a></li>
+            <li class="active" id="tabMenu02_ALL"><a href="${pageContext.request.contextPath }/Magazine/Index?GC=ALL">전체</a></li>
+            <li class="" id="tabMenu02_NEWS"><a href="${pageContext.request.contextPath }/Magazine/Index?GC=NEWS">뉴스</a></li>
+            <li class="" id="tabMenu02_STAR"><a href="${pageContext.request.contextPath }/Magazine/Index?GC=STAR">스타</a></li>
         </ul>
+        
+        <!-- <select id="label" name="label">
+<optgroup label="NEWS">
+	<option value=0>최초공개</option>
+	<option value=1>핫토픽</option>
+	<option value=2>전문가칼럼</option>
+</optgroup>
+<optgroup label="STAR">
+	<option value=3>스타패션</option>
+	<option value=4>현장취재</option>
+	<option value=5>연예가쉿</option>
+</optgroup>
+</select> <br> -->
+        
         <div class="magazine_tab_container">
             <div class="magazine_area" id="magazineList">
+        <c:forEach items="${magazineList }" var="magazineList">
+        <c:set var="imgArr" value="${fn:split(magazineList.mgz_img,',') }"/>
                             <div class="mg_box">
-                                <a href="/Magazine/Detail?contentsId=343402&amp;sectionCd=CONATT780">
-                                    <div class="mg_thumb"><img src="https://image.yes24.com/images/chyes24/froala/10/1/6297.jpg" alt="‘얼굴 다 가리는 모자’ 이유비, 러블리 인형 비주얼 " onerror="fnImgError(this);" /></div>
+                                <a href="${pageContext.request.contextPath }/Magazine/Detail?num=${magazineList.mgz_num}">
+                                    <div class="mg_thumb"><img src="<c:out value="${imgArr[0] }"/> " style="width: 100%;" alt="" onerror="fnImgError(this);" /></div>
                                     <div class="mg_info_box">
-                                        <p class="mg_first"><span>스타패션</span><span class="date">2020.07.31</span></p>
-                                        <p class="mg_de_txt dot_st">‘얼굴 다 가리는 모자’ 이유비, 러블리 인형 비주얼 </p>
-                                    </div>
+                                        <p class="mg_first">
+                                        <span>
+                                        <c:set var="label" value="${magazineList.label}"/>
+                                        <c:if test="${label eq 0}"><c:out value="최초공개"/></c:if>
+                                        <c:if test="${label eq 1}"><c:out value="핫토픽"/></c:if>
+                                        <c:if test="${label eq 2}"><c:out value="전문가칼럼"/></c:if>
+                                        <c:if test="${label eq 3}"><c:out value="스타패션"/></c:if>
+                                        <c:if test="${label eq 4}"><c:out value="현장취재"/></c:if>
+                                        <c:if test="${label eq 5}"><c:out value="연예가쉿"/></c:if>
+                                        <%-- ${magazineList.label} --%>
+                                        </span>
+                                        
+                                        <span class="date"><fmt:formatDate value="${magazineList.reg_date }" pattern="yyyy.MM.dd"/></span></p>
+                                        <p class="mg_de_txt dot_st">${magazineList.title} </p>
                                 </a>
+		 								<% if(session.getAttribute("id")!=null && session.getAttribute("id").equals("admin")){ %>
+		                              			<a href="${pageContext.request.contextPath }/updateMagazine?num=${magazineList.mgz_num}">
+		                                        <span class="mg_modify">수정 </span></a>
+		                                        <span class="mg_modify"> || </span>
+		                              			<a href="${pageContext.request.contextPath }/deleteMagazine?num=${magazineList.mgz_num}">
+		                                        <span class="mg_modify">삭제 </span></a>
+		                                <%} %>
+                                    </div>
                             </div>
+        </c:forEach>
+        
             </div>
                     <div class="btn_bottom_area" id="btnMoreArea">
                         <button type="button" class="btn_defaultB" onclick="javascript:fnMore();">더보기</button>

@@ -24,7 +24,21 @@ public interface LsyDAO {
 		
 	// 영화 삭제(delete)
 		public void deleteMovie(String movie_id) throws Exception;
+		
+	// 매거진 등록
+		public void registerMagazine(Map<String,Object> mgz) throws Exception ;
 
+	// 매거진 전체 목록 가져오기
+		public List<Map<String,Object>> magazineList() throws Exception;
+		
+	// 매거진 읽기 dao.readMagazine();
+		public Map<String,Object> readMagazine(int mgz_num) throws Exception;
+		
+	// 매거진 수정
+		public void updateMagazine(Map<String,Object> mgz) throws Exception ;
 
+	// 매거진 읽기
+		public void deleteMagazine(int mgz_num) throws Exception;
+	
 
 }
