@@ -17,7 +17,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>	
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 
 
@@ -142,8 +143,11 @@ a {text-decoration: none; color: #000000;
 		<tr>
 			<td><c:out value="${boxoffice.rank }"/></td>
 			<td style="text-align: left;"><a href="#"><c:out value="${boxoffice.movieNm }"/></a></td>
-			<td><text class="currency"><c:out value="${boxoffice.salesAmt }"/></text>원</td>
-			<td><text class="currency"><c:out value="${boxoffice.audiAcc }"/></text>명</td>
+			<td>
+			<fmt:formatNumber var="bo_salesAmt" value="${boxoffice.salesAmt }" pattern="#,###"/>
+			<c:out value="${bo_salesAmt }"/>원</td>
+			<fmt:formatNumber var="bo_audiAcc" value="${boxoffice.audiAcc }" pattern="#,###"/>
+			<td><c:out value="${bo_audiAcc }"/>명</td>
 			<td><c:out value="${boxoffice.rankInten }"/></td>
 		</tr>
 	</c:forEach>
@@ -210,8 +214,8 @@ a {text-decoration: none; color: #000000;
 	 <tr>
 	 <td><c:out value="${wboxoffice.rank }"/></td>
 			<td style="text-align: left;"><a href="#"><c:out value="${wboxoffice.movieNm }"/></a></td>
-			<td><text class="currency"><c:out value="${wboxoffice.salesAmt }"/></text>원</td>
-			<td><text class="currency"><c:out value="${wboxoffice.audiAcc }"/></text>명</td>
+			<td><text class="currency"><fmt:formatNumber var="w_salesAmt" value="${wboxoffice.salesAmt }" pattern="#,###"/><c:out value="${w_salesAmt }"/></text>원</td>
+			<td><text class="currency"><fmt:formatNumber var="w_audiAcc" value="${wboxoffice.audiAcc }" pattern="#,###"/><c:out value="${w_audiAcc }"/></text>명</td>
 			<td><c:out value="${wboxoffice.rankInten }"/></td> 
 	 </c:forEach>
 	</c:if>

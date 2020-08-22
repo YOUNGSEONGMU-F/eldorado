@@ -49,7 +49,9 @@
 		    <span>평점  ${about_movie.user_rating } </span>
 		   </p>
 		   <p class="dmb_txt">
-<!-- 		    <span>2020.06.10 개봉</span> -->
+		    <fmt:parseDate value="${about_movie.openDt}" var="openDate" pattern="yyyyMMdd"/>
+			<fmt:formatDate var="openDt" value="${openDate}" pattern="yyyy.MM.dd"/>
+		    <span><c:out value="${openDt}" /> 개봉</span>
 <!-- 		    <span>110 분</span> -->
 		    <span>
 		    <c:if test="${about_movie.grade eq '12' }">${about_movie.grade}세이상 관람가 </c:if>
@@ -57,8 +59,8 @@
 		    <c:if test="${about_movie.grade eq '전체' }">${about_movie.grade} 관람가 </c:if>
 		    <c:if test="${about_movie.grade eq '청불' }">청소년 관람불가 </c:if> 
 		    </span>
-<!-- 		    <span>드라마</span> -->
-<!-- 		    <span>한국</span> -->
+		    <span>${about_movie.genre }</span>
+		    <span>${about_movie.repNationNm }</span>
 		   </p>
 		   <div class="btn_area">
 		    <button type="button" class="btn_defaultB btn_line_whilte" id="btnReserve" onclick="javascript: fnTicket('M000071414');"
@@ -263,8 +265,8 @@
             <!-- //배우 제작진-->
             <!-- 동영상-->
             <p class="mc_title" id="indexVodTitle">동영상<!-- <a href="#" class="btn_more" onclick="javascript: fnShowMenuMovieDetail('Vod');"></a> --></p>
-            <div class="detail_vod_area" id="indexVodContents">
-	        <video src='${about_movie.video }' width='1000' controls autoplay>
+            <div class="detail_vod_area" id="indexVodContents" >
+	        <video src='${about_movie.video }' width='1000' controls >
 			</video>
                 <div class="detail_vod_slider" id="indexVod"></div>
             </div>
