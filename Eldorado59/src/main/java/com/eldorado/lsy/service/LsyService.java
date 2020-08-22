@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Map;
 
 public interface LsyService {
+	
+	// ----------------- 영화
+	
 	// 영화 등록
 	public void registMovie(List<Object> list) throws Exception;
 	
@@ -25,6 +28,13 @@ public interface LsyService {
 	// 영화 삭제(delete)
 	public void deleteMovie(String movie_id) throws Exception;
 
+	// 영화 (dataLoad)
+	public void GetAPImovieCode(Map<String,Object> map) throws Exception;
+	
+
+	
+	// ----------------- 매거진
+	
 	// 매거진 등록
 	public void registerMagazine(Map<String,Object> mgz) throws Exception ;
 	
@@ -39,6 +49,8 @@ public interface LsyService {
 
 	// 매거진 삭제
 	public void deleteMagazine(int mgz_num) throws Exception;
+	
+	
 
 }
 

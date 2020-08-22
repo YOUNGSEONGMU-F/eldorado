@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Map;
 
 public interface LsyDAO {
+	
+	// ----------------- 영화
+
 	// 영화 등록(regist)
 		public void registMovie(List<Object> list) throws Exception ;
 		
@@ -24,7 +27,13 @@ public interface LsyDAO {
 		
 	// 영화 삭제(delete)
 		public void deleteMovie(String movie_id) throws Exception;
+	
+	// 영화 GetAPImovieCode
+		public void GetAPImovieCode(Map<String,Object> map) throws Exception;
 		
+		
+	// ----------------- 매거진
+
 	// 매거진 등록
 		public void registerMagazine(Map<String,Object> mgz) throws Exception ;
 

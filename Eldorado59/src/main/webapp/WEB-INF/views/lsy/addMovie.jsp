@@ -111,9 +111,9 @@ let main = {
 			$("#output").empty();
 			// 데이터 append
 			$("#output").append("<table id='movie' class='table table-hover'>");
-			$("#movie").append("<thead><tr><td class='fixedHeader'><input type='checkbox' id='checkAll' onclick='cAll();' ></td><td class='fixedHeader'>사진</td><td class='fixedHeader'>제목</td><td class='fixedHeader'>개봉</td><td class='fixedHeader'>감독</td><td class='fixedHeader'>배우</td><td class='fixedHeader'>평점</td></tr></thead>");
+			$("#movie").append("<thead><tr><td class='fixedHeader'><input type='checkbox' id='checkAll' onclick='cAll();' ></td><td class='fixedHeader'>사진</td><td class='fixedHeader'>영화명</td><td class='fixedHeader'>영화명(영문)</td><td class='fixedHeader'>제작</td><td class='fixedHeader'>감독</td><td class='fixedHeader'>배우</td><td class='fixedHeader'>평점</td></tr></thead>");
 				for(i=0;i<movie.length;i++){
-					$("#movie").append("<tr><td><input type='checkbox' name='box' class='ckitem'></td><td><img src='"+movie[i].image+"'/></td><td><a href='"+res.items[i].link+"' target='_blank'>"+movie[i].title+"</a></td><td>"+movie[i].pubDate+"</td><td>"+movie[i].director+"</td><td>"+movie[i].actor+"</td><td>"+movie[i].userRating+"</td></tr>");
+					$("#movie").append("<tr><td><input type='checkbox' name='box' class='ckitem'></td><td><img src='"+movie[i].image+"'/></td><td><a href='"+res.items[i].link+"' target='_blank'>"+movie[i].title+"</a></td><td>"+movie[i].subtitle+"</td><td>"+movie[i].pubDate+"</td><td>"+movie[i].director+"</td><td>"+movie[i].actor+"</td><td>"+movie[i].userRating+"</td></tr>");
 				}
 			$("#output").append("</table>");
 	
@@ -166,10 +166,11 @@ $(document).on("click", "#selectBtn", function(){
 
     tdData.thumb_nail=td.eq(1).html();
     tdData.title=td.eq(2).text();
-    tdData.pub_date=td.eq(3).text();
-    tdData.director=td.eq(4).text();
-    tdData.cast=td.eq(5).text();
-    tdData.user_rating=td.eq(6).text();
+    tdData.subtitle=td.eq(3).text();
+    tdData.pub_date=td.eq(4).text();
+    tdData.director=td.eq(5).text();
+    tdData.cast=td.eq(6).text();
+    tdData.user_rating=td.eq(7).text();
 
     // 체크된 row의 모든 값을 배열에 담는다.
     rowData.push(tdData);

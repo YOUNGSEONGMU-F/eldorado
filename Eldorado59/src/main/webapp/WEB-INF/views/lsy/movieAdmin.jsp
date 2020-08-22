@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,11 +58,12 @@ display:none;
 					<th>no</th>
 					<th>ID</th>
 					<th>썸네일</th>
-					<th>제목</th>
-					<th>개봉</th>
+					<th>영화명</th>
+					<th>제작</th>
 					<th>평점</th>
 					<th>출연자</th>
 					<th>감독</th>
+					<th>Code</th>
 					<th>상세</th>
 					<th>삭제</th>
 				</tr>
@@ -75,6 +77,9 @@ display:none;
 					<td>${movieList.user_rating }</td>
 					<td>${movieList.cast }</td>
 					<td>${movieList.director }</td>
+					<c:set var="arr" value="${fn:split(movieList.director,'|') }"/>
+					
+					<td><a href="${pageContext.request.contextPath }/Movie/dataLoad?m_id=${movieList.movie_id }&title=${movieList.title }&subtitle=${movieList.subtitle }&director=${arr[0] }&pub_date=${movieList.pub_date }">Get</a></td>
 					<td><a href="${pageContext.request.contextPath }/Movie/readMovie?m_id=${movieList.movie_id }">관리</a></td>
 					<td><a href="${pageContext.request.contextPath }/Movie/deleteMovie?m_id=${movieList.movie_id }">삭제</a></td>
 				</tr>

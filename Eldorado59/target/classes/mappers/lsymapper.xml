@@ -6,9 +6,9 @@
 <!-- 영화등록 API 정보만 이용. 추가정보는 개별 상세 페이지 수정으로 처리-->
 <insert id="registerMovies" parameterType="Object">
 insert into 
-		movie(movie_id,title,director,cast,thumb_nail,pub_date,user_rating) 
+		movie(movie_id,title,subtitle,director,cast,thumb_nail,pub_date,user_rating) 
 values
-		(#{movie_id},#{object.title},#{object.director},#{object.cast},#{object.thumb_nail},#{object.pub_date},#{object.user_rating})
+		(#{movie_id},#{object.title},#{object.subtitle},#{object.director},#{object.cast},#{object.thumb_nail},#{object.pub_date},#{object.user_rating})
 </insert>
 <!-- 등록된 영화 개수count(movie_id에 사용) -->
 <select id="countRegisteredMovies" resultType="int">
@@ -80,6 +80,31 @@ values
 		movie_id=#{movie_id};
 	]]>
 </delete>
+
+
+<!-- 영화API 코드 가져오기 :  -->
+<update id="GetAPImovieCode" parameterType="Object">
+ 	<![CDATA[
+ 	update 
+ 		movie
+	set 
+		movieCd=#{movieCd}
+	where 
+		movie_id=#{movie_id};
+	]]>
+</update>
+
+<!-- 영화API 상세정보 가져오기 : 상영시간|개봉연도|제작국가명|장르명|관람등급 -->
+<!-- <update id="GetAPImovieInfo" parameterType="Object"> -->
+<!--  	<![CDATA[ -->
+<!--  	update  -->
+<!--  		movie -->
+<!-- 	set  -->
+<!-- 		showTm=#{showTm},openDt=#{openDt},repNationNm=#{nationNm},genre=#{genreNm},grade=#{watchGradeNm} -->
+<!-- 	where  -->
+<!-- 		movieCd=#{movieCd}; -->
+<!-- 	]]> -->
+<!-- </update> -->
 
 <!-- 페이징처리도 해야함 -->
 

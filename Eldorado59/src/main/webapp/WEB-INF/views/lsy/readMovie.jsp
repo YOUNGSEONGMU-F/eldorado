@@ -146,7 +146,7 @@ display:none;
 				<img src="<c:out value="${imgArr[1] }"/>" width='400'>
 				
 				<!-- 동영상 예시 -->
-				<video src='${about_movie.video }' width='400' controls autoplay>
+				<video src='${about_movie.video }' width='400' controls>
 					</video>
 <!--  -->	</form>
 				<!-- 삭제폼 -->

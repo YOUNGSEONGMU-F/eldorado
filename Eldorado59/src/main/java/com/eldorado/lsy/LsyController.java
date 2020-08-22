@@ -196,6 +196,32 @@ public class LsyController {
 		logger.info("@@@@ controller : 영화 정보 삭제 성공!!!");
 		return "redirect:/Movie/movieAdmin";
 	}
+	//영화 => dataLoad
+	@RequestMapping(value = "Movie/dataLoad", method = RequestMethod.GET)
+	public String dataLoad(@RequestParam("m_id") String movie_id, @RequestParam("title") String title, @RequestParam("director") String director, @RequestParam("subtitle") String subtitle,  @RequestParam("pub_date") String pub_date) throws Exception {
+		logger.info("/GetAPImovieCode요청(Get) 실행 ");
+		
+		Map<String,Object> map = new HashMap<String, Object>();
+		map.put("movie_id", movie_id);
+		map.put("title", title);
+		map.put("director", director);		
+		map.put("subtitle", subtitle);
+		map.put("pub_date", pub_date);
+		
+		//영화 => GetAPImovieCode
+		service.GetAPImovieCode(map);
+
+		//코드번호 리턴받아서, 아래 메서드 매개변수로 사용해야함
+		
+		logger.info("/GetAPImovieInfo요청 실행 ");
+		//영화 => movieCode로 상세정보 땡겨오기
+		//서비스,DAO 추가해야함.
+		
+		
+		logger.info("@@@@ controller : dataLoad!!!");
+	//	return null;
+		return "redirect:/Movie/movieAdmin";
+	}	
 	
 	
 	
@@ -268,10 +294,10 @@ public class LsyController {
                  String value = entry.getValue();
 
                  JsonData.put(key, value);
-
 		     }
 
-		     logger.info("성공@@@@@json 정보:" + JsonData);
+		     logger.info("성공 @@@@@ json 정보:" + JsonData);
+		     
 		} catch (IOException e) {
 			FileUtils.deleteQuietly(targetFile);	//저장된 파일 삭제
 			map.put("responseCode", "error");
@@ -282,10 +308,11 @@ public class LsyController {
 
                  JsonData.put(key, value);
 		     }
-		     logger.info("실패@@@@@json 정보:" + JsonData);
-			e.printStackTrace();
+		     logger.info("실패 @@@@@ json 정보:" + JsonData);
+			 e.printStackTrace();
 		}
-		logger.info("최종@@@@@json 정보:" + JsonData);
+		
+		logger.info("최종 @@@@@ json 정보:" + JsonData);
 
 		return JsonData.toString();
 	}

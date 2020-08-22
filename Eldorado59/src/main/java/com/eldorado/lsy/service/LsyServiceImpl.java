@@ -82,6 +82,22 @@ public class LsyServiceImpl implements LsyService{
 		
 	}
 	
+	// 영화 GetAPImovieCode
+	@Override
+	public void GetAPImovieCode(Map<String,Object> map) throws Exception {
+		logger.info("@ Service : 영화 데이터 로드 동작 실행-> DAO 메서드 호출");
+		
+
+		//GetAPImovieCode : 코드 받아오기
+		dao.GetAPImovieCode(map);
+		
+		
+		
+		logger.info("@ DAO : 처리완료. 결과 컨트롤러 전달");
+	}
+	
+	
+	// 매거진
 	@Override
 	public void registerMagazine(Map<String, Object> mgz) throws Exception {
 		logger.info("@ Service : 매거진 등록 동작 실행 -> DAO 메서드 호출, 정보:"+mgz);
